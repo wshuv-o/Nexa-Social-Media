@@ -30,8 +30,8 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
-            this.testControl1 = new media.TestControl();
             this.guna2WinProgressIndicator1 = new Guna.UI2.WinForms.Guna2WinProgressIndicator();
+            this.testControl1 = new media.TestControl();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.testControl1)).BeginInit();
             this.SuspendLayout();
@@ -42,9 +42,9 @@
             this.panel1.Controls.Add(this.guna2WinProgressIndicator1);
             this.panel1.Controls.Add(this.webBrowser1);
             this.panel1.Controls.Add(this.testControl1);
-            this.panel1.Location = new System.Drawing.Point(201, 95);
+            this.panel1.Location = new System.Drawing.Point(201, 222);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(762, 585);
+            this.panel1.Size = new System.Drawing.Size(636, 458);
             this.panel1.TabIndex = 1;
             // 
             // webBrowser1
@@ -55,6 +55,13 @@
             this.webBrowser1.Size = new System.Drawing.Size(536, 549);
             this.webBrowser1.TabIndex = 1;
             this.webBrowser1.Url = new System.Uri("http://m.facebook.com", System.UriKind.Absolute);
+            // 
+            // guna2WinProgressIndicator1
+            // 
+            this.guna2WinProgressIndicator1.Location = new System.Drawing.Point(372, 179);
+            this.guna2WinProgressIndicator1.Name = "guna2WinProgressIndicator1";
+            this.guna2WinProgressIndicator1.Size = new System.Drawing.Size(90, 90);
+            this.guna2WinProgressIndicator1.TabIndex = 2;
             // 
             // testControl1
             // 
@@ -73,13 +80,6 @@
             this.testControl1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.testControl1.TabIndex = 0;
             this.testControl1.TabStop = false;
-            // 
-            // guna2WinProgressIndicator1
-            // 
-            this.guna2WinProgressIndicator1.Location = new System.Drawing.Point(372, 179);
-            this.guna2WinProgressIndicator1.Name = "guna2WinProgressIndicator1";
-            this.guna2WinProgressIndicator1.Size = new System.Drawing.Size(90, 90);
-            this.guna2WinProgressIndicator1.TabIndex = 2;
             // 
             // FormTest
             // 
