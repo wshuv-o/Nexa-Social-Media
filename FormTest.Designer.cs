@@ -29,7 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.testControl1 = new media.TestControl();
+            this.guna2WinProgressIndicator1 = new Guna.UI2.WinForms.Guna2WinProgressIndicator();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.testControl1)).BeginInit();
             this.SuspendLayout();
@@ -37,11 +39,22 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.panel1.Controls.Add(this.guna2WinProgressIndicator1);
+            this.panel1.Controls.Add(this.webBrowser1);
             this.panel1.Controls.Add(this.testControl1);
-            this.panel1.Location = new System.Drawing.Point(421, 95);
+            this.panel1.Location = new System.Drawing.Point(201, 95);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(323, 313);
+            this.panel1.Size = new System.Drawing.Size(762, 585);
             this.panel1.TabIndex = 1;
+            // 
+            // webBrowser1
+            // 
+            this.webBrowser1.Location = new System.Drawing.Point(199, 3);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.Size = new System.Drawing.Size(536, 549);
+            this.webBrowser1.TabIndex = 1;
+            this.webBrowser1.Url = new System.Uri("http://m.facebook.com", System.UriKind.Absolute);
             // 
             // testControl1
             // 
@@ -61,12 +74,19 @@
             this.testControl1.TabIndex = 0;
             this.testControl1.TabStop = false;
             // 
+            // guna2WinProgressIndicator1
+            // 
+            this.guna2WinProgressIndicator1.Location = new System.Drawing.Point(372, 179);
+            this.guna2WinProgressIndicator1.Name = "guna2WinProgressIndicator1";
+            this.guna2WinProgressIndicator1.Size = new System.Drawing.Size(90, 90);
+            this.guna2WinProgressIndicator1.TabIndex = 2;
+            // 
             // FormTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MidnightBlue;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1047, 692);
             this.Controls.Add(this.panel1);
             this.Name = "FormTest";
             this.Text = "FormTest";
@@ -80,5 +100,7 @@
 
         private TestControl testControl1;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.WebBrowser webBrowser1;
+        private Guna.UI2.WinForms.Guna2WinProgressIndicator guna2WinProgressIndicator1;
     }
 }
