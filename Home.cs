@@ -43,12 +43,7 @@ namespace media
                 Methods.RoundPanelCorners(ref this.flowLayoutPanel2, 20);
 
             };
-            this.panel4.Resize += (sender, e) =>
-            {
-                panel4.Width=flowLayoutPanel2.Width;
-               // Methods.RoundPanelCorners(ref panel4, 20);
 
-            };
             this.guna2Panel2.Resize += (sender, e) =>
             {
                 guna2Panel2.Width = flowLayoutPanel1.Width;
@@ -65,8 +60,6 @@ namespace media
              };*/
 
 
-            Methods.RoundImageBoxCorners(pictureBox1, 10);
-            //Methods.RoundPanelCorners(ref panel4, 20);
 
 
         }
@@ -160,16 +153,16 @@ namespace media
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Panel panelBase=new Panel();    
-            Panel panelChild=new Panel();
+            Guna2Panel panelBase =new Guna2Panel();    
+            Guna2Panel panelChild=new Guna2Panel();
             panelBase.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
-            panelBase.BackColor = System.Drawing.Color.Blue;
+            panelBase.BackColor = System.Drawing.Color.WhiteSmoke;
             panelBase.Controls.Add(panelChild);
             panelBase.Location = new System.Drawing.Point(43, 347);
             panelBase.Name = "panel1";
             panelBase.Padding = new System.Windows.Forms.Padding(50, 10, 50, 10);
-            panelBase.Size = new System.Drawing.Size(866, 750);
+            panelBase.Size = new System.Drawing.Size(866, 850);
             panelBase.TabIndex = 1;
             panelBase.Paint += new System.Windows.Forms.PaintEventHandler(panelBase_Paint);
             // 
@@ -179,13 +172,15 @@ namespace media
             panelChild.Dock = System.Windows.Forms.DockStyle.Fill;
             panelChild.Location = new System.Drawing.Point(50, 0);
             panelChild.Name = "panel2";
-            panelChild.Size = new System.Drawing.Size(766, 500);
+            panelChild.Size = new System.Drawing.Size(766, 600);
             panelChild.TabIndex = 0;
+            panelChild.BorderColor = Color.Red;
+            panelChild.BorderThickness = 1;
+            panelChild.BorderRadius = 20;
             panelChild.BackColor = Color.White;
             panelChild.Paint += new System.Windows.Forms.PaintEventHandler(panelChild_Paint_1);
             panelChild.MouseEnter += new System.EventHandler(panelChild_MouseEnter);
             panelChild.MouseLeave += new System.EventHandler(panelChild_MouseLeave);
-            Methods.RoundPanelCorners(ref panelChild, 30);
 
             Post a = new Post();
             Methods.OpenChildForm(a, panelChild);
@@ -563,6 +558,31 @@ namespace media
         }
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2Panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void customRoundPictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint_1(object sender, PaintEventArgs e)
         {
 
         }

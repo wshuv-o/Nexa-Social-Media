@@ -32,19 +32,23 @@
             this.guna2GradientCircleButton3 = new Guna.UI2.WinForms.Guna2GradientCircleButton();
             this.guna2GradientCircleButton2 = new Guna.UI2.WinForms.Guna2GradientCircleButton();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.customRoundPictureBox1 = new media.CustomRoundPictureBox();
             this.guna2CircleButton3 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2CircleButton2 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.customRoundPictureBox1 = new media.CustomRoundPictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.customPanel1 = new media.CustomPanel();
+            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2GradientPanel1.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customRoundPictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.customRoundPictureBox1)).BeginInit();
+            this.customPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2GradientPanel1
@@ -114,18 +118,35 @@
             // 
             this.guna2Panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.guna2Panel1.BackgroundImage = global::media.Properties.Resources.p4;
             this.guna2Panel1.BorderRadius = 25;
+            this.guna2Panel1.Controls.Add(this.customPanel1);
             this.guna2Panel1.Controls.Add(this.customRoundPictureBox1);
             this.guna2Panel1.Controls.Add(this.guna2CircleButton3);
             this.guna2Panel1.Controls.Add(this.guna2CircleButton2);
-            this.guna2Panel1.Controls.Add(this.guna2CircleButton1);
-            this.guna2Panel1.Controls.Add(this.guna2TextBox1);
+            this.guna2Panel1.Controls.Add(this.guna2PictureBox1);
             this.guna2Panel1.FillColor = System.Drawing.Color.Transparent;
             this.guna2Panel1.Location = new System.Drawing.Point(238, 9);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(410, 710);
             this.guna2Panel1.TabIndex = 0;
+            // 
+            // customRoundPictureBox1
+            // 
+            this.customRoundPictureBox1.BackgroundImage = global::media.Properties.Resources.p1;
+            this.customRoundPictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.customRoundPictureBox1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.customRoundPictureBox1.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.customRoundPictureBox1.BorderColor2 = System.Drawing.Color.HotPink;
+            this.customRoundPictureBox1.BorderDashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.customRoundPictureBox1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.customRoundPictureBox1.BorderSize = 4;
+            this.customRoundPictureBox1.GradientAngle = 50F;
+            this.customRoundPictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.customRoundPictureBox1.Name = "customRoundPictureBox1";
+            this.customRoundPictureBox1.Size = new System.Drawing.Size(61, 62);
+            this.customRoundPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.customRoundPictureBox1.TabIndex = 5;
+            this.customRoundPictureBox1.TabStop = false;
             // 
             // guna2CircleButton3
             // 
@@ -154,7 +175,7 @@
             this.guna2CircleButton2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2CircleButton2.ForeColor = System.Drawing.Color.White;
             this.guna2CircleButton2.Image = global::media.Properties.Resources.icons8_share_96;
-            this.guna2CircleButton2.Location = new System.Drawing.Point(359, 3);
+            this.guna2CircleButton2.Location = new System.Drawing.Point(360, 3);
             this.guna2CircleButton2.Name = "guna2CircleButton2";
             this.guna2CircleButton2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CircleButton2.Size = new System.Drawing.Size(44, 44);
@@ -172,35 +193,24 @@
             this.guna2CircleButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2CircleButton1.ForeColor = System.Drawing.Color.Snow;
             this.guna2CircleButton1.Image = global::media.Properties.Resources.happy;
-            this.guna2CircleButton1.Location = new System.Drawing.Point(305, 665);
+            this.guna2CircleButton1.Location = new System.Drawing.Point(278, 6);
             this.guna2CircleButton1.Name = "guna2CircleButton1";
             this.guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CircleButton1.Size = new System.Drawing.Size(36, 36);
             this.guna2CircleButton1.TabIndex = 2;
             this.guna2CircleButton1.Click += new System.EventHandler(this.guna2CircleButton1_Click);
             // 
-            // guna2TextBox1
+            // guna2PictureBox1
             // 
-            this.guna2TextBox1.BorderRadius = 20;
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox1.ForeColor = System.Drawing.Color.Black;
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Location = new System.Drawing.Point(3, 661);
-            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PasswordChar = '\0';
-            this.guna2TextBox1.PlaceholderForeColor = System.Drawing.Color.Gray;
-            this.guna2TextBox1.PlaceholderText = "Send Message";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.Size = new System.Drawing.Size(343, 45);
-            this.guna2TextBox1.TabIndex = 1;
+            this.guna2PictureBox1.BorderRadius = 20;
+            this.guna2PictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.guna2PictureBox1.Image = global::media.Properties.Resources._340378262;
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(410, 710);
+            this.guna2PictureBox1.TabIndex = 6;
+            this.guna2PictureBox1.TabStop = false;
             // 
             // tableLayoutPanel1
             // 
@@ -227,24 +237,6 @@
             this.panel1.Size = new System.Drawing.Size(399, 728);
             this.panel1.TabIndex = 0;
             // 
-            // customRoundPictureBox1
-            // 
-            this.customRoundPictureBox1.BackgroundImage = global::media.Properties.Resources.p1;
-            this.customRoundPictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.customRoundPictureBox1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.customRoundPictureBox1.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.customRoundPictureBox1.BorderColor2 = System.Drawing.Color.HotPink;
-            this.customRoundPictureBox1.BorderDashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.customRoundPictureBox1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.customRoundPictureBox1.BorderSize = 4;
-            this.customRoundPictureBox1.GradientAngle = 50F;
-            this.customRoundPictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.customRoundPictureBox1.Name = "customRoundPictureBox1";
-            this.customRoundPictureBox1.Size = new System.Drawing.Size(61, 62);
-            this.customRoundPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.customRoundPictureBox1.TabIndex = 5;
-            this.customRoundPictureBox1.TabStop = false;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -253,6 +245,42 @@
             this.label1.Size = new System.Drawing.Size(44, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "label1";
+            // 
+            // customPanel1
+            // 
+            this.customPanel1.BackColor = System.Drawing.Color.White;
+            this.customPanel1.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.customPanel1.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.customPanel1.BorderRadius = 20;
+            this.customPanel1.BorderSize = 1;
+            this.customPanel1.Controls.Add(this.guna2TextBox1);
+            this.customPanel1.Controls.Add(this.guna2CircleButton1);
+            this.customPanel1.Location = new System.Drawing.Point(15, 662);
+            this.customPanel1.Name = "customPanel1";
+            this.customPanel1.Size = new System.Drawing.Size(328, 45);
+            this.customPanel1.TabIndex = 2;
+            this.customPanel1.UnderlinedStyle = false;
+            // 
+            // guna2TextBox1
+            // 
+            this.guna2TextBox1.BorderThickness = 0;
+            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox1.DefaultText = "";
+            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox1.Location = new System.Drawing.Point(17, 4);
+            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.guna2TextBox1.Name = "guna2TextBox1";
+            this.guna2TextBox1.PasswordChar = '\0';
+            this.guna2TextBox1.PlaceholderText = "";
+            this.guna2TextBox1.SelectedText = "";
+            this.guna2TextBox1.Size = new System.Drawing.Size(255, 37);
+            this.guna2TextBox1.TabIndex = 3;
             // 
             // FormStorySingle
             // 
@@ -264,10 +292,12 @@
             this.Text = "Story";
             this.guna2GradientPanel1.ResumeLayout(false);
             this.guna2Panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.customRoundPictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.customRoundPictureBox1)).EndInit();
+            this.customPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -279,12 +309,14 @@
         private Guna.UI2.WinForms.Guna2GradientCircleButton guna2GradientCircleButton3;
         private Guna.UI2.WinForms.Guna2GradientCircleButton guna2GradientCircleButton2;
         private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton1;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
         private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton2;
         private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel1;
         private CustomRoundPictureBox customRoundPictureBox1;
         private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private CustomPanel customPanel1;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
     }
 }

@@ -18,6 +18,15 @@ namespace media
         {
             InitializeComponent();
             Methods.RoundImageBoxCorners(pictureBox1, 20);
+            panel3.BackColor=Methods.GetBackgroundAverageColor((Bitmap)panel3.BackgroundImage);
+            Methods.SetDoubleBuffer(panel1, true);
+            Methods.SetDoubleBuffer(panel2, true);
+            Methods.SetDoubleBuffer(panel4, true);
+            Methods.SetDoubleBuffer(panel3, true);
+            Methods.SetDoubleBuffer(guna2ShadowPanel1, true);
+            Methods.SetDoubleBuffer(basePanel, true);
+            Methods.SetDoubleBuffer(tableLayoutPanel1, true);
+            Methods.SetDoubleBuffer(tableLayoutPanel2, true);
         }
 
         private void button3_Click(object sender, EventArgs e)
