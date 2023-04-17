@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Guna.UI2.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,7 +23,6 @@ namespace media
             panelBaseHome.ColumnStyles[1] = new ColumnStyle(SizeType.Percent, 100F);
             panelFeed.Resize += new System.EventHandler(this.panelNavBar_Resize);
             Methods.RoundPanelCorners(ref panelNavBar, 20);
-            Methods.RoundPanelCorners(ref flowLayoutPanel1, 20);
             Methods.RoundPanelCorners(ref flowLayoutPanel2, 20);
             //Methods.RoundPanelCorners(ref panel3, 20);
            // Methods.RoundPanelCorners(ref panelSavior, 20);
@@ -35,13 +35,7 @@ namespace media
                 Methods.RoundPanelCorners1(ref this.panelNavBar, 30);
             };
 
-            this.flowLayoutPanel1.Resize += (sender, e) =>
-            {
-                flowLayoutPanel1.Height = this.panel2.Height;
-                flowLayoutPanel1.Width=this.panel2.Width;
-                Methods.RoundPanelCorners(ref this.flowLayoutPanel1, 20);
-
-            };            
+            
             this.flowLayoutPanel2.Resize += (sender, e) =>
             {
                 flowLayoutPanel2.Height = this.panel3.Height;
@@ -52,21 +46,27 @@ namespace media
             this.panel4.Resize += (sender, e) =>
             {
                 panel4.Width=flowLayoutPanel2.Width;
-                Methods.RoundPanelCorners(ref panel4, 20);
+               // Methods.RoundPanelCorners(ref panel4, 20);
+
+            };
+            this.guna2Panel2.Resize += (sender, e) =>
+            {
+                guna2Panel2.Width = flowLayoutPanel1.Width;
+                // Methods.RoundPanelCorners(ref panel4, 20);
 
             };
             //this.Visible = true;
 
-           /*this.panelSavior.Resize += (sender, e) =>
-            {
-                this.panel3.Height += this.panel1.Height;
-                this.panel3.Width += this.panel3.Width;
-                Methods.RoundPanelCorners(ref this.panelSavior, 20);
-            };*/
+            /*this.panelSavior.Resize += (sender, e) =>
+             {
+                 this.panel3.Height += this.panel1.Height;
+                 this.panel3.Width += this.panel3.Width;
+                 Methods.RoundPanelCorners(ref this.panelSavior, 20);
+             };*/
 
 
             Methods.RoundImageBoxCorners(pictureBox1, 10);
-            Methods.RoundPanelCorners(ref panel4, 20);
+            //Methods.RoundPanelCorners(ref panel4, 20);
 
 
         }
@@ -248,13 +248,13 @@ namespace media
         {
             TableLayoutPanel BaseEachRequest= new TableLayoutPanel();
             TableLayoutPanel panelsAcceptDecline= new TableLayoutPanel();
-            Panel panelUser = new Panel();
-            Button accept=new Button();
-            Button decline=new Button();
-            Button toUserProfile=new Button();
-            PictureBox pictureBox1=new PictureBox();
-            Label friendName= new Label();
-            Label noOfMutual=new Label();
+            Guna2Panel panelUser = new Guna2Panel();
+            Guna2Button accept =new Guna2Button();
+            Guna2Button decline =new Guna2Button();
+            Guna2Button toUserProfile =new Guna2Button();
+            Guna2PictureBox pictureBox1 =new Guna2PictureBox();
+            Guna2HtmlLabel friendName = new Guna2HtmlLabel();
+            Guna2HtmlLabel noOfMutual=new Guna2HtmlLabel();
 
 
 
@@ -315,8 +315,6 @@ namespace media
             // 
             accept.BackColor = Color.FromArgb(134,27,242);
             accept.Dock = System.Windows.Forms.DockStyle.Fill;
-            accept.FlatAppearance.BorderSize = 0;
-            accept.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             accept.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             accept.ForeColor = System.Drawing.Color.White;
             accept.Location = new System.Drawing.Point(3, 3);
@@ -324,14 +322,11 @@ namespace media
             accept.Size = new System.Drawing.Size(183, 57);
             accept.TabIndex = 0;
             accept.Text = "Accept";
-            accept.UseVisualStyleBackColor = false;
             // 
             // decline
             // 
             decline.BackColor = Color.FromArgb(134, 27, 242);
             decline.Dock = System.Windows.Forms.DockStyle.Fill;
-            decline.FlatAppearance.BorderSize = 0;
-            decline.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             decline.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             decline.ForeColor = System.Drawing.Color.White;
             decline.Location = new System.Drawing.Point(192, 3);
@@ -339,20 +334,16 @@ namespace media
             decline.Size = new System.Drawing.Size(183, 57);
             decline.TabIndex = 1;
             decline.Text = "Decline";
-            decline.UseVisualStyleBackColor = false;
             // 
             // toUserProfile
             // 
             toUserProfile.BackColor = System.Drawing.SystemColors.HighlightText;
             toUserProfile.Dock = System.Windows.Forms.DockStyle.Fill;
-            toUserProfile.FlatAppearance.BorderSize = 0;
-            toUserProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             toUserProfile.Location = new System.Drawing.Point(0, 0);
             toUserProfile.Name = "toUserProfile";
             toUserProfile.Padding = new System.Windows.Forms.Padding(15);
             toUserProfile.Size = new System.Drawing.Size(378, 80);
             toUserProfile.TabIndex = 0;
-            toUserProfile.UseVisualStyleBackColor = false;
             //toUserProfile.Click += new System.EventHandler(this.toUserProfile_Click);
             // 
             // pictureBox1
@@ -387,13 +378,8 @@ namespace media
             noOfMutual.TabIndex = 3;
             noOfMutual.Text = "20 mutual contact";
             noOfMutual.ForeColor= System.Drawing.Color.Black;
-            this.flowLayoutPanel1.Controls.Add(BaseEachRequest);
 
-            Methods.RoundButtonCorners(toUserProfile, 20);
-            Methods.RoundPanelCorners(ref BaseEachRequest, 20);
-            Methods.RoundButtonCorners(accept, 15);
-            Methods.RoundButtonCorners(decline, 15);
-            Methods.RoundImageBoxCorners(pictureBox1, 15);
+
 
         }
         public void ContactList()
@@ -558,6 +544,26 @@ namespace media
                 panelFeed.Controls.Add(panelBase);
 
             
+
+        }
+
+        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void customRoundPictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }

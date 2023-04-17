@@ -49,10 +49,10 @@
             // 
             // webBrowser1
             // 
-            this.webBrowser1.Location = new System.Drawing.Point(199, 3);
+            this.webBrowser1.Location = new System.Drawing.Point(199, 23);
             this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(536, 549);
+            this.webBrowser1.Size = new System.Drawing.Size(279, 529);
             this.webBrowser1.TabIndex = 1;
             this.webBrowser1.Url = new System.Uri("http://m.facebook.com", System.UriKind.Absolute);
             // 
@@ -86,7 +86,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MidnightBlue;
-            this.ClientSize = new System.Drawing.Size(1047, 692);
+            this.ClientSize = new System.Drawing.Size(1096, 718);
             this.Controls.Add(this.panel1);
             this.Name = "FormTest";
             this.Text = "FormTest";

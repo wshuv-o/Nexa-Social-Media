@@ -32,7 +32,7 @@ namespace media
                 }
             }
 
-            Application.Run(new FormTest());
+            Application.Run(new Nexa());
         }
 
         [DllImport("user32.dll")]
