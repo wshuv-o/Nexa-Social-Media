@@ -10,17 +10,21 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp2
 {
-    public partial class Story : Form
+    public partial class MarketPlace : Form
     {
-        public Story()
+        public MarketPlace()
         {
             InitializeComponent();
         }
 
-        private void guna2CircleButton1_Click(object sender, EventArgs e)
+        private void guna2GradientPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2RadioButton2_CheckedChanged(object sender, EventArgs e)
         {
 
         }
     }
-       
 }
