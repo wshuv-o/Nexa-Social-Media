@@ -83,6 +83,16 @@ namespace media.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _338458104_1527903524367608_1923566569049492375_n_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("338458104_1527903524367608_1923566569049492375_n-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _34037826 {
             get {
                 object obj = ResourceManager.GetObject("34037826", resourceCulture);
@@ -193,6 +203,16 @@ namespace media.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap gjb {
+            get {
+                object obj = ResourceManager.GetObject("gjb", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap happy {
             get {
                 object obj = ResourceManager.GetObject("happy", resourceCulture);
@@ -216,6 +236,16 @@ namespace media.Properties {
         internal static System.Drawing.Bitmap icons8_add_new_32 {
             get {
                 object obj = ResourceManager.GetObject("icons8-add-new-32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_audio_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-audio-32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -276,6 +306,16 @@ namespace media.Properties {
         internal static System.Drawing.Bitmap icons8_close_96 {
             get {
                 object obj = ResourceManager.GetObject("icons8-close-96", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_expand_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-expand-32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -376,6 +416,16 @@ namespace media.Properties {
         internal static System.Drawing.Bitmap icons8_microphone_32 {
             get {
                 object obj = ResourceManager.GetObject("icons8-microphone-32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_no_audio_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-no-audio-32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -523,9 +573,39 @@ namespace media.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Mic {
+            get {
+                object obj = ResourceManager.GetObject("Mic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap microfunnel_flaticon_removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("microfunnel-flaticon-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap noMic {
+            get {
+                object obj = ResourceManager.GetObject("noMic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap noVideo {
+            get {
+                object obj = ResourceManager.GetObject("noVideo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -836,6 +916,16 @@ namespace media.Properties {
         internal static System.Drawing.Bitmap sssssss {
             get {
                 object obj = ResourceManager.GetObject("sssssss", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Video {
+            get {
+                object obj = ResourceManager.GetObject("Video", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

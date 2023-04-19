@@ -59,6 +59,15 @@
     <Compile Include="ChatPerson.Designer.cs">
       <DependentUpon>ChatPerson.cs</DependentUpon>
     </Compile>
+    <Compile Include="Classes\ClassCalls.cs" />
+    <Compile Include="Classes\ClassComment.cs" />
+    <Compile Include="Classes\ClassMedia.cs" />
+    <Compile Include="Classes\ClassMessage.cs" />
+    <Compile Include="Classes\ClassPost.cs" />
+    <Compile Include="Classes\ClassProduct.cs" />
+    <Compile Include="Classes\Page.cs" />
+    <Compile Include="Classes\PersonalWebsites.cs" />
+    <Compile Include="Classes\User.cs" />
     <Compile Include="CustomFlowLayoutPanel.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -80,6 +89,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormCallE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCallE.Designer.cs">
+      <DependentUpon>FormCallE.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCreate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +106,12 @@
     </Compile>
     <Compile Include="FormMarketPlace.Designer.cs">
       <DependentUpon>FormMarketPlace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPostSingle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPostSingle.Designer.cs">
+      <DependentUpon>FormPostSingle.cs</DependentUpon>
     </Compile>
     <Compile Include="FormSignUp.cs">
       <SubType>Form</SubType>
@@ -174,11 +195,17 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormCallE.resx">
+      <DependentUpon>FormCallE.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormCreate.resx">
       <DependentUpon>FormCreate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMarketPlace.resx">
       <DependentUpon>FormMarketPlace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPostSingle.resx">
+      <DependentUpon>FormPostSingle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormSignUp.resx">
       <DependentUpon>FormSignUp.cs</DependentUpon>
@@ -476,6 +503,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-close-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-audio-321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-expand-321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-no-audio-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mic1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\noMic1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\noVideo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Video1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\338458104_1527903524367608_1923566569049492375_n-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gjb.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

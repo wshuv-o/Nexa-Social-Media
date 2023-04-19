@@ -21,7 +21,7 @@ namespace media
         private Color defColor = Color.FromArgb(134, 27, 242);
         public Color myColor = Color.FromArgb(120, 24, 217);
 
-        private void openChildForm(Form childForm)
+        public void openChildForm(Form childForm)
         {
             if (activeForm != null)
             {
@@ -46,6 +46,10 @@ namespace media
                 childForm.Show();
 
             }
+
+        }
+        public void f()
+        {
 
         }
         public Form1()
@@ -143,6 +147,9 @@ namespace media
         private void buttonNotification_Click(object sender, EventArgs e)
         {
             DefaultButtonColor(ref buttonNotification);
+            FormCall    games = new FormCall();
+            openChildForm(games);
+            games.Visible = true;
         }
 
         private void buttonGames_Click(object sender, EventArgs e)
@@ -153,7 +160,7 @@ namespace media
             games.Visible= true;
         }
 
-        private void buttonHome_Click(object sender, EventArgs e)
+        public void buttonHome_Click(object sender, EventArgs e)
         {
             DefaultButtonColor(ref buttonHome);
             //Home h= new Home();
@@ -167,8 +174,9 @@ namespace media
         {
             DefaultButtonColor(ref buttonCreate);
             FormCreate fc= new FormCreate();
-            openChildForm(fc);
-            fc.Visible= true;
+        openChildForm(fc);
+            fc.Visible = true;
+            
 
         }
 

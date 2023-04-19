@@ -65,6 +65,7 @@ namespace media
         }
 
 
+
         private void panelFeed_Paint(object sender, PaintEventArgs e)
         {
             // Check if the panel has vertical scrollbar

@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.guna2WinProgressIndicator1 = new Guna.UI2.WinForms.Guna2WinProgressIndicator();
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.testControl1 = new media.TestControl();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.testControl1)).BeginInit();
@@ -46,6 +46,14 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(636, 458);
             this.panel1.TabIndex = 1;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // guna2WinProgressIndicator1
+            // 
+            this.guna2WinProgressIndicator1.Location = new System.Drawing.Point(372, 179);
+            this.guna2WinProgressIndicator1.Name = "guna2WinProgressIndicator1";
+            this.guna2WinProgressIndicator1.Size = new System.Drawing.Size(90, 90);
+            this.guna2WinProgressIndicator1.TabIndex = 2;
             // 
             // webBrowser1
             // 
@@ -55,13 +63,6 @@
             this.webBrowser1.Size = new System.Drawing.Size(279, 529);
             this.webBrowser1.TabIndex = 1;
             this.webBrowser1.Url = new System.Uri("http://m.facebook.com", System.UriKind.Absolute);
-            // 
-            // guna2WinProgressIndicator1
-            // 
-            this.guna2WinProgressIndicator1.Location = new System.Drawing.Point(372, 179);
-            this.guna2WinProgressIndicator1.Name = "guna2WinProgressIndicator1";
-            this.guna2WinProgressIndicator1.Size = new System.Drawing.Size(90, 90);
-            this.guna2WinProgressIndicator1.TabIndex = 2;
             // 
             // testControl1
             // 
@@ -74,6 +75,7 @@
             this.testControl1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
             this.testControl1.BorderSize = 5;
             this.testControl1.GradientAngle = 50F;
+            this.testControl1.Image = global::media.Properties.Resources.Mic;
             this.testControl1.Location = new System.Drawing.Point(0, 0);
             this.testControl1.Name = "testControl1";
             this.testControl1.Size = new System.Drawing.Size(99, 102);

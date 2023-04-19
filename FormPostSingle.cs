@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace media
 {
-    public partial class FormTest : Form
+    public partial class FormPostSingle : Form
     {
-        public FormTest()
+        public FormPostSingle()
         {
             InitializeComponent();
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }
