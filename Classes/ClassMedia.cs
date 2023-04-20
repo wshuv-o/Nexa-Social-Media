@@ -13,6 +13,10 @@ namespace media.Classes
         private Image mediaContent;
         public int MediaId { get { return this.mediaId; } set { this.mediaId = value; } }
         public Image MediaContent { get { return this.mediaContent; } set { this.mediaContent = value; } }
-        public ClassMedia() { }
+        public ClassMedia(int mediaId, Image mediaContent) 
+        {
+            this.MediaId = mediaId;
+            this.MediaContent = mediaContent;
+        }
     }
 }
