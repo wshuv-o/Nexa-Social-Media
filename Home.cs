@@ -14,7 +14,6 @@ namespace media
 {
     public partial class Home : Form
     {
-        Story s= new Story();
         public Home()
         {
             InitializeComponent();
@@ -529,8 +528,8 @@ namespace media
                 panelChild.MouseLeave += new System.EventHandler(panelChild_MouseLeave);
                 Methods.RoundPanelCorners(ref panelChild, 30);
 
-                Story a = new Story();
-                Methods.OpenChildForm(a, panelChild);
+            //    Story a = new Story();
+              //  Methods.OpenChildForm(a, panelChild);
 
                 // panelBase.Height = a.basePanel.Height;
                 // panelBase.Width = 866;

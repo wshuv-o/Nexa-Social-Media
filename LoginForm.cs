@@ -172,5 +172,17 @@ namespace media
         {
 
         }
+
+        private void button1_Click_3(object sender, EventArgs e)
+        {
+            FormForgetPassword f = new FormForgetPassword();
+            f.Visible = true;
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            Methods.OpenChildForm( new FormPageSignUp(), panelBase);
+            //this.Close();
+        }
     }
 }

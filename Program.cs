@@ -1,25 +1,41 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp2
+namespace media
 {
-    internal static class Program
+    static class Program
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
+        [DllImport("shcore.dll")]
+        private static extern int SetProcessDpiAwareness(int awareness);
+
+        private const int PROCESS_SYSTEM_DPI_AWARE = 1;
+        private const int PROCESS_PER_MONITOR_DPI_AWARE = 2;
+
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            
-            Story form = new Story();
-            form.WindowState = FormWindowState.Maximized;
-            Application.Run(new SingleProduct());
+
+            // Set DPI awareness
+            if (Environment.OSVersion.Version.Major >= 6)
+            {
+                try
+                {
+                    SetProcessDpiAwareness(PROCESS_PER_MONITOR_DPI_AWARE);
+                }
+                catch (EntryPointNotFoundException)
+                {
+                    // Fall back to SetProcessDPIAware() if SetProcessDpiAwareness() is not found
+                    SetProcessDPIAware();
+                }
+            }
+
+            Application.Run(new Nexa());
         }
+
+        [DllImport("user32.dll")]
+        private static extern bool SetProcessDPIAware();
     }
 }

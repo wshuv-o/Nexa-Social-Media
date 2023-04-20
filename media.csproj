@@ -101,17 +101,47 @@
     <Compile Include="FormCreate.Designer.cs">
       <DependentUpon>FormCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormForgetPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormForgetPassword.Designer.cs">
+      <DependentUpon>FormForgetPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormForgetPassword2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormForgetPassword2.Designer.cs">
+      <DependentUpon>FormForgetPassword2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormForgetPassword3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormForgetPassword3.Designer.cs">
+      <DependentUpon>FormForgetPassword3.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMarketPlace.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormMarketPlace.Designer.cs">
       <DependentUpon>FormMarketPlace.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormPageSignUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPageSignUp.Designer.cs">
+      <DependentUpon>FormPageSignUp.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormPostSingle.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormPostSingle.Designer.cs">
       <DependentUpon>FormPostSingle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormProductSingle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProductSingle.Designer.cs">
+      <DependentUpon>FormProductSingle.cs</DependentUpon>
     </Compile>
     <Compile Include="FormSignUp.cs">
       <SubType>Form</SubType>
@@ -201,11 +231,26 @@
     <EmbeddedResource Include="FormCreate.resx">
       <DependentUpon>FormCreate.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormForgetPassword.resx">
+      <DependentUpon>FormForgetPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormForgetPassword2.resx">
+      <DependentUpon>FormForgetPassword2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormForgetPassword3.resx">
+      <DependentUpon>FormForgetPassword3.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMarketPlace.resx">
       <DependentUpon>FormMarketPlace.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormPageSignUp.resx">
+      <DependentUpon>FormPageSignUp.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormPostSingle.resx">
       <DependentUpon>FormPostSingle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormProductSingle.resx">
+      <DependentUpon>FormProductSingle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormSignUp.resx">
       <DependentUpon>FormSignUp.cs</DependentUpon>
