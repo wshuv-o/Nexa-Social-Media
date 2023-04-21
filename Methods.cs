@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Net.Mime.MediaTypeNames;
 using System.Reflection;
+using System.Net.Mail;
+using System.Net;
+using System.Text.RegularExpressions;
 
 namespace media
 {
@@ -215,6 +218,29 @@ namespace media
             LinearGradientBrush brush = new LinearGradientBrush(new Point(0, 0), new Point(panel.Width, panel.Height), color1, color2);
             panel.Paint += (s, e) => e.Graphics.FillRectangle(brush, e.ClipRectangle);
             panel.SendToBack();
+        }
+        public static bool IsValidEmail(string email)
+        {
+            if (string.IsNullOrEmpty(email))
+                return false;
+            string pattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
+            return Regex.IsMatch(email, pattern);
+        }
+        public static void SendEmailWithCode(string recipient, string code)
+        {
+            string senderEmail = "22-47171-1@student.aiub.edu"; // Your email address
+            string senderPassword = "W@hedshuvo16"; // Your email account password
+            string smtpServer = "smtp.office365.com"; // Your SMTP server address
+            int smtpPort = 587; // Your SMTP server port number
+
+            SmtpClient smtpClient = new SmtpClient(smtpServer, smtpPort);
+            smtpClient.Credentials = new NetworkCredential(senderEmail, senderPassword);
+            smtpClient.EnableSsl = true;
+
+            MailMessage message = new MailMessage(senderEmail, recipient);
+            message.Subject = "Your verification code";
+            message.Body = $"Your verification code is {code}";
+            smtpClient.Send(message);
         }
         public static Color GetBackgroundAverageColor(Bitmap image)
         {
