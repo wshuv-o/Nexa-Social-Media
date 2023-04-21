@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,10 +9,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace media
 {
     public partial class FormSignUp : Form
     {
+        private bool isAuthenticated=false;
+        private string AuthCode = "123456";
         public FormSignUp()
         {
             InitializeComponent();
@@ -62,15 +66,90 @@ namespace media
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            if (this.txtBoxEmail != null)
+
+        }
+
+        private void guna2GradientPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            bool isPasswordMatched = true;
+            if (this.txtbxPassword.Text != null && this.txtbxPassword.Text != this.txtbxConfirmPassword.Text)
             {
-                if (Methods.IsValidEmail(this.txtBoxEmail.Text))
-                {
-                   // this.txtBoxEmail.BorderColor = Color.Blue;
-                    Methods.SendEmailWithCode(this.txtBoxEmail.Text, "1234");
-                }
-                //else this.txtBoxEmail.BorderColor = Color.Red;
+                this.txtbxConfirmPassword.FocusedState.BorderColor = Color.Red;
+                this.txtbxConfirmPassword.HoverState.BorderColor = Color.Red;
+                this.txtbxConfirmPassword.BorderColor = Color.Red;
+                isPasswordMatched = false;
+                new Form();
             }
+
+            if (isPasswordMatched && isAuthenticated && txtBoxEmail.Text != null && txtbxFirstName.Text != null && txtbxLastName.Text != null && txtbxPassword.Text != null && datePickerDOB.Text != null)
+            {
+
+
+                string connString = "server=127.0.0.1;user=root;database=nexaa;port=3306;password=";
+
+                // Create MySqlConnection object
+                using (MySqlConnection conn = new MySqlConnection(connString))
+                {
+                    // Open database connection
+                    conn.Open();
+
+                    // Define SQL query to insert data into table
+                    string query = "INSERT INTO user (userfirstname, userlastname, email, dob, gender) VALUES (@first_name, @last_name, @email, @dob, @gender)";
+
+                    // Create MySqlCommand object
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        // Add parameters to SQL query
+                        cmd.Parameters.AddWithValue("@first_name", txtbxFirstName.Text);
+                        cmd.Parameters.AddWithValue("@last_name", txtbxLastName.Text);
+                        cmd.Parameters.AddWithValue("@email", txtBoxEmail.Text);
+                        cmd.Parameters.AddWithValue("@dob", datePickerDOB.Text);
+                        cmd.Parameters.AddWithValue("@gender", "male");
+
+
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+                new Form();
+
+            }
+        }
+
+            private void guna2Button3_Click(object sender, EventArgs e)
+        {
+            if (this.guna2Button3.Text == "Send")
+            {
+                this.guna2Button3.Text = "Verify";
+                if (this.txtBoxEmail != null)
+                {
+                    if (Methods.IsValidEmail(this.txtBoxEmail.Text))
+                    {
+                        Methods.SendEmailWithCode(this.txtBoxEmail.Text, AuthCode);
+                    }
+                }
+            }
+            else
+            {
+                if (this.txtbxAuth.Text == this.AuthCode)
+                {
+                    isAuthenticated= true;
+                }
+            }
+        }
+
+        private void guna2TextBox2_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormSignUp_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
