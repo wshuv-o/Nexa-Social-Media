@@ -113,6 +113,12 @@
     <Compile Include="CustomFlowLayoutPanel.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="CustomMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomMessageBox.Designer.cs">
+      <DependentUpon>CustomMessageBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomPanel.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -184,6 +190,12 @@
     </Compile>
     <Compile Include="FormProductSingle.Designer.cs">
       <DependentUpon>FormProductSingle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSettings.Designer.cs">
+      <DependentUpon>FormSettings.cs</DependentUpon>
     </Compile>
     <Compile Include="FormSignUp.cs">
       <SubType>Form</SubType>
@@ -261,6 +273,9 @@
     <EmbeddedResource Include="ChatPerson.resx">
       <DependentUpon>ChatPerson.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CustomMessageBox.resx">
+      <DependentUpon>CustomMessageBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomPictureBox.resx">
       <DependentUpon>CustomPictureBox.cs</DependentUpon>
     </EmbeddedResource>
@@ -293,6 +308,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormProductSingle.resx">
       <DependentUpon>FormProductSingle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSettings.resx">
+      <DependentUpon>FormSettings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormSignUp.resx">
       <DependentUpon>FormSignUp.cs</DependentUpon>
@@ -620,6 +638,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\mountain.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\party-popper.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-home-page-321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-logout-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-security-lock-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-bank-cards-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-notification-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-themes-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-language-skill-32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

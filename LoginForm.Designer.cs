@@ -42,15 +42,15 @@ namespace media
             this.flowLayoutPanel1 = new media.CustomFlowLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtbxEmail = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.txtbxPassword = new Guna.UI2.WinForms.Guna2TextBox();
+            this.button3 = new Guna.UI2.WinForms.Guna2Button();
+            this.button1 = new Guna.UI2.WinForms.Guna2Button();
             this.panel2 = new media.CustomPanel();
             this.label8 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.button2 = new Guna.UI2.WinForms.Guna2Button();
             this.panelBase.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -185,9 +185,9 @@ namespace media
             this.flowLayoutPanel1.BorderSize = 5;
             this.flowLayoutPanel1.Controls.Add(this.pictureBox1);
             this.flowLayoutPanel1.Controls.Add(this.label1);
-            this.flowLayoutPanel1.Controls.Add(this.textBox1);
+            this.flowLayoutPanel1.Controls.Add(this.txtbxEmail);
             this.flowLayoutPanel1.Controls.Add(this.label2);
-            this.flowLayoutPanel1.Controls.Add(this.textBox2);
+            this.flowLayoutPanel1.Controls.Add(this.txtbxPassword);
             this.flowLayoutPanel1.Controls.Add(this.button3);
             this.flowLayoutPanel1.Controls.Add(this.button1);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -202,6 +202,8 @@ namespace media
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackgroundImage = global::media.Properties.Resources._338458104_1527903524367608_1923566569049492375_n_removebg_preview;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox1.Location = new System.Drawing.Point(14, 12);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
@@ -222,72 +224,83 @@ namespace media
             this.label1.TabIndex = 1;
             this.label1.Text = "E-mail";
             // 
-            // textBox1
+            // txtbxEmail
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(189)))), ((int)(((byte)(252)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.2F);
-            this.textBox1.Location = new System.Drawing.Point(22, 177);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(11, 10, 11, 10);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(315, 35);
-            this.textBox1.TabIndex = 2;
+            this.txtbxEmail.BackColor = System.Drawing.Color.Transparent;
+            this.txtbxEmail.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(27)))), ((int)(((byte)(242)))));
+            this.txtbxEmail.BorderRadius = 10;
+            this.txtbxEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtbxEmail.DefaultText = "";
+            this.txtbxEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.2F);
+            this.txtbxEmail.Location = new System.Drawing.Point(22, 177);
+            this.txtbxEmail.Margin = new System.Windows.Forms.Padding(11, 10, 11, 10);
+            this.txtbxEmail.Name = "txtbxEmail";
+            this.txtbxEmail.PasswordChar = '\0';
+            this.txtbxEmail.PlaceholderText = "";
+            this.txtbxEmail.SelectedText = "";
+            this.txtbxEmail.Size = new System.Drawing.Size(315, 45);
+            this.txtbxEmail.TabIndex = 2;
+            this.txtbxEmail.TextChanged += new System.EventHandler(this.textBox1_TextChanged_2);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(246)))), ((int)(((byte)(242)))), ((int)(((byte)(250)))));
             this.label2.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(14, 222);
+            this.label2.Location = new System.Drawing.Point(14, 232);
             this.label2.Name = "label2";
             this.label2.Padding = new System.Windows.Forms.Padding(11, 15, 15, 0);
             this.label2.Size = new System.Drawing.Size(123, 37);
             this.label2.TabIndex = 3;
             this.label2.Text = "Password";
             // 
-            // textBox2
+            // txtbxPassword
             // 
-            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(189)))), ((int)(((byte)(252)))));
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.2F);
-            this.textBox2.Location = new System.Drawing.Point(22, 269);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(11, 10, 11, 30);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(315, 35);
-            this.textBox2.TabIndex = 4;
-            this.textBox2.UseSystemPasswordChar = true;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.txtbxPassword.BackColor = System.Drawing.Color.Transparent;
+            this.txtbxPassword.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(27)))), ((int)(((byte)(242)))));
+            this.txtbxPassword.BorderRadius = 10;
+            this.txtbxPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtbxPassword.DefaultText = "";
+            this.txtbxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.2F);
+            this.txtbxPassword.Location = new System.Drawing.Point(22, 279);
+            this.txtbxPassword.Margin = new System.Windows.Forms.Padding(11, 10, 11, 30);
+            this.txtbxPassword.Name = "txtbxPassword";
+            this.txtbxPassword.PasswordChar = '●';
+            this.txtbxPassword.PlaceholderText = "";
+            this.txtbxPassword.SelectedText = "";
+            this.txtbxPassword.Size = new System.Drawing.Size(315, 45);
+            this.txtbxPassword.TabIndex = 4;
+            this.txtbxPassword.UseSystemPasswordChar = true;
+            this.txtbxPassword.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(27)))), ((int)(((byte)(242)))));
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(242)))), ((int)(((byte)(250)))));
+            this.button3.BorderRadius = 10;
+            this.button3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(27)))), ((int)(((byte)(242)))));
             this.button3.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.SystemColors.Control;
-            this.button3.Location = new System.Drawing.Point(18, 336);
+            this.button3.Location = new System.Drawing.Point(18, 356);
             this.button3.Margin = new System.Windows.Forms.Padding(7, 2, 3, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(319, 50);
+            this.button3.Size = new System.Drawing.Size(319, 45);
             this.button3.TabIndex = 8;
             this.button3.Text = "Sign In";
-            this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(242)))), ((int)(((byte)(250)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.BorderRadius = 10;
+            this.button1.FillColor = System.Drawing.Color.Transparent;
             this.button1.Font = new System.Drawing.Font("Calisto MT", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(27)))), ((int)(((byte)(242)))));
-            this.button1.Location = new System.Drawing.Point(18, 398);
+            this.button1.Location = new System.Drawing.Point(18, 413);
             this.button1.Margin = new System.Windows.Forms.Padding(7, 10, 3, 0);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(317, 43);
+            this.button1.Size = new System.Drawing.Size(317, 45);
             this.button1.TabIndex = 9;
             this.button1.Text = "Password Forgotten?";
-            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_3);
             // 
             // panel2
@@ -337,18 +350,17 @@ namespace media
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(140)))), ((int)(((byte)(255)))));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.BackColor = System.Drawing.Color.Transparent;
+            this.button2.BorderRadius = 10;
+            this.button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(27)))), ((int)(((byte)(242)))));
             this.button2.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Bold);
             this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button2.Location = new System.Drawing.Point(16, 16);
             this.button2.Margin = new System.Windows.Forms.Padding(7, 2, 3, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(319, 50);
+            this.button2.Size = new System.Drawing.Size(319, 45);
             this.button2.TabIndex = 6;
             this.button2.Text = "Sign Up";
-            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // Nexa
@@ -384,13 +396,13 @@ namespace media
         private CustomFlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private Guna.UI2.WinForms.Guna2TextBox txtbxEmail;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private Guna.UI2.WinForms.Guna2TextBox txtbxPassword;
         private CustomPanel panel2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button1;
+        private Guna.UI2.WinForms.Guna2Button button2;
+        private Guna.UI2.WinForms.Guna2Button button3;
+        private Guna.UI2.WinForms.Guna2Button button1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;

@@ -60,9 +60,9 @@
             this.guna2GradientPanel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(250)))), ((int)(((byte)(197)))), ((int)(((byte)(227)))));
             this.guna2GradientPanel1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(190)))), ((int)(((byte)(47)))), ((int)(((byte)(221)))));
             this.guna2GradientPanel1.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            this.guna2GradientPanel1.Location = new System.Drawing.Point(50, 50);
+            this.guna2GradientPanel1.Location = new System.Drawing.Point(0, 0);
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
-            this.guna2GradientPanel1.Size = new System.Drawing.Size(564, 806);
+            this.guna2GradientPanel1.Size = new System.Drawing.Size(664, 906);
             this.guna2GradientPanel1.TabIndex = 0;
             this.guna2GradientPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2GradientPanel1_Paint);
             // 
@@ -233,7 +233,7 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Verification";
             // 
-            // Forgetpass2
+            // FormForgetPassword2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -245,8 +245,7 @@
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(682, 953);
             this.MinimumSize = new System.Drawing.Size(682, 953);
-            this.Name = "Forgetpass2";
-            this.Padding = new System.Windows.Forms.Padding(50);
+            this.Name = "FormForgetPassword2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.guna2GradientPanel1.ResumeLayout(false);

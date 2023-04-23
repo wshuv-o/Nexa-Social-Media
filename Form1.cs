@@ -140,6 +140,9 @@ namespace media
         private void buttonSettings_Click(object sender, EventArgs e)
         {
             DefaultButtonColor(ref buttonSettings);
+            FormSettings games = new FormSettings();
+            openChildForm(games);
+            games.Visible = true;
         }
 
 

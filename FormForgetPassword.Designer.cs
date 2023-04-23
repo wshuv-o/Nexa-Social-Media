@@ -36,6 +36,8 @@
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.guna2GradientPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -43,9 +45,10 @@
             // guna2GradientPanel1
             // 
             this.guna2GradientPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.guna2GradientPanel1.BorderColor = System.Drawing.Color.Pink;
-            this.guna2GradientPanel1.BorderRadius = 35;
+            this.guna2GradientPanel1.BorderColor = System.Drawing.Color.AliceBlue;
+            this.guna2GradientPanel1.BorderRadius = 30;
             this.guna2GradientPanel1.BorderThickness = 10;
+            this.guna2GradientPanel1.Controls.Add(this.guna2CircleButton1);
             this.guna2GradientPanel1.Controls.Add(this.panel1);
             this.guna2GradientPanel1.Controls.Add(this.guna2Button2);
             this.guna2GradientPanel1.Controls.Add(this.guna2Button1);
@@ -53,8 +56,8 @@
             this.guna2GradientPanel1.Controls.Add(this.label2);
             this.guna2GradientPanel1.Controls.Add(this.label1);
             this.guna2GradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2GradientPanel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(250)))), ((int)(((byte)(197)))), ((int)(((byte)(227)))));
-            this.guna2GradientPanel1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(190)))), ((int)(((byte)(47)))), ((int)(((byte)(221)))));
+            this.guna2GradientPanel1.FillColor = System.Drawing.Color.AliceBlue;
+            this.guna2GradientPanel1.FillColor2 = System.Drawing.Color.MediumSlateBlue;
             this.guna2GradientPanel1.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
             this.guna2GradientPanel1.Location = new System.Drawing.Point(50, 50);
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
@@ -101,6 +104,7 @@
             this.guna2Button2.Size = new System.Drawing.Size(438, 45);
             this.guna2Button2.TabIndex = 5;
             this.guna2Button2.Text = "Request password reset email";
+            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // guna2Button1
             // 
@@ -163,7 +167,34 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Forget password?";
             // 
-            // Form1
+            // guna2CircleButton1
+            // 
+            this.guna2CircleButton1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2CircleButton1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2CircleButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2CircleButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2CircleButton1.FillColor = System.Drawing.Color.Transparent;
+            this.guna2CircleButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2CircleButton1.ForeColor = System.Drawing.Color.White;
+            this.guna2CircleButton1.Image = global::media.Properties.Resources.icons8_close_96;
+            this.guna2CircleButton1.ImageSize = new System.Drawing.Size(40, 40);
+            this.guna2CircleButton1.Location = new System.Drawing.Point(510, 14);
+            this.guna2CircleButton1.Name = "guna2CircleButton1";
+            this.guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CircleButton1.Size = new System.Drawing.Size(40, 40);
+            this.guna2CircleButton1.TabIndex = 7;
+            this.guna2CircleButton1.Click += new System.EventHandler(this.guna2CircleButton1_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Wheat;
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(50, 50);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(564, 806);
+            this.panel2.TabIndex = 1;
+            // 
+            // FormForgetPassword
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -172,13 +203,16 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(664, 906);
             this.Controls.Add(this.guna2GradientPanel1);
+            this.Controls.Add(this.panel2);
+            this.DoubleBuffered = true;
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(682, 953);
             this.MinimumSize = new System.Drawing.Size(682, 953);
-            this.Name = "Form1";
+            this.Name = "FormForgetPassword";
             this.Padding = new System.Windows.Forms.Padding(50);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.FormForgetPassword_Load);
             this.guna2GradientPanel1.ResumeLayout(false);
             this.guna2GradientPanel1.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -197,5 +231,7 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
         private System.Windows.Forms.Panel panel1;
+        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton1;
+        private System.Windows.Forms.Panel panel2;
     }
 }

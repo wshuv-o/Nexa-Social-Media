@@ -1,13 +1,17 @@
-﻿using System;
+﻿using Guna.UI2.WinForms;
+using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace media
 {
@@ -17,11 +21,6 @@ namespace media
         public Nexa()
         {
             InitializeComponent();
-            Methods.RoundButtonCorners(button1, 20);
-            Methods.RoundButtonCorners(button2, 20);
-            Methods.RoundButtonCorners(button3, 20);
-            Methods.RoundTextBoxCorners(textBox1, 15);
-            Methods.RoundTextBoxCorners(textBox2, 15);
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -56,9 +55,44 @@ namespace media
 
         private void button3_Click(object sender, EventArgs e)
         {
-            this.panel1.Dispose();
-            openChildForm(new Form1());
+            string email = txtbxEmail.Text;
+            string connString = "server=127.0.0.1;user=root;database=nexaa;port=3306;password=";
+
+            using (MySqlConnection conn = new MySqlConnection(connString))
+            {
+                conn.Open();
+                string query = "SELECT password FROM user WHERE email=@Email";
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@Email", email);
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            string password = reader.GetString(0);
+                            if (password.Equals(txtbxPassword.Text))
+                            {
+                                this.panel1.Dispose();
+                                openChildForm(new Form1());
+                            }
+                            else
+                            {
+                                CustomMessageBox x= new CustomMessageBox();
+                                x.ShowDialog();
+                                return;
+                            }
+                        }
+                        else
+                        {
+                            CustomMessageBox x = new CustomMessageBox();
+                            x.ShowDialog();
+                            return;
+                        }
+                    }
+                }
+            }
         }
+
 
         private void label3_Click(object sender, EventArgs e)
         {
@@ -183,6 +217,11 @@ namespace media
         {
             Methods.OpenChildForm( new FormPageSignUp(), panelBase);
             //this.Close();
+        }
+
+        private void textBox1_TextChanged_2(object sender, EventArgs e)
+        {
+
         }
     }
 }
