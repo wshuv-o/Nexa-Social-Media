@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using System.IO;
 using media.Classes;
 using Org.BouncyCastle.Utilities.Collections;
+using Guna.UI2.WinForms;
 
 namespace media
 {
@@ -33,17 +34,18 @@ namespace media
 
         private void guna2CircleButton4_Click(object sender, EventArgs e)
         {
-            string selectedImagePath="";
+            string selectedImagePath = "";
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "Image Files(*.BMP;*.JPG;*.GIF;*.PNG)|*.BMP;*.JPG;*.GIF;*.PNG";
+            string conString = "server=127.0.0.1;user=root;database=nexaa;port=3306;password=";
+
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 // The user selected an image file, so you can now use it in your code
-                 selectedImagePath = openFileDialog.FileName;
+                selectedImagePath = openFileDialog.FileName;
 
                 // Convert the selected image to a byte array
                 byte[] imageData = File.ReadAllBytes(selectedImagePath);
-                string conString = "server=127.0.0.1;user=root;database=nexaa;port=3306;password=";
                 // Create a MySQL connection and command objects
                 string query = "UPDATE user SET user_image = @userimage WHERE userid = 38";
 
@@ -59,7 +61,40 @@ namespace media
                 cmd.ExecuteNonQuery();
                 conn.Close();
             }
-            this.guna2Button4.Image = new Bitmap(Image.FromFile(selectedImagePath));
+
+            string connectionString = "server=127.0.0.1;user=root;database=nexaa;port=3306;password=";
+
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    string sql = "SELECT user_image FROM user WHERE userid = 38";
+                    MySqlCommand cmd = new MySqlCommand(sql, conn);
+                    //cmd.Parameters.AddWithValue("@ProductId", productId);
+
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            byte[] imageData = (byte[])reader["user_image"];
+
+                            using (MemoryStream ms = new MemoryStream(imageData))
+                            {
+                                Image img = Image.FromStream(ms);
+
+                                guna2CircleButton4.Image = img;
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error retrieving image from database: " + ex.Message);
+            }
         }
+
     }
 }
