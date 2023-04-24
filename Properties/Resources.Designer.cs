@@ -163,6 +163,16 @@ namespace media.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap dbjewcbmcdmnc_dsn {
+            get {
+                object obj = ResourceManager.GetObject("dbjewcbmcdmnc,dsn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap dead_space {
             get {
                 object obj = ResourceManager.GetObject("dead space", resourceCulture);
@@ -796,6 +806,16 @@ namespace media.Properties {
         internal static System.Drawing.Bitmap ProfileImage {
             get {
                 object obj = ResourceManager.GetObject("ProfileImage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ProfileImage1 {
+            get {
+                object obj = ResourceManager.GetObject("ProfileImage1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -149,6 +149,7 @@
     <Compile Include="FormCreate.Designer.cs">
       <DependentUpon>FormCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="DBImageOperation.cs" />
     <Compile Include="FormForgetPassword.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -287,6 +288,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormCreate.resx">
       <DependentUpon>FormCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DBImageOperation.resx">
+      <DependentUpon>DBImageOperation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormForgetPassword.resx">
       <DependentUpon>FormForgetPassword.cs</DependentUpon>
@@ -662,6 +666,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-language-skill-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dbjewcbmcdmnc,dsn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ProfileImage1.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

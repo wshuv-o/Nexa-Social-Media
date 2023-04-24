@@ -20,8 +20,8 @@ namespace media
         {
             InitializeComponent();
             SetDoubleBuffer(guna2GradientPanel1, true);
-            this.DisplayImageFromDatabase(202);
 
+            this.DisplayImageFromDatabase(202);
         }
         private async void SetImage()
         {
@@ -57,29 +57,20 @@ namespace media
 
             try
             {
-                // Open a connection to the database
                 using (MySqlConnection conn = new MySqlConnection(connectionString))
                 {
                     conn.Open();
-
-                    // Create a command to retrieve the image data
                     string sql = "SELECT productimage FROM product WHERE productid = @ProductId";
                     MySqlCommand cmd = new MySqlCommand(sql, conn);
                     cmd.Parameters.AddWithValue("@ProductId", productId);
-
-                    // Execute the command and retrieve the image data
                     using (MySqlDataReader reader = cmd.ExecuteReader())
                     {
                         if (reader.Read())
                         {
                             byte[] imageData = (byte[])reader["productimage"];
-
-                            // Load the image from the byte array
                             using (MemoryStream ms = new MemoryStream(imageData))
                             {
                                 Image img = Image.FromStream(ms);
-
-                                // Set the image in the picture box
                                 guna2PictureBox1.Image = img;
                             }
                         }
@@ -91,7 +82,7 @@ namespace media
                 MessageBox.Show("Error retrieving image from database: " + ex.Message);
             }
         }
-
+        
 
         private void guna2GradientPanel1_Paint(object sender, PaintEventArgs e)
         {
