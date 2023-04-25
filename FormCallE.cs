@@ -29,7 +29,7 @@ namespace media
             Methods.SetDoubleBuffer(guna2Panel2, true);
             Methods.SetDoubleBuffer(guna2Panel2, true);
             Methods.SetDoubleBuffer(guna2Panel3, true);
-
+            this.SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -84,6 +84,11 @@ namespace media
         }
 
         private void guna2TrackBar1_Scroll(object sender, ScrollEventArgs e)
+        {
+
+        }
+
+        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

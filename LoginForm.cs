@@ -21,6 +21,8 @@ namespace media
         public Nexa()
         {
             InitializeComponent();
+
+            this.SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -52,7 +54,7 @@ namespace media
         {
 
         }
-
+        //192.168.208.69
         private void button3_Click(object sender, EventArgs e)
         {
             string email = txtbxEmail.Text;
@@ -194,9 +196,25 @@ namespace media
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            openChildForm(new FormSignUp());
-        }
+            Methods.OpenChildForm(new FormSignUp(), this.panelBase);
+            //panelBase.SuspendLayout();
+            //FormSignUp f= new FormSignUp();
+            // set the Dock property of form2 to Fill and add it to panel1
+            //f.Dock = DockStyle.Fill;
+            //this.Controls.Add(f);
 
+            // resume layout logic for panel1
+            //this.ResumeLayout();
+        }
+        /*private void button2_Click_1(object sender, EventArgs e)
+        {
+            // Clear all controls from form1
+            this.Controls.Clear();
+            FormSignUp f = new FormSignUp();
+            // Add all controls from form2 to form1
+            this.Controls.AddRange(f.Controls.Cast<Control>().ToArray());
+        }
+        */
         private void panelBase_Paint(object sender, PaintEventArgs e)
         {
 

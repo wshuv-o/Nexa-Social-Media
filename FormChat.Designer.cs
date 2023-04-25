@@ -71,6 +71,7 @@ namespace media
             this.guna2Panel37 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel38 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2HtmlLabel18 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2PictureBox18 = new media.CustomRoundPictureBox();
             this.guna2Panel39 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel40 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2HtmlLabel19 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -101,6 +102,7 @@ namespace media
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.customRoundPictureBox1 = new media.CustomRoundPictureBox();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -132,15 +134,13 @@ namespace media
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.label24 = new System.Windows.Forms.Label();
+            this.pictureBox7 = new media.CustomRoundPictureBox();
             this.sendPanel = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2CircleButton4 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2CircleButton3 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2CircleButton2 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2PictureBox18 = new media.CustomRoundPictureBox();
-            this.customRoundPictureBox1 = new media.CustomRoundPictureBox();
-            this.pictureBox7 = new media.CustomRoundPictureBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.panelChatBox.SuspendLayout();
             this.guna2Panel27.SuspendLayout();
@@ -169,6 +169,7 @@ namespace media
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox17)).BeginInit();
             this.guna2Panel37.SuspendLayout();
             this.guna2Panel38.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox18)).BeginInit();
             this.guna2Panel39.SuspendLayout();
             this.guna2Panel40.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox19)).BeginInit();
@@ -182,6 +183,7 @@ namespace media
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.guna2GradientPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customRoundPictureBox1)).BeginInit();
             this.tableLayoutPanel6.SuspendLayout();
             this.panel4.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -202,10 +204,8 @@ namespace media
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox3)).BeginInit();
             this.panel5.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.sendPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox18)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customRoundPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            this.sendPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -262,6 +262,7 @@ namespace media
             this.guna2Panel27.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
             this.guna2Panel27.Size = new System.Drawing.Size(854, 60);
             this.guna2Panel27.TabIndex = 6;
+            this.guna2Panel27.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel27_Paint);
             // 
             // guna2Panel28
             // 
@@ -680,6 +681,25 @@ namespace media
             this.guna2HtmlLabel18.Text = "ki koro?";
             this.guna2HtmlLabel18.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // guna2PictureBox18
+            // 
+            this.guna2PictureBox18.BackgroundImage = global::media.Properties.Resources.PicsArt_09_0m7_09_40_49;
+            this.guna2PictureBox18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.guna2PictureBox18.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.guna2PictureBox18.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.guna2PictureBox18.BorderColor2 = System.Drawing.Color.HotPink;
+            this.guna2PictureBox18.BorderDashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.guna2PictureBox18.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.guna2PictureBox18.BorderSize = 2;
+            this.guna2PictureBox18.Dock = System.Windows.Forms.DockStyle.Left;
+            this.guna2PictureBox18.GradientAngle = 50F;
+            this.guna2PictureBox18.Location = new System.Drawing.Point(20, 0);
+            this.guna2PictureBox18.Name = "guna2PictureBox18";
+            this.guna2PictureBox18.Size = new System.Drawing.Size(60, 60);
+            this.guna2PictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox18.TabIndex = 0;
+            this.guna2PictureBox18.TabStop = false;
+            // 
             // guna2Panel39
             // 
             this.guna2Panel39.BackColor = System.Drawing.Color.White;
@@ -1088,6 +1108,25 @@ namespace media
             this.label6.TabIndex = 9;
             this.label6.Text = "Wahid Shuvo";
             // 
+            // customRoundPictureBox1
+            // 
+            this.customRoundPictureBox1.BackColor = System.Drawing.Color.Indigo;
+            this.customRoundPictureBox1.BackgroundImage = global::media.Properties.Resources.ProfileImage;
+            this.customRoundPictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.customRoundPictureBox1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.customRoundPictureBox1.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.customRoundPictureBox1.BorderColor2 = System.Drawing.Color.HotPink;
+            this.customRoundPictureBox1.BorderDashStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.customRoundPictureBox1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.customRoundPictureBox1.BorderSize = 3;
+            this.customRoundPictureBox1.GradientAngle = 50F;
+            this.customRoundPictureBox1.Location = new System.Drawing.Point(174, 6);
+            this.customRoundPictureBox1.Name = "customRoundPictureBox1";
+            this.customRoundPictureBox1.Size = new System.Drawing.Size(109, 110);
+            this.customRoundPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.customRoundPictureBox1.TabIndex = 11;
+            this.customRoundPictureBox1.TabStop = false;
+            // 
             // tableLayoutPanel6
             // 
             this.tableLayoutPanel6.ColumnCount = 1;
@@ -1492,9 +1531,30 @@ namespace media
             this.label24.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label24.Name = "label24";
             this.label24.Padding = new System.Windows.Forms.Padding(13, 12, 0, 0);
-            this.label24.Size = new System.Drawing.Size(172, 49);
+            this.label24.Size = new System.Drawing.Size(172, 43);
             this.label24.TabIndex = 13;
             this.label24.Text = "Esm-e Abha";
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.BackColor = System.Drawing.Color.Indigo;
+            this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox7.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.pictureBox7.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.pictureBox7.BorderColor2 = System.Drawing.Color.HotPink;
+            this.pictureBox7.BorderDashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.pictureBox7.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.pictureBox7.BorderSize = 2;
+            this.pictureBox7.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox7.GradientAngle = 50F;
+            this.pictureBox7.Image = global::media.Properties.Resources.ProfileImage;
+            this.pictureBox7.Location = new System.Drawing.Point(25, 6);
+            this.pictureBox7.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(60, 60);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox7.TabIndex = 36;
+            this.pictureBox7.TabStop = false;
             // 
             // sendPanel
             // 
@@ -1614,65 +1674,6 @@ namespace media
             this.guna2TextBox1.Size = new System.Drawing.Size(554, 52);
             this.guna2TextBox1.TabIndex = 40;
             // 
-            // guna2PictureBox18
-            // 
-            this.guna2PictureBox18.BackgroundImage = global::media.Properties.Resources.PicsArt_09_0m7_09_40_49;
-            this.guna2PictureBox18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.guna2PictureBox18.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.guna2PictureBox18.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.guna2PictureBox18.BorderColor2 = System.Drawing.Color.HotPink;
-            this.guna2PictureBox18.BorderDashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.guna2PictureBox18.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.guna2PictureBox18.BorderSize = 2;
-            this.guna2PictureBox18.Dock = System.Windows.Forms.DockStyle.Left;
-            this.guna2PictureBox18.GradientAngle = 50F;
-            this.guna2PictureBox18.Location = new System.Drawing.Point(20, 0);
-            this.guna2PictureBox18.Name = "guna2PictureBox18";
-            this.guna2PictureBox18.Size = new System.Drawing.Size(60, 60);
-            this.guna2PictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox18.TabIndex = 0;
-            this.guna2PictureBox18.TabStop = false;
-            // 
-            // customRoundPictureBox1
-            // 
-            this.customRoundPictureBox1.BackColor = System.Drawing.Color.Indigo;
-            this.customRoundPictureBox1.BackgroundImage = global::media.Properties.Resources.ProfileImage;
-            this.customRoundPictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.customRoundPictureBox1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.customRoundPictureBox1.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.customRoundPictureBox1.BorderColor2 = System.Drawing.Color.HotPink;
-            this.customRoundPictureBox1.BorderDashStyle = System.Drawing.Drawing2D.DashStyle.Custom;
-            this.customRoundPictureBox1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Custom;
-            this.customRoundPictureBox1.BorderSize = 3;
-            this.customRoundPictureBox1.GradientAngle = 50F;
-            this.customRoundPictureBox1.Location = new System.Drawing.Point(174, 6);
-            this.customRoundPictureBox1.Name = "customRoundPictureBox1";
-            this.customRoundPictureBox1.Size = new System.Drawing.Size(109, 110);
-            this.customRoundPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.customRoundPictureBox1.TabIndex = 11;
-            this.customRoundPictureBox1.TabStop = false;
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.BackColor = System.Drawing.Color.Indigo;
-            this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox7.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.pictureBox7.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.pictureBox7.BorderColor2 = System.Drawing.Color.HotPink;
-            this.pictureBox7.BorderDashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.pictureBox7.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.pictureBox7.BorderSize = 2;
-            this.pictureBox7.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox7.GradientAngle = 50F;
-            this.pictureBox7.Image = global::media.Properties.Resources.ProfileImage;
-            this.pictureBox7.Location = new System.Drawing.Point(25, 6);
-            this.pictureBox7.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(60, 60);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox7.TabIndex = 36;
-            this.pictureBox7.TabStop = false;
-            // 
             // FormChat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1727,6 +1728,7 @@ namespace media
             this.guna2Panel37.ResumeLayout(false);
             this.guna2Panel38.ResumeLayout(false);
             this.guna2Panel38.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox18)).EndInit();
             this.guna2Panel39.ResumeLayout(false);
             this.guna2Panel40.ResumeLayout(false);
             this.guna2Panel40.PerformLayout();
@@ -1746,6 +1748,7 @@ namespace media
             this.tableLayoutPanel5.ResumeLayout(false);
             this.guna2GradientPanel1.ResumeLayout(false);
             this.guna2GradientPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customRoundPictureBox1)).EndInit();
             this.tableLayoutPanel6.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
@@ -1772,10 +1775,8 @@ namespace media
             this.panel5.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.sendPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox18)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customRoundPictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            this.sendPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

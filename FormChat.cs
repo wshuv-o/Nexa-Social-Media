@@ -19,7 +19,7 @@ namespace media
         {
             InitializeComponent();
 
-
+            this.SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
 
             panel2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panelChatBox.Resize += (sender, e) =>
@@ -284,6 +284,11 @@ namespace media
         }
 
         private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2Panel27_Paint(object sender, PaintEventArgs e)
         {
 
         }

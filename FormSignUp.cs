@@ -20,9 +20,8 @@ namespace media
         public FormSignUp()
         {
             InitializeComponent();
-            Methods.SetDoubleBuffer(guna2Panel1, true);
-            Methods.SetDoubleBuffer(guna2Panel3, true);
-            Methods.SetDoubleBuffer(guna2GradientPanel1, true);
+            this.SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
+
         }
 
         private void guna2TextBox1_TextChanged(object sender, EventArgs e)
@@ -67,7 +66,11 @@ namespace media
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-
+           // guna2GradientPanel1.Controls.Clear();
+           // guna2GradientPanel1.Padding= new Padding(0,0,0,0);  
+            Nexa n = new Nexa();
+            //n.Dock=DockStyle.Fill;
+            Methods.OpenChildForm(n, guna2GradientPanel1);
         }
 
         private void guna2GradientPanel1_Paint(object sender, PaintEventArgs e)

@@ -370,6 +370,7 @@ namespace media
             this.BackColor = System.Drawing.Color.Violet;
             this.ClientSize = new System.Drawing.Size(1429, 882);
             this.Controls.Add(this.panelBase);
+            this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Nexa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
