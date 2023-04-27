@@ -70,15 +70,7 @@ namespace media
         {
 
         }
-        private void ShowSubmenu(Panel subMenu)
-        {
 
-            if (subMenu.Visible == false)
-            {
-                subMenu.Visible = true;
-            }
-            else subMenu.Visible=false;
-        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -186,8 +178,8 @@ namespace media
         private void buttonCreate_Click(object sender, EventArgs e)
         {
             DefaultButtonColor(ref buttonCreate);
-            FormCreate fc= new FormCreate();
-        openChildForm(fc);
+            FormCreate fc= new FormCreate(this.NativeUser);
+            openChildForm(fc);
             fc.Visible = true;
             
 

@@ -35,7 +35,7 @@ namespace media
             Methods.SetDoubleBuffer(guna2GradientPanel4, true);
             Methods.SetDoubleBuffer(guna2Panel1, true);
             this.userProfilePhoto.BackgroundImage = this.NativeUser.ProfilePhoto;
-            this.lblUserName.Text = this.NativeUser.UserFirstName + this.NativeUser.UserLastName;
+            this.lblUserName.Text = this.NativeUser.UserFirstName + " "+ this.NativeUser.UserLastName;
             this.lblBio.Text= this.NativeUser.Bio;
             this.nativeUser.PersonalWebsites = this.GetWebsitesByUserId(this.nativeUser.Key);
 
@@ -125,6 +125,11 @@ namespace media
             }
             MessageBox.Show("" + websitesList.ToArray().Length);
             return websitesList.ToArray();
+        }
+
+        private void guna2GradientPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

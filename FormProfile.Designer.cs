@@ -32,6 +32,10 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.guna2GradientPanel3 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.web3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.web2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.web1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblBio = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.label4 = new System.Windows.Forms.Label();
             this.userProfilePhoto = new media.CustomPanel();
@@ -61,10 +65,6 @@
             this.guna2ImageButton7 = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2ImageButton8 = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2ImageButton9 = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.web1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.web2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.web3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.tableLayoutPanel1.SuspendLayout();
             this.guna2GradientPanel1.SuspendLayout();
             this.guna2GradientPanel3.SuspendLayout();
@@ -138,6 +138,49 @@
             this.guna2GradientPanel3.Size = new System.Drawing.Size(426, 313);
             this.guna2GradientPanel3.TabIndex = 7;
             // 
+            // web3
+            // 
+            this.web3.BackColor = System.Drawing.Color.Transparent;
+            this.web3.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.web3.Location = new System.Drawing.Point(32, 199);
+            this.web3.Margin = new System.Windows.Forms.Padding(4);
+            this.web3.Name = "web3";
+            this.web3.Size = new System.Drawing.Size(231, 21);
+            this.web3.TabIndex = 5;
+            this.web3.Text = "Hi!, this is Md wahiduzzaman Shuvo";
+            // 
+            // web2
+            // 
+            this.web2.BackColor = System.Drawing.Color.Transparent;
+            this.web2.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.web2.Location = new System.Drawing.Point(32, 170);
+            this.web2.Margin = new System.Windows.Forms.Padding(4);
+            this.web2.Name = "web2";
+            this.web2.Size = new System.Drawing.Size(231, 21);
+            this.web2.TabIndex = 4;
+            this.web2.Text = "Hi!, this is Md wahiduzzaman Shuvo";
+            // 
+            // web1
+            // 
+            this.web1.BackColor = System.Drawing.Color.Transparent;
+            this.web1.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.web1.Location = new System.Drawing.Point(32, 141);
+            this.web1.Margin = new System.Windows.Forms.Padding(4);
+            this.web1.Name = "web1";
+            this.web1.Size = new System.Drawing.Size(231, 21);
+            this.web1.TabIndex = 3;
+            this.web1.Text = "Hi!, this is Md wahiduzzaman Shuvo";
+            // 
+            // guna2HtmlLabel2
+            // 
+            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(32, 107);
+            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(97, 27);
+            this.guna2HtmlLabel2.TabIndex = 2;
+            this.guna2HtmlLabel2.Text = "Social links";
+            // 
             // lblBio
             // 
             this.lblBio.BackColor = System.Drawing.Color.Transparent;
@@ -197,6 +240,7 @@
             this.guna2GradientPanel2.Padding = new System.Windows.Forms.Padding(27, 25, 27, 25);
             this.guna2GradientPanel2.Size = new System.Drawing.Size(426, 449);
             this.guna2GradientPanel2.TabIndex = 6;
+            this.guna2GradientPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2GradientPanel2_Paint);
             // 
             // tableLayoutPanel2
             // 
@@ -628,49 +672,6 @@
             this.guna2ImageButton9.PressedState.ImageSize = new System.Drawing.Size(64, 64);
             this.guna2ImageButton9.Size = new System.Drawing.Size(281, 262);
             this.guna2ImageButton9.TabIndex = 8;
-            // 
-            // guna2HtmlLabel2
-            // 
-            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(32, 107);
-            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(97, 27);
-            this.guna2HtmlLabel2.TabIndex = 2;
-            this.guna2HtmlLabel2.Text = "Social links";
-            // 
-            // web1
-            // 
-            this.web1.BackColor = System.Drawing.Color.Transparent;
-            this.web1.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.web1.Location = new System.Drawing.Point(32, 141);
-            this.web1.Margin = new System.Windows.Forms.Padding(4);
-            this.web1.Name = "web1";
-            this.web1.Size = new System.Drawing.Size(231, 21);
-            this.web1.TabIndex = 3;
-            this.web1.Text = "Hi!, this is Md wahiduzzaman Shuvo";
-            // 
-            // web2
-            // 
-            this.web2.BackColor = System.Drawing.Color.Transparent;
-            this.web2.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.web2.Location = new System.Drawing.Point(32, 170);
-            this.web2.Margin = new System.Windows.Forms.Padding(4);
-            this.web2.Name = "web2";
-            this.web2.Size = new System.Drawing.Size(231, 21);
-            this.web2.TabIndex = 4;
-            this.web2.Text = "Hi!, this is Md wahiduzzaman Shuvo";
-            // 
-            // web3
-            // 
-            this.web3.BackColor = System.Drawing.Color.Transparent;
-            this.web3.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.web3.Location = new System.Drawing.Point(32, 199);
-            this.web3.Margin = new System.Windows.Forms.Padding(4);
-            this.web3.Name = "web3";
-            this.web3.Size = new System.Drawing.Size(231, 21);
-            this.web3.TabIndex = 5;
-            this.web3.Text = "Hi!, this is Md wahiduzzaman Shuvo";
             // 
             // FormProfile
             // 

@@ -67,17 +67,9 @@ namespace media
         private void button1_Click_1(object sender, EventArgs e)
         {
             string richTextBoxText = richTextBox1.Text;
-
-            // Set the text of the label
             label3.Text = richTextBoxText;
-
-            // Set the autosize property of the label to true
             label3.AutoSize = true;
-
-            // Set the maximum size of the label to the width of the parent panel
             label3.MaximumSize = new Size(panel2.Width, int.MaxValue);
-
-            // Resize the parent panel to fit the label
             panel2.Height = label3.Height;
         }
 
