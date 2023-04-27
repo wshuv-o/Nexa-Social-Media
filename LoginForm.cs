@@ -51,8 +51,8 @@ namespace media
 
                                     this.panel1.Dispose();
                                     User user=this.GetUserByEmail(email);
-                                    MessageBox.Show("userFound!"+"user name is"+user.UserFirstName);
-                                    openChildForm(new Form1(user));
+                                    //MessageBox.Show("userFound!"+"user name is"+user.UserFirstName);
+                                    openChildForm(new FormBase(user));
                                 }
                                 else
                                 {
@@ -130,7 +130,7 @@ namespace media
                     user.ProfilePhoto = dbio.LoadImageFromDataBase(reader.GetInt32("userid"));
                     user.Gender = reader.GetString("gender");
                     user.Bio = reader.GetString("bio");
-                    MessageBox.Show(" " + user.Key);
+                    //MessageBox.Show(" " + user.Key);
 
 
                 }

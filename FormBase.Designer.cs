@@ -1,6 +1,6 @@
 ﻿namespace media
 {
-    partial class Form1
+    partial class FormBase
     {
         /// <summary>
         /// Required designer variable.

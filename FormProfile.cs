@@ -34,15 +34,22 @@ namespace media
             Methods.SetDoubleBuffer(guna2GradientPanel3, true);
             Methods.SetDoubleBuffer(guna2GradientPanel4, true);
             Methods.SetDoubleBuffer(guna2Panel1, true);
+            if(this.NativeUser.ProfilePhoto!=null)
             this.userProfilePhoto.BackgroundImage = this.NativeUser.ProfilePhoto;
             this.lblUserName.Text = this.NativeUser.UserFirstName + " "+ this.NativeUser.UserLastName;
             this.lblBio.Text= this.NativeUser.Bio;
             this.nativeUser.PersonalWebsites = this.GetWebsitesByUserId(this.nativeUser.Key);
+            if (this.nativeUser.PersonalWebsites.Length > 0)
+            {
+                int i= 0;
+                foreach (Websites wb in this.NativeUser.PersonalWebsites) 
+                {
+                    this.web[i].Text = this.NativeUser.PersonalWebsites[0].Link;
+                    i++;
+                }
 
-            this.web1.Text = this.NativeUser.PersonalWebsites[0].Link;
-            this.web2.Text = this.NativeUser.PersonalWebsites[1].Link;
+            }
             //this.web1.Text = this.NativeUser.PersonalWebsites[0].Link;
-            MessageBox.Show(""+this.nativeUser.Key+"  "+this.nativeUser.PersonalWebsites.Length);
 
         }
 
@@ -123,11 +130,21 @@ namespace media
                 // Handle the exception here
                 Console.WriteLine("An error occurred: " + ex.Message);
             }
-            MessageBox.Show("" + websitesList.ToArray().Length);
+            //MessageBox.Show("" + websitesList.ToArray().Length);
             return websitesList.ToArray();
         }
 
         private void guna2GradientPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2GradientPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2GradientPanel4_Paint(object sender, PaintEventArgs e)
         {
 
         }

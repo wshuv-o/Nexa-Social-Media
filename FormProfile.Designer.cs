@@ -32,9 +32,6 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.guna2GradientPanel3 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.web3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.web2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.web1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblBio = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.label4 = new System.Windows.Forms.Label();
@@ -114,6 +111,7 @@
             this.guna2GradientPanel1.Padding = new System.Windows.Forms.Padding(27, 25, 27, 25);
             this.guna2GradientPanel1.Size = new System.Drawing.Size(514, 905);
             this.guna2GradientPanel1.TabIndex = 0;
+            this.guna2GradientPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2GradientPanel1_Paint);
             // 
             // guna2GradientPanel3
             // 
@@ -121,9 +119,6 @@
             this.guna2GradientPanel3.BorderColor = System.Drawing.Color.Black;
             this.guna2GradientPanel3.BorderRadius = 30;
             this.guna2GradientPanel3.BorderThickness = 1;
-            this.guna2GradientPanel3.Controls.Add(this.web3);
-            this.guna2GradientPanel3.Controls.Add(this.web2);
-            this.guna2GradientPanel3.Controls.Add(this.web1);
             this.guna2GradientPanel3.Controls.Add(this.guna2HtmlLabel2);
             this.guna2GradientPanel3.Controls.Add(this.lblBio);
             this.guna2GradientPanel3.Controls.Add(this.label4);
@@ -137,39 +132,6 @@
             this.guna2GradientPanel3.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.guna2GradientPanel3.Size = new System.Drawing.Size(426, 313);
             this.guna2GradientPanel3.TabIndex = 7;
-            // 
-            // web3
-            // 
-            this.web3.BackColor = System.Drawing.Color.Transparent;
-            this.web3.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.web3.Location = new System.Drawing.Point(32, 199);
-            this.web3.Margin = new System.Windows.Forms.Padding(4);
-            this.web3.Name = "web3";
-            this.web3.Size = new System.Drawing.Size(231, 21);
-            this.web3.TabIndex = 5;
-            this.web3.Text = "Hi!, this is Md wahiduzzaman Shuvo";
-            // 
-            // web2
-            // 
-            this.web2.BackColor = System.Drawing.Color.Transparent;
-            this.web2.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.web2.Location = new System.Drawing.Point(32, 170);
-            this.web2.Margin = new System.Windows.Forms.Padding(4);
-            this.web2.Name = "web2";
-            this.web2.Size = new System.Drawing.Size(231, 21);
-            this.web2.TabIndex = 4;
-            this.web2.Text = "Hi!, this is Md wahiduzzaman Shuvo";
-            // 
-            // web1
-            // 
-            this.web1.BackColor = System.Drawing.Color.Transparent;
-            this.web1.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.web1.Location = new System.Drawing.Point(32, 141);
-            this.web1.Margin = new System.Windows.Forms.Padding(4);
-            this.web1.Name = "web1";
-            this.web1.Size = new System.Drawing.Size(231, 21);
-            this.web1.TabIndex = 3;
-            this.web1.Text = "Hi!, this is Md wahiduzzaman Shuvo";
             // 
             // guna2HtmlLabel2
             // 
@@ -394,6 +356,7 @@
             this.guna2GradientPanel4.Padding = new System.Windows.Forms.Padding(267, 12, 267, 0);
             this.guna2GradientPanel4.Size = new System.Drawing.Size(1254, 79);
             this.guna2GradientPanel4.TabIndex = 0;
+            this.guna2GradientPanel4.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2GradientPanel4_Paint);
             // 
             // tableLayoutPanel5
             // 
@@ -735,9 +698,7 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button5;
         private Guna.UI2.WinForms.Guna2Button guna2Button4;
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
-        private Guna.UI2.WinForms.Guna2HtmlLabel web3;
-        private Guna.UI2.WinForms.Guna2HtmlLabel web2;
-        private Guna.UI2.WinForms.Guna2HtmlLabel web1;
+        private Guna.UI2.WinForms.Guna2HtmlLabel[] web;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
     }
 }

@@ -95,10 +95,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChatPerson.cs">
+    <Compile Include="CustomControls\ChatPerson.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="ChatPerson.Designer.cs">
+    <Compile Include="CustomControls\ChatPerson.Designer.cs">
       <DependentUpon>ChatPerson.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\ClassCalls.cs" />
@@ -110,33 +110,33 @@
     <Compile Include="Classes\Page.cs" />
     <Compile Include="Classes\Websites.cs" />
     <Compile Include="Classes\User.cs" />
-    <Compile Include="CustomFlowLayoutPanel.cs">
+    <Compile Include="CustomControls\CustomFlowLayoutPanel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="CustomMessageBox.cs">
+    <Compile Include="CustomControls\CustomMessageBox.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CustomMessageBox.Designer.cs">
+    <Compile Include="CustomControls\CustomMessageBox.Designer.cs">
       <DependentUpon>CustomMessageBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="CustomPanel.cs">
+    <Compile Include="CustomControls\CustomPanel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="CustomPictureBox.cs">
+    <Compile Include="CustomControls\CustomPictureBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="CustomPictureBox.Designer.cs">
+    <Compile Include="CustomControls\CustomPictureBox.Designer.cs">
       <DependentUpon>CustomPictureBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="CustomRoundPictureBox.cs">
+    <Compile Include="CustomControls\CustomRoundPictureBox.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="DatabaseCredentials.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="FormBase.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FormBase.Designer.cs">
+      <DependentUpon>FormBase.cs</DependentUpon>
     </Compile>
     <Compile Include="FormCallE.cs">
       <SubType>Form</SubType>
@@ -269,20 +269,20 @@
     <Compile Include="Story.Designer.cs">
       <DependentUpon>Story.cs</DependentUpon>
     </Compile>
-    <Compile Include="TestControl.cs">
+    <Compile Include="CustomControls\TestControl.cs">
       <SubType>Component</SubType>
     </Compile>
-    <EmbeddedResource Include="ChatPerson.resx">
+    <EmbeddedResource Include="CustomControls\ChatPerson.resx">
       <DependentUpon>ChatPerson.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomMessageBox.resx">
+    <EmbeddedResource Include="CustomControls\CustomMessageBox.resx">
       <DependentUpon>CustomMessageBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomPictureBox.resx">
+    <EmbeddedResource Include="CustomControls\CustomPictureBox.resx">
       <DependentUpon>CustomPictureBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="FormBase.resx">
+      <DependentUpon>FormBase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormCallE.resx">
       <DependentUpon>FormCallE.cs</DependentUpon>
@@ -384,18 +384,6 @@
     <None Include="Resources\rsz_1rsz_logo.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\rsz_screenshot_2023-03-20_031207.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\rsz_abc.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\rsz_abc1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\sssssss.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\microfunnel-flaticon-removebg-preview.png" />
   </ItemGroup>
   <ItemGroup>
@@ -438,24 +426,6 @@
     <None Include="Resources\PicsArt_09-0m7-09.40.49.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\rsz_160721257_848984555463636_5606238717187457024_n.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\rsz_whatsapp_image_2023-03-23_at_125055_pm.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\335671610_1374871103291531_4501878706397560800_n-modified.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\rsz_screenshot_2023-03-20_031207-transformed.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\34037826.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\rsz_1picsart_09-0m7-094049.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\icons8-microphone-32.png" />
   </ItemGroup>
   <ItemGroup>
@@ -480,13 +450,7 @@
     <None Include="Resources\send %281%29.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\send %281%291.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\rsz_send_2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\rsz_rsz_1rsz_send_2-transformed-removebg-preview.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\dots.png" />
@@ -522,16 +486,7 @@
     <None Include="Resources\linkedin.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\WIN_20220304_15_10_16_Pro.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\chatDoodle1.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\PicsArt_09-07-09.40.49.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\WhatsApp Image 2023-03-23 at 12.50.55 PM.jpeg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\p1.jpg" />
@@ -549,9 +504,6 @@
     <None Include="Resources\p51.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\CITYSCAPE1142023.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\p111.png" />
   </ItemGroup>
   <ItemGroup>
@@ -564,28 +516,7 @@
     <None Include="Resources\icons8-share-96.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\dead space.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\ezgif.com-webp-to-jpg.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\wallpaperflare.com_wallpaper %281%29.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Screenshot 2023-04-04 213342.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\wallpaperflare.com_wallpaper %284%29.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\wallpaperflare.com_wallpaper %288%29.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\wp6823992-cyberpunk-2077-game-poster-wallpapers.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\wp6823992-cyberpunk-2077-game-poster-wallpapers1.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\pdf.png" />
@@ -634,9 +565,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Video1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\338458104_1527903524367608_1923566569049492375_n-removebg-preview.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\gjb.png" />

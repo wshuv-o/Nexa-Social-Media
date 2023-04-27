@@ -11,7 +11,7 @@ using System.ComponentModel;
 
 namespace media
 {
-    internal class CustomRoundPictureBox:PictureBox
+    public class CustomRoundPictureBox:PictureBox
     {
         private int borderSize = 2;
         private Color borderColor = Color.RoyalBlue;

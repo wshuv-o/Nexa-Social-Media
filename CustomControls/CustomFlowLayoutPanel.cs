@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace media
 {
-    internal class CustomFlowLayoutPanel: System.Windows.Forms.FlowLayoutPanel
+    public class CustomFlowLayoutPanel: System.Windows.Forms.FlowLayoutPanel
     {
         private System.Windows.Forms.FlowLayoutPanel panel;
 

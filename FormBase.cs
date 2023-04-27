@@ -16,7 +16,7 @@ using media.Classes;
 
 namespace media
 {
-    public partial class Form1 : Form
+    public partial class FormBase : Form
     {
         private Form activeForm = null;
         private Color defColor = Color.FromArgb(134, 27, 242);
@@ -29,10 +29,9 @@ namespace media
         }
 
 
-        public Form1(User nativeUser)
+        public FormBase(User nativeUser)
         {
             this.NativeUser = nativeUser;
-            //MessageBox.Show("userFound!" + "user name is" + nativeUser.UserFirstName);
             InitializeComponent();
             Methods.SetDoubleBuffer(panelSubMain, true);
 
