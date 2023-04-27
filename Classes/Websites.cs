@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace media.Classes
 {
-    internal class PersonalWebsites
+    public class Websites
     {
         private string link;
         private string name;
@@ -39,6 +39,10 @@ namespace media.Classes
                 if (this.Name == "Instagram") this.logo = global::media.Properties.Resources.instagram;
                 else this.logo = global::media.Properties.Resources.logo;
             }
+        }
+        public Websites(string link)
+        {
+            this.Link = link;
         }
 
     }

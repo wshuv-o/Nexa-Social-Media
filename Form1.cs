@@ -12,6 +12,7 @@ using System.Drawing.Drawing2D;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
+using media.Classes;
 
 namespace media
 {
@@ -20,7 +21,23 @@ namespace media
         private Form activeForm = null;
         private Color defColor = Color.FromArgb(134, 27, 242);
         public Color myColor = Color.FromArgb(120, 24, 217);
+        private User nativeUser;
+        public User NativeUser
+        {
+            get { return nativeUser; }
+            set { nativeUser = value; }
+        }
 
+
+        public Form1(User nativeUser)
+        {
+            this.NativeUser = nativeUser;
+            //MessageBox.Show("userFound!" + "user name is" + nativeUser.UserFirstName);
+            InitializeComponent();
+            Methods.SetDoubleBuffer(panelSubMain, true);
+
+
+        }
         public void openChildForm(Form childForm)
         {
             if (activeForm != null)
@@ -34,7 +51,8 @@ namespace media
                 panelSubMain.Tag = childForm;
                 childForm.BringToFront();
                 childForm.Show();
-            }else
+            }
+            else
             {
                 activeForm = childForm;
                 childForm.TopLevel = false;
@@ -52,14 +70,6 @@ namespace media
         {
 
         }
-        public Form1()
-        {
-            InitializeComponent();
-            Methods.SetDoubleBuffer(panelSubMain, true);
-
-
-        }
-
         private void ShowSubmenu(Panel subMenu)
         {
 
@@ -126,7 +136,7 @@ namespace media
         private void buttonTwizzle_Click(object sender, EventArgs e)
         {
             DefaultButtonColor(ref buttonTwizzle);
-            FormProfile profile = new FormProfile();
+            FormProfile profile = new FormProfile(this.NativeUser);
             openChildForm(profile);
             profile.Visible = true;
         }

@@ -45,12 +45,12 @@ namespace media
             this.txtbxEmail = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtbxPassword = new Guna.UI2.WinForms.Guna2TextBox();
-            this.button3 = new Guna.UI2.WinForms.Guna2Button();
-            this.button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnSignIn = new Guna.UI2.WinForms.Guna2Button();
+            this.btnForgotPassword = new Guna.UI2.WinForms.Guna2Button();
             this.panel2 = new media.CustomPanel();
             this.label8 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnPageSignUp = new System.Windows.Forms.Button();
+            this.btnUserSignUp = new Guna.UI2.WinForms.Guna2Button();
             this.panelBase.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -106,7 +106,6 @@ namespace media
             this.label6.Size = new System.Drawing.Size(157, 32);
             this.label6.TabIndex = 11;
             this.label6.Text = "Community";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label5
             // 
@@ -119,7 +118,6 @@ namespace media
             this.label5.Size = new System.Drawing.Size(531, 32);
             this.label5.TabIndex = 10;
             this.label5.Text = "and discover a world of new connections.";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label4
             // 
@@ -132,7 +130,6 @@ namespace media
             this.label4.Size = new System.Drawing.Size(116, 38);
             this.label4.TabIndex = 9;
             this.label4.Text = "Subha";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
             // 
@@ -145,7 +142,6 @@ namespace media
             this.label3.Size = new System.Drawing.Size(121, 32);
             this.label3.TabIndex = 8;
             this.label3.Text = "Join the ";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // pictureBox2
             // 
@@ -188,8 +184,8 @@ namespace media
             this.flowLayoutPanel1.Controls.Add(this.txtbxEmail);
             this.flowLayoutPanel1.Controls.Add(this.label2);
             this.flowLayoutPanel1.Controls.Add(this.txtbxPassword);
-            this.flowLayoutPanel1.Controls.Add(this.button3);
-            this.flowLayoutPanel1.Controls.Add(this.button1);
+            this.flowLayoutPanel1.Controls.Add(this.btnSignIn);
+            this.flowLayoutPanel1.Controls.Add(this.btnForgotPassword);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 2);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -240,7 +236,6 @@ namespace media
             this.txtbxEmail.SelectedText = "";
             this.txtbxEmail.Size = new System.Drawing.Size(315, 45);
             this.txtbxEmail.TabIndex = 2;
-            this.txtbxEmail.TextChanged += new System.EventHandler(this.textBox1_TextChanged_2);
             // 
             // label2
             // 
@@ -271,37 +266,36 @@ namespace media
             this.txtbxPassword.Size = new System.Drawing.Size(315, 45);
             this.txtbxPassword.TabIndex = 4;
             this.txtbxPassword.UseSystemPasswordChar = true;
-            this.txtbxPassword.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
-            // button3
+            // btnSignIn
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(242)))), ((int)(((byte)(250)))));
-            this.button3.BorderRadius = 10;
-            this.button3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(27)))), ((int)(((byte)(242)))));
-            this.button3.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.SystemColors.Control;
-            this.button3.Location = new System.Drawing.Point(18, 356);
-            this.button3.Margin = new System.Windows.Forms.Padding(7, 2, 3, 2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(319, 45);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "Sign In";
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnSignIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(242)))), ((int)(((byte)(250)))));
+            this.btnSignIn.BorderRadius = 10;
+            this.btnSignIn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(27)))), ((int)(((byte)(242)))));
+            this.btnSignIn.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSignIn.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnSignIn.Location = new System.Drawing.Point(18, 356);
+            this.btnSignIn.Margin = new System.Windows.Forms.Padding(7, 2, 3, 2);
+            this.btnSignIn.Name = "btnSignIn";
+            this.btnSignIn.Size = new System.Drawing.Size(319, 45);
+            this.btnSignIn.TabIndex = 8;
+            this.btnSignIn.Text = "Sign In";
+            this.btnSignIn.Click += new System.EventHandler(this.btnSignIn_Click);
             // 
-            // button1
+            // btnForgotPassword
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(242)))), ((int)(((byte)(250)))));
-            this.button1.BorderRadius = 10;
-            this.button1.FillColor = System.Drawing.Color.Transparent;
-            this.button1.Font = new System.Drawing.Font("Calisto MT", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(27)))), ((int)(((byte)(242)))));
-            this.button1.Location = new System.Drawing.Point(18, 413);
-            this.button1.Margin = new System.Windows.Forms.Padding(7, 10, 3, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(317, 45);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Password Forgotten?";
-            this.button1.Click += new System.EventHandler(this.button1_Click_3);
+            this.btnForgotPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(242)))), ((int)(((byte)(250)))));
+            this.btnForgotPassword.BorderRadius = 10;
+            this.btnForgotPassword.FillColor = System.Drawing.Color.Transparent;
+            this.btnForgotPassword.Font = new System.Drawing.Font("Calisto MT", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnForgotPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(27)))), ((int)(((byte)(242)))));
+            this.btnForgotPassword.Location = new System.Drawing.Point(18, 413);
+            this.btnForgotPassword.Margin = new System.Windows.Forms.Padding(7, 10, 3, 0);
+            this.btnForgotPassword.Name = "btnForgotPassword";
+            this.btnForgotPassword.Size = new System.Drawing.Size(317, 45);
+            this.btnForgotPassword.TabIndex = 9;
+            this.btnForgotPassword.Text = "Password Forgotten?";
+            this.btnForgotPassword.Click += new System.EventHandler(this.btnForgotPassword_Click);
             // 
             // panel2
             // 
@@ -311,8 +305,8 @@ namespace media
             this.panel2.BorderRadius = 20;
             this.panel2.BorderSize = 1;
             this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.button4);
-            this.panel2.Controls.Add(this.button2);
+            this.panel2.Controls.Add(this.btnPageSignUp);
+            this.panel2.Controls.Add(this.btnUserSignUp);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 484);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -332,36 +326,36 @@ namespace media
             this.label8.TabIndex = 13;
             this.label8.Text = "for brand or bussines";
             // 
-            // button4
+            // btnPageSignUp
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(242)))), ((int)(((byte)(250)))));
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Calisto MT", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(27)))), ((int)(((byte)(242)))));
-            this.button4.Location = new System.Drawing.Point(13, 80);
-            this.button4.Margin = new System.Windows.Forms.Padding(7, 10, 0, 0);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(123, 41);
-            this.button4.TabIndex = 10;
-            this.button4.Text = "Create a page";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click_1);
+            this.btnPageSignUp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(242)))), ((int)(((byte)(250)))));
+            this.btnPageSignUp.FlatAppearance.BorderSize = 0;
+            this.btnPageSignUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPageSignUp.Font = new System.Drawing.Font("Calisto MT", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPageSignUp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(27)))), ((int)(((byte)(242)))));
+            this.btnPageSignUp.Location = new System.Drawing.Point(13, 80);
+            this.btnPageSignUp.Margin = new System.Windows.Forms.Padding(7, 10, 0, 0);
+            this.btnPageSignUp.Name = "btnPageSignUp";
+            this.btnPageSignUp.Size = new System.Drawing.Size(123, 41);
+            this.btnPageSignUp.TabIndex = 10;
+            this.btnPageSignUp.Text = "Create a page";
+            this.btnPageSignUp.UseVisualStyleBackColor = false;
+            this.btnPageSignUp.Click += new System.EventHandler(this.btnPageSignUp_Click);
             // 
-            // button2
+            // btnUserSignUp
             // 
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.BorderRadius = 10;
-            this.button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(27)))), ((int)(((byte)(242)))));
-            this.button2.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Bold);
-            this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.Location = new System.Drawing.Point(16, 16);
-            this.button2.Margin = new System.Windows.Forms.Padding(7, 2, 3, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(319, 45);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Sign Up";
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            this.btnUserSignUp.BackColor = System.Drawing.Color.Transparent;
+            this.btnUserSignUp.BorderRadius = 10;
+            this.btnUserSignUp.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(27)))), ((int)(((byte)(242)))));
+            this.btnUserSignUp.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Bold);
+            this.btnUserSignUp.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnUserSignUp.Location = new System.Drawing.Point(16, 16);
+            this.btnUserSignUp.Margin = new System.Windows.Forms.Padding(7, 2, 3, 2);
+            this.btnUserSignUp.Name = "btnUserSignUp";
+            this.btnUserSignUp.Size = new System.Drawing.Size(319, 45);
+            this.btnUserSignUp.TabIndex = 6;
+            this.btnUserSignUp.Text = "Sign Up";
+            this.btnUserSignUp.Click += new System.EventHandler(this.btnSignUp_Click);
             // 
             // Nexa
             // 
@@ -371,11 +365,11 @@ namespace media
             this.ClientSize = new System.Drawing.Size(1429, 882);
             this.Controls.Add(this.panelBase);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Nexa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Twizzle";
-            this.Load += new System.EventHandler(this.Twizzle_Load);
             this.panelBase.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -401,16 +395,16 @@ namespace media
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2TextBox txtbxPassword;
         private CustomPanel panel2;
-        private Guna.UI2.WinForms.Guna2Button button2;
-        private Guna.UI2.WinForms.Guna2Button button3;
-        private Guna.UI2.WinForms.Guna2Button button1;
+        private Guna.UI2.WinForms.Guna2Button btnUserSignUp;
+        private Guna.UI2.WinForms.Guna2Button btnSignIn;
+        private Guna.UI2.WinForms.Guna2Button btnForgotPassword;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnPageSignUp;
         private Panel panelBase;
     }
 }

@@ -69,7 +69,7 @@ namespace media
             //DisplayUserImageFromDatabase();
             */
             //byte[] a = BTN_SHOW_Click(sender, e);
-            this.guna2CircleButton4.Image= dbio.SelectImageFromFile(sender, e);
+            this.guna2CircleButton4.Image= dbio.SelectImageFromFile();
             
             
         }
@@ -81,9 +81,14 @@ namespace media
 
         private void guna2Button9_Click(object sender, EventArgs e)
         {
-            dbio.SaveToDataBase(sender, e);
-            this.guna2CircleButton4.Image = dbio.LoadImageFromDataBase(sender, e);
+            dbio.SaveToDataBase(38);
+            this.guna2CircleButton4.Image = dbio.LoadImageFromDataBase(38);
             //guna2CircleButton4.ImageSize = new Size(200, 200);
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

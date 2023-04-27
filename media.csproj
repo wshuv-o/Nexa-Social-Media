@@ -108,7 +108,7 @@
     <Compile Include="Classes\ClassPost.cs" />
     <Compile Include="Classes\ClassProduct.cs" />
     <Compile Include="Classes\Page.cs" />
-    <Compile Include="Classes\PersonalWebsites.cs" />
+    <Compile Include="Classes\Websites.cs" />
     <Compile Include="Classes\User.cs" />
     <Compile Include="CustomFlowLayoutPanel.cs">
       <SubType>Component</SubType>
@@ -131,6 +131,7 @@
     <Compile Include="CustomRoundPictureBox.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="DatabaseCredentials.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

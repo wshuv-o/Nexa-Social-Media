@@ -1,4 +1,6 @@
-﻿using System;
+﻿using media.Classes;
+using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,8 +14,15 @@ namespace media
 {
     public partial class FormProfile : Form
     {
-        public FormProfile()
+        private User nativeUser;
+        public User NativeUser
         {
+            get { return nativeUser; }
+            set { nativeUser = value; }
+        }
+        public FormProfile(User nativeUser)
+        {
+            this.NativeUser= nativeUser;
             InitializeComponent();
             Methods.SetDoubleBuffer(tableLayoutPanel1, true);
             Methods.SetDoubleBuffer(tableLayoutPanel2, true);
@@ -25,6 +34,16 @@ namespace media
             Methods.SetDoubleBuffer(guna2GradientPanel3, true);
             Methods.SetDoubleBuffer(guna2GradientPanel4, true);
             Methods.SetDoubleBuffer(guna2Panel1, true);
+            this.userProfilePhoto.BackgroundImage = this.NativeUser.ProfilePhoto;
+            this.lblUserName.Text = this.NativeUser.UserFirstName + this.NativeUser.UserLastName;
+            this.lblBio.Text= this.NativeUser.Bio;
+            this.nativeUser.PersonalWebsites = this.GetWebsitesByUserId(this.nativeUser.Key);
+
+            this.web1.Text = this.NativeUser.PersonalWebsites[0].Link;
+            this.web2.Text = this.NativeUser.PersonalWebsites[1].Link;
+            //this.web1.Text = this.NativeUser.PersonalWebsites[0].Link;
+            MessageBox.Show(""+this.nativeUser.Key+"  "+this.nativeUser.PersonalWebsites.Length);
+
         }
 
         private void guna2ShadowPanel1_Paint(object sender, PaintEventArgs e)
@@ -64,6 +83,48 @@ namespace media
         private void FormProfile_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void userProfilePhoto_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2ImageButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+        public Websites[] GetWebsitesByUserId(int userId)
+        {
+            List<Websites> websitesList = new List<Websites>();
+
+            try
+            {
+                string connectionString = DatabaseCredentials.connectionStringLocalServer;
+                string query = "SELECT * FROM websites WHERE userid = @UserId";
+                MySqlConnection connection = new MySqlConnection(connectionString);
+                MySqlCommand command = new MySqlCommand(query, connection);
+                command.Parameters.AddWithValue("@UserId", userId);
+                connection.Open();
+                MySqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    string link = reader.GetString("website_link");
+                    Websites website = new Websites(link);
+                    websitesList.Add(website);
+                }
+
+                reader.Close();
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                // Handle the exception here
+                Console.WriteLine("An error occurred: " + ex.Message);
+            }
+            MessageBox.Show("" + websitesList.ToArray().Length);
+            return websitesList.ToArray();
         }
     }
 }

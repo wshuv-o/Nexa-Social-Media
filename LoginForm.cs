@@ -1,17 +1,10 @@
 ﻿using Guna.UI2.WinForms;
+using media.Classes;
 using MySql.Data.MySqlClient;
 using System;
+using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace media
 {
@@ -25,136 +18,65 @@ namespace media
             this.SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void btnForgotPassword_Click(object sender, EventArgs e)
         {
-
+            new FormForgetPassword();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Methods.RoundButtonCorners(button1, 20);
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
+        private void flowLayoutPanel1_Paint(object sender, EventArgs e)
         {
 
         }
         //192.168.208.69
-        private void button3_Click(object sender, EventArgs e)
+        private void btnSignIn_Click(object sender, EventArgs e)
         {
             string email = txtbxEmail.Text;
-            string connString = "server=127.0.0.1;user=root;database=nexaa;port=3306;password=";
-
-            using (MySqlConnection conn = new MySqlConnection(connString))
+            string connString = DatabaseCredentials.connectionStringLocalServer;
+            try
             {
-                conn.Open();
-                string query = "SELECT password FROM user WHERE email=@Email";
-                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                using (MySqlConnection conn = new MySqlConnection(connString))
                 {
-                    cmd.Parameters.AddWithValue("@Email", email);
-                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    conn.Open();
+                    string query = "SELECT password FROM user WHERE email=@Email";
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
-                        if (reader.Read())
+                        cmd.Parameters.AddWithValue("@Email", email);
+                        using (MySqlDataReader reader = cmd.ExecuteReader())
                         {
-                            string password = reader.GetString(0);
-                            if (password.Equals(txtbxPassword.Text))
+                            if (reader.Read())
                             {
-                                this.panel1.Dispose();
-                                openChildForm(new Form1());
+                                string password = reader.GetString(0);
+                                if (password.Equals(txtbxPassword.Text))
+                                {
+
+                                    this.panel1.Dispose();
+                                    User user=this.GetUserByEmail(email);
+                                    MessageBox.Show("userFound!"+"user name is"+user.UserFirstName);
+                                    openChildForm(new Form1(user));
+                                }
+                                else
+                                {
+                                    CustomMessageBox x = new CustomMessageBox();
+                                    x.ShowDialog();
+                                    return;
+                                }
                             }
                             else
                             {
-                                CustomMessageBox x= new CustomMessageBox();
+                                CustomMessageBox x = new CustomMessageBox();
                                 x.ShowDialog();
                                 return;
                             }
                         }
-                        else
-                        {
-                            CustomMessageBox x = new CustomMessageBox();
-                            x.ShowDialog();
-                            return;
-                        }
                     }
                 }
             }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click_2(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Twizzle_Load(object sender, EventArgs e)
-        {
-
-        }
         private void openChildForm(Form childForm)
         {
             if (activeForm != null)
@@ -183,19 +105,47 @@ namespace media
             }
 
         }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        public Classes.User GetUserByEmail(string email)
         {
+            DBImageOperation dbio = new DBImageOperation();
+            Classes.User user = new Classes.User();
+            try
+            {
+                string connectionString = DatabaseCredentials.connectionStringLocalServer;
+                string query = "SELECT * FROM user WHERE email = @Email";
+                MySqlConnection connection = new MySqlConnection(connectionString);
+                MySqlCommand command = new MySqlCommand(query, connection);
+                command.Parameters.AddWithValue("@Email", email);
+                connection.Open();
+                MySqlDataReader reader = command.ExecuteReader();
+                if (reader.Read())
+                {
+                    user.Key = reader.GetInt32("userid");
+                   
+                    user.UserFirstName = reader.GetString("userfirstname");
+                    user.UserLastName = reader.GetString("userlastname");
+                    user.Dob = reader.GetDateTime("dob");
+                    user.Email = reader.GetString("email");
+                    user.PhoneNumber = reader.GetString("phoneno");
+                    user.ProfilePhoto = dbio.LoadImageFromDataBase(reader.GetInt32("userid"));
+                    user.Gender = reader.GetString("gender");
+                    user.Bio = reader.GetString("bio");
+                    MessageBox.Show(" " + user.Key);
 
+
+                }
+                reader.Close();
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("An error occurred: " + ex.Message);
+            }
+            return user;
         }
+       
 
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void button2_Click_1(object sender, EventArgs e)
-        {
+        private void btnSignUp(object sender, EventArgs e){
             Methods.OpenChildForm(new FormSignUp(), this.panelBase);
             //panelBase.SuspendLayout();
             //FormSignUp f= new FormSignUp();
@@ -215,31 +165,31 @@ namespace media
             this.Controls.AddRange(f.Controls.Cast<Control>().ToArray());
         }
         */
-        private void panelBase_Paint(object sender, PaintEventArgs e)
+
+
+        private void btnSignUp_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click_3(object sender, EventArgs e)
-        {
-            FormForgetPassword f = new FormForgetPassword();
-            f.Visible = true;
-        }
-
-        private void button4_Click_1(object sender, EventArgs e)
+            Methods.OpenChildForm( new FormSignUp(), panelBase);
+            //this.Close();
+        }        
+        private void btnPageSignUp_Click(object sender, EventArgs e)
         {
             Methods.OpenChildForm( new FormPageSignUp(), panelBase);
             //this.Close();
+        }    
+        private void panel1_Paint(object sender, EventArgs e)
+        {
+
+        }    
+        private void panelBase_Paint(object sender, EventArgs e)
+        {
+
         }
 
-        private void textBox1_TextChanged_2(object sender, EventArgs e)
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
     }
+
 }

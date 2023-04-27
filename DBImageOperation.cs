@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using media.Classes;
+using MySql.Data.MySqlClient;
 using System;
 using System.Data;
 using System.Drawing;
@@ -9,8 +10,8 @@ namespace media
 {
     public partial class DBImageOperation
     {
-        private const string ConnectionString = "server=127.0.0.1;user=root;database=nexaa;port=3306;password=";
-        private int userId = 38;
+        private string ConnectionString = DatabaseCredentials.connectionStringLocalServer;
+        private int userId;
         private Image image;
         public int UserId
         {
@@ -20,10 +21,11 @@ namespace media
         public Image Image
         {
             get { return this.image; }
+            set { this.image = value; }
         }
 
 
-        public  Image SelectImageFromFile(object sender, EventArgs e)
+        public  Image SelectImageFromFile()
         {
             using (OpenFileDialog dialog = new OpenFileDialog())
             {
@@ -36,8 +38,9 @@ namespace media
             return image;
         }
 
-        public void SaveToDataBase(object sender, EventArgs e)
+        public void SaveToDataBase(int userId)
         {
+            this.UserId = userId;
             if (image == null)
             {
                 MessageBox.Show("Please select an image first.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -45,13 +48,14 @@ namespace media
             }
 
             byte[] imageBytes = ImageToByteArray(image);
-            UpdateUserImage(imageBytes);
+            UpdateUserImage(imageBytes, this.UserId);
             MessageBox.Show("Image saved successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        public Image LoadImageFromDataBase(object sender, EventArgs e)
+        public Image LoadImageFromDataBase(int userId)
         {
-            byte[] imageBytes = GetUserImage();
+            this.UserId= userId;
+            byte[] imageBytes = GetUserImage(this.UserId);
             if (imageBytes == null)
             {
                 MessageBox.Show("No image found for user ID " + userId + ".", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -71,8 +75,10 @@ namespace media
             }
         }
 
-        private void UpdateUserImage(byte[] imageBytes)
+        public void UpdateUserImage(byte[] imageBytes,  int userId)
         {
+            this.UserId = userId;
+
             using (MySqlConnection connection = new MySqlConnection(ConnectionString))
             {
                 connection.Open();
@@ -88,8 +94,10 @@ namespace media
             }
         }
 
-        private byte[] GetUserImage()
+        public byte[] GetUserImage(int userId)
         {
+            this.UserId = userId;
+
             using (MySqlConnection connection = new MySqlConnection(ConnectionString))
             {
                 connection.Open();

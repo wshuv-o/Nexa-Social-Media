@@ -7,19 +7,33 @@ using System.Threading.Tasks;
 
 namespace media.Classes
 {
-    internal class User
+    public class User
     {
         private string userFirstName;
         private string userLastName;
         private string bio;
+        private int key;
         private string email;
         private string password;
         private string phoneNumber;
         private DateTime dob;
         private string gender;
         private Image profilePhoto;
-        private PersonalWebsites[] websites;
+        private Websites[] personalWebsites;
         private User[] friends;
+
+            public int Key
+        {
+            get { return key; }
+            set { key = value; }
+        }
+
+
+        public Websites[] PersonalWebsites
+        {
+            get { return this.personalWebsites; }
+            set { this.personalWebsites = value; }
+        }
         public string UserFirstName
         {
             get { return this.userFirstName; }
@@ -89,6 +103,10 @@ namespace media.Classes
             this.PhoneNumber= phoneNumber;
             this.Dob= dob;
             this.Gender=gender;
+        }
+        public User()
+        {
+
         }
     }
 }

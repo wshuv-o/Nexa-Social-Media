@@ -66,11 +66,17 @@ namespace media
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-           // guna2GradientPanel1.Controls.Clear();
-           // guna2GradientPanel1.Padding= new Padding(0,0,0,0);  
-            Nexa n = new Nexa();
-            //n.Dock=DockStyle.Fill;
-            Methods.OpenChildForm(n, guna2GradientPanel1);
+            try
+            {
+                // guna2GradientPanel1.Controls.Clear();
+                // guna2GradientPanel1.Padding= new Padding(0,0,0,0);  
+                Nexa n = new Nexa();
+                //n.Dock=DockStyle.Fill;
+                Methods.OpenChildForm(n, guna2GradientPanel1);
+            }
+            catch (Exception ex) {// MessageBox.Show(Convert.ToString(ex));
+                                  }
+
         }
 
         private void guna2GradientPanel1_Paint(object sender, PaintEventArgs e)
