@@ -45,22 +45,14 @@ namespace media
 
              if (openFileDialog.ShowDialog() == DialogResult.OK)
              {
-                 // The user selected an image file, so you can now use it in your code
                  selectedImagePath = openFileDialog.FileName;
-
-                 // Convert the selected image to a byte array
                  byte[] imageData = File.ReadAllBytes(selectedImagePath);
-                 // Create a MySQL connection and command objects
                  string query = "UPDATE user SET userimage = @userimage WHERE userid = 38";
-
                  MySqlConnection conn = new MySqlConnection(conString);
                  MySqlCommand cmd = new MySqlCommand(query, conn);
-                 // Add the image data as a parameter to the command
                  MySqlParameter param = new MySqlParameter("@userimage", MySqlDbType.Blob);
                  param.Value = imageData;
                  cmd.Parameters.Add(param);
-
-                 // Open the connection and execute the command
                  conn.Open();
                  cmd.ExecuteNonQuery();
                  conn.Close();

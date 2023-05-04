@@ -10,21 +10,14 @@ using System.Windows.Forms;
 
 namespace media
 {
-    public partial class FormTest : Form
+    public partial class FormPost : Form
     {
-        public FormTest()
+        public FormPost()
         {
             InitializeComponent();
-            Methods.SetDoubleBuffer(panel1, true);
-
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void webView21_Click(object sender, EventArgs e)
+        private void FormPost_Load(object sender, EventArgs e)
         {
 
         }

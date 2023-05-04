@@ -117,10 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="label1.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <data name="guna2HtmlLabel1.Text" xml:space="preserve">
-    <value>Take the standard EDTA solution into the burette. Take 50 ml. of sample water (tap water) by a volumetric pipette into a conical flask. Acidify the sample water with conc. hydrochloric acid (use a litmus paper) and boil for a minute to drive off carbon dioxide. Cool and neutralize it with sodium hydroxide (use litmus paper). Add about 2 ml of buffer solution (pH 10) and 2 drops of EBT indicator. Titrate the solution with a standard 0.01M EDTA solution until the color changes from wine red to blue. Repeat the titration at least two times and take the mean value. The mean of three readings of EDTA is the volume of EDTA required to calculate the total hardness. </value>
-  </data>
 </root>

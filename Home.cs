@@ -58,7 +58,31 @@ namespace media
                  Methods.RoundPanelCorners(ref this.panelSavior, 20);
              };*/
 
+            /* ClassPost[] cp = new ClassPost[5];
+             for (int i = 0; i < 5; i++)
+             {
+                 Post a = new Post();
+                 cp[i] = new ClassPost(a, panelFeed);
+             }*/
+            Post[] posts = new Post[5];
+            ClassPost[] classPosts = new ClassPost[5];
 
+            for (int i = 0; i < 5; i++)
+            {
+                classPosts[i] = new ClassPost();
+                posts[i] = new Post();
+                Methods.OpenChildForm2(posts[i], classPosts[i].panelBase);
+                panelFeed.Controls.Add(classPosts[i].panelBase);
+            }
+            Methods.SetDoubleBuffer(panel1, true);
+            Methods.SetDoubleBuffer(panel3, true);
+            Methods.SetDoubleBuffer(panelBaseHome, true);
+            Methods.SetDoubleBuffer(panelFC, true);
+            Methods.SetDoubleBuffer(flowLayoutPanel1, true);
+            Methods.SetDoubleBuffer(tableLayoutPanel1, true);
+            Methods.SetDoubleBuffer(panelFC, true);
+            Methods.SetDoubleBuffer(panelFeed, true);
+            Methods.SetDoubleBuffer(flowLayoutPanel2, true);
 
 
         }

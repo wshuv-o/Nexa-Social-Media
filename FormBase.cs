@@ -167,8 +167,8 @@ namespace media
         public void buttonHome_Click(object sender, EventArgs e)
         {
             DefaultButtonColor(ref buttonHome);
-            //Home h= new Home();
-            openChildForm(new Home());
+            Home h= new Home();
+            openChildForm(h);
             //h.Visible= true;
         }
         

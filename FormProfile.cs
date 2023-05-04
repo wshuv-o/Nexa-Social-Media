@@ -127,7 +127,6 @@ namespace media
             }
             catch (Exception ex)
             {
-                // Handle the exception here
                 Console.WriteLine("An error occurred: " + ex.Message);
             }
             //MessageBox .Show("" + websitesList.ToArray().Length);

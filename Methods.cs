@@ -11,6 +11,7 @@ using System.Reflection;
 using System.Net.Mail;
 using System.Net;
 using System.Text.RegularExpressions;
+using System.Runtime.CompilerServices;
 
 namespace media
 {
@@ -200,6 +201,34 @@ namespace media
                 childForm.Show();
             }
         }
+        public static void OpenChildForm2(Form childForm, Panel parentPanel)
+        {
+            Form activeForm = null;
+            if (activeForm != null)
+            {
+                activeForm.Close();
+                activeForm = childForm;
+                childForm.TopLevel = false;
+                childForm.FormBorderStyle = FormBorderStyle.None;
+                childForm.Dock = DockStyle.Fill;
+                parentPanel.Controls.Add(childForm);
+                parentPanel.Tag = childForm;
+                childForm.BringToFront();
+                childForm.Show();
+            }
+            else
+            {
+                activeForm = childForm;
+                childForm.TopLevel = false;
+                childForm.FormBorderStyle = FormBorderStyle.None;
+                childForm.Dock = DockStyle.Fill;
+                parentPanel.Controls.Add(childForm);
+                parentPanel.Tag = childForm;
+                childForm.BringToFront();
+                childForm.Show();
+            }
+        }
+
         public static int spaceBetweenPictureBoxes = 10;
         static void AddPictureBox(Bitmap image, Panel basePanel)
         {

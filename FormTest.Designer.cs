@@ -29,59 +29,35 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.guna2WinProgressIndicator1 = new Guna.UI2.WinForms.Guna2WinProgressIndicator();
-            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
-            this.testControl1 = new media.TestControl();
+            this.webView21 = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.testControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.webView21)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.MediumSpringGreen;
-            this.panel1.Controls.Add(this.guna2WinProgressIndicator1);
-            this.panel1.Controls.Add(this.webBrowser1);
-            this.panel1.Controls.Add(this.testControl1);
-            this.panel1.Location = new System.Drawing.Point(201, 222);
+            this.panel1.Controls.Add(this.webView21);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(636, 458);
+            this.panel1.Size = new System.Drawing.Size(1096, 718);
             this.panel1.TabIndex = 1;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // guna2WinProgressIndicator1
+            // webView21
             // 
-            this.guna2WinProgressIndicator1.Location = new System.Drawing.Point(372, 179);
-            this.guna2WinProgressIndicator1.Name = "guna2WinProgressIndicator1";
-            this.guna2WinProgressIndicator1.Size = new System.Drawing.Size(90, 90);
-            this.guna2WinProgressIndicator1.TabIndex = 2;
-            // 
-            // webBrowser1
-            // 
-            this.webBrowser1.Location = new System.Drawing.Point(199, 23);
-            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(279, 529);
-            this.webBrowser1.TabIndex = 1;
-            this.webBrowser1.Url = new System.Uri("http://m.facebook.com", System.UriKind.Absolute);
-            // 
-            // testControl1
-            // 
-            this.testControl1.BackgroundImage = global::media.Properties.Resources._335671610_1374871103291531_4501878706397560800_n_modified;
-            this.testControl1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.testControl1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.testControl1.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.testControl1.BorderColor2 = System.Drawing.Color.HotPink;
-            this.testControl1.BorderDashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.testControl1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.testControl1.BorderSize = 5;
-            this.testControl1.GradientAngle = 50F;
-            this.testControl1.Image = global::media.Properties.Resources.Mic;
-            this.testControl1.Location = new System.Drawing.Point(0, 0);
-            this.testControl1.Name = "testControl1";
-            this.testControl1.Size = new System.Drawing.Size(99, 102);
-            this.testControl1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.testControl1.TabIndex = 0;
-            this.testControl1.TabStop = false;
+            this.webView21.AllowExternalDrop = true;
+            this.webView21.CreationProperties = null;
+            this.webView21.DefaultBackgroundColor = System.Drawing.Color.White;
+            this.webView21.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.webView21.Location = new System.Drawing.Point(0, 0);
+            this.webView21.Name = "webView21";
+            this.webView21.Size = new System.Drawing.Size(1096, 718);
+            this.webView21.Source = new System.Uri("https://poki.com/en/g/crazy-cars#", System.UriKind.Absolute);
+            this.webView21.TabIndex = 1;
+            this.webView21.ZoomFactor = 1D;
+            this.webView21.Click += new System.EventHandler(this.webView21_Click);
             // 
             // FormTest
             // 
@@ -90,19 +66,17 @@
             this.BackColor = System.Drawing.Color.MidnightBlue;
             this.ClientSize = new System.Drawing.Size(1096, 718);
             this.Controls.Add(this.panel1);
+            this.DoubleBuffered = true;
             this.Name = "FormTest";
             this.Text = "FormTest";
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.testControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.webView21)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private TestControl testControl1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.WebBrowser webBrowser1;
-        private Guna.UI2.WinForms.Guna2WinProgressIndicator guna2WinProgressIndicator1;
+        private Microsoft.Web.WebView2.WinForms.WebView2 webView21;
     }
 }

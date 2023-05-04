@@ -292,5 +292,10 @@ namespace media
         {
 
         }
+
+        private void guna2Panel21_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

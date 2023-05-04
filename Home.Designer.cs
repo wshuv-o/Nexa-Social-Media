@@ -37,27 +37,22 @@ namespace media
             this.guna2Button12 = new Guna.UI2.WinForms.Guna2Button();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.guna2Panel14 = new Guna.UI2.WinForms.Guna2Panel();
-            this.customRoundPictureBox10 = new media.CustomRoundPictureBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.guna2Button14 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel10 = new Guna.UI2.WinForms.Guna2Panel();
-            this.customRoundPictureBox5 = new media.CustomRoundPictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.guna2Button10 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel11 = new Guna.UI2.WinForms.Guna2Panel();
-            this.customRoundPictureBox6 = new media.CustomRoundPictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.guna2Button11 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel12 = new Guna.UI2.WinForms.Guna2Panel();
-            this.customRoundPictureBox7 = new media.CustomRoundPictureBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.guna2Button13 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel13 = new Guna.UI2.WinForms.Guna2Panel();
-            this.customRoundPictureBox8 = new media.CustomRoundPictureBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.guna2Button15 = new Guna.UI2.WinForms.Guna2Button();
@@ -73,7 +68,6 @@ namespace media
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.label5 = new System.Windows.Forms.Label();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
-            this.customRoundPictureBox1 = new media.CustomRoundPictureBox();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
@@ -82,7 +76,6 @@ namespace media
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             this.label6 = new System.Windows.Forms.Label();
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
-            this.customRoundPictureBox2 = new media.CustomRoundPictureBox();
             this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
@@ -91,7 +84,6 @@ namespace media
             this.guna2Button6 = new Guna.UI2.WinForms.Guna2Button();
             this.label7 = new System.Windows.Forms.Label();
             this.guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
-            this.customRoundPictureBox3 = new media.CustomRoundPictureBox();
             this.guna2Panel8 = new Guna.UI2.WinForms.Guna2Panel();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
@@ -100,7 +92,6 @@ namespace media
             this.guna2Button8 = new Guna.UI2.WinForms.Guna2Button();
             this.label8 = new System.Windows.Forms.Label();
             this.guna2Panel9 = new Guna.UI2.WinForms.Guna2Panel();
-            this.customRoundPictureBox4 = new media.CustomRoundPictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panelFeed = new System.Windows.Forms.FlowLayoutPanel();
             this.panelNavBar = new System.Windows.Forms.Panel();
@@ -109,20 +100,24 @@ namespace media
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.customRoundPictureBox10 = new media.CustomRoundPictureBox();
+            this.customRoundPictureBox5 = new media.CustomRoundPictureBox();
+            this.customRoundPictureBox6 = new media.CustomRoundPictureBox();
+            this.customRoundPictureBox7 = new media.CustomRoundPictureBox();
+            this.customRoundPictureBox8 = new media.CustomRoundPictureBox();
+            this.customRoundPictureBox1 = new media.CustomRoundPictureBox();
+            this.customRoundPictureBox2 = new media.CustomRoundPictureBox();
+            this.customRoundPictureBox3 = new media.CustomRoundPictureBox();
+            this.customRoundPictureBox4 = new media.CustomRoundPictureBox();
             this.panelBaseHome.SuspendLayout();
             this.panelFC.SuspendLayout();
             this.panel3.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.guna2Panel14.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.customRoundPictureBox10)).BeginInit();
             this.guna2Panel10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.customRoundPictureBox5)).BeginInit();
             this.guna2Panel11.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.customRoundPictureBox6)).BeginInit();
             this.guna2Panel12.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.customRoundPictureBox7)).BeginInit();
             this.guna2Panel13.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.customRoundPictureBox8)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
@@ -130,27 +125,32 @@ namespace media
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.customRoundPictureBox1)).BeginInit();
             this.guna2Panel4.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             this.guna2Panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.customRoundPictureBox2)).BeginInit();
             this.guna2Panel6.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
             this.tableLayoutPanel9.SuspendLayout();
             this.guna2Panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.customRoundPictureBox3)).BeginInit();
             this.guna2Panel8.SuspendLayout();
             this.tableLayoutPanel10.SuspendLayout();
             this.tableLayoutPanel11.SuspendLayout();
             this.tableLayoutPanel12.SuspendLayout();
             this.guna2Panel9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.customRoundPictureBox4)).BeginInit();
             this.panelNavBar.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customRoundPictureBox10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customRoundPictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customRoundPictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customRoundPictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customRoundPictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customRoundPictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customRoundPictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customRoundPictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customRoundPictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // panelBaseHome
@@ -158,7 +158,7 @@ namespace media
             this.panelBaseHome.ColumnCount = 3;
             this.panelBaseHome.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.43478F));
             this.panelBaseHome.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 87.56522F));
-            this.panelBaseHome.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 626F));
+            this.panelBaseHome.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 645F));
             this.panelBaseHome.Controls.Add(this.panelFC, 2, 0);
             this.panelBaseHome.Controls.Add(this.panelFeed, 1, 0);
             this.panelBaseHome.Controls.Add(this.panelNavBar, 0, 0);
@@ -180,13 +180,13 @@ namespace media
             this.panelFC.Controls.Add(this.panel3, 0, 1);
             this.panelFC.Controls.Add(this.guna2Panel1, 0, 0);
             this.panelFC.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelFC.Location = new System.Drawing.Point(1301, 4);
+            this.panelFC.Location = new System.Drawing.Point(1282, 4);
             this.panelFC.Margin = new System.Windows.Forms.Padding(4);
             this.panelFC.Name = "panelFC";
             this.panelFC.RowCount = 2;
             this.panelFC.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 51.56951F));
             this.panelFC.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 48.43049F));
-            this.panelFC.Size = new System.Drawing.Size(619, 998);
+            this.panelFC.Size = new System.Drawing.Size(638, 998);
             this.panelFC.TabIndex = 1;
             this.panelFC.Resize += new System.EventHandler(this.panelNavBar_Resize);
             // 
@@ -201,7 +201,7 @@ namespace media
             this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(10);
-            this.panel3.Size = new System.Drawing.Size(611, 476);
+            this.panel3.Size = new System.Drawing.Size(630, 476);
             this.panel3.TabIndex = 3;
             // 
             // guna2Button12
@@ -218,7 +218,7 @@ namespace media
             this.guna2Button12.Location = new System.Drawing.Point(10, 427);
             this.guna2Button12.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
             this.guna2Button12.Name = "guna2Button12";
-            this.guna2Button12.Size = new System.Drawing.Size(591, 39);
+            this.guna2Button12.Size = new System.Drawing.Size(610, 39);
             this.guna2Button12.TabIndex = 3;
             this.guna2Button12.Text = "See All";
             // 
@@ -236,7 +236,7 @@ namespace media
             this.flowLayoutPanel2.Location = new System.Drawing.Point(9, 74);
             this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(577, 347);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(596, 347);
             this.flowLayoutPanel2.TabIndex = 2;
             // 
             // guna2Panel14
@@ -251,24 +251,6 @@ namespace media
             this.guna2Panel14.Name = "guna2Panel14";
             this.guna2Panel14.Size = new System.Drawing.Size(358, 57);
             this.guna2Panel14.TabIndex = 8;
-            // 
-            // customRoundPictureBox10
-            // 
-            this.customRoundPictureBox10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.customRoundPictureBox10.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.customRoundPictureBox10.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.customRoundPictureBox10.BorderColor2 = System.Drawing.Color.HotPink;
-            this.customRoundPictureBox10.BorderDashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.customRoundPictureBox10.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.customRoundPictureBox10.BorderSize = 0;
-            this.customRoundPictureBox10.GradientAngle = 50F;
-            this.customRoundPictureBox10.Image = global::media.Properties.Resources.PicsArt_09_0m7_09_40_49;
-            this.customRoundPictureBox10.Location = new System.Drawing.Point(17, 0);
-            this.customRoundPictureBox10.Name = "customRoundPictureBox10";
-            this.customRoundPictureBox10.Size = new System.Drawing.Size(51, 51);
-            this.customRoundPictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.customRoundPictureBox10.TabIndex = 4;
-            this.customRoundPictureBox10.TabStop = false;
             // 
             // label17
             // 
@@ -327,24 +309,6 @@ namespace media
             this.guna2Panel10.Size = new System.Drawing.Size(358, 57);
             this.guna2Panel10.TabIndex = 9;
             // 
-            // customRoundPictureBox5
-            // 
-            this.customRoundPictureBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.customRoundPictureBox5.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.customRoundPictureBox5.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.customRoundPictureBox5.BorderColor2 = System.Drawing.Color.HotPink;
-            this.customRoundPictureBox5.BorderDashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.customRoundPictureBox5.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.customRoundPictureBox5.BorderSize = 0;
-            this.customRoundPictureBox5.GradientAngle = 50F;
-            this.customRoundPictureBox5.Image = global::media.Properties.Resources.PicsArt_09_0m7_09_40_49;
-            this.customRoundPictureBox5.Location = new System.Drawing.Point(17, 0);
-            this.customRoundPictureBox5.Name = "customRoundPictureBox5";
-            this.customRoundPictureBox5.Size = new System.Drawing.Size(51, 51);
-            this.customRoundPictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.customRoundPictureBox5.TabIndex = 4;
-            this.customRoundPictureBox5.TabStop = false;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -401,24 +365,6 @@ namespace media
             this.guna2Panel11.Name = "guna2Panel11";
             this.guna2Panel11.Size = new System.Drawing.Size(358, 57);
             this.guna2Panel11.TabIndex = 10;
-            // 
-            // customRoundPictureBox6
-            // 
-            this.customRoundPictureBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.customRoundPictureBox6.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.customRoundPictureBox6.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.customRoundPictureBox6.BorderColor2 = System.Drawing.Color.HotPink;
-            this.customRoundPictureBox6.BorderDashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.customRoundPictureBox6.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.customRoundPictureBox6.BorderSize = 0;
-            this.customRoundPictureBox6.GradientAngle = 50F;
-            this.customRoundPictureBox6.Image = global::media.Properties.Resources.PicsArt_09_0m7_09_40_49;
-            this.customRoundPictureBox6.Location = new System.Drawing.Point(17, 0);
-            this.customRoundPictureBox6.Name = "customRoundPictureBox6";
-            this.customRoundPictureBox6.Size = new System.Drawing.Size(51, 51);
-            this.customRoundPictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.customRoundPictureBox6.TabIndex = 4;
-            this.customRoundPictureBox6.TabStop = false;
             // 
             // label4
             // 
@@ -477,24 +423,6 @@ namespace media
             this.guna2Panel12.Size = new System.Drawing.Size(358, 57);
             this.guna2Panel12.TabIndex = 11;
             // 
-            // customRoundPictureBox7
-            // 
-            this.customRoundPictureBox7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.customRoundPictureBox7.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.customRoundPictureBox7.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.customRoundPictureBox7.BorderColor2 = System.Drawing.Color.HotPink;
-            this.customRoundPictureBox7.BorderDashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.customRoundPictureBox7.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.customRoundPictureBox7.BorderSize = 0;
-            this.customRoundPictureBox7.GradientAngle = 50F;
-            this.customRoundPictureBox7.Image = global::media.Properties.Resources.PicsArt_09_0m7_09_40_49;
-            this.customRoundPictureBox7.Location = new System.Drawing.Point(17, 0);
-            this.customRoundPictureBox7.Name = "customRoundPictureBox7";
-            this.customRoundPictureBox7.Size = new System.Drawing.Size(51, 51);
-            this.customRoundPictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.customRoundPictureBox7.TabIndex = 4;
-            this.customRoundPictureBox7.TabStop = false;
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -551,24 +479,6 @@ namespace media
             this.guna2Panel13.Name = "guna2Panel13";
             this.guna2Panel13.Size = new System.Drawing.Size(358, 57);
             this.guna2Panel13.TabIndex = 12;
-            // 
-            // customRoundPictureBox8
-            // 
-            this.customRoundPictureBox8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.customRoundPictureBox8.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.customRoundPictureBox8.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.customRoundPictureBox8.BorderColor2 = System.Drawing.Color.HotPink;
-            this.customRoundPictureBox8.BorderDashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.customRoundPictureBox8.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.customRoundPictureBox8.BorderSize = 0;
-            this.customRoundPictureBox8.GradientAngle = 50F;
-            this.customRoundPictureBox8.Image = global::media.Properties.Resources.PicsArt_09_0m7_09_40_49;
-            this.customRoundPictureBox8.Location = new System.Drawing.Point(17, 0);
-            this.customRoundPictureBox8.Name = "customRoundPictureBox8";
-            this.customRoundPictureBox8.Size = new System.Drawing.Size(51, 51);
-            this.customRoundPictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.customRoundPictureBox8.TabIndex = 4;
-            this.customRoundPictureBox8.TabStop = false;
             // 
             // label12
             // 
@@ -636,7 +546,7 @@ namespace media
             this.guna2Panel1.Location = new System.Drawing.Point(3, 3);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Padding = new System.Windows.Forms.Padding(10, 10, 10, 0);
-            this.guna2Panel1.Size = new System.Drawing.Size(613, 508);
+            this.guna2Panel1.Size = new System.Drawing.Size(632, 508);
             this.guna2Panel1.TabIndex = 4;
             this.guna2Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel1_Paint);
             // 
@@ -653,7 +563,7 @@ namespace media
             this.guna2Button9.ForeColor = System.Drawing.Color.Black;
             this.guna2Button9.Location = new System.Drawing.Point(10, 469);
             this.guna2Button9.Name = "guna2Button9";
-            this.guna2Button9.Size = new System.Drawing.Size(593, 39);
+            this.guna2Button9.Size = new System.Drawing.Size(612, 39);
             this.guna2Button9.TabIndex = 2;
             this.guna2Button9.Text = "See All";
             // 
@@ -669,7 +579,7 @@ namespace media
             this.flowLayoutPanel1.Controls.Add(this.guna2Panel8);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(10, 66);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(593, 397);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(612, 397);
             this.flowLayoutPanel1.TabIndex = 1;
             this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
@@ -801,26 +711,6 @@ namespace media
             this.guna2Panel3.TabIndex = 1;
             this.guna2Panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel3_Paint);
             // 
-            // customRoundPictureBox1
-            // 
-            this.customRoundPictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.customRoundPictureBox1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.customRoundPictureBox1.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.customRoundPictureBox1.BorderColor2 = System.Drawing.Color.HotPink;
-            this.customRoundPictureBox1.BorderDashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.customRoundPictureBox1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.customRoundPictureBox1.BorderSize = 2;
-            this.customRoundPictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.customRoundPictureBox1.GradientAngle = 50F;
-            this.customRoundPictureBox1.Image = global::media.Properties.Resources.PicsArt_09_0m7_09_40_49;
-            this.customRoundPictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.customRoundPictureBox1.Name = "customRoundPictureBox1";
-            this.customRoundPictureBox1.Size = new System.Drawing.Size(85, 85);
-            this.customRoundPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.customRoundPictureBox1.TabIndex = 1;
-            this.customRoundPictureBox1.TabStop = false;
-            this.customRoundPictureBox1.Click += new System.EventHandler(this.customRoundPictureBox1_Click);
-            // 
             // guna2Panel4
             // 
             this.guna2Panel4.BackColor = System.Drawing.Color.Yellow;
@@ -946,25 +836,6 @@ namespace media
             this.guna2Panel5.Name = "guna2Panel5";
             this.guna2Panel5.Size = new System.Drawing.Size(85, 85);
             this.guna2Panel5.TabIndex = 1;
-            // 
-            // customRoundPictureBox2
-            // 
-            this.customRoundPictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.customRoundPictureBox2.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.customRoundPictureBox2.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.customRoundPictureBox2.BorderColor2 = System.Drawing.Color.HotPink;
-            this.customRoundPictureBox2.BorderDashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.customRoundPictureBox2.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.customRoundPictureBox2.BorderSize = 2;
-            this.customRoundPictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.customRoundPictureBox2.GradientAngle = 50F;
-            this.customRoundPictureBox2.Image = global::media.Properties.Resources.PicsArt_09_0m7_09_40_49;
-            this.customRoundPictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.customRoundPictureBox2.Name = "customRoundPictureBox2";
-            this.customRoundPictureBox2.Size = new System.Drawing.Size(85, 85);
-            this.customRoundPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.customRoundPictureBox2.TabIndex = 1;
-            this.customRoundPictureBox2.TabStop = false;
             // 
             // guna2Panel6
             // 
@@ -1092,25 +963,6 @@ namespace media
             this.guna2Panel7.Size = new System.Drawing.Size(85, 85);
             this.guna2Panel7.TabIndex = 1;
             // 
-            // customRoundPictureBox3
-            // 
-            this.customRoundPictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.customRoundPictureBox3.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.customRoundPictureBox3.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.customRoundPictureBox3.BorderColor2 = System.Drawing.Color.HotPink;
-            this.customRoundPictureBox3.BorderDashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.customRoundPictureBox3.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.customRoundPictureBox3.BorderSize = 2;
-            this.customRoundPictureBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.customRoundPictureBox3.GradientAngle = 50F;
-            this.customRoundPictureBox3.Image = global::media.Properties.Resources.PicsArt_09_0m7_09_40_49;
-            this.customRoundPictureBox3.Location = new System.Drawing.Point(0, 0);
-            this.customRoundPictureBox3.Name = "customRoundPictureBox3";
-            this.customRoundPictureBox3.Size = new System.Drawing.Size(85, 85);
-            this.customRoundPictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.customRoundPictureBox3.TabIndex = 1;
-            this.customRoundPictureBox3.TabStop = false;
-            // 
             // guna2Panel8
             // 
             this.guna2Panel8.BackColor = System.Drawing.Color.Yellow;
@@ -1237,25 +1089,6 @@ namespace media
             this.guna2Panel9.Size = new System.Drawing.Size(85, 85);
             this.guna2Panel9.TabIndex = 1;
             // 
-            // customRoundPictureBox4
-            // 
-            this.customRoundPictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.customRoundPictureBox4.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.customRoundPictureBox4.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.customRoundPictureBox4.BorderColor2 = System.Drawing.Color.HotPink;
-            this.customRoundPictureBox4.BorderDashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.customRoundPictureBox4.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.customRoundPictureBox4.BorderSize = 2;
-            this.customRoundPictureBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.customRoundPictureBox4.GradientAngle = 50F;
-            this.customRoundPictureBox4.Image = global::media.Properties.Resources.PicsArt_09_0m7_09_40_49;
-            this.customRoundPictureBox4.Location = new System.Drawing.Point(0, 0);
-            this.customRoundPictureBox4.Name = "customRoundPictureBox4";
-            this.customRoundPictureBox4.Size = new System.Drawing.Size(85, 85);
-            this.customRoundPictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.customRoundPictureBox4.TabIndex = 1;
-            this.customRoundPictureBox4.TabStop = false;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -1273,11 +1106,11 @@ namespace media
             this.panelFeed.AutoScroll = true;
             this.panelFeed.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panelFeed.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelFeed.Location = new System.Drawing.Point(165, 4);
+            this.panelFeed.Location = new System.Drawing.Point(163, 4);
             this.panelFeed.Margin = new System.Windows.Forms.Padding(4);
             this.panelFeed.Name = "panelFeed";
             this.panelFeed.Padding = new System.Windows.Forms.Padding(53, 25, 27, 25);
-            this.panelFeed.Size = new System.Drawing.Size(1128, 998);
+            this.panelFeed.Size = new System.Drawing.Size(1111, 998);
             this.panelFeed.TabIndex = 2;
             this.panelFeed.Paint += new System.Windows.Forms.PaintEventHandler(this.panelFeed_Paint);
             this.panelFeed.Resize += new System.EventHandler(this.panelNavBar_Resize);
@@ -1291,7 +1124,7 @@ namespace media
             this.panelNavBar.Location = new System.Drawing.Point(4, 4);
             this.panelNavBar.Margin = new System.Windows.Forms.Padding(4);
             this.panelNavBar.Name = "panelNavBar";
-            this.panelNavBar.Size = new System.Drawing.Size(153, 998);
+            this.panelNavBar.Size = new System.Drawing.Size(151, 998);
             this.panelNavBar.TabIndex = 0;
             this.panelNavBar.Resize += new System.EventHandler(this.panelNavBar_Resize);
             // 
@@ -1315,7 +1148,7 @@ namespace media
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(153, 998);
+            this.panel1.Size = new System.Drawing.Size(151, 998);
             this.panel1.TabIndex = 1;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint_1);
             // 
@@ -1353,6 +1186,173 @@ namespace media
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
+            // customRoundPictureBox10
+            // 
+            this.customRoundPictureBox10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.customRoundPictureBox10.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.customRoundPictureBox10.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.customRoundPictureBox10.BorderColor2 = System.Drawing.Color.HotPink;
+            this.customRoundPictureBox10.BorderDashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.customRoundPictureBox10.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.customRoundPictureBox10.BorderSize = 0;
+            this.customRoundPictureBox10.GradientAngle = 50F;
+            this.customRoundPictureBox10.Image = global::media.Properties.Resources.PicsArt_09_0m7_09_40_49;
+            this.customRoundPictureBox10.Location = new System.Drawing.Point(17, 0);
+            this.customRoundPictureBox10.Name = "customRoundPictureBox10";
+            this.customRoundPictureBox10.Size = new System.Drawing.Size(51, 51);
+            this.customRoundPictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.customRoundPictureBox10.TabIndex = 4;
+            this.customRoundPictureBox10.TabStop = false;
+            // 
+            // customRoundPictureBox5
+            // 
+            this.customRoundPictureBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.customRoundPictureBox5.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.customRoundPictureBox5.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.customRoundPictureBox5.BorderColor2 = System.Drawing.Color.HotPink;
+            this.customRoundPictureBox5.BorderDashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.customRoundPictureBox5.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.customRoundPictureBox5.BorderSize = 0;
+            this.customRoundPictureBox5.GradientAngle = 50F;
+            this.customRoundPictureBox5.Image = global::media.Properties.Resources.PicsArt_09_0m7_09_40_49;
+            this.customRoundPictureBox5.Location = new System.Drawing.Point(17, 0);
+            this.customRoundPictureBox5.Name = "customRoundPictureBox5";
+            this.customRoundPictureBox5.Size = new System.Drawing.Size(51, 51);
+            this.customRoundPictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.customRoundPictureBox5.TabIndex = 4;
+            this.customRoundPictureBox5.TabStop = false;
+            // 
+            // customRoundPictureBox6
+            // 
+            this.customRoundPictureBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.customRoundPictureBox6.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.customRoundPictureBox6.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.customRoundPictureBox6.BorderColor2 = System.Drawing.Color.HotPink;
+            this.customRoundPictureBox6.BorderDashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.customRoundPictureBox6.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.customRoundPictureBox6.BorderSize = 0;
+            this.customRoundPictureBox6.GradientAngle = 50F;
+            this.customRoundPictureBox6.Image = global::media.Properties.Resources.PicsArt_09_0m7_09_40_49;
+            this.customRoundPictureBox6.Location = new System.Drawing.Point(17, 0);
+            this.customRoundPictureBox6.Name = "customRoundPictureBox6";
+            this.customRoundPictureBox6.Size = new System.Drawing.Size(51, 51);
+            this.customRoundPictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.customRoundPictureBox6.TabIndex = 4;
+            this.customRoundPictureBox6.TabStop = false;
+            // 
+            // customRoundPictureBox7
+            // 
+            this.customRoundPictureBox7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.customRoundPictureBox7.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.customRoundPictureBox7.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.customRoundPictureBox7.BorderColor2 = System.Drawing.Color.HotPink;
+            this.customRoundPictureBox7.BorderDashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.customRoundPictureBox7.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.customRoundPictureBox7.BorderSize = 0;
+            this.customRoundPictureBox7.GradientAngle = 50F;
+            this.customRoundPictureBox7.Image = global::media.Properties.Resources.PicsArt_09_0m7_09_40_49;
+            this.customRoundPictureBox7.Location = new System.Drawing.Point(17, 0);
+            this.customRoundPictureBox7.Name = "customRoundPictureBox7";
+            this.customRoundPictureBox7.Size = new System.Drawing.Size(51, 51);
+            this.customRoundPictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.customRoundPictureBox7.TabIndex = 4;
+            this.customRoundPictureBox7.TabStop = false;
+            // 
+            // customRoundPictureBox8
+            // 
+            this.customRoundPictureBox8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.customRoundPictureBox8.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.customRoundPictureBox8.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.customRoundPictureBox8.BorderColor2 = System.Drawing.Color.HotPink;
+            this.customRoundPictureBox8.BorderDashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.customRoundPictureBox8.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.customRoundPictureBox8.BorderSize = 0;
+            this.customRoundPictureBox8.GradientAngle = 50F;
+            this.customRoundPictureBox8.Image = global::media.Properties.Resources.PicsArt_09_0m7_09_40_49;
+            this.customRoundPictureBox8.Location = new System.Drawing.Point(17, 0);
+            this.customRoundPictureBox8.Name = "customRoundPictureBox8";
+            this.customRoundPictureBox8.Size = new System.Drawing.Size(51, 51);
+            this.customRoundPictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.customRoundPictureBox8.TabIndex = 4;
+            this.customRoundPictureBox8.TabStop = false;
+            // 
+            // customRoundPictureBox1
+            // 
+            this.customRoundPictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.customRoundPictureBox1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.customRoundPictureBox1.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.customRoundPictureBox1.BorderColor2 = System.Drawing.Color.HotPink;
+            this.customRoundPictureBox1.BorderDashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.customRoundPictureBox1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.customRoundPictureBox1.BorderSize = 2;
+            this.customRoundPictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.customRoundPictureBox1.GradientAngle = 50F;
+            this.customRoundPictureBox1.Image = global::media.Properties.Resources.PicsArt_09_0m7_09_40_49;
+            this.customRoundPictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.customRoundPictureBox1.Name = "customRoundPictureBox1";
+            this.customRoundPictureBox1.Size = new System.Drawing.Size(85, 85);
+            this.customRoundPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.customRoundPictureBox1.TabIndex = 1;
+            this.customRoundPictureBox1.TabStop = false;
+            this.customRoundPictureBox1.Click += new System.EventHandler(this.customRoundPictureBox1_Click);
+            // 
+            // customRoundPictureBox2
+            // 
+            this.customRoundPictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.customRoundPictureBox2.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.customRoundPictureBox2.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.customRoundPictureBox2.BorderColor2 = System.Drawing.Color.HotPink;
+            this.customRoundPictureBox2.BorderDashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.customRoundPictureBox2.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.customRoundPictureBox2.BorderSize = 2;
+            this.customRoundPictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.customRoundPictureBox2.GradientAngle = 50F;
+            this.customRoundPictureBox2.Image = global::media.Properties.Resources.PicsArt_09_0m7_09_40_49;
+            this.customRoundPictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.customRoundPictureBox2.Name = "customRoundPictureBox2";
+            this.customRoundPictureBox2.Size = new System.Drawing.Size(85, 85);
+            this.customRoundPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.customRoundPictureBox2.TabIndex = 1;
+            this.customRoundPictureBox2.TabStop = false;
+            // 
+            // customRoundPictureBox3
+            // 
+            this.customRoundPictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.customRoundPictureBox3.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.customRoundPictureBox3.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.customRoundPictureBox3.BorderColor2 = System.Drawing.Color.HotPink;
+            this.customRoundPictureBox3.BorderDashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.customRoundPictureBox3.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.customRoundPictureBox3.BorderSize = 2;
+            this.customRoundPictureBox3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.customRoundPictureBox3.GradientAngle = 50F;
+            this.customRoundPictureBox3.Image = global::media.Properties.Resources.PicsArt_09_0m7_09_40_49;
+            this.customRoundPictureBox3.Location = new System.Drawing.Point(0, 0);
+            this.customRoundPictureBox3.Name = "customRoundPictureBox3";
+            this.customRoundPictureBox3.Size = new System.Drawing.Size(85, 85);
+            this.customRoundPictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.customRoundPictureBox3.TabIndex = 1;
+            this.customRoundPictureBox3.TabStop = false;
+            // 
+            // customRoundPictureBox4
+            // 
+            this.customRoundPictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.customRoundPictureBox4.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.customRoundPictureBox4.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.customRoundPictureBox4.BorderColor2 = System.Drawing.Color.HotPink;
+            this.customRoundPictureBox4.BorderDashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.customRoundPictureBox4.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.customRoundPictureBox4.BorderSize = 2;
+            this.customRoundPictureBox4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.customRoundPictureBox4.GradientAngle = 50F;
+            this.customRoundPictureBox4.Image = global::media.Properties.Resources.PicsArt_09_0m7_09_40_49;
+            this.customRoundPictureBox4.Location = new System.Drawing.Point(0, 0);
+            this.customRoundPictureBox4.Name = "customRoundPictureBox4";
+            this.customRoundPictureBox4.Size = new System.Drawing.Size(85, 85);
+            this.customRoundPictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.customRoundPictureBox4.TabIndex = 1;
+            this.customRoundPictureBox4.TabStop = false;
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1370,19 +1370,14 @@ namespace media
             this.flowLayoutPanel2.ResumeLayout(false);
             this.guna2Panel14.ResumeLayout(false);
             this.guna2Panel14.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.customRoundPictureBox10)).EndInit();
             this.guna2Panel10.ResumeLayout(false);
             this.guna2Panel10.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.customRoundPictureBox5)).EndInit();
             this.guna2Panel11.ResumeLayout(false);
             this.guna2Panel11.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.customRoundPictureBox6)).EndInit();
             this.guna2Panel12.ResumeLayout(false);
             this.guna2Panel12.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.customRoundPictureBox7)).EndInit();
             this.guna2Panel13.ResumeLayout(false);
             this.guna2Panel13.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.customRoundPictureBox8)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
@@ -1392,30 +1387,35 @@ namespace media
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.guna2Panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.customRoundPictureBox1)).EndInit();
             this.guna2Panel4.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
             this.tableLayoutPanel6.ResumeLayout(false);
             this.guna2Panel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.customRoundPictureBox2)).EndInit();
             this.guna2Panel6.ResumeLayout(false);
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel8.ResumeLayout(false);
             this.tableLayoutPanel8.PerformLayout();
             this.tableLayoutPanel9.ResumeLayout(false);
             this.guna2Panel7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.customRoundPictureBox3)).EndInit();
             this.guna2Panel8.ResumeLayout(false);
             this.tableLayoutPanel10.ResumeLayout(false);
             this.tableLayoutPanel11.ResumeLayout(false);
             this.tableLayoutPanel11.PerformLayout();
             this.tableLayoutPanel12.ResumeLayout(false);
             this.guna2Panel9.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.customRoundPictureBox4)).EndInit();
             this.panelNavBar.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.customRoundPictureBox10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customRoundPictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customRoundPictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customRoundPictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customRoundPictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customRoundPictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customRoundPictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customRoundPictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customRoundPictureBox4)).EndInit();
             this.ResumeLayout(false);
 
         }

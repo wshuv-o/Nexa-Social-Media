@@ -31,10 +31,8 @@ namespace media
                     SetProcessDPIAware();
                 }
             }
-
-            Application.Run(new Nexa());
+            Application.Run(new MarketPlaceStats());
         }
-
         [DllImport("user32.dll")]
         private static extern bool SetProcessDPIAware();
     }

@@ -97,7 +97,7 @@ namespace media
                     if (value >= 0)
                     {
                         borderRadius = value;
-                        this.Invalidate();//Redraw control
+                        this.Invalidate();
                     }
                 }
             }
@@ -107,9 +107,9 @@ namespace media
                 base.OnPaint(e);
                 Graphics graph = e.Graphics;
 
-                if (borderRadius > 1)//Rounded TextBox
+                if (borderRadius > 1)
                 {
-                    //-Fields
+                  
                     var rectBorderSmooth = this.ClientRectangle;
                     var rectBorder = Rectangle.Inflate(rectBorderSmooth, -borderSize, -borderSize);
                     int smoothSize = borderSize > 0 ? borderSize : 1;
@@ -119,26 +119,23 @@ namespace media
                     using (Pen penBorderSmooth = new Pen(this.Parent.BackColor, smoothSize))
                     using (Pen penBorder = new Pen(borderColor, borderSize))
                     {
-                        //-Drawing
-                        this.Region = new Region(pathBorderSmooth);//Set the rounded region of UserControl
-                        if (borderRadius > 30) SetTextBoxRoundedRegion();//Set the rounded region of TextBox component
+                        this.Region = new Region(pathBorderSmooth);
+                        if (borderRadius > 30) SetTextBoxRoundedRegion();
                         graph.SmoothingMode = SmoothingMode.AntiAlias;
                         penBorder.Alignment = System.Drawing.Drawing2D.PenAlignment.Center;
                         if (isFocused) penBorder.Color = borderFocusColor;
 
-                        if (underlinedStyle) //Line Style
+                        if (underlinedStyle) 
                         {
-                            //Draw border smoothing
+                           
                             graph.DrawPath(penBorderSmooth, pathBorderSmooth);
-                            //Draw border
                             graph.SmoothingMode = SmoothingMode.None;
                             graph.DrawLine(penBorder, 0, this.Height - 1, this.Width, this.Height - 1);
                         }
-                        else //Normal Style
+                        else 
                         {
-                            //Draw border smoothing
+                           
                             graph.DrawPath(penBorderSmooth, pathBorderSmooth);
-                            //Draw border
                             graph.DrawPath(penBorder, pathBorder);
                         }
                     }

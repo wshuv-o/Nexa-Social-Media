@@ -37,7 +37,7 @@ namespace media
                 using (MySqlConnection conn = new MySqlConnection(connString))
                 {
                     conn.Open();
-                    string query = "SELECT password FROM user WHERE email=@Email";
+                    string query = "SELECT  password  FROM user WHERE email=@Email";
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@Email", email);
@@ -131,7 +131,6 @@ namespace media
                     user.Gender = reader.GetString("gender");
                     user.Bio = reader.GetString("bio");
                     //MessageBox.Show(" " + user.Key);
-
 
                 }
                 reader.Close();

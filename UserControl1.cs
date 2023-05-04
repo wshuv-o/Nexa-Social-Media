@@ -10,23 +10,11 @@ using System.Windows.Forms;
 
 namespace media
 {
-    public partial class FormTest : Form
+    public partial class UserControl1 : UserControl
     {
-        public FormTest()
+        public UserControl1()
         {
             InitializeComponent();
-            Methods.SetDoubleBuffer(panel1, true);
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void webView21_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
