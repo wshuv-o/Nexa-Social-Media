@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 
 namespace media.Classes
 {
-    internal class ClassPost
+    public class ClassPost
     {
         
+        private int postId;
         private string postText;
         private DateTime postTime;
         private Image[] postImages;
@@ -20,6 +21,11 @@ namespace media.Classes
         {
             get { return this.postText; }
             set { this.postText = value; }
+        }
+        public int PostId
+        {
+            get { return this.postId; }
+            set { this.postId = value; }
         }
         public DateTime PostTime
         {
@@ -42,7 +48,7 @@ namespace media.Classes
                 this.permission = value;
             }
         }
-        private int NoOfReacts
+        public int NoOfReacts
         {
             get { return this.noOfReacts; }
             set
@@ -55,13 +61,23 @@ namespace media.Classes
             get { return this.classMedias; }
             set { this.classMedias = value; }
         }
-        public ClassPost(string postText, DateTime postTime, Image[] postImages, string permission, ClassMedia[] classMedias, int noOfReacts)
+        public ClassPost(int postId, string postText, DateTime postTime, Image[] postImages, string permission, ClassMedia[] classMedias, int noOfReacts)
         {
+            this.PostId = postId;
             this.PostText = postText;
             this.PostTime = postTime;
             this.PostImages = postImages;
             this.Permission = permission;
             this.ClassMedias = classMedias;
         }
+        public ClassPost(int postId, string postText, DateTime postTime, Image[] postImages, string permission, int noOfReacts)
+        {
+            this.PostId = postId;
+            this.PostText = postText;
+            this.PostTime = postTime;
+            this.PostImages = postImages;
+            this.Permission = permission;
+        }
+        public ClassPost() { }
     }
 }

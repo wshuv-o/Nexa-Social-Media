@@ -1,16 +1,10 @@
 ﻿using Guna.UI2.WinForms;
-using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+
 
 namespace media
 {
-    internal class ClassPost
+    internal class PostAdopter
     {
         public Guna2Panel panelBase;
         public Guna2Panel panelChild;
@@ -20,8 +14,9 @@ namespace media
             get { return a; }
             set { a = value; }
         }
-        public ClassPost()
+        public PostAdopter(media.Classes.ClassPost classPosts)
         {
+           // this.A= new Post(classPosts);
             /*this.A = new Post();
             panelBase = new Guna2Panel();
             panelChild = new Guna2Panel();
@@ -58,14 +53,14 @@ namespace media
             Methods.OpenChildForm(this.A, panelChild);
 
             // panelBase.Height = a.basePanel.Height;
-            // panelBase.Width = 866;
+           
             //panelChild.Height = a.basePanel.Height;
             //panelChild.Width = 766;
             //panelChild.Height = a.Height;
             *///panelFeed.Controls.Add(panelBase);
 
 
-            a= new Post();
+                a= new Post(classPosts);
                 panelBase = new Guna2Panel();
                 panelChild = new Guna2Panel();
 
@@ -90,7 +85,14 @@ namespace media
                 panelChild.BorderRadius = 20;
                 panelChild.BackColor = Color.White;
 
-                Methods.OpenChildForm(a, panelChild);
+                /*panelBase.Width = 866;
+                panelBase.Height = 800;
+
+                panelChild.Height = 800;
+                panelChild.Width = 766;
+                panelChild.Height = 800;*/
+
+            Methods.OpenChildForm(a, panelChild);
 
                 //parentPanel.Controls.Add(panelBase);
             

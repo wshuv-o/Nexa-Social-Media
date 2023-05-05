@@ -13,10 +13,16 @@ namespace media
         private string ConnectionString = DatabaseCredentials.connectionStringLocalServer;
         private int userId;
         private Image image;
+        private int postId;
         public int UserId
         {
             get { return this.userId; }
             set { this.userId = value; }
+        }
+        public int PostId
+        {
+            get { return this.postId; }
+            set { this.postId = value; }
         }
         public Image Image
         {
@@ -65,6 +71,19 @@ namespace media
             image = ByteArrayToImage(imageBytes);
             return image;
         }
+        public Image LoadPostImageFromDataBase(int postId)
+        {
+            this.PostId = postId;
+            byte[] imageBytes = GetPostImage(this.PostId);
+            if (imageBytes == null)
+            {
+                MessageBox.Show("No image found for the post ID " + PostId + ".", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+
+            image = ByteArrayToImage(imageBytes);
+            return image;
+        }
 
         private byte[] ImageToByteArray(Image image)
         {
@@ -107,6 +126,35 @@ namespace media
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@userId", userId);
+
+                    using (MySqlDataReader reader = command.ExecuteReader(CommandBehavior.SingleRow))
+                    {
+                        if (reader.Read())
+                        {
+                            if (!reader.IsDBNull(0))
+                            {
+                                return (byte[])reader[0];
+                            }
+                        }
+                    }
+                }
+            }
+
+            return null;
+        }
+        public byte[] GetPostImage(int postId)
+        {
+            this.PostId = postId;
+
+            using (MySqlConnection connection = new MySqlConnection(ConnectionString))
+            {
+                connection.Open();
+
+                string query = "SELECT image FROM mediacontent_postuser WHERE postid = @postID";
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@postID", postId);
 
                     using (MySqlDataReader reader = command.ExecuteReader(CommandBehavior.SingleRow))
                     {

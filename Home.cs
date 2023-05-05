@@ -1,4 +1,6 @@
 ﻿using Guna.UI2.WinForms;
+using media.Classes;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,8 +16,11 @@ namespace media
 {
     public partial class Home : Form
     {
+       
+
         public Home()
         {
+            media.Classes.ClassPost[] classPostList= new media.Classes.ClassPost[20]; 
             InitializeComponent();
             panelBaseHome.ColumnStyles[0] = new ColumnStyle(SizeType.Percent, 40F);
             panelBaseHome.ColumnStyles[2] = new ColumnStyle(SizeType.Percent,40F);
@@ -23,9 +28,6 @@ namespace media
             panelFeed.Resize += new System.EventHandler(this.panelNavBar_Resize);
             Methods.RoundPanelCorners(ref panelNavBar, 20);
             Methods.RoundPanelCorners(ref flowLayoutPanel2, 20);
-            //Methods.RoundPanelCorners(ref panel3, 20);
-           // Methods.RoundPanelCorners(ref panelSavior, 20);
-
 
             this.panelNavBar.Resize += (sender, e) =>
             {
@@ -46,34 +48,10 @@ namespace media
             this.guna2Panel2.Resize += (sender, e) =>
             {
                 guna2Panel2.Width = flowLayoutPanel1.Width;
-                // Methods.RoundPanelCorners(ref panel4, 20);
 
             };
-            //this.Visible = true;
 
-            /*this.panelSavior.Resize += (sender, e) =>
-             {
-                 this.panel3.Height += this.panel1.Height;
-                 this.panel3.Width += this.panel3.Width;
-                 Methods.RoundPanelCorners(ref this.panelSavior, 20);
-             };*/
 
-            /* ClassPost[] cp = new ClassPost[5];
-             for (int i = 0; i < 5; i++)
-             {
-                 Post a = new Post();
-                 cp[i] = new ClassPost(a, panelFeed);
-             }*/
-            Post[] posts = new Post[5];
-            ClassPost[] classPosts = new ClassPost[5];
-
-            for (int i = 0; i < 5; i++)
-            {
-                classPosts[i] = new ClassPost();
-                posts[i] = new Post();
-                Methods.OpenChildForm2(posts[i], classPosts[i].panelBase);
-                panelFeed.Controls.Add(classPosts[i].panelBase);
-            }
             Methods.SetDoubleBuffer(panel1, true);
             Methods.SetDoubleBuffer(panel3, true);
             Methods.SetDoubleBuffer(panelBaseHome, true);
@@ -84,17 +62,86 @@ namespace media
             Methods.SetDoubleBuffer(panelFeed, true);
             Methods.SetDoubleBuffer(flowLayoutPanel2, true);
 
+            string connectionString = DatabaseCredentials.connectionStringLocalServer;
+            MySqlConnection connection = new MySqlConnection(connectionString);
+            connection.Open();
+            string query = @"SELECT p.postid, p.posttext, p.posttime, p.postPermission, p.postReactCount, i.image
+                FROM postofuser p
+                JOIN mediacontent_postuser i ON i.postid = p.postid
+                JOIN friends f ON f.nativeuserid = p.userid";
+            MySqlCommand command = new MySqlCommand(query, connection);
+            MySqlDataReader reader = command.ExecuteReader();
+            int j = 0;
+            while (reader.Read())
+            {
+                DBImageOperation dbio= new DBImageOperation();
+                int postID = reader.GetInt32("postid");
+                string postText = (string)reader["posttext"];
+                DateTime postTime = reader.GetDateTime("posttime");
+                string postPermission = (string)reader["postPermission"];
+                int postReact = (int)reader["postReactCount"];
+                //string mediaContent = (string)reader["image"];
+                System.Drawing.Image[] postImage = new System.Drawing.Image[2];
+                postImage[0] = dbio.LoadPostImageFromDataBase(postID);
+                Classes.ClassPost p = new Classes.ClassPost(postID, postText, postTime, postImage, postPermission, postReact);
+                //MessageBox.Show(p.PostText);
+                classPostList[j] = new Classes.ClassPost();
+                classPostList[j]=p;
+                j++;
 
+            }
+            reader.Close();
+            connection.Close();
+
+            Post[] posts = new Post[5];
+            PostAdopter[] postAdopters = new PostAdopter[5];
+            string s = new string('e','e');
+            //ClassPost[] distinctPosts = new ClassPost[20];
+            //ClassPost[] distinctPostList = classPostList.GroupBy(p => p.PostId).Select(g => g.First()).ToArray();
+            ClassPost[] distinctPostList = null ;
+            if (classPostList != null && classPostList.Length > 0)
+            {
+               distinctPostList = classPostList
+                    .Where(p => p != null) // Filter out any null objects
+                    .GroupBy(p => p.PostId)
+                    .Select(g => g.First())
+                    .ToArray();
+            }
+            MessageBox.Show(distinctPostList.Length.ToString());
+
+            foreach (media.Classes.ClassPost c in classPostList)
+            {
+                if (c != null)
+                {
+                    s = s + c.PostText + "\n";
+                }
+            }
+            MessageBox.Show(s);
+            s = "";
+            foreach (media.Classes.ClassPost c in distinctPostList)
+            {
+                if (c != null)
+                {
+                    s = s + +c.PostId+"  "+c.PostText + "\n\n";
+                }
+            }
+            MessageBox.Show(s);
+
+            for (int i = 0; i < 4; i++)
+            {
+                postAdopters[i] = new PostAdopter(distinctPostList[i]);
+                posts[i] = new Post(distinctPostList[i]);
+                Methods.OpenChildForm2(posts[i], postAdopters[i].panelBase);
+                panelFeed.Controls.Add(postAdopters[i].panelBase);
+            }
         }
 
 
 
         private void panelFeed_Paint(object sender, PaintEventArgs e)
         {
-            // Check if the panel has vertical scrollbar
             if (panelFeed.VerticalScroll.Visible)
             {
-                // Draw the vertical scrollbar using a custom color
                 int scrollbarWidth = SystemInformation.VerticalScrollBarWidth;
                 int scrollbarX = panelFeed.Width - scrollbarWidth;
                 int scrollbarY = panelFeed.VerticalScroll.Value * (panelFeed.Height - scrollbarWidth) /
@@ -107,10 +154,8 @@ namespace media
                 }
             }
 
-            // Check if the panel has horizontal scrollbar
             if (panelFeed.HorizontalScroll.Visible)
             {
-                // Draw the horizontal scrollbar using a custom color
                 int scrollbarHeight = SystemInformation.HorizontalScrollBarHeight;
                 int scrollbarX = panelFeed.HorizontalScroll.Value * (panelFeed.Width - scrollbarHeight) /
                     (panelFeed.HorizontalScroll.Maximum - panelFeed.HorizontalScroll.Minimum);
@@ -189,9 +234,8 @@ namespace media
             panelBase.Size = new System.Drawing.Size(866, 850);
             panelBase.TabIndex = 1;
             panelBase.Paint += new System.Windows.Forms.PaintEventHandler(panelBase_Paint);
-            // 
-            // panel2
-            // 
+
+
             panelChild.BackColor = System.Drawing.SystemColors.ControlLightLight;
             panelChild.Dock = System.Windows.Forms.DockStyle.Fill;
             panelChild.Location = new System.Drawing.Point(50, 0);

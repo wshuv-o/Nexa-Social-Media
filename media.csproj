@@ -261,7 +261,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClassPost.cs" />
+    <Compile Include="PostAdopter.cs" />
     <Compile Include="CreateProduct.cs">
       <SubType>Form</SubType>
     </Compile>

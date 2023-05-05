@@ -1,16 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Drawing.Drawing2D;
-using System.Drawing;
-using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 using media.Classes;
 
@@ -34,7 +23,6 @@ namespace media
             this.NativeUser = nativeUser;
             InitializeComponent();
             Methods.SetDoubleBuffer(panelSubMain, true);
-
 
         }
         public void openChildForm(Form childForm)
@@ -65,11 +53,6 @@ namespace media
             }
 
         }
-        public void f()
-        {
-
-        }
-
 
         private void Form1_Load(object sender, EventArgs e)
         {

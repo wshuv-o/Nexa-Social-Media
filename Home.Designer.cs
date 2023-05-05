@@ -158,7 +158,7 @@ namespace media
             this.panelBaseHome.ColumnCount = 3;
             this.panelBaseHome.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.43478F));
             this.panelBaseHome.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 87.56522F));
-            this.panelBaseHome.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 645F));
+            this.panelBaseHome.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 656F));
             this.panelBaseHome.Controls.Add(this.panelFC, 2, 0);
             this.panelBaseHome.Controls.Add(this.panelFeed, 1, 0);
             this.panelBaseHome.Controls.Add(this.panelNavBar, 0, 0);
@@ -180,13 +180,13 @@ namespace media
             this.panelFC.Controls.Add(this.panel3, 0, 1);
             this.panelFC.Controls.Add(this.guna2Panel1, 0, 0);
             this.panelFC.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelFC.Location = new System.Drawing.Point(1282, 4);
+            this.panelFC.Location = new System.Drawing.Point(1271, 4);
             this.panelFC.Margin = new System.Windows.Forms.Padding(4);
             this.panelFC.Name = "panelFC";
             this.panelFC.RowCount = 2;
             this.panelFC.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 51.56951F));
             this.panelFC.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 48.43049F));
-            this.panelFC.Size = new System.Drawing.Size(638, 998);
+            this.panelFC.Size = new System.Drawing.Size(649, 998);
             this.panelFC.TabIndex = 1;
             this.panelFC.Resize += new System.EventHandler(this.panelNavBar_Resize);
             // 
@@ -201,7 +201,7 @@ namespace media
             this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(10);
-            this.panel3.Size = new System.Drawing.Size(630, 476);
+            this.panel3.Size = new System.Drawing.Size(641, 476);
             this.panel3.TabIndex = 3;
             // 
             // guna2Button12
@@ -218,7 +218,7 @@ namespace media
             this.guna2Button12.Location = new System.Drawing.Point(10, 427);
             this.guna2Button12.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
             this.guna2Button12.Name = "guna2Button12";
-            this.guna2Button12.Size = new System.Drawing.Size(610, 39);
+            this.guna2Button12.Size = new System.Drawing.Size(621, 39);
             this.guna2Button12.TabIndex = 3;
             this.guna2Button12.Text = "See All";
             // 
@@ -236,7 +236,7 @@ namespace media
             this.flowLayoutPanel2.Location = new System.Drawing.Point(9, 74);
             this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(596, 347);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(607, 347);
             this.flowLayoutPanel2.TabIndex = 2;
             // 
             // guna2Panel14
@@ -546,7 +546,7 @@ namespace media
             this.guna2Panel1.Location = new System.Drawing.Point(3, 3);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Padding = new System.Windows.Forms.Padding(10, 10, 10, 0);
-            this.guna2Panel1.Size = new System.Drawing.Size(632, 508);
+            this.guna2Panel1.Size = new System.Drawing.Size(643, 508);
             this.guna2Panel1.TabIndex = 4;
             this.guna2Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel1_Paint);
             // 
@@ -563,7 +563,7 @@ namespace media
             this.guna2Button9.ForeColor = System.Drawing.Color.Black;
             this.guna2Button9.Location = new System.Drawing.Point(10, 469);
             this.guna2Button9.Name = "guna2Button9";
-            this.guna2Button9.Size = new System.Drawing.Size(612, 39);
+            this.guna2Button9.Size = new System.Drawing.Size(623, 39);
             this.guna2Button9.TabIndex = 2;
             this.guna2Button9.Text = "See All";
             // 
@@ -579,7 +579,7 @@ namespace media
             this.flowLayoutPanel1.Controls.Add(this.guna2Panel8);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(10, 66);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(612, 397);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(623, 397);
             this.flowLayoutPanel1.TabIndex = 1;
             this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
@@ -1106,11 +1106,11 @@ namespace media
             this.panelFeed.AutoScroll = true;
             this.panelFeed.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panelFeed.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelFeed.Location = new System.Drawing.Point(163, 4);
+            this.panelFeed.Location = new System.Drawing.Point(161, 4);
             this.panelFeed.Margin = new System.Windows.Forms.Padding(4);
             this.panelFeed.Name = "panelFeed";
             this.panelFeed.Padding = new System.Windows.Forms.Padding(53, 25, 27, 25);
-            this.panelFeed.Size = new System.Drawing.Size(1111, 998);
+            this.panelFeed.Size = new System.Drawing.Size(1102, 998);
             this.panelFeed.TabIndex = 2;
             this.panelFeed.Paint += new System.Windows.Forms.PaintEventHandler(this.panelFeed_Paint);
             this.panelFeed.Resize += new System.EventHandler(this.panelNavBar_Resize);
@@ -1124,7 +1124,7 @@ namespace media
             this.panelNavBar.Location = new System.Drawing.Point(4, 4);
             this.panelNavBar.Margin = new System.Windows.Forms.Padding(4);
             this.panelNavBar.Name = "panelNavBar";
-            this.panelNavBar.Size = new System.Drawing.Size(151, 998);
+            this.panelNavBar.Size = new System.Drawing.Size(149, 998);
             this.panelNavBar.TabIndex = 0;
             this.panelNavBar.Resize += new System.EventHandler(this.panelNavBar_Resize);
             // 
@@ -1148,7 +1148,7 @@ namespace media
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(151, 998);
+            this.panel1.Size = new System.Drawing.Size(149, 998);
             this.panel1.TabIndex = 1;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint_1);
             // 

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace media.Classes
 {
-    internal class ClassMedia
+    public class ClassMedia
     {
         private int mediaId;
         private Image mediaContent;
