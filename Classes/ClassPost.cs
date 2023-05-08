@@ -17,6 +17,12 @@ namespace media.Classes
         private string permission;
         private ClassMedia[] classMedias;
         private int noOfReacts;
+        private User postCreator;
+        public User PostCreator
+        {
+            get { return this.postCreator; }
+            set { this.postCreator = value; }
+        }
         public string PostText
         {
             get { return this.postText; }
@@ -70,13 +76,14 @@ namespace media.Classes
             this.Permission = permission;
             this.ClassMedias = classMedias;
         }
-        public ClassPost(int postId, string postText, DateTime postTime, Image[] postImages, string permission, int noOfReacts)
+        public ClassPost(int postId, string postText, DateTime postTime, Image[] postImages, string permission, int noOfReacts, User postCreator)
         {
             this.PostId = postId;
             this.PostText = postText;
             this.PostTime = postTime;
             this.PostImages = postImages;
             this.Permission = permission;
+            this.PostCreator= postCreator;
         }
         public ClassPost() { }
     }

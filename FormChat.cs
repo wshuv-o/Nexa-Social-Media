@@ -297,5 +297,86 @@ namespace media
         {
 
         }
+
+        private void guna2TextBox1_TextChanged(object sender, KeyPressEventArgs e)
+        {
+
+                if (e.KeyChar == (char)Keys.Enter) 
+                {
+                    Panel panelSendContent = new Panel();
+                    Guna2Panel panelText = new Guna2Panel();
+                    CustomRoundPictureBox userProfilePic= new CustomRoundPictureBox();
+                    Guna2HtmlLabel lblMessage = new Guna2HtmlLabel();
+
+                    userProfilePic.BackgroundImage = global::media.Properties.Resources.PicsArt_09_0m7_09_40_49;
+                    userProfilePic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+                    userProfilePic.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+                    userProfilePic.BorderColor = System.Drawing.Color.White;
+                    userProfilePic.BorderColor2 = System.Drawing.Color.White;
+                    userProfilePic.BorderDashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+                    userProfilePic.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+                    userProfilePic.BorderSize = 2;
+                    userProfilePic.Dock = System.Windows.Forms.DockStyle.Right;
+                    userProfilePic.GradientAngle = 50F;
+                    userProfilePic.Location = new System.Drawing.Point(773, 0);
+                    userProfilePic.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+                    userProfilePic.Name = "userProfilePic";
+                    userProfilePic.Size = new System.Drawing.Size(60, 60);
+                    userProfilePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+                    userProfilePic.TabIndex = 2;
+                    userProfilePic.TabStop = false;
+
+                    lblMessage.BackColor = System.Drawing.Color.Transparent;
+                    lblMessage.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                    lblMessage.Location = new System.Drawing.Point(13, 11);
+                    lblMessage.Margin = new System.Windows.Forms.Padding(11, 10, 11, 10);
+                    lblMessage.Name = "lblMessage";
+                    lblMessage.Size = new System.Drawing.Size(68, 27);
+                    lblMessage.TabIndex = 1;
+                    lblMessage.Text = this.guna2TextBox1.Text;
+                    lblMessage.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+
+                    panelText.BorderColor = System.Drawing.Color.Purple;
+                    panelText.BorderRadius = 10;
+                    panelText.BorderThickness = 1;
+                    panelText.Controls.Add(guna2HtmlLabel11);
+                    panelText.CustomizableEdges.BottomRight = false;
+                    panelText.Location = new System.Drawing.Point(625, 11);
+                    panelText.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+                    panelText.Name = "panelText";
+                    panelText.Size = new System.Drawing.Size(143, 46);
+                    panelText.TabIndex = 1;
+                    panelText.Paint += new System.Windows.Forms.PaintEventHandler(panelText_Paint);
+
+                    panelSendContent.BackColor = System.Drawing.Color.White;
+                    panelSendContent.Controls.Add(userProfilePic);
+                    panelSendContent.Controls.Add(panelText);
+                    panelSendContent.Location = new System.Drawing.Point(30, 157);
+                    panelSendContent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+                    panelSendContent.Name = "panelSendContent";
+                    panelSendContent.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
+                    panelSendContent.Size = new System.Drawing.Size(853, 60);
+                    panelSendContent.TabIndex = 5;
+
+                    this.panelChatBox.Controls.Add(panelSendContent);
+                    this.guna2TextBox1.Text = "";
+
+                }
+        }
+
+        private void panelText_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panelSendContent_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

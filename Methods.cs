@@ -12,6 +12,7 @@ using System.Net.Mail;
 using System.Net;
 using System.Text.RegularExpressions;
 using System.Runtime.CompilerServices;
+using MySql.Data.MySqlClient;
 
 namespace media
 {
@@ -287,10 +288,8 @@ namespace media
                 }
             }
 
-            // Define a threshold color difference to determine whether a pixel is part of the human body
             int threshold = 50;
 
-            // Iterate through the color array and calculate the average color of the pixels that are not part of the human body
             int totalRed = 0, totalGreen = 0, totalBlue = 0, count = 0;
             for (int i = 0; i < pixels.Length; i++)
             {
@@ -316,5 +315,41 @@ namespace media
 
             return Color.FromArgb(averageRed, averageGreen, averageBlue);
         }
+        public static Classes.User GetUserByEmail(int userId)
+        {
+            DBImageOperation dbio = new DBImageOperation();
+            Classes.User user = new Classes.User();
+            try
+            {
+                string connectionString = DatabaseCredentials.connectionStringLocalServer;
+                string query = "SELECT * FROM user WHERE userid = @userId";
+                MySqlConnection connection = new MySqlConnection(connectionString);
+                MySqlCommand command = new MySqlCommand(query, connection);
+                command.Parameters.AddWithValue("@userId", userId);
+                connection.Open();
+                MySqlDataReader reader = command.ExecuteReader();
+                if (reader.Read())
+                {
+                    user.Key = reader.GetInt32("userid");
+                    user.UserFirstName = reader.GetString("userfirstname");
+                    user.UserLastName = reader.GetString("userlastname");
+                    user.Dob = reader.GetDateTime("dob");
+                    user.Email = reader.GetString("email");
+                    user.PhoneNumber = reader.GetString("phoneno");
+                    user.ProfilePhoto = dbio.LoadImageFromDataBase(reader.GetInt32("userid"));
+                    user.Gender = reader.GetString("gender");
+                    user.Bio = reader.GetString("bio");
+
+                }
+                reader.Close();
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("An error occurred: " + ex.Message);
+            }
+            return user;
+        }
+
     }
 }

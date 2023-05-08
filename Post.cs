@@ -24,7 +24,7 @@ namespace media
             this.classPosts = new Classes.ClassPost();
             this.classPosts = classPost;
             InitializeComponent();
-            Methods.RoundImageBoxCorners(pictureBox1, 20);
+            Methods.RoundImageBoxCorners(UserProfileImage, 20);
             postImagePanel.BackColor=Methods.GetBackgroundAverageColor((Bitmap)postImagePanel.BackgroundImage);
             Methods.SetDoubleBuffer(panel1, true);
             Methods.SetDoubleBuffer(panel2, true);
@@ -43,12 +43,17 @@ namespace media
                 this.postImagePanel.BackgroundImage = classPost.PostImages[0];
                 this.reactCount.Text = classPost.NoOfReacts.ToString();
                 this.postImagePanel.BackColor = Methods.GetBackgroundAverageColor((Bitmap)this.postImagePanel.BackgroundImage);
+                this.UserProfileImage.BackgroundImage = classPost.PostCreator.ProfilePhoto;
+                this.lblUserName.Text = classPost.PostCreator.UserFirstName + " " + classPost.PostCreator.UserLastName;
+
             }
             else
             {
                 this.postTime.Text = "N/A";
             }
-            
+            //postText.AutoSize = false;
+            postText.MaximumSize = new Size(700, 100);
+
         }
         public Post()
         {

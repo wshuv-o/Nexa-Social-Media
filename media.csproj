@@ -36,6 +36,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Aspose.Imaging, Version=23.4.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <HintPath>packages\Aspose.Imaging.23.4.0\lib\net40\Aspose.Imaging.dll</HintPath>
+    </Reference>
     <Reference Include="BouncyCastle.Crypto, Version=1.9.0.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
       <HintPath>packages\Portable.BouncyCastle.1.9.0\lib\net40\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
@@ -261,6 +264,24 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Calculator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calculator.Designer.cs">
+      <DependentUpon>Calculator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormProductSingle1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FormProductSingle.resx</DependentUpon>
+    </Compile>
+    <Compile Include="JpegOptions.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PostAdopter.cs" />
     <Compile Include="CreateProduct.cs">
       <SubType>Form</SubType>
@@ -462,6 +483,18 @@
     <Compile Include="ProductSingle.Designer.cs">
       <DependentUpon>ProductSingle.cs</DependentUpon>
     </Compile>
+    <Compile Include="Profile\FormPostImages.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Profile\FormPostImages.Designer.cs">
+      <DependentUpon>FormPostImages.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Profile\FormProfilePost.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Profile\FormProfilePost.Designer.cs">
+      <DependentUpon>FormProfilePost.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Story.cs">
@@ -473,6 +506,9 @@
     <Compile Include="CustomControls\TestControl.cs">
       <SubType>Component</SubType>
     </Compile>
+    <EmbeddedResource Include="Calculator.resx">
+      <DependentUpon>Calculator.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CreateProduct.resx">
       <DependentUpon>CreateProduct.cs</DependentUpon>
     </EmbeddedResource>
@@ -518,7 +554,10 @@
     <EmbeddedResource Include="FormPostSingle.resx">
       <DependentUpon>FormPostSingle.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormProductSingle.resx" />
+    <EmbeddedResource Include="FormProductSingle.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>FormProductSingle1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormSettings.resx">
       <DependentUpon>FormSettings.cs</DependentUpon>
     </EmbeddedResource>
@@ -536,6 +575,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GamesPage.resx">
       <DependentUpon>GamesPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MarketPlaceStats.resx">
       <DependentUpon>MarketPlaceStats.cs</DependentUpon>
@@ -557,6 +599,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PostControl.resx">
       <DependentUpon>PostControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Profile\FormPostImages.resx">
+      <DependentUpon>FormPostImages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Profile\FormProfilePost.resx">
+      <DependentUpon>FormProfilePost.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

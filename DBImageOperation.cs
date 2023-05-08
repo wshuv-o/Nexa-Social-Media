@@ -179,5 +179,40 @@ namespace media
                 return Image.FromStream(stream);
             }
         }
+        public Classes.User GetUserByUserId(int userId)
+        {
+            DBImageOperation dbio = new DBImageOperation();
+            Classes.User user = new Classes.User();
+            try
+            {
+                string connectionString = DatabaseCredentials.connectionStringLocalServer;
+                string query = "SELECT * FROM user WHERE userid = @userId";
+                MySqlConnection connection = new MySqlConnection(connectionString);
+                MySqlCommand command = new MySqlCommand(query, connection);
+                command.Parameters.AddWithValue("@userId", userId);
+                connection.Open();
+                MySqlDataReader reader = command.ExecuteReader();
+                if (reader.Read())
+                {
+                    user.Key = reader.GetInt32("userid");
+                    user.UserFirstName = reader.GetString("userfirstname");
+                    user.UserLastName = reader.GetString("userlastname");
+                    user.Dob = reader.GetDateTime("dob");
+                    user.Email = reader.GetString("email");
+                    user.PhoneNumber = reader.GetString("phoneno");
+                    user.ProfilePhoto = dbio.LoadImageFromDataBase(reader.GetInt32("userid"));
+                    user.Gender = reader.GetString("gender");
+                    user.Bio = reader.GetString("bio");
+
+                }
+                reader.Close();
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("An error occurred: " + ex.Message);
+            }
+            return user;
+        }
     }
 }
