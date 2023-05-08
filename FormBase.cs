@@ -181,7 +181,7 @@ namespace media
 
         private void buttonMessages_Click(object sender, EventArgs e)
         {
-            FormChat c=new FormChat();
+            FormChat c=new FormChat(this.NativeUser);
             DefaultButtonColor(ref buttonMessages);
             openChildForm(c);
             c.Visible= true;

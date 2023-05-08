@@ -31,7 +31,7 @@ namespace media
                     SetProcessDPIAware();
                 }
             }
-            Application.Run(new FormChat());
+            Application.Run(new Nexa());
         }
         [DllImport("user32.dll")]
         private static extern bool SetProcessDPIAware();

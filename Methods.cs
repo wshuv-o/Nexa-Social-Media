@@ -258,8 +258,8 @@ namespace media
         }
         public static void SendEmailWithCode(string recipient, string code)
         {
-            string senderEmail = "22-47171-1@student.aiub.edu"; // Your email address
-            string senderPassword = "W@hedshuvo16"; // Your email account password
+            string senderEmail = "22-49070-1@student.iub.edu"; // Your email address
+            string senderPassword = "4@hjbAbnc45"; // Your email account password
             string smtpServer = "smtp.office365.com"; // Your SMTP server address
             int smtpPort = 587; // Your SMTP server port number
 

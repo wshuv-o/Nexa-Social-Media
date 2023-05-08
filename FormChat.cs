@@ -1,5 +1,8 @@
 ﻿using Guna.UI2.WinForms;
+using media.Classes;
+using media.Message;
 using media.Properties;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,43 +18,81 @@ namespace media
 {
     public partial class FormChat : Form
     {
-        public FormChat()
+        Classes.User user= new User();
+        Classes.User User
         {
+            get { return user; }
+            set { this.user = value; }
+        }
+        Message.ClassChatList[] classChatList= new ClassChatList[20];
+        Guna2GradientPanel[] panelArray= new Guna2GradientPanel[20];
+        public FormChat(Classes.User user)
+        {
+            this.User= user;
+
             InitializeComponent();
 
             this.SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
 
-            panel2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panelChatBox.Resize += (sender, e) =>
             {
                 int availableWidth = panelChatBox.ClientSize.Width - panelChatBox.Padding.Left - panelChatBox.Padding.Right;
-                panel2.Width = availableWidth;
                 sendPanel.Width = availableWidth;
             };
 
-
-            panel2.Resize += (sender, e) =>
-            {
-                panel2.Location = new Point(panelChatBox.Location.X + 30, panelChatBox.Location.Y);
-            };
-            sendPanel.Resize += (sender, e) =>
-            {
-                sendPanel.Location = new Point(panelChatBox.Location.X + 30, panelChatList.Height+50);
-            };            
-            guna2Panel27.Resize += (sender, e) =>
-            {
-                guna2Panel27.Location = new Point(panelChatBox.Location.X + 30, panelChatList.Height+50);
-                guna2Panel27.Width=panelChatBox.Width-100;
-            };
-            panel2.BringToFront();
-            this.sendPanel.BringToFront();
 
             this.Visible= false;
             Methods.SetDoubleBuffer(panel2, true);
             Methods.SetDoubleBuffer(panel3, true);
             Methods.SetDoubleBuffer(panel4, true);
 
+            /*string connectionString = DatabaseCredentials.connectionStringLocalServer;
+            MySqlConnection connection = new MySqlConnection(connectionString);
+            connection.Open();
+            string query = "SELECT CASE WHEN nativeuserid = @userId THEN frienduserid ELSE nativeuserid END FROM friends WHERE nativeuserid = @userId OR frienduserid = @userId";
+            MySqlCommand command = new MySqlCommand(query, connection);
+            command.Parameters.AddWithValue("@userId", this.User.Key);
+            MySqlDataReader reader = command.ExecuteReader();
+            int j = 0;
+            while (reader.Read())
+            {
+                DBImageOperation dbio = new DBImageOperation();
+                User chatPerson = dbio.GetUserByUserId(this.User.Key);
+                Message.ClassChatList p = new Message.ClassChatList(chatPerson);
+                classChatList[j] = p;
+                j++;
 
+            }
+            reader.Close();
+            connection.Close();
+            */
+            string connectionString = DatabaseCredentials.connectionStringLocalServer;
+            MySqlConnection connection = new MySqlConnection(connectionString);
+            connection.Open();
+            string query = "SELECT CASE WHEN nativeuserid = @userId THEN frienduserid ELSE nativeuserid END FROM friends WHERE nativeuserid = @userId OR frienduserid = @userId";
+            MySqlCommand command = new MySqlCommand(query, connection);
+            command.Parameters.AddWithValue("@userId", this.User.Key);
+            MySqlDataReader reader = command.ExecuteReader();
+            int j = 0;
+            while (reader.Read())
+            {
+                int friendUserId = reader.GetInt32(0); // Assuming the column index is 0
+                DBImageOperation dbio = new DBImageOperation();
+                User chatPerson = dbio.GetUserByUserId(friendUserId);
+                Message.ClassChatList p = new Message.ClassChatList(chatPerson);
+                classChatList[j] = p;
+                j++;
+            }
+            reader.Close();
+            connection.Close();
+
+            foreach (ClassChatList c in classChatList)
+            {
+                if(c!=null)
+                this.flowLayoutPanel3.Controls.Add(c.ChatPanel);
+            }
+            panelArray = flowLayoutPanel3.Controls.OfType<Guna2GradientPanel>().ToArray();
+            ClassChatList.panelChats= panelArray;
         }
         private void tableLayoutPanel1_Resize(object sender, EventArgs e)
         {
@@ -117,6 +158,10 @@ namespace media
         {
 
         }
+        public void AllPanel()
+        {
+            Panel[] panelArray = flowLayoutPanel1.Controls.OfType<Guna2GradientPanel>().ToArray();
+        }
 
         private void button2_Click_1(object sender, EventArgs e)
         {
@@ -181,7 +226,6 @@ namespace media
 
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
-            this.panel2.Width=panelChatBox.Width-panelChatBox.Padding.Right;
         }
 
         private void button3_Click_1(object sender, EventArgs e)
@@ -192,16 +236,6 @@ namespace media
         private void pictureBox7_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void panel2_Resize(object sender, EventArgs e)
-        {
-            
-                int availableWidth = panelChatBox.ClientSize.Width - panelChatBox.Padding.Left - panelChatBox.Padding.Right;
-                int availableHeight = panelChatBox.ClientSize.Height - panelChatBox.Padding.Top - panelChatBox.Padding.Bottom;
-
-                panel2.Size = new Size(availableWidth, availableHeight);
-            
         }
 
         private void pictureBox9_Click(object sender, EventArgs e)
@@ -352,7 +386,7 @@ namespace media
                     panelSendContent.Controls.Add(userProfilePic);
                     panelSendContent.Controls.Add(panelText);
                     panelSendContent.Location = new System.Drawing.Point(30, 157);
-                    panelSendContent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+                    panelSendContent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 25);
                     panelSendContent.Name = "panelSendContent";
                     panelSendContent.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
                     panelSendContent.Size = new System.Drawing.Size(853, 60);
@@ -360,8 +394,9 @@ namespace media
 
                     this.panelChatBox.Controls.Add(panelSendContent);
                     this.guna2TextBox1.Text = "";
+                panelChatBox.ScrollControlIntoView(panelSendContent);
 
-                }
+            }
         }
 
         private void panelText_Paint(object sender, PaintEventArgs e)
@@ -377,6 +412,63 @@ namespace media
         private void guna2TextBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+        private void IniTiateChatLists()
+        {
+            CustomRoundPictureBox contactProfilePic = new CustomRoundPictureBox();
+            Guna2GradientPanel chatPanel = new Guna2GradientPanel();
+            Label lastMessage = new Label();
+            Label contactName = new Label();
+
+            contactProfilePic.BackgroundImage = global::media.Properties.Resources.PicsArt_09_0m7_09_40_49;
+            contactProfilePic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            contactProfilePic.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            contactProfilePic.BorderColor = System.Drawing.Color.White;
+            contactProfilePic.BorderColor2 = System.Drawing.Color.White;
+            contactProfilePic.BorderDashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            contactProfilePic.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            contactProfilePic.BorderSize = 2;
+            contactProfilePic.Dock = System.Windows.Forms.DockStyle.Left;
+            contactProfilePic.GradientAngle = 50F;
+            contactProfilePic.Location = new System.Drawing.Point(0, 0);
+            contactProfilePic.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            contactProfilePic.Name = "contactProfilePic";
+            contactProfilePic.Size = new System.Drawing.Size(71, 74);
+            contactProfilePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            contactProfilePic.TabIndex = 3;
+            contactProfilePic.TabStop = false;
+
+            chatPanel.Controls.Add(contactProfilePic);
+            chatPanel.Controls.Add(lastMessage);
+            chatPanel.Controls.Add(contactName);
+            chatPanel.FillColor = System.Drawing.Color.White;
+            chatPanel.FillColor2 = System.Drawing.Color.White;
+            chatPanel.Location = new System.Drawing.Point(3, 2);
+            chatPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            chatPanel.Name = "chatPanel";
+            chatPanel.Size = new System.Drawing.Size(409, 74);
+            chatPanel.TabIndex = 0;
+
+            lastMessage.AutoSize = true;
+            lastMessage.BackColor = System.Drawing.Color.Transparent;
+            lastMessage.Location = new System.Drawing.Point(77, 43);
+            lastMessage.Name = "lastMessage";
+            lastMessage.Size = new System.Drawing.Size(106, 16);
+            lastMessage.TabIndex = 2;
+            lastMessage.Text = ".....";
+            // 
+            // contactName
+            // 
+            contactName.AutoSize = true;
+            contactName.BackColor = System.Drawing.Color.Transparent;
+            contactName.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            contactName.ForeColor = System.Drawing.Color.Black;
+            contactName.Location = new System.Drawing.Point(77, 15);
+            contactName.Name = "contactName";
+            contactName.Size = new System.Drawing.Size(134, 25);
+            contactName.TabIndex = 1;
+            contactName.Text = "wAHID sHUVO";
+            this.flowLayoutPanel3.Controls.Add(chatPanel);
         }
     }
 }

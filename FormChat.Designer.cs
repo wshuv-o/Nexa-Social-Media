@@ -35,62 +35,17 @@ namespace media
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormChat));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.panelChatBox = new System.Windows.Forms.FlowLayoutPanel();
-            this.guna2Panel27 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Panel28 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2HtmlLabel13 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2PictureBox13 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2Panel25 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Panel26 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2HtmlLabel12 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2PictureBox12 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.panelSendContent = new Guna.UI2.WinForms.Guna2Panel();
-            this.userProfilePic = new media.CustomRoundPictureBox();
-            this.panelText = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2HtmlLabel11 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2Panel19 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Panel20 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2HtmlLabel9 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2PictureBox9 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2Panel21 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Panel22 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2HtmlLabel10 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2PictureBox10 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Panel8 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2Panel35 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Panel36 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2HtmlLabel17 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2PictureBox17 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2Panel37 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Panel38 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2HtmlLabel18 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2PictureBox18 = new media.CustomRoundPictureBox();
-            this.guna2Panel39 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Panel40 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2HtmlLabel19 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2PictureBox19 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panelChatList = new Guna.UI2.WinForms.Guna2Panel();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
-            this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.chatPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.contactProfilePic = new media.CustomRoundPictureBox();
+            this.lastMessage = new System.Windows.Forms.Label();
+            this.contactName = new System.Windows.Forms.Label();
             this.guna2GradientPanel3 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2GradientPanel4 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.guna2Panel10 = new Guna.UI2.WinForms.Guna2Panel();
             this.panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.button8 = new Guna.UI2.WinForms.Guna2Button();
@@ -129,6 +84,20 @@ namespace media
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.panelChatBox = new System.Windows.Forms.FlowLayoutPanel();
+            this.panelSendContent = new Guna.UI2.WinForms.Guna2Panel();
+            this.userProfilePic = new media.CustomRoundPictureBox();
+            this.panelText = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2HtmlLabel11 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2Panel37 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Panel38 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2HtmlLabel18 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2PictureBox18 = new media.CustomRoundPictureBox();
+            this.guna2Panel39 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Panel40 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2HtmlLabel19 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2PictureBox19 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.button13 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -142,43 +111,12 @@ namespace media
             this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.tableLayoutPanel1.SuspendLayout();
-            this.panelChatBox.SuspendLayout();
-            this.guna2Panel27.SuspendLayout();
-            this.guna2Panel28.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox13)).BeginInit();
-            this.guna2Panel25.SuspendLayout();
-            this.guna2Panel26.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox12)).BeginInit();
-            this.panelSendContent.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.userProfilePic)).BeginInit();
-            this.panelText.SuspendLayout();
-            this.guna2Panel19.SuspendLayout();
-            this.guna2Panel20.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox9)).BeginInit();
-            this.guna2Panel21.SuspendLayout();
-            this.guna2Panel22.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox10)).BeginInit();
-            this.guna2Panel7.SuspendLayout();
-            this.guna2Panel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
-            this.guna2Panel1.SuspendLayout();
-            this.guna2Panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
-            this.guna2Panel35.SuspendLayout();
-            this.guna2Panel36.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox17)).BeginInit();
-            this.guna2Panel37.SuspendLayout();
-            this.guna2Panel38.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox18)).BeginInit();
-            this.guna2Panel39.SuspendLayout();
-            this.guna2Panel40.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox19)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.panelChatList.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
-            this.guna2GradientPanel2.SuspendLayout();
+            this.chatPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.contactProfilePic)).BeginInit();
             this.guna2GradientPanel3.SuspendLayout();
-            this.guna2GradientPanel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
@@ -203,6 +141,17 @@ namespace media
             this.guna2Panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox3)).BeginInit();
             this.panel5.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
+            this.panelChatBox.SuspendLayout();
+            this.panelSendContent.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.userProfilePic)).BeginInit();
+            this.panelText.SuspendLayout();
+            this.guna2Panel37.SuspendLayout();
+            this.guna2Panel38.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox18)).BeginInit();
+            this.guna2Panel39.SuspendLayout();
+            this.guna2Panel40.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox19)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.sendPanel.SuspendLayout();
@@ -215,9 +164,9 @@ namespace media
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.63889F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67.36111F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.63889F));
-            this.tableLayoutPanel1.Controls.Add(this.panelChatBox, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel5, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel4, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
@@ -227,565 +176,6 @@ namespace media
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1832, 912);
             this.tableLayoutPanel1.TabIndex = 0;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
-            // 
-            // panelChatBox
-            // 
-            this.panelChatBox.AutoScroll = true;
-            this.panelChatBox.BackColor = System.Drawing.Color.White;
-            this.panelChatBox.Controls.Add(this.guna2Panel27);
-            this.panelChatBox.Controls.Add(this.guna2Panel25);
-            this.panelChatBox.Controls.Add(this.panelSendContent);
-            this.panelChatBox.Controls.Add(this.guna2Panel19);
-            this.panelChatBox.Controls.Add(this.guna2Panel21);
-            this.panelChatBox.Controls.Add(this.guna2Panel7);
-            this.panelChatBox.Controls.Add(this.guna2Panel1);
-            this.panelChatBox.Controls.Add(this.guna2Panel35);
-            this.panelChatBox.Controls.Add(this.guna2Panel37);
-            this.panelChatBox.Controls.Add(this.guna2Panel39);
-            this.panelChatBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelChatBox.Location = new System.Drawing.Point(454, 4);
-            this.panelChatBox.Margin = new System.Windows.Forms.Padding(4);
-            this.panelChatBox.MinimumSize = new System.Drawing.Size(533, 0);
-            this.panelChatBox.Name = "panelChatBox";
-            this.panelChatBox.Padding = new System.Windows.Forms.Padding(27, 27, 51, 400);
-            this.panelChatBox.Size = new System.Drawing.Size(922, 904);
-            this.panelChatBox.TabIndex = 1;
-            this.panelChatBox.Paint += new System.Windows.Forms.PaintEventHandler(this.panelChatBox_Paint);
-            // 
-            // guna2Panel27
-            // 
-            this.guna2Panel27.BackColor = System.Drawing.Color.White;
-            this.guna2Panel27.Controls.Add(this.guna2Panel28);
-            this.guna2Panel27.Controls.Add(this.guna2PictureBox13);
-            this.guna2Panel27.Location = new System.Drawing.Point(30, 29);
-            this.guna2Panel27.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2Panel27.Name = "guna2Panel27";
-            this.guna2Panel27.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.guna2Panel27.Size = new System.Drawing.Size(853, 60);
-            this.guna2Panel27.TabIndex = 6;
-            this.guna2Panel27.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel27_Paint);
-            // 
-            // guna2Panel28
-            // 
-            this.guna2Panel28.BorderColor = System.Drawing.Color.Purple;
-            this.guna2Panel28.BorderRadius = 10;
-            this.guna2Panel28.BorderThickness = 1;
-            this.guna2Panel28.Controls.Add(this.guna2HtmlLabel13);
-            this.guna2Panel28.CustomizableEdges.BottomRight = false;
-            this.guna2Panel28.Location = new System.Drawing.Point(625, 11);
-            this.guna2Panel28.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2Panel28.Name = "guna2Panel28";
-            this.guna2Panel28.Size = new System.Drawing.Size(143, 46);
-            this.guna2Panel28.TabIndex = 1;
-            // 
-            // guna2HtmlLabel13
-            // 
-            this.guna2HtmlLabel13.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel13.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel13.Location = new System.Drawing.Point(13, 11);
-            this.guna2HtmlLabel13.Margin = new System.Windows.Forms.Padding(11, 10, 11, 10);
-            this.guna2HtmlLabel13.Name = "guna2HtmlLabel13";
-            this.guna2HtmlLabel13.Size = new System.Drawing.Size(68, 27);
-            this.guna2HtmlLabel13.TabIndex = 1;
-            this.guna2HtmlLabel13.Text = "ki koro?";
-            this.guna2HtmlLabel13.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // guna2PictureBox13
-            // 
-            this.guna2PictureBox13.BackgroundImage = global::media.Properties.Resources.PicsArt_09_0m7_09_40_49;
-            this.guna2PictureBox13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.guna2PictureBox13.BorderRadius = 30;
-            this.guna2PictureBox13.Dock = System.Windows.Forms.DockStyle.Right;
-            this.guna2PictureBox13.FillColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox13.ImageRotate = 0F;
-            this.guna2PictureBox13.Location = new System.Drawing.Point(773, 0);
-            this.guna2PictureBox13.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2PictureBox13.Name = "guna2PictureBox13";
-            this.guna2PictureBox13.Size = new System.Drawing.Size(60, 60);
-            this.guna2PictureBox13.TabIndex = 0;
-            this.guna2PictureBox13.TabStop = false;
-            // 
-            // guna2Panel25
-            // 
-            this.guna2Panel25.BackColor = System.Drawing.Color.White;
-            this.guna2Panel25.Controls.Add(this.guna2Panel26);
-            this.guna2Panel25.Controls.Add(this.guna2PictureBox12);
-            this.guna2Panel25.Location = new System.Drawing.Point(30, 93);
-            this.guna2Panel25.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2Panel25.Name = "guna2Panel25";
-            this.guna2Panel25.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.guna2Panel25.Size = new System.Drawing.Size(853, 60);
-            this.guna2Panel25.TabIndex = 7;
-            // 
-            // guna2Panel26
-            // 
-            this.guna2Panel26.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2Panel26.BorderColor = System.Drawing.Color.Purple;
-            this.guna2Panel26.BorderRadius = 10;
-            this.guna2Panel26.BorderThickness = 1;
-            this.guna2Panel26.Controls.Add(this.guna2HtmlLabel12);
-            this.guna2Panel26.CustomizableEdges.BottomRight = false;
-            this.guna2Panel26.Location = new System.Drawing.Point(625, 11);
-            this.guna2Panel26.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2Panel26.Name = "guna2Panel26";
-            this.guna2Panel26.Size = new System.Drawing.Size(143, 46);
-            this.guna2Panel26.TabIndex = 1;
-            // 
-            // guna2HtmlLabel12
-            // 
-            this.guna2HtmlLabel12.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel12.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel12.Location = new System.Drawing.Point(13, 11);
-            this.guna2HtmlLabel12.Margin = new System.Windows.Forms.Padding(11, 10, 11, 10);
-            this.guna2HtmlLabel12.Name = "guna2HtmlLabel12";
-            this.guna2HtmlLabel12.Size = new System.Drawing.Size(68, 27);
-            this.guna2HtmlLabel12.TabIndex = 1;
-            this.guna2HtmlLabel12.Text = "ki koro?";
-            this.guna2HtmlLabel12.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // guna2PictureBox12
-            // 
-            this.guna2PictureBox12.BackgroundImage = global::media.Properties.Resources.PicsArt_09_0m7_09_40_49;
-            this.guna2PictureBox12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.guna2PictureBox12.BorderRadius = 30;
-            this.guna2PictureBox12.Dock = System.Windows.Forms.DockStyle.Right;
-            this.guna2PictureBox12.FillColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox12.ImageRotate = 0F;
-            this.guna2PictureBox12.Location = new System.Drawing.Point(773, 0);
-            this.guna2PictureBox12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2PictureBox12.Name = "guna2PictureBox12";
-            this.guna2PictureBox12.Size = new System.Drawing.Size(60, 60);
-            this.guna2PictureBox12.TabIndex = 0;
-            this.guna2PictureBox12.TabStop = false;
-            // 
-            // panelSendContent
-            // 
-            this.panelSendContent.BackColor = System.Drawing.Color.White;
-            this.panelSendContent.Controls.Add(this.userProfilePic);
-            this.panelSendContent.Controls.Add(this.panelText);
-            this.panelSendContent.Location = new System.Drawing.Point(30, 157);
-            this.panelSendContent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panelSendContent.Name = "panelSendContent";
-            this.panelSendContent.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.panelSendContent.Size = new System.Drawing.Size(853, 60);
-            this.panelSendContent.TabIndex = 5;
-            this.panelSendContent.Paint += new System.Windows.Forms.PaintEventHandler(this.panelSendContent_Paint);
-            // 
-            // userProfilePic
-            // 
-            this.userProfilePic.BackgroundImage = global::media.Properties.Resources.PicsArt_09_0m7_09_40_49;
-            this.userProfilePic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.userProfilePic.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.userProfilePic.BorderColor = System.Drawing.Color.White;
-            this.userProfilePic.BorderColor2 = System.Drawing.Color.White;
-            this.userProfilePic.BorderDashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.userProfilePic.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.userProfilePic.BorderSize = 2;
-            this.userProfilePic.Dock = System.Windows.Forms.DockStyle.Right;
-            this.userProfilePic.GradientAngle = 50F;
-            this.userProfilePic.Location = new System.Drawing.Point(773, 0);
-            this.userProfilePic.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.userProfilePic.Name = "userProfilePic";
-            this.userProfilePic.Size = new System.Drawing.Size(60, 60);
-            this.userProfilePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.userProfilePic.TabIndex = 2;
-            this.userProfilePic.TabStop = false;
-            // 
-            // panelText
-            // 
-            this.panelText.BorderColor = System.Drawing.Color.Purple;
-            this.panelText.BorderRadius = 10;
-            this.panelText.BorderThickness = 1;
-            this.panelText.Controls.Add(this.guna2HtmlLabel11);
-            this.panelText.CustomizableEdges.BottomRight = false;
-            this.panelText.Location = new System.Drawing.Point(625, 11);
-            this.panelText.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panelText.Name = "panelText";
-            this.panelText.Size = new System.Drawing.Size(143, 46);
-            this.panelText.TabIndex = 1;
-            this.panelText.Paint += new System.Windows.Forms.PaintEventHandler(this.panelText_Paint);
-            // 
-            // guna2HtmlLabel11
-            // 
-            this.guna2HtmlLabel11.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel11.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel11.Location = new System.Drawing.Point(13, 11);
-            this.guna2HtmlLabel11.Margin = new System.Windows.Forms.Padding(11, 10, 11, 10);
-            this.guna2HtmlLabel11.Name = "guna2HtmlLabel11";
-            this.guna2HtmlLabel11.Size = new System.Drawing.Size(68, 27);
-            this.guna2HtmlLabel11.TabIndex = 1;
-            this.guna2HtmlLabel11.Text = "ki koro?";
-            this.guna2HtmlLabel11.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // guna2Panel19
-            // 
-            this.guna2Panel19.BackColor = System.Drawing.Color.White;
-            this.guna2Panel19.Controls.Add(this.guna2Panel20);
-            this.guna2Panel19.Controls.Add(this.guna2PictureBox9);
-            this.guna2Panel19.Location = new System.Drawing.Point(30, 221);
-            this.guna2Panel19.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2Panel19.Name = "guna2Panel19";
-            this.guna2Panel19.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.guna2Panel19.Size = new System.Drawing.Size(853, 60);
-            this.guna2Panel19.TabIndex = 6;
-            // 
-            // guna2Panel20
-            // 
-            this.guna2Panel20.BorderColor = System.Drawing.Color.Purple;
-            this.guna2Panel20.BorderRadius = 10;
-            this.guna2Panel20.BorderThickness = 1;
-            this.guna2Panel20.Controls.Add(this.guna2HtmlLabel9);
-            this.guna2Panel20.CustomizableEdges.BottomLeft = false;
-            this.guna2Panel20.Location = new System.Drawing.Point(95, 4);
-            this.guna2Panel20.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2Panel20.Name = "guna2Panel20";
-            this.guna2Panel20.Size = new System.Drawing.Size(143, 46);
-            this.guna2Panel20.TabIndex = 1;
-            // 
-            // guna2HtmlLabel9
-            // 
-            this.guna2HtmlLabel9.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel9.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel9.Location = new System.Drawing.Point(13, 11);
-            this.guna2HtmlLabel9.Margin = new System.Windows.Forms.Padding(11, 10, 11, 10);
-            this.guna2HtmlLabel9.Name = "guna2HtmlLabel9";
-            this.guna2HtmlLabel9.Size = new System.Drawing.Size(68, 27);
-            this.guna2HtmlLabel9.TabIndex = 1;
-            this.guna2HtmlLabel9.Text = "ki koro?";
-            this.guna2HtmlLabel9.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // guna2PictureBox9
-            // 
-            this.guna2PictureBox9.BackgroundImage = global::media.Properties.Resources.PicsArt_09_0m7_09_40_49;
-            this.guna2PictureBox9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.guna2PictureBox9.BorderRadius = 30;
-            this.guna2PictureBox9.Dock = System.Windows.Forms.DockStyle.Left;
-            this.guna2PictureBox9.FillColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox9.ImageRotate = 0F;
-            this.guna2PictureBox9.Location = new System.Drawing.Point(20, 0);
-            this.guna2PictureBox9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2PictureBox9.Name = "guna2PictureBox9";
-            this.guna2PictureBox9.Size = new System.Drawing.Size(60, 60);
-            this.guna2PictureBox9.TabIndex = 0;
-            this.guna2PictureBox9.TabStop = false;
-            // 
-            // guna2Panel21
-            // 
-            this.guna2Panel21.BackColor = System.Drawing.Color.White;
-            this.guna2Panel21.Controls.Add(this.guna2Panel22);
-            this.guna2Panel21.Controls.Add(this.guna2PictureBox10);
-            this.guna2Panel21.Location = new System.Drawing.Point(30, 285);
-            this.guna2Panel21.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2Panel21.Name = "guna2Panel21";
-            this.guna2Panel21.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.guna2Panel21.Size = new System.Drawing.Size(853, 60);
-            this.guna2Panel21.TabIndex = 4;
-            this.guna2Panel21.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel21_Paint);
-            // 
-            // guna2Panel22
-            // 
-            this.guna2Panel22.BorderColor = System.Drawing.Color.Purple;
-            this.guna2Panel22.BorderRadius = 10;
-            this.guna2Panel22.BorderThickness = 1;
-            this.guna2Panel22.Controls.Add(this.guna2HtmlLabel10);
-            this.guna2Panel22.CustomizableEdges.BottomLeft = false;
-            this.guna2Panel22.Location = new System.Drawing.Point(95, 4);
-            this.guna2Panel22.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2Panel22.Name = "guna2Panel22";
-            this.guna2Panel22.Size = new System.Drawing.Size(143, 46);
-            this.guna2Panel22.TabIndex = 1;
-            // 
-            // guna2HtmlLabel10
-            // 
-            this.guna2HtmlLabel10.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel10.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel10.Location = new System.Drawing.Point(13, 11);
-            this.guna2HtmlLabel10.Margin = new System.Windows.Forms.Padding(11, 10, 11, 10);
-            this.guna2HtmlLabel10.Name = "guna2HtmlLabel10";
-            this.guna2HtmlLabel10.Size = new System.Drawing.Size(111, 27);
-            this.guna2HtmlLabel10.TabIndex = 1;
-            this.guna2HtmlLabel10.Text = "kemon acho?";
-            this.guna2HtmlLabel10.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // guna2PictureBox10
-            // 
-            this.guna2PictureBox10.BackgroundImage = global::media.Properties.Resources.PicsArt_09_0m7_09_40_49;
-            this.guna2PictureBox10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.guna2PictureBox10.BorderRadius = 30;
-            this.guna2PictureBox10.Dock = System.Windows.Forms.DockStyle.Left;
-            this.guna2PictureBox10.FillColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox10.ImageRotate = 0F;
-            this.guna2PictureBox10.Location = new System.Drawing.Point(20, 0);
-            this.guna2PictureBox10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2PictureBox10.Name = "guna2PictureBox10";
-            this.guna2PictureBox10.Size = new System.Drawing.Size(60, 60);
-            this.guna2PictureBox10.TabIndex = 0;
-            this.guna2PictureBox10.TabStop = false;
-            // 
-            // guna2Panel7
-            // 
-            this.guna2Panel7.BackColor = System.Drawing.Color.White;
-            this.guna2Panel7.Controls.Add(this.guna2Panel8);
-            this.guna2Panel7.Controls.Add(this.guna2PictureBox3);
-            this.guna2Panel7.Location = new System.Drawing.Point(30, 349);
-            this.guna2Panel7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2Panel7.Name = "guna2Panel7";
-            this.guna2Panel7.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.guna2Panel7.Size = new System.Drawing.Size(853, 60);
-            this.guna2Panel7.TabIndex = 3;
-            // 
-            // guna2Panel8
-            // 
-            this.guna2Panel8.BorderColor = System.Drawing.Color.Purple;
-            this.guna2Panel8.BorderRadius = 10;
-            this.guna2Panel8.BorderThickness = 1;
-            this.guna2Panel8.Controls.Add(this.guna2HtmlLabel3);
-            this.guna2Panel8.CustomizableEdges.BottomLeft = false;
-            this.guna2Panel8.Location = new System.Drawing.Point(95, 4);
-            this.guna2Panel8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2Panel8.Name = "guna2Panel8";
-            this.guna2Panel8.Size = new System.Drawing.Size(143, 46);
-            this.guna2Panel8.TabIndex = 1;
-            // 
-            // guna2HtmlLabel3
-            // 
-            this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(13, 11);
-            this.guna2HtmlLabel3.Margin = new System.Windows.Forms.Padding(11, 10, 11, 10);
-            this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(68, 27);
-            this.guna2HtmlLabel3.TabIndex = 1;
-            this.guna2HtmlLabel3.Text = "ki koro?";
-            this.guna2HtmlLabel3.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // guna2PictureBox3
-            // 
-            this.guna2PictureBox3.BackgroundImage = global::media.Properties.Resources.PicsArt_09_0m7_09_40_49;
-            this.guna2PictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.guna2PictureBox3.BorderRadius = 30;
-            this.guna2PictureBox3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.guna2PictureBox3.FillColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox3.ImageRotate = 0F;
-            this.guna2PictureBox3.Location = new System.Drawing.Point(20, 0);
-            this.guna2PictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2PictureBox3.Name = "guna2PictureBox3";
-            this.guna2PictureBox3.Size = new System.Drawing.Size(60, 60);
-            this.guna2PictureBox3.TabIndex = 0;
-            this.guna2PictureBox3.TabStop = false;
-            // 
-            // guna2Panel1
-            // 
-            this.guna2Panel1.BackColor = System.Drawing.Color.White;
-            this.guna2Panel1.Controls.Add(this.guna2Panel3);
-            this.guna2Panel1.Controls.Add(this.guna2PictureBox1);
-            this.guna2Panel1.Location = new System.Drawing.Point(30, 413);
-            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.guna2Panel1.Size = new System.Drawing.Size(853, 60);
-            this.guna2Panel1.TabIndex = 0;
-            // 
-            // guna2Panel3
-            // 
-            this.guna2Panel3.BorderColor = System.Drawing.Color.Purple;
-            this.guna2Panel3.BorderRadius = 10;
-            this.guna2Panel3.BorderThickness = 1;
-            this.guna2Panel3.Controls.Add(this.guna2HtmlLabel1);
-            this.guna2Panel3.CustomizableEdges.BottomLeft = false;
-            this.guna2Panel3.Location = new System.Drawing.Point(95, 4);
-            this.guna2Panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.Size = new System.Drawing.Size(143, 46);
-            this.guna2Panel3.TabIndex = 1;
-            // 
-            // guna2HtmlLabel1
-            // 
-            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(13, 11);
-            this.guna2HtmlLabel1.Margin = new System.Windows.Forms.Padding(11, 10, 11, 10);
-            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(111, 27);
-            this.guna2HtmlLabel1.TabIndex = 1;
-            this.guna2HtmlLabel1.Text = "kemon acho?";
-            this.guna2HtmlLabel1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.BackgroundImage = global::media.Properties.Resources.PicsArt_09_0m7_09_40_49;
-            this.guna2PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.guna2PictureBox1.BorderRadius = 30;
-            this.guna2PictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.guna2PictureBox1.FillColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(20, 0);
-            this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(60, 60);
-            this.guna2PictureBox1.TabIndex = 0;
-            this.guna2PictureBox1.TabStop = false;
-            // 
-            // guna2Panel35
-            // 
-            this.guna2Panel35.BackColor = System.Drawing.Color.White;
-            this.guna2Panel35.Controls.Add(this.guna2Panel36);
-            this.guna2Panel35.Controls.Add(this.guna2PictureBox17);
-            this.guna2Panel35.Location = new System.Drawing.Point(30, 477);
-            this.guna2Panel35.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2Panel35.Name = "guna2Panel35";
-            this.guna2Panel35.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.guna2Panel35.Size = new System.Drawing.Size(851, 60);
-            this.guna2Panel35.TabIndex = 10;
-            // 
-            // guna2Panel36
-            // 
-            this.guna2Panel36.BorderColor = System.Drawing.Color.Purple;
-            this.guna2Panel36.BorderRadius = 10;
-            this.guna2Panel36.BorderThickness = 1;
-            this.guna2Panel36.Controls.Add(this.guna2HtmlLabel17);
-            this.guna2Panel36.CustomizableEdges.BottomLeft = false;
-            this.guna2Panel36.Location = new System.Drawing.Point(95, 4);
-            this.guna2Panel36.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2Panel36.Name = "guna2Panel36";
-            this.guna2Panel36.Size = new System.Drawing.Size(143, 46);
-            this.guna2Panel36.TabIndex = 1;
-            // 
-            // guna2HtmlLabel17
-            // 
-            this.guna2HtmlLabel17.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel17.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel17.Location = new System.Drawing.Point(13, 11);
-            this.guna2HtmlLabel17.Margin = new System.Windows.Forms.Padding(11, 10, 11, 10);
-            this.guna2HtmlLabel17.Name = "guna2HtmlLabel17";
-            this.guna2HtmlLabel17.Size = new System.Drawing.Size(111, 27);
-            this.guna2HtmlLabel17.TabIndex = 1;
-            this.guna2HtmlLabel17.Text = "kemon acho?";
-            this.guna2HtmlLabel17.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // guna2PictureBox17
-            // 
-            this.guna2PictureBox17.BackgroundImage = global::media.Properties.Resources.PicsArt_09_0m7_09_40_49;
-            this.guna2PictureBox17.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.guna2PictureBox17.BorderRadius = 30;
-            this.guna2PictureBox17.Dock = System.Windows.Forms.DockStyle.Left;
-            this.guna2PictureBox17.FillColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox17.ImageRotate = 0F;
-            this.guna2PictureBox17.Location = new System.Drawing.Point(20, 0);
-            this.guna2PictureBox17.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2PictureBox17.Name = "guna2PictureBox17";
-            this.guna2PictureBox17.Size = new System.Drawing.Size(60, 60);
-            this.guna2PictureBox17.TabIndex = 0;
-            this.guna2PictureBox17.TabStop = false;
-            // 
-            // guna2Panel37
-            // 
-            this.guna2Panel37.BackColor = System.Drawing.Color.White;
-            this.guna2Panel37.Controls.Add(this.guna2Panel38);
-            this.guna2Panel37.Controls.Add(this.guna2PictureBox18);
-            this.guna2Panel37.Location = new System.Drawing.Point(30, 541);
-            this.guna2Panel37.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2Panel37.Name = "guna2Panel37";
-            this.guna2Panel37.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.guna2Panel37.Size = new System.Drawing.Size(851, 60);
-            this.guna2Panel37.TabIndex = 9;
-            // 
-            // guna2Panel38
-            // 
-            this.guna2Panel38.BorderColor = System.Drawing.Color.Purple;
-            this.guna2Panel38.BorderRadius = 10;
-            this.guna2Panel38.BorderThickness = 1;
-            this.guna2Panel38.Controls.Add(this.guna2HtmlLabel18);
-            this.guna2Panel38.CustomizableEdges.TopLeft = false;
-            this.guna2Panel38.Location = new System.Drawing.Point(95, 4);
-            this.guna2Panel38.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2Panel38.Name = "guna2Panel38";
-            this.guna2Panel38.Size = new System.Drawing.Size(143, 46);
-            this.guna2Panel38.TabIndex = 1;
-            // 
-            // guna2HtmlLabel18
-            // 
-            this.guna2HtmlLabel18.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel18.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel18.Location = new System.Drawing.Point(13, 11);
-            this.guna2HtmlLabel18.Margin = new System.Windows.Forms.Padding(11, 10, 11, 10);
-            this.guna2HtmlLabel18.Name = "guna2HtmlLabel18";
-            this.guna2HtmlLabel18.Size = new System.Drawing.Size(68, 27);
-            this.guna2HtmlLabel18.TabIndex = 1;
-            this.guna2HtmlLabel18.Text = "ki koro?";
-            this.guna2HtmlLabel18.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // guna2PictureBox18
-            // 
-            this.guna2PictureBox18.BackgroundImage = global::media.Properties.Resources.PicsArt_09_0m7_09_40_49;
-            this.guna2PictureBox18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.guna2PictureBox18.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.guna2PictureBox18.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.guna2PictureBox18.BorderColor2 = System.Drawing.Color.HotPink;
-            this.guna2PictureBox18.BorderDashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.guna2PictureBox18.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.guna2PictureBox18.BorderSize = 2;
-            this.guna2PictureBox18.Dock = System.Windows.Forms.DockStyle.Left;
-            this.guna2PictureBox18.GradientAngle = 50F;
-            this.guna2PictureBox18.Location = new System.Drawing.Point(20, 0);
-            this.guna2PictureBox18.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2PictureBox18.Name = "guna2PictureBox18";
-            this.guna2PictureBox18.Size = new System.Drawing.Size(60, 60);
-            this.guna2PictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox18.TabIndex = 0;
-            this.guna2PictureBox18.TabStop = false;
-            // 
-            // guna2Panel39
-            // 
-            this.guna2Panel39.BackColor = System.Drawing.Color.White;
-            this.guna2Panel39.Controls.Add(this.guna2Panel40);
-            this.guna2Panel39.Controls.Add(this.guna2PictureBox19);
-            this.guna2Panel39.Location = new System.Drawing.Point(30, 605);
-            this.guna2Panel39.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2Panel39.Name = "guna2Panel39";
-            this.guna2Panel39.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.guna2Panel39.Size = new System.Drawing.Size(835, 60);
-            this.guna2Panel39.TabIndex = 8;
-            // 
-            // guna2Panel40
-            // 
-            this.guna2Panel40.BorderColor = System.Drawing.Color.Purple;
-            this.guna2Panel40.BorderRadius = 10;
-            this.guna2Panel40.BorderThickness = 1;
-            this.guna2Panel40.Controls.Add(this.guna2HtmlLabel19);
-            this.guna2Panel40.CustomizableEdges.BottomLeft = false;
-            this.guna2Panel40.Location = new System.Drawing.Point(95, 4);
-            this.guna2Panel40.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2Panel40.Name = "guna2Panel40";
-            this.guna2Panel40.Size = new System.Drawing.Size(143, 46);
-            this.guna2Panel40.TabIndex = 1;
-            // 
-            // guna2HtmlLabel19
-            // 
-            this.guna2HtmlLabel19.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel19.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel19.Location = new System.Drawing.Point(13, 11);
-            this.guna2HtmlLabel19.Margin = new System.Windows.Forms.Padding(11, 10, 11, 10);
-            this.guna2HtmlLabel19.Name = "guna2HtmlLabel19";
-            this.guna2HtmlLabel19.Size = new System.Drawing.Size(111, 27);
-            this.guna2HtmlLabel19.TabIndex = 1;
-            this.guna2HtmlLabel19.Text = "kemon acho?";
-            this.guna2HtmlLabel19.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // guna2PictureBox19
-            // 
-            this.guna2PictureBox19.BackgroundImage = global::media.Properties.Resources.PicsArt_09_0m7_09_40_49;
-            this.guna2PictureBox19.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.guna2PictureBox19.BorderRadius = 30;
-            this.guna2PictureBox19.Dock = System.Windows.Forms.DockStyle.Left;
-            this.guna2PictureBox19.FillColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox19.ImageRotate = 0F;
-            this.guna2PictureBox19.Location = new System.Drawing.Point(20, 0);
-            this.guna2PictureBox19.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2PictureBox19.Name = "guna2PictureBox19";
-            this.guna2PictureBox19.Size = new System.Drawing.Size(60, 60);
-            this.guna2PictureBox19.TabIndex = 0;
-            this.guna2PictureBox19.TabStop = false;
             // 
             // tableLayoutPanel2
             // 
@@ -825,9 +215,8 @@ namespace media
             // 
             // flowLayoutPanel3
             // 
-            this.flowLayoutPanel3.Controls.Add(this.guna2GradientPanel2);
+            this.flowLayoutPanel3.Controls.Add(this.chatPanel);
             this.flowLayoutPanel3.Controls.Add(this.guna2GradientPanel3);
-            this.flowLayoutPanel3.Controls.Add(this.guna2GradientPanel4);
             this.flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel3.Location = new System.Drawing.Point(5, 15);
             this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -835,49 +224,60 @@ namespace media
             this.flowLayoutPanel3.Size = new System.Drawing.Size(422, 732);
             this.flowLayoutPanel3.TabIndex = 0;
             // 
-            // guna2GradientPanel2
+            // chatPanel
             // 
-            this.guna2GradientPanel2.Controls.Add(this.label10);
-            this.guna2GradientPanel2.Controls.Add(this.label9);
-            this.guna2GradientPanel2.Controls.Add(this.guna2Panel2);
-            this.guna2GradientPanel2.FillColor = System.Drawing.Color.White;
-            this.guna2GradientPanel2.FillColor2 = System.Drawing.Color.White;
-            this.guna2GradientPanel2.Location = new System.Drawing.Point(3, 2);
-            this.guna2GradientPanel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2GradientPanel2.Name = "guna2GradientPanel2";
-            this.guna2GradientPanel2.Size = new System.Drawing.Size(409, 74);
-            this.guna2GradientPanel2.TabIndex = 0;
+            this.chatPanel.Controls.Add(this.contactProfilePic);
+            this.chatPanel.Controls.Add(this.lastMessage);
+            this.chatPanel.Controls.Add(this.contactName);
+            this.chatPanel.FillColor = System.Drawing.Color.White;
+            this.chatPanel.FillColor2 = System.Drawing.Color.White;
+            this.chatPanel.Location = new System.Drawing.Point(3, 2);
+            this.chatPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.chatPanel.Name = "chatPanel";
+            this.chatPanel.Size = new System.Drawing.Size(409, 74);
+            this.chatPanel.TabIndex = 0;
             // 
-            // label10
+            // contactProfilePic
             // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Location = new System.Drawing.Point(77, 43);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(106, 16);
-            this.label10.TabIndex = 2;
-            this.label10.Text = "KEMON  ACHO?";
+            this.contactProfilePic.BackgroundImage = global::media.Properties.Resources.PicsArt_09_0m7_09_40_49;
+            this.contactProfilePic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.contactProfilePic.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.contactProfilePic.BorderColor = System.Drawing.Color.White;
+            this.contactProfilePic.BorderColor2 = System.Drawing.Color.White;
+            this.contactProfilePic.BorderDashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.contactProfilePic.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.contactProfilePic.BorderSize = 2;
+            this.contactProfilePic.Dock = System.Windows.Forms.DockStyle.Left;
+            this.contactProfilePic.GradientAngle = 50F;
+            this.contactProfilePic.Location = new System.Drawing.Point(0, 0);
+            this.contactProfilePic.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.contactProfilePic.Name = "contactProfilePic";
+            this.contactProfilePic.Size = new System.Drawing.Size(71, 74);
+            this.contactProfilePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.contactProfilePic.TabIndex = 3;
+            this.contactProfilePic.TabStop = false;
             // 
-            // label9
+            // lastMessage
             // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(77, 15);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(134, 25);
-            this.label9.TabIndex = 1;
-            this.label9.Text = "wAHID sHUVO";
+            this.lastMessage.AutoSize = true;
+            this.lastMessage.BackColor = System.Drawing.Color.Transparent;
+            this.lastMessage.Location = new System.Drawing.Point(77, 43);
+            this.lastMessage.Name = "lastMessage";
+            this.lastMessage.Size = new System.Drawing.Size(106, 16);
+            this.lastMessage.TabIndex = 2;
+            this.lastMessage.Text = "KEMON  ACHO?";
             // 
-            // guna2Panel2
+            // contactName
             // 
-            this.guna2Panel2.BackColor = System.Drawing.Color.Violet;
-            this.guna2Panel2.Location = new System.Drawing.Point(19, 14);
-            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(52, 49);
-            this.guna2Panel2.TabIndex = 0;
+            this.contactName.AutoSize = true;
+            this.contactName.BackColor = System.Drawing.Color.Transparent;
+            this.contactName.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contactName.ForeColor = System.Drawing.Color.Black;
+            this.contactName.Location = new System.Drawing.Point(77, 15);
+            this.contactName.Name = "contactName";
+            this.contactName.Size = new System.Drawing.Size(134, 25);
+            this.contactName.TabIndex = 1;
+            this.contactName.Text = "wAHID sHUVO";
             // 
             // guna2GradientPanel3
             // 
@@ -922,50 +322,6 @@ namespace media
             this.guna2Panel4.Name = "guna2Panel4";
             this.guna2Panel4.Size = new System.Drawing.Size(52, 49);
             this.guna2Panel4.TabIndex = 0;
-            // 
-            // guna2GradientPanel4
-            // 
-            this.guna2GradientPanel4.Controls.Add(this.label13);
-            this.guna2GradientPanel4.Controls.Add(this.label14);
-            this.guna2GradientPanel4.Controls.Add(this.guna2Panel10);
-            this.guna2GradientPanel4.FillColor = System.Drawing.Color.White;
-            this.guna2GradientPanel4.FillColor2 = System.Drawing.Color.White;
-            this.guna2GradientPanel4.Location = new System.Drawing.Point(3, 158);
-            this.guna2GradientPanel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2GradientPanel4.Name = "guna2GradientPanel4";
-            this.guna2GradientPanel4.Size = new System.Drawing.Size(409, 74);
-            this.guna2GradientPanel4.TabIndex = 4;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.Transparent;
-            this.label13.Location = new System.Drawing.Point(77, 43);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(106, 16);
-            this.label13.TabIndex = 2;
-            this.label13.Text = "KEMON  ACHO?";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.Color.Transparent;
-            this.label14.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.Black;
-            this.label14.Location = new System.Drawing.Point(77, 15);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(134, 25);
-            this.label14.TabIndex = 1;
-            this.label14.Text = "wAHID sHUVO";
-            // 
-            // guna2Panel10
-            // 
-            this.guna2Panel10.BackColor = System.Drawing.Color.Violet;
-            this.guna2Panel10.Location = new System.Drawing.Point(19, 14);
-            this.guna2Panel10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2Panel10.Name = "guna2Panel10";
-            this.guna2Panel10.Size = new System.Drawing.Size(52, 49);
-            this.guna2Panel10.TabIndex = 0;
             // 
             // panel3
             // 
@@ -1525,6 +881,206 @@ namespace media
             this.label2.TabIndex = 0;
             this.label2.Text = "Attathcments";
             // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.ColumnCount = 1;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.Controls.Add(this.panelChatBox, 0, 1);
+            this.tableLayoutPanel4.Controls.Add(this.panel2, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.sendPanel, 0, 2);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(453, 3);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 3;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.61599F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 89.38401F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 82F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 82F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(924, 906);
+            this.tableLayoutPanel4.TabIndex = 11;
+            // 
+            // panelChatBox
+            // 
+            this.panelChatBox.AutoScroll = true;
+            this.panelChatBox.BackColor = System.Drawing.Color.White;
+            this.panelChatBox.Controls.Add(this.panelSendContent);
+            this.panelChatBox.Controls.Add(this.guna2Panel37);
+            this.panelChatBox.Controls.Add(this.guna2Panel39);
+            this.panelChatBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelChatBox.Location = new System.Drawing.Point(4, 91);
+            this.panelChatBox.Margin = new System.Windows.Forms.Padding(4);
+            this.panelChatBox.MinimumSize = new System.Drawing.Size(533, 0);
+            this.panelChatBox.Name = "panelChatBox";
+            this.panelChatBox.Padding = new System.Windows.Forms.Padding(27, 27, 51, 400);
+            this.panelChatBox.Size = new System.Drawing.Size(916, 728);
+            this.panelChatBox.TabIndex = 5;
+            // 
+            // panelSendContent
+            // 
+            this.panelSendContent.BackColor = System.Drawing.Color.White;
+            this.panelSendContent.Controls.Add(this.userProfilePic);
+            this.panelSendContent.Controls.Add(this.panelText);
+            this.panelSendContent.Location = new System.Drawing.Point(30, 29);
+            this.panelSendContent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelSendContent.Name = "panelSendContent";
+            this.panelSendContent.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
+            this.panelSendContent.Size = new System.Drawing.Size(853, 60);
+            this.panelSendContent.TabIndex = 5;
+            // 
+            // userProfilePic
+            // 
+            this.userProfilePic.BackgroundImage = global::media.Properties.Resources.PicsArt_09_0m7_09_40_49;
+            this.userProfilePic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.userProfilePic.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.userProfilePic.BorderColor = System.Drawing.Color.White;
+            this.userProfilePic.BorderColor2 = System.Drawing.Color.White;
+            this.userProfilePic.BorderDashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.userProfilePic.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.userProfilePic.BorderSize = 2;
+            this.userProfilePic.Dock = System.Windows.Forms.DockStyle.Right;
+            this.userProfilePic.GradientAngle = 50F;
+            this.userProfilePic.Location = new System.Drawing.Point(773, 0);
+            this.userProfilePic.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.userProfilePic.Name = "userProfilePic";
+            this.userProfilePic.Size = new System.Drawing.Size(60, 60);
+            this.userProfilePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.userProfilePic.TabIndex = 2;
+            this.userProfilePic.TabStop = false;
+            // 
+            // panelText
+            // 
+            this.panelText.BorderColor = System.Drawing.Color.Purple;
+            this.panelText.BorderRadius = 10;
+            this.panelText.BorderThickness = 1;
+            this.panelText.Controls.Add(this.guna2HtmlLabel11);
+            this.panelText.CustomizableEdges.BottomRight = false;
+            this.panelText.Location = new System.Drawing.Point(625, 11);
+            this.panelText.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelText.Name = "panelText";
+            this.panelText.Size = new System.Drawing.Size(143, 46);
+            this.panelText.TabIndex = 1;
+            // 
+            // guna2HtmlLabel11
+            // 
+            this.guna2HtmlLabel11.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel11.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel11.Location = new System.Drawing.Point(13, 11);
+            this.guna2HtmlLabel11.Margin = new System.Windows.Forms.Padding(11, 10, 11, 10);
+            this.guna2HtmlLabel11.Name = "guna2HtmlLabel11";
+            this.guna2HtmlLabel11.Size = new System.Drawing.Size(68, 27);
+            this.guna2HtmlLabel11.TabIndex = 1;
+            this.guna2HtmlLabel11.Text = "ki koro?";
+            this.guna2HtmlLabel11.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // guna2Panel37
+            // 
+            this.guna2Panel37.BackColor = System.Drawing.Color.White;
+            this.guna2Panel37.Controls.Add(this.guna2Panel38);
+            this.guna2Panel37.Controls.Add(this.guna2PictureBox18);
+            this.guna2Panel37.Location = new System.Drawing.Point(30, 93);
+            this.guna2Panel37.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.guna2Panel37.Name = "guna2Panel37";
+            this.guna2Panel37.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
+            this.guna2Panel37.Size = new System.Drawing.Size(851, 60);
+            this.guna2Panel37.TabIndex = 9;
+            // 
+            // guna2Panel38
+            // 
+            this.guna2Panel38.BorderColor = System.Drawing.Color.Purple;
+            this.guna2Panel38.BorderRadius = 10;
+            this.guna2Panel38.BorderThickness = 1;
+            this.guna2Panel38.Controls.Add(this.guna2HtmlLabel18);
+            this.guna2Panel38.CustomizableEdges.TopLeft = false;
+            this.guna2Panel38.Location = new System.Drawing.Point(95, 4);
+            this.guna2Panel38.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.guna2Panel38.Name = "guna2Panel38";
+            this.guna2Panel38.Size = new System.Drawing.Size(143, 46);
+            this.guna2Panel38.TabIndex = 1;
+            // 
+            // guna2HtmlLabel18
+            // 
+            this.guna2HtmlLabel18.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel18.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel18.Location = new System.Drawing.Point(13, 11);
+            this.guna2HtmlLabel18.Margin = new System.Windows.Forms.Padding(11, 10, 11, 10);
+            this.guna2HtmlLabel18.Name = "guna2HtmlLabel18";
+            this.guna2HtmlLabel18.Size = new System.Drawing.Size(68, 27);
+            this.guna2HtmlLabel18.TabIndex = 1;
+            this.guna2HtmlLabel18.Text = "ki koro?";
+            this.guna2HtmlLabel18.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // guna2PictureBox18
+            // 
+            this.guna2PictureBox18.BackgroundImage = global::media.Properties.Resources.PicsArt_09_0m7_09_40_49;
+            this.guna2PictureBox18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.guna2PictureBox18.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.guna2PictureBox18.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.guna2PictureBox18.BorderColor2 = System.Drawing.Color.HotPink;
+            this.guna2PictureBox18.BorderDashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.guna2PictureBox18.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.guna2PictureBox18.BorderSize = 2;
+            this.guna2PictureBox18.Dock = System.Windows.Forms.DockStyle.Left;
+            this.guna2PictureBox18.GradientAngle = 50F;
+            this.guna2PictureBox18.Location = new System.Drawing.Point(20, 0);
+            this.guna2PictureBox18.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.guna2PictureBox18.Name = "guna2PictureBox18";
+            this.guna2PictureBox18.Size = new System.Drawing.Size(60, 60);
+            this.guna2PictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox18.TabIndex = 0;
+            this.guna2PictureBox18.TabStop = false;
+            // 
+            // guna2Panel39
+            // 
+            this.guna2Panel39.BackColor = System.Drawing.Color.White;
+            this.guna2Panel39.Controls.Add(this.guna2Panel40);
+            this.guna2Panel39.Controls.Add(this.guna2PictureBox19);
+            this.guna2Panel39.Location = new System.Drawing.Point(30, 157);
+            this.guna2Panel39.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.guna2Panel39.Name = "guna2Panel39";
+            this.guna2Panel39.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
+            this.guna2Panel39.Size = new System.Drawing.Size(835, 60);
+            this.guna2Panel39.TabIndex = 8;
+            // 
+            // guna2Panel40
+            // 
+            this.guna2Panel40.BorderColor = System.Drawing.Color.Purple;
+            this.guna2Panel40.BorderRadius = 10;
+            this.guna2Panel40.BorderThickness = 1;
+            this.guna2Panel40.Controls.Add(this.guna2HtmlLabel19);
+            this.guna2Panel40.CustomizableEdges.BottomLeft = false;
+            this.guna2Panel40.Location = new System.Drawing.Point(95, 4);
+            this.guna2Panel40.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.guna2Panel40.Name = "guna2Panel40";
+            this.guna2Panel40.Size = new System.Drawing.Size(143, 46);
+            this.guna2Panel40.TabIndex = 1;
+            // 
+            // guna2HtmlLabel19
+            // 
+            this.guna2HtmlLabel19.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel19.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel19.Location = new System.Drawing.Point(13, 11);
+            this.guna2HtmlLabel19.Margin = new System.Windows.Forms.Padding(11, 10, 11, 10);
+            this.guna2HtmlLabel19.Name = "guna2HtmlLabel19";
+            this.guna2HtmlLabel19.Size = new System.Drawing.Size(111, 27);
+            this.guna2HtmlLabel19.TabIndex = 1;
+            this.guna2HtmlLabel19.Text = "kemon acho?";
+            this.guna2HtmlLabel19.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // guna2PictureBox19
+            // 
+            this.guna2PictureBox19.BackgroundImage = global::media.Properties.Resources.PicsArt_09_0m7_09_40_49;
+            this.guna2PictureBox19.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2PictureBox19.BorderRadius = 30;
+            this.guna2PictureBox19.Dock = System.Windows.Forms.DockStyle.Left;
+            this.guna2PictureBox19.FillColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox19.ImageRotate = 0F;
+            this.guna2PictureBox19.Location = new System.Drawing.Point(20, 0);
+            this.guna2PictureBox19.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.guna2PictureBox19.Name = "guna2PictureBox19";
+            this.guna2PictureBox19.Size = new System.Drawing.Size(60, 60);
+            this.guna2PictureBox19.TabIndex = 0;
+            this.guna2PictureBox19.TabStop = false;
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
@@ -1534,14 +1090,15 @@ namespace media
             this.panel2.Controls.Add(this.button3);
             this.panel2.Controls.Add(this.label24);
             this.panel2.Controls.Add(this.pictureBox7);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.FillColor = System.Drawing.Color.Lavender;
             this.panel2.ForeColor = System.Drawing.SystemColors.Info;
-            this.panel2.Location = new System.Drawing.Point(509, 30);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4);
+            this.panel2.Location = new System.Drawing.Point(4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 30, 4);
             this.panel2.MinimumSize = new System.Drawing.Size(500, 0);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(25, 6, 40, 6);
-            this.panel2.Size = new System.Drawing.Size(868, 71);
+            this.panel2.Size = new System.Drawing.Size(890, 77);
             this.panel2.TabIndex = 2;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint_1);
             // 
@@ -1552,10 +1109,10 @@ namespace media
             this.button13.Dock = System.Windows.Forms.DockStyle.Right;
             this.button13.FlatAppearance.BorderSize = 0;
             this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button13.Location = new System.Drawing.Point(586, 6);
+            this.button13.Location = new System.Drawing.Point(608, 6);
             this.button13.Margin = new System.Windows.Forms.Padding(4);
             this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(83, 59);
+            this.button13.Size = new System.Drawing.Size(83, 65);
             this.button13.TabIndex = 39;
             this.button13.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button13.UseVisualStyleBackColor = true;
@@ -1567,10 +1124,10 @@ namespace media
             this.button4.Dock = System.Windows.Forms.DockStyle.Right;
             this.button4.FlatAppearance.BorderSize = 0;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(669, 6);
+            this.button4.Location = new System.Drawing.Point(691, 6);
             this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(83, 59);
+            this.button4.Size = new System.Drawing.Size(83, 65);
             this.button4.TabIndex = 38;
             this.button4.UseVisualStyleBackColor = true;
             // 
@@ -1581,11 +1138,11 @@ namespace media
             this.button3.Dock = System.Windows.Forms.DockStyle.Right;
             this.button3.FlatAppearance.BorderSize = 0;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(752, 6);
+            this.button3.Location = new System.Drawing.Point(774, 6);
             this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
-            this.button3.Size = new System.Drawing.Size(76, 59);
+            this.button3.Size = new System.Drawing.Size(76, 65);
             this.button3.TabIndex = 37;
             this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button3.UseVisualStyleBackColor = true;
@@ -1621,14 +1178,14 @@ namespace media
             this.pictureBox7.Location = new System.Drawing.Point(25, 6);
             this.pictureBox7.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(60, 59);
+            this.pictureBox7.Size = new System.Drawing.Size(60, 65);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox7.TabIndex = 36;
             this.pictureBox7.TabStop = false;
             // 
             // sendPanel
             // 
-            this.sendPanel.BackColor = this.panelChatBox.BackColor;
+            this.sendPanel.BackColor = System.Drawing.Color.White;
             this.sendPanel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.sendPanel.BorderRadius = 30;
             this.sendPanel.BorderThickness = 2;
@@ -1637,13 +1194,14 @@ namespace media
             this.sendPanel.Controls.Add(this.guna2CircleButton2);
             this.sendPanel.Controls.Add(this.guna2CircleButton1);
             this.sendPanel.Controls.Add(this.guna2TextBox1);
+            this.sendPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.sendPanel.FillColor = System.Drawing.Color.White;
             this.sendPanel.ForeColor = System.Drawing.SystemColors.Info;
-            this.sendPanel.Location = new System.Drawing.Point(509, 664);
-            this.sendPanel.Margin = new System.Windows.Forms.Padding(4);
+            this.sendPanel.Location = new System.Drawing.Point(4, 834);
+            this.sendPanel.Margin = new System.Windows.Forms.Padding(4, 4, 30, 4);
             this.sendPanel.Name = "sendPanel";
             this.sendPanel.Padding = new System.Windows.Forms.Padding(40, 6, 40, 6);
-            this.sendPanel.Size = new System.Drawing.Size(868, 68);
+            this.sendPanel.Size = new System.Drawing.Size(890, 68);
             this.sendPanel.TabIndex = 2;
             this.sendPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.sendPanel_Paint);
             // 
@@ -1659,7 +1217,7 @@ namespace media
             this.guna2CircleButton4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2CircleButton4.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2CircleButton4.ForeColor = System.Drawing.Color.White;
-            this.guna2CircleButton4.Location = new System.Drawing.Point(643, 4);
+            this.guna2CircleButton4.Location = new System.Drawing.Point(665, 4);
             this.guna2CircleButton4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2CircleButton4.Name = "guna2CircleButton4";
             this.guna2CircleButton4.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
@@ -1678,7 +1236,7 @@ namespace media
             this.guna2CircleButton3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2CircleButton3.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2CircleButton3.ForeColor = System.Drawing.Color.White;
-            this.guna2CircleButton3.Location = new System.Drawing.Point(709, 6);
+            this.guna2CircleButton3.Location = new System.Drawing.Point(731, 6);
             this.guna2CircleButton3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2CircleButton3.Name = "guna2CircleButton3";
             this.guna2CircleButton3.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
@@ -1697,7 +1255,7 @@ namespace media
             this.guna2CircleButton2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2CircleButton2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2CircleButton2.ForeColor = System.Drawing.Color.Transparent;
-            this.guna2CircleButton2.Location = new System.Drawing.Point(793, -2);
+            this.guna2CircleButton2.Location = new System.Drawing.Point(815, -2);
             this.guna2CircleButton2.Margin = new System.Windows.Forms.Padding(3, 2, 11, 2);
             this.guna2CircleButton2.Name = "guna2CircleButton2";
             this.guna2CircleButton2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
@@ -1744,7 +1302,7 @@ namespace media
             this.guna2TextBox1.PlaceholderText = "Send a message!";
             this.guna2TextBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.Size = new System.Drawing.Size(555, 52);
+            this.guna2TextBox1.Size = new System.Drawing.Size(577, 52);
             this.guna2TextBox1.TabIndex = 40;
             this.guna2TextBox1.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged);
             this.guna2TextBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.guna2TextBox1_TextChanged);
@@ -1755,9 +1313,7 @@ namespace media
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1832, 912);
-            this.Controls.Add(this.sendPanel);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.panel2);
             this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MinimumSize = new System.Drawing.Size(661, 233);
@@ -1766,56 +1322,14 @@ namespace media
             this.Text = "Chats";
             this.Load += new System.EventHandler(this.FormChat_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.panelChatBox.ResumeLayout(false);
-            this.guna2Panel27.ResumeLayout(false);
-            this.guna2Panel28.ResumeLayout(false);
-            this.guna2Panel28.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox13)).EndInit();
-            this.guna2Panel25.ResumeLayout(false);
-            this.guna2Panel26.ResumeLayout(false);
-            this.guna2Panel26.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox12)).EndInit();
-            this.panelSendContent.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.userProfilePic)).EndInit();
-            this.panelText.ResumeLayout(false);
-            this.panelText.PerformLayout();
-            this.guna2Panel19.ResumeLayout(false);
-            this.guna2Panel20.ResumeLayout(false);
-            this.guna2Panel20.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox9)).EndInit();
-            this.guna2Panel21.ResumeLayout(false);
-            this.guna2Panel22.ResumeLayout(false);
-            this.guna2Panel22.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox10)).EndInit();
-            this.guna2Panel7.ResumeLayout(false);
-            this.guna2Panel8.ResumeLayout(false);
-            this.guna2Panel8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
-            this.guna2Panel1.ResumeLayout(false);
-            this.guna2Panel3.ResumeLayout(false);
-            this.guna2Panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
-            this.guna2Panel35.ResumeLayout(false);
-            this.guna2Panel36.ResumeLayout(false);
-            this.guna2Panel36.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox17)).EndInit();
-            this.guna2Panel37.ResumeLayout(false);
-            this.guna2Panel38.ResumeLayout(false);
-            this.guna2Panel38.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox18)).EndInit();
-            this.guna2Panel39.ResumeLayout(false);
-            this.guna2Panel40.ResumeLayout(false);
-            this.guna2Panel40.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox19)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.panelChatList.ResumeLayout(false);
             this.flowLayoutPanel3.ResumeLayout(false);
-            this.guna2GradientPanel2.ResumeLayout(false);
-            this.guna2GradientPanel2.PerformLayout();
+            this.chatPanel.ResumeLayout(false);
+            this.chatPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.contactProfilePic)).EndInit();
             this.guna2GradientPanel3.ResumeLayout(false);
             this.guna2GradientPanel3.PerformLayout();
-            this.guna2GradientPanel4.ResumeLayout(false);
-            this.guna2GradientPanel4.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
@@ -1847,6 +1361,20 @@ namespace media
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox3)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.panelChatBox.ResumeLayout(false);
+            this.panelSendContent.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.userProfilePic)).EndInit();
+            this.panelText.ResumeLayout(false);
+            this.panelText.PerformLayout();
+            this.guna2Panel37.ResumeLayout(false);
+            this.guna2Panel38.ResumeLayout(false);
+            this.guna2Panel38.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox18)).EndInit();
+            this.guna2Panel39.ResumeLayout(false);
+            this.guna2Panel40.ResumeLayout(false);
+            this.guna2Panel40.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox19)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
@@ -1856,7 +1384,6 @@ namespace media
         }
 
         #endregion
-        private System.Windows.Forms.FlowLayoutPanel panelChatBox;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private Guna.UI2.WinForms.Guna2Panel panelChatList;
@@ -1887,45 +1414,6 @@ namespace media
         private Guna2CircleButton guna2CircleButton3;
         private Guna2CircleButton guna2CircleButton2;
         private Guna2CircleButton guna2CircleButton1;
-        private Guna2Panel guna2Panel1;
-        private Guna2HtmlLabel guna2HtmlLabel1;
-        private Guna2PictureBox guna2PictureBox1;
-        private Guna2Panel guna2Panel3;
-        private Guna2Panel guna2Panel7;
-        private Guna2Panel guna2Panel8;
-        private Guna2HtmlLabel guna2HtmlLabel3;
-        private Guna2PictureBox guna2PictureBox3;
-        private Guna2Panel guna2Panel19;
-        private Guna2Panel guna2Panel20;
-        private Guna2HtmlLabel guna2HtmlLabel9;
-        private Guna2PictureBox guna2PictureBox9;
-        private Guna2Panel guna2Panel25;
-        private Guna2Panel guna2Panel26;
-        private Guna2HtmlLabel guna2HtmlLabel12;
-        private Guna2PictureBox guna2PictureBox12;
-        private Guna2Panel panelSendContent;
-        private Guna2Panel panelText;
-        private Guna2HtmlLabel guna2HtmlLabel11;
-        private Guna2Panel guna2Panel21;
-        private Guna2Panel guna2Panel22;
-        private Guna2HtmlLabel guna2HtmlLabel10;
-        private Guna2PictureBox guna2PictureBox10;
-        private Guna2Panel guna2Panel27;
-        private Guna2Panel guna2Panel28;
-        private Guna2HtmlLabel guna2HtmlLabel13;
-        private Guna2PictureBox guna2PictureBox13;
-        private Guna2Panel guna2Panel35;
-        private Guna2Panel guna2Panel36;
-        private Guna2HtmlLabel guna2HtmlLabel17;
-        private Guna2PictureBox guna2PictureBox17;
-        private Guna2Panel guna2Panel37;
-        private Guna2Panel guna2Panel38;
-        private Guna2HtmlLabel guna2HtmlLabel18;
-        private CustomRoundPictureBox guna2PictureBox18;
-        private Guna2Panel guna2Panel39;
-        private Guna2Panel guna2Panel40;
-        private Guna2HtmlLabel guna2HtmlLabel19;
-        private Guna2PictureBox guna2PictureBox19;
         private Label label1;
         private Guna2PictureBox guna2PictureBox2;
         private Guna2PictureBox guna2PictureBox4;
@@ -1949,19 +1437,28 @@ namespace media
         private Label label8;
         private Label label6;
         private FlowLayoutPanel flowLayoutPanel3;
-        private Guna2GradientPanel guna2GradientPanel2;
-        private Label label10;
-        private Label label9;
-        private Guna2Panel guna2Panel2;
+        private Guna2GradientPanel chatPanel;
+        private Label lastMessage;
+        private Label contactName;
         private Guna2GradientPanel guna2GradientPanel3;
         private Label label11;
         private Label label12;
         private Guna2Panel guna2Panel4;
-        private Guna2GradientPanel guna2GradientPanel4;
-        private Label label13;
-        private Label label14;
-        private Guna2Panel guna2Panel10;
         private CustomRoundPictureBox customRoundPictureBox1;
+        private TableLayoutPanel tableLayoutPanel4;
+        private FlowLayoutPanel panelChatBox;
+        private Guna2Panel panelSendContent;
         private CustomRoundPictureBox userProfilePic;
+        private Guna2Panel panelText;
+        private Guna2HtmlLabel guna2HtmlLabel11;
+        private Guna2Panel guna2Panel37;
+        private Guna2Panel guna2Panel38;
+        private Guna2HtmlLabel guna2HtmlLabel18;
+        private CustomRoundPictureBox guna2PictureBox18;
+        private Guna2Panel guna2Panel39;
+        private Guna2Panel guna2Panel40;
+        private Guna2HtmlLabel guna2HtmlLabel19;
+        private Guna2PictureBox guna2PictureBox19;
+        private CustomRoundPictureBox contactProfilePic;
     }
 }

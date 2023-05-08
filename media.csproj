@@ -282,6 +282,7 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Message\ClassChatList.cs" />
     <Compile Include="PostAdopter.cs" />
     <Compile Include="CreateProduct.cs">
       <SubType>Form</SubType>
