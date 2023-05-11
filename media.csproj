@@ -270,6 +270,7 @@
     <Compile Include="Calculator.Designer.cs">
       <DependentUpon>Calculator.cs</DependentUpon>
     </Compile>
+    <Compile Include="Classes\Message.cs" />
     <Compile Include="FormProductSingle1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

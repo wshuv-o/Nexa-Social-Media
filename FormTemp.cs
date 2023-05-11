@@ -16,5 +16,10 @@ namespace media
         {
             InitializeComponent();
         }
+
+        private void FormTemp_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
