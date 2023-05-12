@@ -20,7 +20,7 @@ namespace media
 
         public Home()
         {
-            media.Classes.ClassPost[] classPostList= new media.Classes.ClassPost[20]; 
+            media.Classes.ClassPost[] classPostList= new media.Classes.ClassPost[100]; 
             InitializeComponent();
             panelBaseHome.ColumnStyles[0] = new ColumnStyle(SizeType.Percent, 40F);
             panelBaseHome.ColumnStyles[2] = new ColumnStyle(SizeType.Percent,40F);

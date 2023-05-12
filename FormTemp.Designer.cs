@@ -36,9 +36,11 @@ namespace media
             this.panelText = new Guna.UI2.WinForms.Guna2Panel();
             this.lblMessage = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.customPanel1 = new media.CustomPanel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelSendContent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userProfilePic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelSendContent
@@ -98,30 +100,39 @@ namespace media
             this.lblMessage.Text = "sdfksdj";
             this.lblMessage.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // customPanel1
+            // button1
             // 
-            this.customPanel1.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.customPanel1.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.customPanel1.BorderRadius = 0;
-            this.customPanel1.BorderSize = 2;
-            this.customPanel1.Location = new System.Drawing.Point(253, 125);
-            this.customPanel1.Name = "customPanel1";
-            this.customPanel1.Size = new System.Drawing.Size(301, 257);
-            this.customPanel1.TabIndex = 0;
-            this.customPanel1.UnderlinedStyle = false;
+            this.button1.Location = new System.Drawing.Point(769, 407);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(304, 131);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(279, 299);
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
             // 
             // FormTemp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1042, 635);
-            this.Controls.Add(this.customPanel1);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.button1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormTemp";
             this.Text = "FormTemp";
             this.Load += new System.EventHandler(this.FormTemp_Load);
             this.panelSendContent.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.userProfilePic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -133,6 +144,7 @@ namespace media
         private Guna2Panel panelText;
         private Guna2HtmlLabel lblMessage;
         private ColorDialog colorDialog1;
-        private CustomPanel customPanel1;
+        private Button button1;
+        private PictureBox pictureBox1;
     }
 }

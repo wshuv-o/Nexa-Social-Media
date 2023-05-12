@@ -10,6 +10,8 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Resources;
+using System.Runtime.CompilerServices;
+using System.ServiceModel.Security;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,20 +20,24 @@ namespace media
 {
     public partial class FormChat : Form
     {
-        private Classes.User user= new User();
+        private static Classes.User nativeUser = new User();
         private ClassChatList[] classChatList = new ClassChatList[20];
         private Guna2GradientPanel[] panelArray = new Guna2GradientPanel[20];
         public static int key = 0;
+        public static Classes.User ChatUser;
 
-        Classes.User User
+
+        static Classes.User NativeUser
         {
-            get { return user; }
-            set { this.user = value; }
+            get { return nativeUser; }
+            set { nativeUser = value; }
         }
 
-        public FormChat(Classes.User user)
+        public FormChat(Classes.User nativeUser)
         {
-            this.User= user;
+
+
+            NativeUser = nativeUser;
 
             InitializeComponent();
             this.SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
@@ -52,7 +58,7 @@ namespace media
             connection.Open();
             string query = "SELECT CASE WHEN nativeuserid = @userId THEN frienduserid ELSE nativeuserid END FROM friends WHERE nativeuserid = @userId OR frienduserid = @userId";
             MySqlCommand command = new MySqlCommand(query, connection);
-            command.Parameters.AddWithValue("@userId", this.User.Key);
+            command.Parameters.AddWithValue("@userId", NativeUser.Key);
             MySqlDataReader reader = command.ExecuteReader();
             int j = 0;
             while (reader.Read())
@@ -74,21 +80,18 @@ namespace media
             panelArray = flowLayoutPanel3.Controls.OfType<Guna2GradientPanel>().ToArray();
             ClassChatList.panelChats= panelArray;
 
-
-
-            
         }
 
-        public void GetMessagesOfUser(int chatPersonId)
+        public static void GetMessagesOfUser(int chatPersonId)
         {
             string connectionString = DatabaseCredentials.connectionStringLocalServer;
 
             MySqlConnection conn = new MySqlConnection(connectionString);
             conn.Open();
-            string querySent = "SELECT * FROM message WHERE senderid = " + this.User.Key + " AND recieverid = " +chatPersonId+"";
+            string querySent = "SELECT * FROM message WHERE senderid = " + NativeUser.Key + " AND recieverid = " +chatPersonId+"";
             List<Classes.Message> sentMessages = GetMessages(conn, querySent);
 
-            string queryReceived = "SELECT * FROM message WHERE senderid = " +chatPersonId+ " AND recieverid = "+ this.User.Key +"";
+            string queryReceived = "SELECT * FROM message WHERE senderid = " +chatPersonId+ " AND recieverid = "+ NativeUser.Key +"";
             List<Classes.Message> receivedMessages = GetMessages(conn, queryReceived);
 
             List<Classes.Message> mergedMessages = new List<Classes.Message>();
@@ -204,6 +207,7 @@ namespace media
        private void guna2TextBox1_TextChanged(object sender, KeyPressEventArgs e)
         {
 
+
            if (e.KeyChar == (char)Keys.Enter) 
             {
                 Panel panelSendContent = new Panel();
@@ -211,7 +215,7 @@ namespace media
                 CustomRoundPictureBox userProfilePic= new CustomRoundPictureBox();
                 Guna2HtmlLabel lblMessage = new Guna2HtmlLabel();
 
-                userProfilePic.BackgroundImage = global::media.Properties.Resources.PicsArt_09_0m7_09_40_49;
+                userProfilePic.BackgroundImage = NativeUser.ProfilePhoto;
                 userProfilePic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
                 userProfilePic.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
                 userProfilePic.BorderColor = System.Drawing.Color.White;
@@ -237,11 +241,12 @@ namespace media
                 lblMessage.ForeColor= System.Drawing.Color.Black;
                 lblMessage.Size = new System.Drawing.Size(68, 27);
                 lblMessage.TabIndex = 1;
-                lblMessage.Text = this.guna2TextBox1.Text;
+                lblMessage.Text = guna2TextBox1.Text;
                 lblMessage.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
 
                 panelText.BorderColor = System.Drawing.Color.Purple;
                 panelText.BorderRadius = 10;
+                panelText.Controls.Add(lblMessage);
                 panelText.BorderThickness = 1;
                 panelText.CustomizableEdges.BottomRight = false;
                 panelText.Location = new System.Drawing.Point(500, 11);
@@ -261,31 +266,42 @@ namespace media
                 panelSendContent.Size = new System.Drawing.Size(853, 60);
                 panelSendContent.TabIndex = 5;
 
-/*                    lblMessage.AutoSize = true;
-                lblMessage.MaximumSize = new Size(panelText.Width, 40);
-                panelText.Size = new Size(panelText.Width, lblMessage.Height+100);
-                panelSendContent.Size = new Size(panelSendContent.Width, panelText.Height);
-                lblMessage.MaximumSize = new Size(lblMessage.Width, 40); 
-                lblMessage.AutoSize = false;
-                lblMessage.Dock = DockStyle.Fill;
-                lblMessage.MaximumSize = new Size(panelText.Width, 40);
 
-*/                //lblMessage.TextImageRelation = TextImageRelation.Overlay;
 
-            this.panelChatBox.Controls.Add(panelSendContent);
-                this.guna2TextBox1.Text = "";
+
+                string connectionString = DatabaseCredentials.connectionStringLocalServer;
+                DateTime messageTime = DateTime.Now;
+
+                using (MySqlConnection connection = new MySqlConnection(connectionString))
+                {
+                    connection.Open();
+                    string query = "INSERT INTO message (messagetext, senderid, recieverid, messageTime) VALUES (@messageText, @senderId, @receiverId, @messageTime)";
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@messageText", guna2TextBox1.Text);
+                        command.Parameters.AddWithValue("@senderId", NativeUser.Key);
+                        command.Parameters.AddWithValue("@receiverId", key);
+                        command.Parameters.AddWithValue("@messageTime", messageTime);
+
+                        int rowsAffected = command.ExecuteNonQuery();
+
+                    }
+                }
+
+                panelChatBox.Controls.Add(panelSendContent);
+                guna2TextBox1.Text = "";
                 panelChatBox.ScrollControlIntoView(panelSendContent);
-
-
             }
         }
-        public void InitiateOldChatSent(Classes.Message message)
+        public static void InitiateOldChatSent(Classes.Message message)
         {
             Panel panelSendContent = new Panel();
             Guna2Panel panelText = new Guna2Panel();
             CustomRoundPictureBox userProfilePic = new CustomRoundPictureBox();
             Guna2HtmlLabel lblMessage = new Guna2HtmlLabel();
-            if(this.User.ProfilePhoto!=null) userProfilePic.BackgroundImage = this.User.ProfilePhoto;
+
+
+            if(FormChat.NativeUser.ProfilePhoto!=null) userProfilePic.BackgroundImage = NativeUser.ProfilePhoto;
 
             userProfilePic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             userProfilePic.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
@@ -316,6 +332,7 @@ namespace media
             lblMessage.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
 
             panelText.BorderColor = System.Drawing.Color.Purple;
+            panelText.Controls.Add(lblMessage);
             panelText.BorderRadius = 10;
             panelText.BorderThickness = 1;
             panelText.CustomizableEdges.BottomRight = false;
@@ -336,24 +353,13 @@ namespace media
             panelSendContent.Size = new System.Drawing.Size(853, 60);
             panelSendContent.TabIndex = 5;
 
-            /*                    lblMessage.AutoSize = true;
-                                lblMessage.MaximumSize = new Size(panelText.Width, 40);
-                                panelText.Size = new Size(panelText.Width, lblMessage.Height+100);
-                                panelSendContent.Size = new Size(panelSendContent.Width, panelText.Height);
-                                lblMessage.MaximumSize = new Size(lblMessage.Width, 40); 
-                                lblMessage.AutoSize = false;
-                                lblMessage.Dock = DockStyle.Fill;
-                                lblMessage.MaximumSize = new Size(panelText.Width, 40);
-
-            */                //lblMessage.TextImageRelation = TextImageRelation.Overlay;
-
-            this.panelChatBox.Controls.Add(panelSendContent);
-            this.guna2TextBox1.Text = "";
+            panelChatBox.Controls.Add(panelSendContent);
+            guna2TextBox1.Text = "";
             panelChatBox.ScrollControlIntoView(panelSendContent);
 
         }
 
-        public void InitiateOldChatRecieved(Classes.User chatPerson, Classes.Message message)
+        public static void InitiateOldChatRecieved(Classes.User chatPerson, Classes.Message message)
         {
             Panel panelSendContent = new Panel();
             Guna2Panel panelText = new Guna2Panel();
@@ -371,7 +377,7 @@ namespace media
             userProfilePic.BorderSize = 2;
             userProfilePic.Dock = System.Windows.Forms.DockStyle.Left;
             userProfilePic.GradientAngle = 50F;
-            userProfilePic.Location = new System.Drawing.Point(773, 0);
+            userProfilePic.Location = new System.Drawing.Point(500, 0);
             userProfilePic.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             userProfilePic.Name = "userProfilePic";
             userProfilePic.Size = new System.Drawing.Size(60, 60);
@@ -387,14 +393,15 @@ namespace media
             lblMessage.ForeColor = System.Drawing.Color.Black;
             lblMessage.Size = new System.Drawing.Size(68, 27);
             lblMessage.TabIndex = 1;
-            lblMessage.Text = message.MessageText;
+            lblMessage.Text =message.MessageText;
             lblMessage.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
 
             panelText.BorderColor = System.Drawing.Color.Purple;
+            panelText.Controls.Add(lblMessage);
             panelText.BorderRadius = 10;
             panelText.BorderThickness = 1;
             panelText.CustomizableEdges.BottomLeft = false;
-            panelText.Location = new System.Drawing.Point(20, 11);
+            panelText.Location = new System.Drawing.Point(80, 11);
             panelText.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             panelText.Name = "panelText";
             panelText.Size = new System.Drawing.Size(270, 46);
@@ -404,26 +411,16 @@ namespace media
             panelSendContent.BackColor = System.Drawing.Color.White;
             panelSendContent.Controls.Add(userProfilePic);
             panelSendContent.Controls.Add(panelText);
-            panelSendContent.Location = new System.Drawing.Point(30, 157);
+            panelSendContent.Location = new System.Drawing.Point(0, 157);
             panelSendContent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 25);
             panelSendContent.Name = "panelSendContent";
             panelSendContent.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            panelSendContent.Size = new System.Drawing.Size(853, 60);
+            panelSendContent.Size = new System.Drawing.Size(850, 60);
             panelSendContent.TabIndex = 5;
 
-            /*                    lblMessage.AutoSize = true;
-                                lblMessage.MaximumSize = new Size(panelText.Width, 40);
-                                panelText.Size = new Size(panelText.Width, lblMessage.Height+100);
-                                panelSendContent.Size = new Size(panelSendContent.Width, panelText.Height);
-                                lblMessage.MaximumSize = new Size(lblMessage.Width, 40); 
-                                lblMessage.AutoSize = false;
-                                lblMessage.Dock = DockStyle.Fill;
-                                lblMessage.MaximumSize = new Size(panelText.Width, 40);
 
-            */                //lblMessage.TextImageRelation = TextImageRelation.Overlay;
-
-            this.panelChatBox.Controls.Add(panelSendContent);
-            this.guna2TextBox1.Text = "";
+            panelChatBox.Controls.Add(panelSendContent);
+            guna2TextBox1.Text = "";
             panelChatBox.ScrollControlIntoView(panelSendContent);
 
         }
@@ -436,6 +433,8 @@ namespace media
             private System.Windows.Forms.Label lastMessage = new System.Windows.Forms.Label();
             private System.Windows.Forms.Label contactName = new System.Windows.Forms.Label();
             public static Guna2GradientPanel[] panelChats = new Guna2GradientPanel[20];
+            static List<Classes.Message> mergedMessages = new List<Classes.Message>();
+
             private Classes.User user = new Classes.User();
             private Label lblKey = new Label();
             private int chatPersonKey;
@@ -462,6 +461,7 @@ namespace media
 
             public ClassChatList(Classes.User user)
             {
+                mergedMessages = ClassChatList.GetMessagesOfUser(user.Key);
                 this.User = user;
                 if (this.User.ProfilePhoto != null)
                 {
@@ -506,7 +506,11 @@ namespace media
                 lastMessage.Name = "lastMessage";
                 lastMessage.Size = new System.Drawing.Size(106, 16);
                 lastMessage.TabIndex = 2;
-                lastMessage.Text = ".....";
+                if (mergedMessages.Count > 0)
+                {
+                    lastMessage.Text = mergedMessages.Last().MessageText;
+                }
+                //MessageBox.Show(mergedMessages.Last().MessageText);
                 lastMessage.Click += new System.EventHandler(this.FocusOnChat);
 
                 contactName.AutoSize = true;
@@ -521,23 +525,70 @@ namespace media
                 contactName.Text = user.UserFirstName + " " + user.UserLastName;
 
             }
-
-
-/*            public void FocusOnChat(object sender, EventArgs e)
+            public static List<Classes.Message> GetMessagesOfUser(int chatPersonId)
             {
+                string connectionString = DatabaseCredentials.connectionStringLocalServer;
 
-                foreach (Guna2GradientPanel panel in panelChats)
+                MySqlConnection conn = new MySqlConnection(connectionString);
+                conn.Open();
+                string querySent = "SELECT * FROM message WHERE senderid = " + NativeUser.Key + " AND recieverid = " + chatPersonId + "";
+                List<Classes.Message> sentMessages = GetMessages(conn, querySent);
+
+                string queryReceived = "SELECT * FROM message WHERE senderid = " + chatPersonId + " AND recieverid = " + NativeUser.Key + "";
+                List<Classes.Message> receivedMessages = GetMessages(conn, queryReceived);
+
+                mergedMessages = new List<Classes.Message>();
+                mergedMessages.AddRange(sentMessages);
+                mergedMessages.AddRange(receivedMessages);
+                mergedMessages.Sort((m1, m2) => DateTime.Compare(m1.SendTime, m2.SendTime));
+
+                DBImageOperation dbio = new DBImageOperation();
+                User chatPerson = dbio.GetUserByUserId(chatPersonId);
+
+                conn.Close();
+                return mergedMessages;
+
+            }
+
+            private static List<Classes.Message> GetMessages(MySqlConnection connection, string query)
+            {
+                List<Classes.Message> messages = new List<Classes.Message>();
+
+                MySqlCommand command = new MySqlCommand(query, connection);
+                MySqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
                 {
-                    panel.FillColor = System.Drawing.Color.White; // Set the desired background color
-                    panel.FillColor2 = System.Drawing.Color.White; // Set the desired background color
+                    int messageId = Convert.ToInt32(reader["messageid"]);
+                    string messageText = reader["messagetext"].ToString();
+                    DateTime sendTime = Convert.ToDateTime(reader["messageTime"]);
+                    int senderId = Convert.ToInt32(reader["senderid"]);
+                    int receiverId = Convert.ToInt32(reader["recieverid"]);
+
+                    Classes.Message message = new Classes.Message(messageId, messageText, sendTime, senderId, receiverId);
+                    messages.Add(message);
                 }
-                this.chatPanel.FillColor = System.Drawing.Color.Pink;
-                this.chatPanel.FillColor2 = System.Drawing.Color.HotPink;
 
-                int chatPersonId = 35; // Example value
-               // guna2TextBox1_TextChanged(sender, e);
+                reader.Close();
+                return messages;
+            }
 
-            }*/
+
+            /*            public void FocusOnChat(object sender, EventArgs e)
+                        {
+
+                            foreach (Guna2GradientPanel panel in panelChats)
+                            {
+                                panel.FillColor = System.Drawing.Color.White; // Set the desired background color
+                                panel.FillColor2 = System.Drawing.Color.White; // Set the desired background color
+                            }
+                            this.chatPanel.FillColor = System.Drawing.Color.Pink;
+                            this.chatPanel.FillColor2 = System.Drawing.Color.HotPink;
+
+                            int chatPersonId = 35; // Example value
+                           // guna2TextBox1_TextChanged(sender, e);
+
+                        }*/
             private void FocusOnChat(object sender, EventArgs e)
             {
                 foreach (Guna2GradientPanel panel in panelChats)
@@ -550,7 +601,7 @@ namespace media
 
                 //MessageBox.Show(lblKey.Text);
                 ChatPersonKey = Convert.ToInt32(lblKey.Text);
-                if (ChatPersonKey != null)
+                if (ChatPersonKey != 0)
                 {
                     //MessageBox.Show(ChatPersonKey.ToString());
                     // parent.InvokeGetMessagesOfUser(ChatPersonKey);
@@ -584,7 +635,15 @@ namespace media
         {
             //this.Visible= false;
             label9.Text = FormChat.key.ToString();
+            panelChatBox.Controls.Clear();
+            FormChat.GetMessagesOfUser(key);
+            DBImageOperation dbio = new DBImageOperation();
+            ChatUser = dbio.GetUserByUserId(FormChat.key);
+            pictureBox7.Image = ChatUser.ProfilePhoto;
+            userName.Text=ChatUser.UserFirstName+ " "+ChatUser.UserLastName;
+            
         }
+
         private void button2_Click(object sender, EventArgs e)
         {
 
@@ -594,7 +653,7 @@ namespace media
         {
 
         }
-        private void panelText_Paint(object sender, PaintEventArgs e)
+        private static void panelText_Paint(object sender, PaintEventArgs e)
         {
 
         }
@@ -611,6 +670,11 @@ namespace media
         }
 
         private void tableLayoutPanel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox7_Click(object sender, EventArgs e)
         {
 
         }

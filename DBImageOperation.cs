@@ -85,7 +85,7 @@ namespace media
             return image;
         }
 
-        private byte[] ImageToByteArray(Image image)
+        public byte[] ImageToByteArray(Image image)
         {
             using (MemoryStream stream = new MemoryStream())
             {

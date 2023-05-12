@@ -276,6 +276,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FormProductSingle.resx</DependentUpon>
     </Compile>
+    <Compile Include="ImageCompress.cs" />
     <Compile Include="JpegOptions.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>

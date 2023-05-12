@@ -157,25 +157,8 @@ namespace media
             path.CloseFigure();
             panel.Region = new Region(path);
         }
-        private static void FuncRound(TextBox textBox1)
-        {
-            // Set the border style of the textbox to none
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Height = 100;
-            textBox1.Padding = new Padding(20);
 
-            // Set the rounded corners of the textbox
-            GraphicsPath path = new GraphicsPath();
-            path.AddArc(0, 0, 20, 20, 180, 90);
-            path.AddLine(20, 0, textBox1.Width - 20, 0);
-            path.AddArc(textBox1.Width - 20, 0, 20, 20, 270, 90);
-            path.AddLine(textBox1.Width, 20, textBox1.Width, textBox1.Height - 20);
-            path.AddArc(textBox1.Width - 20, textBox1.Height - 20, 20, 20, 0, 90);
-            path.AddLine(textBox1.Width - 20, textBox1.Height, 20, textBox1.Height);
-            path.AddArc(0, textBox1.Height - 20, 20, 20, 90, 90);
-            path.CloseFigure();
-            textBox1.Region = new Region(path);
-        }
+
         public static void OpenChildForm(Form childForm, Panel parentPanel)
         {
             if (activeForm != null)

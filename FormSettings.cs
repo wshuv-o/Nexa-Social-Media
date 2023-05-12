@@ -14,6 +14,7 @@ using Org.BouncyCastle.Utilities.Collections;
 using Guna.UI2.WinForms;
 using System.Configuration;
 using System.Data.SqlClient;
+using Aspose.Imaging.FileFormats.Emf.EmfPlus.Objects;
 
 namespace media
 {
@@ -61,7 +62,7 @@ namespace media
             //DisplayUserImageFromDatabase();
             */
             //byte[] a = BTN_SHOW_Click(sender, e);
-            this.guna2CircleButton4.Image= dbio.SelectImageFromFile();
+            this.guna2CircleButton4.Image= ImageCompress.SelectAndCompressImage();
             
             
         }
@@ -81,6 +82,11 @@ namespace media
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void guna2Button8_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
         }
     }
 }
