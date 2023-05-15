@@ -20,36 +20,21 @@ namespace media
 
         private void button1_Click(object sender, EventArgs e)
         {
-            // Assuming you have a TableLayoutPanel called 'tableLayoutPanel2'
-            int removeColumnIndex = 0;
-            int removeRowIndex = 2;
+            string emoji = richTextBox1.Text;label1.UseCompatibleTextRendering = true;
+            label1.Text = emoji;
+/*            string emo = this.richTextBox1.Text;
+            
+            this.label1.Text = emo ;*/
+        }
 
-            Control controlToRemove = tableLayoutPanel2.GetControlFromPosition(removeColumnIndex, removeRowIndex);
-            if (controlToRemove != null)
-            {
-                tableLayoutPanel2.Controls.Remove(controlToRemove);
-                controlToRemove.Dispose();
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
 
-                // Adjust the layout by shifting controls in the same column above the removed cell
-                for (int rowIndex = removeRowIndex + 1; rowIndex < tableLayoutPanel2.RowCount; rowIndex++)
-                {
-                    Control control = tableLayoutPanel2.GetControlFromPosition(removeColumnIndex, rowIndex);
-                    if (control != null)
-                    {
-                        tableLayoutPanel2.SetCellPosition(control, new TableLayoutPanelCellPosition(removeColumnIndex, rowIndex - 1));
-                    }
-                }
+        }
 
-                // Update the row span of the control in the adjacent cell
-                Control adjacentControl = tableLayoutPanel2.GetControlFromPosition(removeColumnIndex, removeRowIndex - 1);
-                if (adjacentControl != null)
-                {
-                    tableLayoutPanel2.SetRowSpan(adjacentControl, tableLayoutPanel2.GetRowSpan(adjacentControl) + 1);
-                }
+        private void label1_Click(object sender, EventArgs e)
+        {
 
-                // Decrement the row count of the table layout
-                tableLayoutPanel2.RowCount--;
-            }
         }
     }
 }

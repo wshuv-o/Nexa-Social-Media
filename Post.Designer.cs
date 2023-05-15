@@ -382,10 +382,7 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton1;
-        private System.Windows.Forms.Label reactCount;
-
-        System.Windows.Forms.Label lblUserName;
-
+        private System.Windows.Forms.Label reactCount;            System.Windows.Forms.Label lblUserName;
 
 
     }

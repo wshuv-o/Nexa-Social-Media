@@ -19,7 +19,7 @@ namespace media
 {
     public partial class Home : Form
     {
-
+        private int searchKey=0;
         private Classes.User nativeUser;
         List<ClassFriendRequest> classFriendRequestlist = new List<ClassFriendRequest>();
         List<FriendRequestAdopter> friendRequestAdopter = new List<FriendRequestAdopter>();
@@ -77,10 +77,16 @@ namespace media
             Methods.SetDoubleBuffer(panelFC, true);
             Methods.SetDoubleBuffer(panelFeed, true);
             Methods.SetDoubleBuffer(contactPanel, true);
-            
-            
-            //MessageBox.Show(x);
-           
+
+
+
+            DataGridViewButtonColumn buttonColumn = new DataGridViewButtonColumn();
+            buttonColumn.HeaderText = "Button Column";
+            buttonColumn.Name = "btnColumn";
+            buttonColumn.Text = "Click Me";
+            buttonColumn.UseColumnTextForButtonValue = true;
+
+            guna2DataGridView1.Columns.Add(buttonColumn);
         }
         public Home(int userId)
         {
@@ -143,7 +149,6 @@ namespace media
             MySqlCommand command = new MySqlCommand(query, connection);
             command.Parameters.AddWithValue("@userId", userId);
             MySqlDataReader reader = command.ExecuteReader();
-            int j = 0;
             while (reader.Read())
             {
                 DBImageOperation dbio = new DBImageOperation();
@@ -151,7 +156,7 @@ namespace media
                 string postText = (string)reader["posttext"];
                 DateTime postTime = reader.GetDateTime("posttime");
                 string postPermission = (string)reader["postPermission"];
-                int postReact = (int)reader["postReactCount"];
+                int postReact = reader.GetInt32("postReactCount");
                 int Key = reader.GetInt32("userid");
                 System.Drawing.Image postImage= dbio.LoadPostImageFromDataBase(postID);
                 User postCreator = dbio.GetUserByUserId(Key);
@@ -255,7 +260,7 @@ namespace media
         }
 
         private void Home_Load(object sender, EventArgs e)
-        {/*
+        {
             List<media.Classes.ClassPost> classPostList = new List<media.Classes.ClassPost>();
             string connectionString = DatabaseCredentials.connectionStringLocalServer;
             MySqlConnection connection = new MySqlConnection(connectionString);
@@ -420,23 +425,17 @@ namespace media
                 this.contactPanel.Controls.Add(contactAdaptorPanel[i].panelEachContact);
 
             }
-            */
+            
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
 
-        }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-                    
-        }
+
 
         private void panelBaseStory_Paint(object sender, PaintEventArgs e)
         {
@@ -490,10 +489,7 @@ namespace media
 
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }        
+      
         private void panelBase_Paint(object sender, PaintEventArgs e)
         {
 
@@ -503,15 +499,9 @@ namespace media
         {
 
         }
-        private void panel2_MouseEnter(object sender, EventArgs e)
-        {
-            panelFeed.VerticalScroll.Visible = true;
-        }
 
-        private void panel2_MouseLeave(object sender, EventArgs e)
-        {
-            panelFeed.VerticalScroll.Visible = false;
-        }        
+
+    
         private void panelChild_Paint_1(object sender, PaintEventArgs e)
         {
 
@@ -526,240 +516,9 @@ namespace media
             panelFeed.VerticalScroll.Visible = false;
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-        private void AddNewFriendRequest()
-        {
-            TableLayoutPanel BaseEachRequest= new TableLayoutPanel();
-            TableLayoutPanel panelsAcceptDecline= new TableLayoutPanel();
-            Guna2Panel panelUser = new Guna2Panel();
-            Guna2Button accept =new Guna2Button();
-            Guna2Button decline =new Guna2Button();
-            Guna2Button toUserProfile =new Guna2Button();
-            Guna2PictureBox pictureBox1 =new Guna2PictureBox();
-            Guna2HtmlLabel friendName = new Guna2HtmlLabel();
-            Guna2HtmlLabel noOfMutual=new Guna2HtmlLabel();
 
 
 
-            BaseEachRequest.BackColor = System.Drawing.Color.White;
-            BaseEachRequest.ColumnCount = 1;
-            BaseEachRequest.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            BaseEachRequest.Controls.Add(panelsAcceptDecline, 0, 1);
-            BaseEachRequest.Controls.Add(panelUser, 0, 0);
-            BaseEachRequest.Location = new System.Drawing.Point(3, 3);
-            BaseEachRequest.Name = "BaseEachRequest";
-            BaseEachRequest.RowCount = 2;
-            BaseEachRequest.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55.76923F));
-            BaseEachRequest.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 44.23077F));
-            BaseEachRequest.Size = new System.Drawing.Size(380, 130);
-            BaseEachRequest.TabIndex = 0;
-
-            /*this.tableLayoutPanel1.BackColor = System.Drawing.Color.White;
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.panel4, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55.76923F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 44.23077F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(392, 139);
-            this.tableLayoutPanel1.TabIndex = 0;
-            */ 
-            // panelsAcceptDecline
-            // 
-            panelsAcceptDecline.ColumnCount = 2;
-            panelsAcceptDecline.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            panelsAcceptDecline.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            panelsAcceptDecline.Controls.Add(accept, 0, 0);
-            panelsAcceptDecline.Controls.Add(decline, 1, 0);
-            panelsAcceptDecline.Dock = System.Windows.Forms.DockStyle.Fill;
-            panelsAcceptDecline.Location = new System.Drawing.Point(3, 89);
-            panelsAcceptDecline.Name = "panelsAcceptDecline";
-            panelsAcceptDecline.RowCount = 1;
-            panelsAcceptDecline.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            panelsAcceptDecline.Size = new System.Drawing.Size(378, 63);
-            panelsAcceptDecline.TabIndex = 0;
-            // 
-            // panelUser
-            // 
-            panelUser.Controls.Add(noOfMutual);
-            panelUser.Controls.Add(friendName);
-            panelUser.Controls.Add(pictureBox1);
-            panelUser.Controls.Add(toUserProfile);
-            panelUser.Dock = System.Windows.Forms.DockStyle.Fill;
-            panelUser.Location = new System.Drawing.Point(3, 3);
-            panelUser.Name = "panelUser";
-            panelUser.Size = new System.Drawing.Size(378, 80);
-            panelUser.TabIndex = 1;
-            // 
-            // accept
-            // 
-            accept.BackColor = Color.FromArgb(134,27,242);
-            accept.Dock = System.Windows.Forms.DockStyle.Fill;
-            accept.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            accept.ForeColor = System.Drawing.Color.White;
-            accept.Location = new System.Drawing.Point(3, 3);
-            accept.Name = "accept";
-            accept.Size = new System.Drawing.Size(183, 57);
-            accept.TabIndex = 0;
-            accept.Text = "Accept";
-            // 
-            // decline
-            // 
-            decline.BackColor = Color.FromArgb(134, 27, 242);
-            decline.Dock = System.Windows.Forms.DockStyle.Fill;
-            decline.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            decline.ForeColor = System.Drawing.Color.White;
-            decline.Location = new System.Drawing.Point(192, 3);
-            decline.Name = "decline";
-            decline.Size = new System.Drawing.Size(183, 57);
-            decline.TabIndex = 1;
-            decline.Text = "Decline";
-            // 
-            // toUserProfile
-            // 
-            toUserProfile.BackColor = System.Drawing.SystemColors.HighlightText;
-            toUserProfile.Dock = System.Windows.Forms.DockStyle.Fill;
-            toUserProfile.Location = new System.Drawing.Point(0, 0);
-            toUserProfile.Name = "toUserProfile";
-            toUserProfile.Padding = new System.Windows.Forms.Padding(15);
-            toUserProfile.Size = new System.Drawing.Size(378, 80);
-            toUserProfile.TabIndex = 0;
-            //toUserProfile.Click += new System.EventHandler(this.toUserProfile_Click);
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.BackgroundImage = global::media.Properties.Resources.rsz_160721257_848984555463636_5606238717187457024_n;
-            pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            pictureBox1.Location = new System.Drawing.Point(3, 5);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new System.Drawing.Size(71, 72);
-            pictureBox1.TabIndex = 1;
-            pictureBox1.TabStop = false;
-            pictureBox1.Click += new System.EventHandler(pictureBox1_Click_1);
-            // 
-            // friendName
-            // 
-            friendName.AutoSize = true;
-            friendName.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            friendName.Location = new System.Drawing.Point(85, 15);
-            friendName.Name = "friendName";
-            friendName.Size = new System.Drawing.Size(101, 22);
-            friendName.TabIndex = 2;
-            friendName.Text = "Imtiaj Sajin";
-            friendName.ForeColor = System.Drawing.Color.Black;
-
-            // 
-            // noOfMutual
-            // panelEachContact
-            noOfMutual.AutoSize = true;
-            noOfMutual.Location = new System.Drawing.Point(86, 53);
-            noOfMutual.Name = "noOfMutual";
-            noOfMutual.Size = new System.Drawing.Size(92, 13);
-            noOfMutual.TabIndex = 3;
-            noOfMutual.Text = "20 mutual contact";
-            noOfMutual.ForeColor= System.Drawing.Color.Black;
-
-
-
-        }
-        public void ContactList()
-        {
-            Panel panelEachContact;
-            Label active;
-            Label contactName;
-            PictureBox contactPicture;
-            Button contactButton;
-            panelEachContact = new System.Windows.Forms.Panel();
-            active = new System.Windows.Forms.Label();
-            contactName = new System.Windows.Forms.Label();
-            contactPicture = new System.Windows.Forms.PictureBox();
-            contactButton = new System.Windows.Forms.Button();
-            panelEachContact.BackColor = System.Drawing.Color.White;
-            panelEachContact.Controls.Add(active);
-            panelEachContact.Controls.Add(contactName);
-            panelEachContact.Controls.Add(contactPicture);
-            panelEachContact.Controls.Add(contactButton);
-            panelEachContact.Location = new System.Drawing.Point(3, 87);
-            panelEachContact.Name = "panelEachContact";
-            panelEachContact.Padding = new System.Windows.Forms.Padding(10);
-            panelEachContact.Size = new System.Drawing.Size(378, 75);
-            panelEachContact.TabIndex = 6;
-            // 
-            // active
-            // 
-            active.AutoSize = true;
-            active.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            active.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            active.Location = new System.Drawing.Point(343, 25);
-            active.Name = "active";
-            active.Size = new System.Drawing.Size(31, 24);
-            active.TabIndex = 2;
-            active.Text = "🔴";
-            // 
-            // contactName
-            // 
-            contactName.AutoSize = true;
-            contactName.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            contactName.ForeColor = System.Drawing.Color.Black;
-            contactName.Location = new System.Drawing.Point(84, 23);
-            contactName.Name = "contactName";
-            contactName.Size = new System.Drawing.Size(113, 26);
-            contactName.TabIndex = 1;
-            contactName.Text = "Saif Hasan";
-            contactName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // contactPicture
-            // 
-            contactPicture.BackColor = System.Drawing.Color.Goldenrod;
-            contactPicture.Dock = System.Windows.Forms.DockStyle.Left;
-            contactPicture.Image = global::media.Properties.Resources.p2;
-            contactPicture.Location = new System.Drawing.Point(10, 10);
-            contactPicture.Name = "contactPicture";
-            contactPicture.Size = new System.Drawing.Size(55, 55);
-            contactPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            contactPicture.TabIndex = 0;
-            contactPicture.TabStop = false;
-            // 
-            // contactButton
-            // 
-            contactButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            contactButton.FlatAppearance.BorderSize = 0;
-            contactButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            contactButton.ForeColor = System.Drawing.Color.Black;
-            contactButton.Location = new System.Drawing.Point(10, 10);
-            contactButton.Name = "contactButton";
-            contactButton.Size = new System.Drawing.Size(358, 55);
-            contactButton.TabIndex = 3;
-            contactButton.UseVisualStyleBackColor = true;
-            Methods.RoundPanelCorners(ref panelEachContact, 20);
-            Methods.RoundImageBoxCorners(contactPicture, 25);
-
-            contactPanel.Controls.Add(panelEachContact);
-
-
-
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void label1_Click_1(object sender, EventArgs e)
         {
@@ -792,7 +551,7 @@ namespace media
 
         private void button3_Click(object sender, EventArgs e)
         {
-            this.ContactList();
+            
         }
 
         private void button4_Click_1(object sender, EventArgs e)
@@ -837,15 +596,7 @@ namespace media
 
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void panel1_Paint_1(object sender, PaintEventArgs e)
         {
@@ -860,31 +611,116 @@ namespace media
         private void guna2TextBox1_TextChanged(object sender, EventArgs e)
         {
             string searchText = guna2TextBox1.Text.Trim();
-            DataTable dataTable = RetrieveUserData(searchText);
-            guna2DataGridView1.DataSource = dataTable;
+            guna2DataGridView1.Rows.Clear();
+            if (!string.IsNullOrEmpty(searchText))
+            {
+                DataTable dataTable = RetrieveUserData(searchText);
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    string fullName = row["FullName"].ToString();
+                    DataGridViewRow dataGridViewRow = new DataGridViewRow();
+                    dataGridViewRow.Height = 50; 
+                    DataGridViewButtonCell buttonCell = new DataGridViewButtonCell();
+                    buttonCell.Value = fullName;
+                    dataGridViewRow.Cells.Add(buttonCell);
+                    guna2DataGridView1.Rows.Add(dataGridViewRow);
+                }
+            }
         }
+
+
+
+
 
         private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
         private DataTable RetrieveUserData(string searchText)
-        {
+        {                
+            DataTable dataTable = new DataTable();
 
-            using (MySqlConnection connection = new MySqlConnection(DatabaseCredentials.connectionStringLocalServer))
+            if (searchKey == 2)
             {
-                string query = "SELECT CONCAT(userFirstName, ' ', userLastName) AS FullName FROM user WHERE userFirstName LIKE @searchText OR userLastName LIKE @searchText";
 
-                MySqlCommand command = new MySqlCommand(query, connection);
-                command.Parameters.AddWithValue("@searchText", "%" + searchText + "%");
-
-                DataTable dataTable = new DataTable();
-                MySqlDataAdapter adapter = new MySqlDataAdapter(command);
-                adapter.Fill(dataTable);
-
-                return dataTable;
+                using (MySqlConnection connection = new MySqlConnection(DatabaseCredentials.connectionStringLocalServer))
+                {
+                    string query = "SELECT CONCAT(userFirstName, ' ', userLastName) AS FullName FROM user WHERE userFirstName LIKE @searchText OR userLastName LIKE @searchText";
+                    MySqlCommand command = new MySqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@searchText", "%" + searchText + "%");
+                    dataTable.Columns.Add("FullName", typeof(string)); // Column for FullName
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                    adapter.Fill(dataTable);
+                    //return dataTable;
+                }
             }
+            else if(searchKey == 4)
+            {
+                using (MySqlConnection connection = new MySqlConnection(DatabaseCredentials.connectionStringLocalServer))
+                {
+                    string query = "SELECT page_name AS FullName FROM pages WHERE page_name LIKE @searchText";
+                    MySqlCommand command = new MySqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@searchText", "%" + searchText + "%");
+                    dataTable.Columns.Add("FullName", typeof(string)); // Column for FullName
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                    adapter.Fill(dataTable);
+                    //return dataTable;
+                }
+            }
+            else if (searchKey == 3)
+            {
+                using (MySqlConnection connection = new MySqlConnection(DatabaseCredentials.connectionStringLocalServer))
+                {
+                    string query = "SELECT postText AS FullName FROM postofuser WHERE postText LIKE @searchText";
+                    MySqlCommand command = new MySqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@searchText", "%" + searchText + "%");
+                    dataTable.Columns.Add("FullName", typeof(string)); // Column for FullName
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                    adapter.Fill(dataTable);
+                    //return dataTable;
+                }
+            }
+            return dataTable;
+
+
         }
 
+        private void btnPeople_Click(object sender, EventArgs e)
+        {
+            btnPeople.FillColor= Color.Black;
+            btnPage.FillColor= Color.White;
+            btnPost.FillColor= Color.White;
+
+            btnPeople.ForeColor = Color.White;
+            btnPost.ForeColor = Color.Black;
+            btnPage.ForeColor = Color.Black;
+            searchKey = 2;
+        }
+
+        private void btnPost_Click(object sender, EventArgs e)
+        {
+            btnPeople.FillColor = Color.White;
+            btnPage.FillColor = Color.White;
+            btnPost.FillColor = Color.Black;
+
+            btnPeople.ForeColor = Color.Black;
+            btnPost.ForeColor = Color.White;
+            btnPage.ForeColor = Color.Black;
+            searchKey = 3;
+
+        }
+
+        private void btnPage_Click(object sender, EventArgs e)
+        {
+            btnPeople.FillColor = Color.White;
+            btnPage.FillColor = Color.Black;
+            btnPost.FillColor = Color.White;
+
+            btnPeople.ForeColor = Color.Black;
+            btnPost.ForeColor = Color.Black;
+            btnPage.ForeColor = Color.White;
+            searchKey = 4;
+
+        }
     }
 }

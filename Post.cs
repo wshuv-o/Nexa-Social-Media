@@ -1,4 +1,6 @@
-﻿using System;
+﻿using media.Classes;
+using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -93,6 +95,12 @@ namespace media
             //postText.AutoSize = false;
             postText.MaximumSize = new Size(700, 100);
 
+            bool alreadyLiked = CheckIfAlreadyLiked(this.ClassPosts.PostId, ClassNativeUser.NativeUser.Key);
+            if (alreadyLiked)
+            {
+                button2.Image = global::media.Properties.Resources.icons8_favorite_96;
+            }
+
         }
         public Post()
         {
@@ -179,9 +187,106 @@ namespace media
 
         }
 
+
         private void button2_Click(object sender, EventArgs e)
         {
+            int postId = GetPostId(); 
+            int userId = GetUserId(); 
 
+            bool alreadyLiked = CheckIfAlreadyLiked(postId, userId);
+
+            if (!alreadyLiked)
+            {
+                InsertLike(postId, userId);
+                UpdateReactCount(postId, 1);
+                button2.Image = global::media.Properties.Resources.icons8_favorite_96;
+            }
+            else
+            {
+                RemoveLike(postId, userId);
+                UpdateReactCount(postId, -1);
+                button2.Image = global::media.Properties.Resources.icons8_heart_96;
+            }
         }
+
+        private bool CheckIfAlreadyLiked(int postId, int userId)
+        {
+            using (MySqlConnection connection = new MySqlConnection(DatabaseCredentials.connectionStringLocalServer))
+            {
+                string query = "SELECT COUNT(*) FROM LikeTable WHERE PostId = @postId AND UserId = @userId";
+
+                MySqlCommand command = new MySqlCommand(query, connection);
+                command.Parameters.AddWithValue("@postId", postId);
+                command.Parameters.AddWithValue("@userId", userId);
+
+                connection.Open();
+                int count = Convert.ToInt32(command.ExecuteScalar());
+                connection.Close();
+                return count > 0;
+                
+            }
+        }
+
+        private void InsertLike(int postId, int userId)
+        {
+            using (MySqlConnection connection = new MySqlConnection(DatabaseCredentials.connectionStringLocalServer))
+            {
+                string query = "INSERT INTO LikeTable (PostId, UserId, LikedOn) VALUES (@postId, @userId, @likedOn)";
+
+                MySqlCommand command = new MySqlCommand(query, connection);
+                command.Parameters.AddWithValue("@postId", postId);
+                command.Parameters.AddWithValue("@userId", userId);
+                command.Parameters.AddWithValue("@likedOn", DateTime.Now); // You can replace DateTime.Now with the actual likedOn value
+
+                connection.Open();
+                command.ExecuteNonQuery();
+                connection.Close();
+            }
+        }
+
+        // Method to remove the like from the Likes table
+        private void RemoveLike(int postId, int userId)
+        {
+            using (MySqlConnection connection = new MySqlConnection(DatabaseCredentials.connectionStringLocalServer))
+            {
+                string query = "DELETE FROM LikeTAble WHERE PostId = @postId AND UserId = @userId";
+
+                MySqlCommand command = new MySqlCommand(query, connection);
+                command.Parameters.AddWithValue("@postId", postId);
+                command.Parameters.AddWithValue("@userId", userId);
+
+                connection.Open();
+                command.ExecuteNonQuery();
+                connection.Close();
+
+            }
+        }
+
+        private void UpdateReactCount(int postId, int incrementValue)
+        {
+            using (MySqlConnection connection = new MySqlConnection(DatabaseCredentials.connectionStringLocalServer))
+            {
+                string query = "UPDATE postofuser SET postReactCount = postReactCount + @incrementValue WHERE PostId = @postId";
+
+                MySqlCommand command = new MySqlCommand(query, connection);
+                command.Parameters.AddWithValue("@incrementValue", incrementValue);
+                command.Parameters.AddWithValue("@postId", postId);
+
+                connection.Open();
+                command.ExecuteNonQuery();
+                connection.Close();
+            }
+        }
+
+        private int GetPostId()
+        {
+            return this.ClassPosts.PostId;
+        }
+
+        private int GetUserId()
+        {
+            return ClassNativeUser.NativeUser.Key;
+        }
+
     }
 }

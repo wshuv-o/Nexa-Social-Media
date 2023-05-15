@@ -84,6 +84,8 @@ namespace media.Classes
             this.PostImages = postImages;
             this.Permission = permission;
             this.ClassMedias = classMedias;
+            this.NoOfReacts = noOfReacts;
+
         }
         public ClassPost(int postId, string postText, DateTime postTime, Image[] postImages, string permission, int noOfReacts, User postCreator)
         {
@@ -93,6 +95,8 @@ namespace media.Classes
             this.PostImages = postImages;
             this.Permission = permission;
             this.PostCreator= postCreator;
+            this.NoOfReacts = noOfReacts;
+
         }
         public ClassPost(int postId, string postText, DateTime postTime, Image postImage, string permission, int noOfReacts, User postCreator)
         {
@@ -102,6 +106,8 @@ namespace media.Classes
             this.PostImage = postImage;
             this.Permission = permission;
             this.PostCreator = postCreator;
+            this.NoOfReacts = noOfReacts;
+
         }
         public ClassPost(int postId, string postText, DateTime postTime, string permission, int noOfReacts, User postCreator)
         {
@@ -110,6 +116,7 @@ namespace media.Classes
             this.PostTime = postTime;
             this.Permission = permission;
             this.PostCreator = postCreator;
+            this.NoOfReacts= noOfReacts;
         }
         public ClassPost() { }
     }

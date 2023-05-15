@@ -15,7 +15,6 @@ namespace media
         public GamesPage()
         {
             InitializeComponent();
-            Color s = new Color();
             // Methods.RoundPanelCorners(ref customFlowLayoutPanel1,20);
             // s= FunctionsAll.GetBackgroundColor((Bitmap)guna2PictureBox1.BackgroundImage);
             // this.guna2PictureBox1.BackColor = s;
