@@ -9,6 +9,7 @@ namespace media
         public Guna2Panel panelBase;
         public Guna2Panel panelChild;
         public Post a;
+        public FormPost b;
         public Post A
         {
             get { return a; }
@@ -16,74 +17,32 @@ namespace media
         }
         public PostAdopter(media.Classes.ClassPost classPosts)
         {
-           // this.A= new Post(classPosts);
-            /*this.A = new Post();
-            panelBase = new Guna2Panel();
-            panelChild = new Guna2Panel();
-
-
-            panelBase.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            panelBase.BackColor = System.Drawing.Color.WhiteSmoke;
-            panelBase.Controls.Add(panelChild);
-            panelBase.Location = new System.Drawing.Point(43, 347);
-            panelBase.Name = "panel1";
-            panelBase.Padding = new System.Windows.Forms.Padding(50, 10, 50, 10);
-            panelBase.Size = new System.Drawing.Size(866, 850);
-            panelBase.TabIndex = 1;
-            //panelBase.Paint += new System.Windows.Forms.PaintEventHandler(panelBase_Paint);
-            // 
-            // panel2
-            // 
-            panelChild.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            panelChild.Dock = System.Windows.Forms.DockStyle.Fill;
-            panelChild.Location = new System.Drawing.Point(50, 0);
-            panelChild.Name = "panel2";
-            panelChild.Size = new System.Drawing.Size(766, 600);
-            panelChild.TabIndex = 0;
-            panelChild.BorderColor = Color.Red;
-            panelChild.BorderThickness = 1;
-            panelChild.BorderRadius = 20;
-            panelChild.BackColor = Color.White;
-            //panelChild.Paint += new System.Windows.Forms.PaintEventHandler(panelChild_Paint_1);
-           // panelChild.MouseEnter += new System.EventHandler(panelChild_MouseEnter);
-           // panelChild.MouseLeave += new System.EventHandler(panelChild_MouseLeave);
-
-            
-            Methods.OpenChildForm(this.A, panelChild);
-
-            // panelBase.Height = a.basePanel.Height;
-           
-            //panelChild.Height = a.basePanel.Height;
-            //panelChild.Width = 766;
-            //panelChild.Height = a.Height;
-            *///panelFeed.Controls.Add(panelBase);
-
-
-                a= new Post(classPosts);
+            if(classPosts.PostImage != null) 
+            {
+                a = new Post(classPosts);
                 panelBase = new Guna2Panel();
                 panelChild = new Guna2Panel();
 
                 panelBase.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                     | System.Windows.Forms.AnchorStyles.Right)));
-                panelBase.BackColor = System.Drawing.Color.WhiteSmoke;
+                panelBase.BackColor = System.Drawing.Color.White;
                 panelBase.Controls.Add(panelChild);
                 panelBase.Location = new System.Drawing.Point(43, 347);
-                panelBase.Name = "panel1";
+                panelBase.Name = "panelBase";
                 panelBase.Padding = new System.Windows.Forms.Padding(50, -10, 50, 0);
                 panelBase.Size = new System.Drawing.Size(866, 850);
                 panelBase.TabIndex = 1;
 
-                panelChild.BackColor = System.Drawing.SystemColors.ControlLightLight;
+                panelChild.BackColor = System.Drawing.Color.White;
                 panelChild.Dock = System.Windows.Forms.DockStyle.Fill;
                 panelChild.Location = new System.Drawing.Point(50, 0);
-                panelChild.Name = "panel2";
+                panelChild.Name = "panelChild";
                 panelChild.Size = new System.Drawing.Size(766, 600);
                 panelChild.TabIndex = 0;
                 panelChild.BorderColor = Color.Red;
                 panelChild.BorderThickness = 1;
                 panelChild.BorderRadius = 20;
-                panelChild.BackColor = Color.White;
+                //panelChild.BackColor = Color.White;
 
                 /*panelBase.Width = 866;
                 panelBase.Height = 800;
@@ -92,10 +51,50 @@ namespace media
                 panelChild.Width = 766;
                 panelChild.Height = 800;*/
 
-            Methods.OpenChildForm(a, panelChild);
+                Methods.OpenChildForm(a, panelChild);
 
                 //parentPanel.Controls.Add(panelBase);
-            
+            }
+            else
+            {
+                b = new FormPost(classPosts);
+                panelBase = new Guna2Panel();
+                panelChild = new Guna2Panel();
+
+                panelBase.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                    | System.Windows.Forms.AnchorStyles.Right)));
+                panelBase.BackColor = System.Drawing.Color.White;
+                panelBase.Controls.Add(panelChild);
+                panelBase.Location = new System.Drawing.Point(43, 347);
+                panelBase.Name = "panelBase";
+                panelBase.Padding = new System.Windows.Forms.Padding(50, -10, 50, 0);
+                panelBase.Size = new System.Drawing.Size(866, 850);
+                panelBase.TabIndex = 1;
+
+                panelChild.BackColor = System.Drawing.Color.White;
+                panelChild.Dock = System.Windows.Forms.DockStyle.Fill;
+                panelChild.Location = new System.Drawing.Point(50, 0);
+                panelChild.Name = "panelChild";
+                panelChild.Size = new System.Drawing.Size(766, 600);
+                panelChild.TabIndex = 0;
+                panelChild.BorderColor = Color.Red;
+                panelChild.BorderThickness = 1;
+                panelChild.BorderRadius = 20;
+                //panelChild.BackColor = Color.White;
+
+                /*panelBase.Width = 866;
+                panelBase.Height = 800;
+
+                panelChild.Height = 800;
+                panelChild.Width = 766;
+                panelChild.Height = 800;*/
+
+                Methods.OpenChildForm(b, panelChild);
+
+                //parentPanel.Controls.Add(panelBase);
+            }
+
+
 
         }
     }

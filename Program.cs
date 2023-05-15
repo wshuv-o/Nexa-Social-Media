@@ -1,4 +1,5 @@
-﻿using System;
+﻿using media.Admin;
+using System;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
@@ -31,7 +32,7 @@ namespace media
                     SetProcessDPIAware();
                 }
             }
-            Application.Run(new FormAdminHome());
+            Application.Run(new Nexa());
         }
         [DllImport("user32.dll")]
         private static extern bool SetProcessDPIAware();

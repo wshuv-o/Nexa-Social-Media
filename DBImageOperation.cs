@@ -3,7 +3,9 @@ using MySql.Data.MySqlClient;
 using System;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
+using System.Messaging;
 using System.Windows.Forms;
 
 namespace media
@@ -68,7 +70,7 @@ namespace media
                 return null;
             }
 
-            image = ByteArrayToImage(imageBytes);
+            Image image = ByteArrayToImage(imageBytes);
             return image;
         }
         public Image LoadPostImageFromDataBase(int postId)
@@ -77,19 +79,39 @@ namespace media
             byte[] imageBytes = GetPostImage(this.PostId);
             if (imageBytes == null)
             {
-                MessageBox.Show("No image found for the post ID " + PostId + ".", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show("No image found for the post ID " + PostId + ".", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
 
-            image = ByteArrayToImage(imageBytes);
+            Image image = ByteArrayToImage(imageBytes);
             return image;
         }
 
+        public byte[] ImageToByteArrayxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx(Image image)
+        {
+            if (image == null)
+            {
+                // Handle the null image case
+                return null;
+            }
+
+            using (MemoryStream stream = new MemoryStream())
+                {
+                    image.Save(stream, image.RawFormat);
+                    return stream.ToArray();
+                }
+            
+/*            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                return null;
+            }*/
+        }
         public byte[] ImageToByteArray(Image image)
         {
             using (MemoryStream stream = new MemoryStream())
             {
-                image.Save(stream, image.RawFormat);
+                image.Save(stream, ImageFormat.Png); // Save the image as PNG format
                 return stream.ToArray();
             }
         }
@@ -110,6 +132,7 @@ namespace media
                     command.Parameters.AddWithValue("@userId", userId);
                     command.ExecuteNonQuery();
                 }
+                connection.Close();
             }
         }
 
@@ -138,6 +161,7 @@ namespace media
                         }
                     }
                 }
+                connection.Close();
             }
 
             return null;
@@ -167,6 +191,7 @@ namespace media
                         }
                     }
                 }
+                connection.Close();
             }
 
             return null;

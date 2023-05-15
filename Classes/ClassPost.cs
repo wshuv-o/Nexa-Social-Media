@@ -14,6 +14,7 @@ namespace media.Classes
         private string postText;
         private DateTime postTime;
         private Image[] postImages;
+        private Image postImage;
         private string permission;
         private ClassMedia[] classMedias;
         private int noOfReacts;
@@ -36,7 +37,7 @@ namespace media.Classes
         public DateTime PostTime
         {
             get { return this.postTime; }
-            set { this.postTime = value; }
+            set { this.postTime = DateTime.Now; }
         }
         public Image[] PostImages
         {
@@ -44,6 +45,14 @@ namespace media.Classes
             set
             {
                 this.postImages = value;
+            }
+        }
+        public Image PostImage
+        {
+            get { return this.postImage; }
+            set
+            {
+                this.postImage = value;
             }
         }
         public string Permission
@@ -84,6 +93,23 @@ namespace media.Classes
             this.PostImages = postImages;
             this.Permission = permission;
             this.PostCreator= postCreator;
+        }
+        public ClassPost(int postId, string postText, DateTime postTime, Image postImage, string permission, int noOfReacts, User postCreator)
+        {
+            this.PostId = postId;
+            this.PostText = postText;
+            this.PostTime = postTime;
+            this.PostImage = postImage;
+            this.Permission = permission;
+            this.PostCreator = postCreator;
+        }
+        public ClassPost(int postId, string postText, DateTime postTime, string permission, int noOfReacts, User postCreator)
+        {
+            this.PostId = postId;
+            this.PostText = postText;
+            this.PostTime = postTime;
+            this.Permission = permission;
+            this.PostCreator = postCreator;
         }
         public ClassPost() { }
     }

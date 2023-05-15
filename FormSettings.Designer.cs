@@ -46,36 +46,35 @@
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.guna2Button11 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.guna2CircleButton4 = new media.CustomRoundPictureBox();
+            this.userProfilePhoto = new media.CustomRoundPictureBox();
             this.guna2Button10 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button9 = new Guna.UI2.WinForms.Guna2Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.txtBoxBio = new System.Windows.Forms.RichTextBox();
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
             this.guna2CircleButton3 = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.guna2TextBox8 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.scLink3 = new Guna.UI2.WinForms.Guna2TextBox();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.guna2TextBox6 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.scLink2 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             this.guna2CircleButton2 = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.guna2TextBox7 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.scLink = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
-            this.guna2TextBox5 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtBoxEmail = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
-            this.guna2TextBox4 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtBoxPhone = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.guna2TextBox3 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lastName = new Guna.UI2.WinForms.Guna2TextBox();
+            this.firstName = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
@@ -88,7 +87,7 @@
             this.tableLayoutPanel5.SuspendLayout();
             this.panel3.SuspendLayout();
             this.guna2GradientPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CircleButton4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userProfilePhoto)).BeginInit();
             this.panel2.SuspendLayout();
             this.guna2GradientPanel1.SuspendLayout();
             this.tableLayoutPanel11.SuspendLayout();
@@ -111,7 +110,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1295, 791);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1295, 790);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // tableLayoutPanel2
@@ -126,7 +125,7 @@
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.65035F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90.34965F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(264, 785);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(264, 784);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // guna2Panel1
@@ -173,7 +172,7 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(258, 704);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(258, 703);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
             // guna2Button8
@@ -190,10 +189,10 @@
             this.guna2Button8.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button8.ImageOffset = new System.Drawing.Point(15, 0);
             this.guna2Button8.ImageSize = new System.Drawing.Size(25, 25);
-            this.guna2Button8.Location = new System.Drawing.Point(3, 619);
+            this.guna2Button8.Location = new System.Drawing.Point(3, 612);
             this.guna2Button8.Name = "guna2Button8";
             this.guna2Button8.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.guna2Button8.Size = new System.Drawing.Size(252, 82);
+            this.guna2Button8.Size = new System.Drawing.Size(252, 88);
             this.guna2Button8.TabIndex = 7;
             this.guna2Button8.Text = "Logout ";
             this.guna2Button8.Click += new System.EventHandler(this.guna2Button8_Click);
@@ -212,10 +211,10 @@
             this.guna2Button7.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button7.ImageOffset = new System.Drawing.Point(10, 0);
             this.guna2Button7.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2Button7.Location = new System.Drawing.Point(3, 531);
+            this.guna2Button7.Location = new System.Drawing.Point(3, 525);
             this.guna2Button7.Name = "guna2Button7";
             this.guna2Button7.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.guna2Button7.Size = new System.Drawing.Size(252, 82);
+            this.guna2Button7.Size = new System.Drawing.Size(252, 81);
             this.guna2Button7.TabIndex = 6;
             this.guna2Button7.Text = "Notifications";
             // 
@@ -233,10 +232,10 @@
             this.guna2Button6.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button6.ImageOffset = new System.Drawing.Point(10, 0);
             this.guna2Button6.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2Button6.Location = new System.Drawing.Point(3, 443);
+            this.guna2Button6.Location = new System.Drawing.Point(3, 438);
             this.guna2Button6.Name = "guna2Button6";
             this.guna2Button6.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.guna2Button6.Size = new System.Drawing.Size(252, 82);
+            this.guna2Button6.Size = new System.Drawing.Size(252, 81);
             this.guna2Button6.TabIndex = 5;
             this.guna2Button6.Text = "Themes";
             // 
@@ -254,10 +253,10 @@
             this.guna2Button5.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button5.ImageOffset = new System.Drawing.Point(10, 0);
             this.guna2Button5.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2Button5.Location = new System.Drawing.Point(3, 355);
+            this.guna2Button5.Location = new System.Drawing.Point(3, 351);
             this.guna2Button5.Name = "guna2Button5";
             this.guna2Button5.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.guna2Button5.Size = new System.Drawing.Size(252, 82);
+            this.guna2Button5.Size = new System.Drawing.Size(252, 81);
             this.guna2Button5.TabIndex = 4;
             this.guna2Button5.Text = "Language";
             // 
@@ -275,10 +274,10 @@
             this.guna2Button4.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button4.ImageOffset = new System.Drawing.Point(10, 0);
             this.guna2Button4.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2Button4.Location = new System.Drawing.Point(3, 267);
+            this.guna2Button4.Location = new System.Drawing.Point(3, 264);
             this.guna2Button4.Name = "guna2Button4";
             this.guna2Button4.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.guna2Button4.Size = new System.Drawing.Size(252, 82);
+            this.guna2Button4.Size = new System.Drawing.Size(252, 81);
             this.guna2Button4.TabIndex = 3;
             this.guna2Button4.Text = "General Details";
             // 
@@ -296,10 +295,10 @@
             this.guna2Button3.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button3.ImageOffset = new System.Drawing.Point(10, 0);
             this.guna2Button3.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2Button3.Location = new System.Drawing.Point(3, 179);
+            this.guna2Button3.Location = new System.Drawing.Point(3, 177);
             this.guna2Button3.Name = "guna2Button3";
             this.guna2Button3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.guna2Button3.Size = new System.Drawing.Size(252, 82);
+            this.guna2Button3.Size = new System.Drawing.Size(252, 81);
             this.guna2Button3.TabIndex = 2;
             this.guna2Button3.Text = "Payment";
             // 
@@ -317,10 +316,10 @@
             this.guna2Button2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button2.ImageOffset = new System.Drawing.Point(10, 0);
             this.guna2Button2.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2Button2.Location = new System.Drawing.Point(3, 91);
+            this.guna2Button2.Location = new System.Drawing.Point(3, 90);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.guna2Button2.Size = new System.Drawing.Size(252, 82);
+            this.guna2Button2.Size = new System.Drawing.Size(252, 81);
             this.guna2Button2.TabIndex = 1;
             this.guna2Button2.Text = "Privacy";
             // 
@@ -341,7 +340,7 @@
             this.guna2Button1.Location = new System.Drawing.Point(3, 3);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.guna2Button1.Size = new System.Drawing.Size(252, 82);
+            this.guna2Button1.Size = new System.Drawing.Size(252, 81);
             this.guna2Button1.TabIndex = 0;
             this.guna2Button1.Text = "General Details";
             // 
@@ -353,7 +352,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(273, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1019, 785);
+            this.panel1.Size = new System.Drawing.Size(1019, 784);
             this.panel1.TabIndex = 1;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -392,7 +391,7 @@
             this.tableLayoutPanel4.Padding = new System.Windows.Forms.Padding(30);
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(1013, 707);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(1013, 706);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
             // tableLayoutPanel5
@@ -407,13 +406,12 @@
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(947, 641);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(947, 640);
             this.tableLayoutPanel5.TabIndex = 0;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel3.Controls.Add(this.guna2Button11);
             this.panel3.Controls.Add(this.guna2GradientPanel2);
             this.panel3.Controls.Add(this.guna2Button10);
             this.panel3.Controls.Add(this.guna2Button9);
@@ -421,54 +419,39 @@
             this.panel3.Location = new System.Drawing.Point(661, 3);
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.panel3.Size = new System.Drawing.Size(283, 635);
+            this.panel3.Size = new System.Drawing.Size(283, 634);
             this.panel3.TabIndex = 1;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
-            // 
-            // guna2Button11
-            // 
-            this.guna2Button11.BorderRadius = 18;
-            this.guna2Button11.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button11.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button11.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button11.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button11.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button11.ForeColor = System.Drawing.Color.White;
-            this.guna2Button11.Location = new System.Drawing.Point(11, 343);
-            this.guna2Button11.Name = "guna2Button11";
-            this.guna2Button11.Size = new System.Drawing.Size(180, 45);
-            this.guna2Button11.TabIndex = 3;
-            this.guna2Button11.Text = "Save Changes";
             // 
             // guna2GradientPanel2
             // 
             this.guna2GradientPanel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.guna2GradientPanel2.Controls.Add(this.guna2CircleButton4);
+            this.guna2GradientPanel2.Controls.Add(this.userProfilePhoto);
             this.guna2GradientPanel2.Location = new System.Drawing.Point(25, 75);
             this.guna2GradientPanel2.Name = "guna2GradientPanel2";
             this.guna2GradientPanel2.Size = new System.Drawing.Size(235, 235);
             this.guna2GradientPanel2.TabIndex = 2;
             // 
-            // guna2CircleButton4
+            // userProfilePhoto
             // 
-            this.guna2CircleButton4.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.guna2CircleButton4.BorderColor = System.Drawing.Color.White;
-            this.guna2CircleButton4.BorderColor2 = System.Drawing.Color.White;
-            this.guna2CircleButton4.BorderDashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.guna2CircleButton4.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.guna2CircleButton4.BorderSize = 2;
-            this.guna2CircleButton4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2CircleButton4.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2CircleButton4.ForeColor = System.Drawing.Color.White;
-            this.guna2CircleButton4.GradientAngle = 50F;
-            this.guna2CircleButton4.Image = global::media.Properties.Resources.ProfileImage1;
-            this.guna2CircleButton4.Location = new System.Drawing.Point(0, 0);
-            this.guna2CircleButton4.Name = "guna2CircleButton4";
-            this.guna2CircleButton4.Size = new System.Drawing.Size(235, 235);
-            this.guna2CircleButton4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2CircleButton4.TabIndex = 0;
-            this.guna2CircleButton4.TabStop = false;
-            this.guna2CircleButton4.Click += new System.EventHandler(this.guna2CircleButton4_Click);
+            this.userProfilePhoto.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.userProfilePhoto.BorderColor = System.Drawing.Color.White;
+            this.userProfilePhoto.BorderColor2 = System.Drawing.Color.White;
+            this.userProfilePhoto.BorderDashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.userProfilePhoto.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.userProfilePhoto.BorderSize = 2;
+            this.userProfilePhoto.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userProfilePhoto.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.userProfilePhoto.ForeColor = System.Drawing.Color.White;
+            this.userProfilePhoto.GradientAngle = 50F;
+            this.userProfilePhoto.Image = global::media.Properties.Resources.ProfileImage1;
+            this.userProfilePhoto.Location = new System.Drawing.Point(0, 0);
+            this.userProfilePhoto.Name = "userProfilePhoto";
+            this.userProfilePhoto.Size = new System.Drawing.Size(235, 235);
+            this.userProfilePhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.userProfilePhoto.TabIndex = 0;
+            this.userProfilePhoto.TabStop = false;
+            this.userProfilePhoto.Click += new System.EventHandler(this.guna2CircleButton4_Click);
             // 
             // guna2Button10
             // 
@@ -488,6 +471,7 @@
             this.guna2Button10.Size = new System.Drawing.Size(107, 38);
             this.guna2Button10.TabIndex = 1;
             this.guna2Button10.Text = "Discard";
+            this.guna2Button10.Click += new System.EventHandler(this.guna2Button10_Click);
             // 
             // guna2Button9
             // 
@@ -516,7 +500,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(652, 635);
+            this.panel2.Size = new System.Drawing.Size(652, 634);
             this.panel2.TabIndex = 0;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -548,7 +532,7 @@
             this.guna2GradientPanel1.BorderColor = System.Drawing.Color.Black;
             this.guna2GradientPanel1.BorderRadius = 20;
             this.guna2GradientPanel1.BorderThickness = 1;
-            this.guna2GradientPanel1.Controls.Add(this.richTextBox1);
+            this.guna2GradientPanel1.Controls.Add(this.txtBoxBio);
             this.guna2GradientPanel1.Controls.Add(this.tableLayoutPanel11);
             this.guna2GradientPanel1.Controls.Add(this.tableLayoutPanel9);
             this.guna2GradientPanel1.Controls.Add(this.guna2HtmlLabel8);
@@ -566,19 +550,19 @@
             this.guna2GradientPanel1.Location = new System.Drawing.Point(3, 75);
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
             this.guna2GradientPanel1.Padding = new System.Windows.Forms.Padding(10);
-            this.guna2GradientPanel1.Size = new System.Drawing.Size(646, 560);
+            this.guna2GradientPanel1.Size = new System.Drawing.Size(646, 559);
             this.guna2GradientPanel1.TabIndex = 0;
             // 
-            // richTextBox1
+            // txtBoxBio
             // 
-            this.richTextBox1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.richTextBox1.Location = new System.Drawing.Point(10, 454);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(626, 96);
-            this.richTextBox1.TabIndex = 16;
-            this.richTextBox1.Text = "";
+            this.txtBoxBio.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtBoxBio.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBoxBio.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.txtBoxBio.Location = new System.Drawing.Point(10, 453);
+            this.txtBoxBio.Name = "txtBoxBio";
+            this.txtBoxBio.Size = new System.Drawing.Size(626, 96);
+            this.txtBoxBio.TabIndex = 16;
+            this.txtBoxBio.Text = "";
             // 
             // tableLayoutPanel11
             // 
@@ -589,7 +573,7 @@
             this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.48742F));
             this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel11.Controls.Add(this.guna2CircleButton3, 0, 0);
-            this.tableLayoutPanel11.Controls.Add(this.guna2TextBox8, 0, 0);
+            this.tableLayoutPanel11.Controls.Add(this.scLink3, 0, 0);
             this.tableLayoutPanel11.Location = new System.Drawing.Point(16, 431);
             this.tableLayoutPanel11.Name = "tableLayoutPanel11";
             this.tableLayoutPanel11.RowCount = 1;
@@ -615,27 +599,27 @@
             this.guna2CircleButton3.TabIndex = 8;
             this.guna2CircleButton3.Text = "+";
             // 
-            // guna2TextBox8
+            // scLink3
             // 
-            this.guna2TextBox8.BorderRadius = 18;
-            this.guna2TextBox8.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox8.DefaultText = "";
-            this.guna2TextBox8.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox8.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox8.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox8.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2TextBox8.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox8.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox8.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox8.Location = new System.Drawing.Point(3, 4);
-            this.guna2TextBox8.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.guna2TextBox8.Name = "guna2TextBox8";
-            this.guna2TextBox8.PasswordChar = '\0';
-            this.guna2TextBox8.PlaceholderText = "Phone Number";
-            this.guna2TextBox8.SelectedText = "";
-            this.guna2TextBox8.Size = new System.Drawing.Size(558, 42);
-            this.guna2TextBox8.TabIndex = 6;
+            this.scLink3.BorderRadius = 18;
+            this.scLink3.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.scLink3.DefaultText = "";
+            this.scLink3.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.scLink3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.scLink3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.scLink3.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.scLink3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.scLink3.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.scLink3.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.scLink3.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.scLink3.Location = new System.Drawing.Point(3, 4);
+            this.scLink3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.scLink3.Name = "scLink3";
+            this.scLink3.PasswordChar = '\0';
+            this.scLink3.PlaceholderText = "Link";
+            this.scLink3.SelectedText = "";
+            this.scLink3.Size = new System.Drawing.Size(558, 42);
+            this.scLink3.TabIndex = 6;
             // 
             // tableLayoutPanel9
             // 
@@ -646,7 +630,7 @@
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.48742F));
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel9.Controls.Add(this.guna2CircleButton1, 0, 0);
-            this.tableLayoutPanel9.Controls.Add(this.guna2TextBox6, 0, 0);
+            this.tableLayoutPanel9.Controls.Add(this.scLink2, 0, 0);
             this.tableLayoutPanel9.Location = new System.Drawing.Point(16, 375);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 1;
@@ -672,27 +656,27 @@
             this.guna2CircleButton1.TabIndex = 8;
             this.guna2CircleButton1.Text = "+";
             // 
-            // guna2TextBox6
+            // scLink2
             // 
-            this.guna2TextBox6.BorderRadius = 18;
-            this.guna2TextBox6.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox6.DefaultText = "";
-            this.guna2TextBox6.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox6.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox6.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox6.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2TextBox6.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox6.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox6.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox6.Location = new System.Drawing.Point(3, 4);
-            this.guna2TextBox6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.guna2TextBox6.Name = "guna2TextBox6";
-            this.guna2TextBox6.PasswordChar = '\0';
-            this.guna2TextBox6.PlaceholderText = "Phone Number";
-            this.guna2TextBox6.SelectedText = "";
-            this.guna2TextBox6.Size = new System.Drawing.Size(558, 42);
-            this.guna2TextBox6.TabIndex = 6;
+            this.scLink2.BorderRadius = 18;
+            this.scLink2.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.scLink2.DefaultText = "";
+            this.scLink2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.scLink2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.scLink2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.scLink2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.scLink2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.scLink2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.scLink2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.scLink2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.scLink2.Location = new System.Drawing.Point(3, 4);
+            this.scLink2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.scLink2.Name = "scLink2";
+            this.scLink2.PasswordChar = '\0';
+            this.scLink2.PlaceholderText = "Link";
+            this.scLink2.SelectedText = "";
+            this.scLink2.Size = new System.Drawing.Size(558, 42);
+            this.scLink2.TabIndex = 6;
             // 
             // guna2HtmlLabel8
             // 
@@ -712,7 +696,7 @@
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.48742F));
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel10.Controls.Add(this.guna2CircleButton2, 0, 0);
-            this.tableLayoutPanel10.Controls.Add(this.guna2TextBox7, 0, 0);
+            this.tableLayoutPanel10.Controls.Add(this.scLink, 0, 0);
             this.tableLayoutPanel10.Location = new System.Drawing.Point(16, 319);
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
             this.tableLayoutPanel10.RowCount = 1;
@@ -738,27 +722,27 @@
             this.guna2CircleButton2.TabIndex = 8;
             this.guna2CircleButton2.Text = "+";
             // 
-            // guna2TextBox7
+            // scLink
             // 
-            this.guna2TextBox7.BorderRadius = 18;
-            this.guna2TextBox7.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox7.DefaultText = "";
-            this.guna2TextBox7.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox7.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox7.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox7.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2TextBox7.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox7.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox7.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox7.Location = new System.Drawing.Point(3, 4);
-            this.guna2TextBox7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.guna2TextBox7.Name = "guna2TextBox7";
-            this.guna2TextBox7.PasswordChar = '\0';
-            this.guna2TextBox7.PlaceholderText = "Phone Number";
-            this.guna2TextBox7.SelectedText = "";
-            this.guna2TextBox7.Size = new System.Drawing.Size(558, 42);
-            this.guna2TextBox7.TabIndex = 6;
+            this.scLink.BorderRadius = 18;
+            this.scLink.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.scLink.DefaultText = "";
+            this.scLink.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.scLink.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.scLink.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.scLink.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.scLink.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.scLink.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.scLink.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.scLink.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.scLink.Location = new System.Drawing.Point(3, 4);
+            this.scLink.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.scLink.Name = "scLink";
+            this.scLink.PasswordChar = '\0';
+            this.scLink.PlaceholderText = "Link";
+            this.scLink.SelectedText = "";
+            this.scLink.Size = new System.Drawing.Size(558, 42);
+            this.scLink.TabIndex = 6;
             // 
             // guna2HtmlLabel7
             // 
@@ -775,7 +759,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel8.ColumnCount = 1;
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.48742F));
-            this.tableLayoutPanel8.Controls.Add(this.guna2TextBox5, 0, 0);
+            this.tableLayoutPanel8.Controls.Add(this.txtBoxEmail, 0, 0);
             this.tableLayoutPanel8.Location = new System.Drawing.Point(13, 243);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 1;
@@ -784,27 +768,27 @@
             this.tableLayoutPanel8.Size = new System.Drawing.Size(620, 50);
             this.tableLayoutPanel8.TabIndex = 9;
             // 
-            // guna2TextBox5
+            // txtBoxEmail
             // 
-            this.guna2TextBox5.BorderRadius = 18;
-            this.guna2TextBox5.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox5.DefaultText = "";
-            this.guna2TextBox5.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox5.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox5.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox5.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2TextBox5.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox5.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox5.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox5.Location = new System.Drawing.Point(3, 4);
-            this.guna2TextBox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.guna2TextBox5.Name = "guna2TextBox5";
-            this.guna2TextBox5.PasswordChar = '\0';
-            this.guna2TextBox5.PlaceholderText = "Email";
-            this.guna2TextBox5.SelectedText = "";
-            this.guna2TextBox5.Size = new System.Drawing.Size(614, 42);
-            this.guna2TextBox5.TabIndex = 6;
+            this.txtBoxEmail.BorderRadius = 18;
+            this.txtBoxEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtBoxEmail.DefaultText = "";
+            this.txtBoxEmail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtBoxEmail.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtBoxEmail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtBoxEmail.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtBoxEmail.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtBoxEmail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtBoxEmail.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtBoxEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtBoxEmail.Location = new System.Drawing.Point(3, 4);
+            this.txtBoxEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtBoxEmail.Name = "txtBoxEmail";
+            this.txtBoxEmail.PasswordChar = '\0';
+            this.txtBoxEmail.PlaceholderText = "Email";
+            this.txtBoxEmail.SelectedText = "";
+            this.txtBoxEmail.Size = new System.Drawing.Size(614, 42);
+            this.txtBoxEmail.TabIndex = 6;
             // 
             // guna2HtmlLabel6
             // 
@@ -821,7 +805,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel7.ColumnCount = 1;
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.48742F));
-            this.tableLayoutPanel7.Controls.Add(this.guna2TextBox4, 0, 0);
+            this.tableLayoutPanel7.Controls.Add(this.txtBoxPhone, 0, 0);
             this.tableLayoutPanel7.Location = new System.Drawing.Point(13, 160);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 1;
@@ -830,27 +814,27 @@
             this.tableLayoutPanel7.Size = new System.Drawing.Size(620, 50);
             this.tableLayoutPanel7.TabIndex = 7;
             // 
-            // guna2TextBox4
+            // txtBoxPhone
             // 
-            this.guna2TextBox4.BorderRadius = 18;
-            this.guna2TextBox4.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox4.DefaultText = "";
-            this.guna2TextBox4.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox4.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2TextBox4.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox4.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox4.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox4.Location = new System.Drawing.Point(3, 4);
-            this.guna2TextBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.guna2TextBox4.Name = "guna2TextBox4";
-            this.guna2TextBox4.PasswordChar = '\0';
-            this.guna2TextBox4.PlaceholderText = "Phone Number";
-            this.guna2TextBox4.SelectedText = "";
-            this.guna2TextBox4.Size = new System.Drawing.Size(614, 42);
-            this.guna2TextBox4.TabIndex = 6;
+            this.txtBoxPhone.BorderRadius = 18;
+            this.txtBoxPhone.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtBoxPhone.DefaultText = "";
+            this.txtBoxPhone.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtBoxPhone.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtBoxPhone.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtBoxPhone.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtBoxPhone.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtBoxPhone.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtBoxPhone.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtBoxPhone.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtBoxPhone.Location = new System.Drawing.Point(3, 4);
+            this.txtBoxPhone.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtBoxPhone.Name = "txtBoxPhone";
+            this.txtBoxPhone.PasswordChar = '\0';
+            this.txtBoxPhone.PlaceholderText = "Phone Number";
+            this.txtBoxPhone.SelectedText = "";
+            this.txtBoxPhone.Size = new System.Drawing.Size(614, 42);
+            this.txtBoxPhone.TabIndex = 6;
             // 
             // guna2HtmlLabel5
             // 
@@ -868,8 +852,8 @@
             this.tableLayoutPanel6.ColumnCount = 2;
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.48742F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.51258F));
-            this.tableLayoutPanel6.Controls.Add(this.guna2TextBox3, 1, 0);
-            this.tableLayoutPanel6.Controls.Add(this.guna2TextBox2, 0, 0);
+            this.tableLayoutPanel6.Controls.Add(this.lastName, 1, 0);
+            this.tableLayoutPanel6.Controls.Add(this.firstName, 0, 0);
             this.tableLayoutPanel6.Location = new System.Drawing.Point(13, 79);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
@@ -878,49 +862,49 @@
             this.tableLayoutPanel6.Size = new System.Drawing.Size(620, 50);
             this.tableLayoutPanel6.TabIndex = 5;
             // 
-            // guna2TextBox3
+            // lastName
             // 
-            this.guna2TextBox3.BorderRadius = 18;
-            this.guna2TextBox3.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox3.DefaultText = "";
-            this.guna2TextBox3.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox3.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2TextBox3.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox3.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox3.Location = new System.Drawing.Point(322, 4);
-            this.guna2TextBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.guna2TextBox3.Name = "guna2TextBox3";
-            this.guna2TextBox3.PasswordChar = '\0';
-            this.guna2TextBox3.PlaceholderText = "Last Name";
-            this.guna2TextBox3.SelectedText = "";
-            this.guna2TextBox3.Size = new System.Drawing.Size(295, 42);
-            this.guna2TextBox3.TabIndex = 5;
+            this.lastName.BorderRadius = 18;
+            this.lastName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.lastName.DefaultText = "";
+            this.lastName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.lastName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.lastName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.lastName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.lastName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lastName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.lastName.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lastName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.lastName.Location = new System.Drawing.Point(322, 4);
+            this.lastName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.lastName.Name = "lastName";
+            this.lastName.PasswordChar = '\0';
+            this.lastName.PlaceholderText = "Last Name";
+            this.lastName.SelectedText = "";
+            this.lastName.Size = new System.Drawing.Size(295, 42);
+            this.lastName.TabIndex = 5;
             // 
-            // guna2TextBox2
+            // firstName
             // 
-            this.guna2TextBox2.BorderRadius = 18;
-            this.guna2TextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox2.DefaultText = "";
-            this.guna2TextBox2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2TextBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox2.Location = new System.Drawing.Point(3, 4);
-            this.guna2TextBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.guna2TextBox2.Name = "guna2TextBox2";
-            this.guna2TextBox2.PasswordChar = '\0';
-            this.guna2TextBox2.PlaceholderText = "First Name";
-            this.guna2TextBox2.SelectedText = "";
-            this.guna2TextBox2.Size = new System.Drawing.Size(313, 42);
-            this.guna2TextBox2.TabIndex = 4;
+            this.firstName.BorderRadius = 18;
+            this.firstName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.firstName.DefaultText = "";
+            this.firstName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.firstName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.firstName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.firstName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.firstName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.firstName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.firstName.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.firstName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.firstName.Location = new System.Drawing.Point(3, 4);
+            this.firstName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.firstName.Name = "firstName";
+            this.firstName.PasswordChar = '\0';
+            this.firstName.PlaceholderText = "First Name";
+            this.firstName.SelectedText = "";
+            this.firstName.Size = new System.Drawing.Size(313, 42);
+            this.firstName.TabIndex = 4;
             // 
             // guna2HtmlLabel4
             // 
@@ -968,7 +952,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1295, 791);
+            this.ClientSize = new System.Drawing.Size(1036, 632);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "FormSettings";
             this.Text = "FormSettings";
@@ -982,7 +966,7 @@
             this.tableLayoutPanel5.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.guna2GradientPanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CircleButton4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userProfilePhoto)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.guna2GradientPanel1.ResumeLayout(false);
@@ -1024,31 +1008,30 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox3;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
+        private Guna.UI2.WinForms.Guna2TextBox lastName;
+        private Guna.UI2.WinForms.Guna2TextBox firstName;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel7;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox5;
+        private Guna.UI2.WinForms.Guna2TextBox txtBoxEmail;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel6;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox4;
+        private Guna.UI2.WinForms.Guna2TextBox txtBoxPhone;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox7;
+        private Guna.UI2.WinForms.Guna2TextBox scLink;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel8;
         private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel11;
         private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton3;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox8;
+        private Guna.UI2.WinForms.Guna2TextBox scLink3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
         private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton1;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox6;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private Guna.UI2.WinForms.Guna2TextBox scLink2;
+        private System.Windows.Forms.RichTextBox txtBoxBio;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel2;
-        private CustomRoundPictureBox guna2CircleButton4;
+        private CustomRoundPictureBox userProfilePhoto;
         private Guna.UI2.WinForms.Guna2Button guna2Button10;
-        private Guna.UI2.WinForms.Guna2Button guna2Button11;
     }
 }

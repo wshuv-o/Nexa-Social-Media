@@ -151,8 +151,6 @@ namespace media
         private void guna2Button3_Click(object sender, EventArgs e)
         {
             Home h = new Home(this.NativeUser.Key);
-           // h.panelFC.Dispose();
-            //h.panel1.Dispose();
             h.panelFeed.Padding = new Padding(170,0,0,0);
             Methods.OpenChildForm(h, this.panel1);
             this.panel1.Refresh();

@@ -38,9 +38,8 @@
             this.postTime = new System.Windows.Forms.Label();
             this.UserProfileImage = new media.CustomRoundPictureBox();
             this.postImagePanel = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.postText = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
@@ -53,14 +52,13 @@
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.UserProfileImage)).BeginInit();
-            this.postImagePanel.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // basePanel
             // 
-            this.basePanel.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.basePanel.BackColor = System.Drawing.Color.White;
             this.basePanel.Controls.Add(this.guna2ShadowPanel1);
             this.basePanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.basePanel.Location = new System.Drawing.Point(0, 0);
@@ -221,10 +219,7 @@
             // postImagePanel
             // 
             this.postImagePanel.BackColor = System.Drawing.Color.White;
-            this.postImagePanel.BackgroundImage = global::media.Properties.Resources.p1;
             this.postImagePanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.postImagePanel.Controls.Add(this.button1);
-            this.postImagePanel.Controls.Add(this.richTextBox1);
             this.postImagePanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.postImagePanel.Location = new System.Drawing.Point(4, 194);
             this.postImagePanel.Margin = new System.Windows.Forms.Padding(4);
@@ -233,31 +228,10 @@
             this.postImagePanel.TabIndex = 7;
             this.postImagePanel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(160, 265);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(260, 64);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Bold);
-            this.richTextBox1.Location = new System.Drawing.Point(121, 42);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(297, 155);
-            this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "";
-            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
-            // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.BackColor = System.Drawing.Color.Turquoise;
+            this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.postText);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(4, 105);
@@ -266,17 +240,29 @@
             this.panel2.Size = new System.Drawing.Size(877, 81);
             this.panel2.TabIndex = 6;
             // 
+            // button1
+            // 
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(784, 55);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(89, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "See more...";
+            // 
             // postText
             // 
             this.postText.AutoSize = true;
-            this.postText.BackColor = System.Drawing.Color.White;
+            this.postText.BackColor = System.Drawing.Color.Wheat;
+            this.postText.Dock = System.Windows.Forms.DockStyle.Fill;
             this.postText.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.postText.Font = new System.Drawing.Font("Microsoft YaHei", 11F);
             this.postText.ForeColor = System.Drawing.Color.Black;
-            this.postText.Location = new System.Drawing.Point(12, 0);
+            this.postText.Location = new System.Drawing.Point(0, 0);
             this.postText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.postText.Name = "postText";
-            this.postText.Size = new System.Drawing.Size(60, 23);
+            this.postText.Size = new System.Drawing.Size(72, 25);
             this.postText.TabIndex = 0;
             this.postText.Text = "          ";
             this.postText.Click += new System.EventHandler(this.label3_Click_1);
@@ -350,6 +336,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(281, 36);
             this.button2.TabIndex = 0;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Post
             // 
@@ -370,7 +357,6 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.UserProfileImage)).EndInit();
-            this.postImagePanel.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -388,7 +374,6 @@
         private System.Windows.Forms.Panel postImagePanel;
         private System.Windows.Forms.Label postText;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private Guna.UI2.WinForms.Guna2Button button2;
@@ -398,7 +383,9 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton1;
         private System.Windows.Forms.Label reactCount;
-        private System.Windows.Forms.Label lblUserName;
+
+        System.Windows.Forms.Label lblUserName;
+
 
 
     }

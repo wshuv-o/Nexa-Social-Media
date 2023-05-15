@@ -22,9 +22,28 @@ namespace media
     {
         private byte[] image;
         private DBImageOperation dbio = new DBImageOperation();
-        public FormSettings()
+        private Classes.User nativeUser= new Classes.User();
+
+        public User NativeUser
         {
+            get { return this.nativeUser; }
+            set { this.nativeUser = value; }
+        }
+        public FormSettings(out User user, User userTemp)
+        {
+            user = userTemp;
+            this.NativeUser = user;
+
             InitializeComponent();
+
+            this.firstName.Text = user.UserFirstName;
+            this.lastName.Text = user.UserLastName;
+            this.txtBoxPhone.Text = user.PhoneNumber;
+            this.txtBoxEmail.Text = user.Email;
+            this.txtBoxBio.Text = user.Bio;
+            this.scLink.Text = user.Email;
+           // DBImageOperation dbio= new DBImageOperation();
+            this.userProfilePhoto.Image = user.ProfilePhoto;
         }
 
         private void guna2TextBox1_TextChanged(object sender, EventArgs e)
@@ -62,7 +81,7 @@ namespace media
             //DisplayUserImageFromDatabase();
             */
             //byte[] a = BTN_SHOW_Click(sender, e);
-            this.guna2CircleButton4.Image= ImageCompress.SelectAndCompressImage();
+            this.userProfilePhoto.Image= ImageCompress.SelectAndCompressImage();
             
             
         }
@@ -71,12 +90,41 @@ namespace media
         {
 
         }
-
+        public byte[] ConvertImageToByteArray(Image image)
+        {
+            using (MemoryStream stream = new MemoryStream())
+            {
+                image.Save(stream, System.Drawing.Imaging.ImageFormat.Png);
+                return stream.ToArray();
+            }
+        }
         private void guna2Button9_Click(object sender, EventArgs e)
         {
-            dbio.SaveToDataBase(38);
-            this.guna2CircleButton4.Image = dbio.LoadImageFromDataBase(38);
-            //guna2CircleButton4.ImageSize = new Size(200, 200);
+            DBImageOperation dbio= new DBImageOperation();
+
+            Image imageUser = ImageCompress.SelectAndCompressImage();
+            MessageBox.Show(imageUser.RawFormat.ToString());
+            this.userProfilePhoto.Image = imageUser;
+            byte[] a = ConvertImageToByteArray(imageUser);
+            using (MySqlConnection conn = new MySqlConnection(DatabaseCredentials.connectionStringLocalServer))
+            {
+                conn.Open();
+                string query = "UPDATE user SET userfirstname = @first_name, userlastname = @last_name, email = @email, "
+                             + "phoneno = @phoneno, userImage = @userImage, bio = @bio WHERE userid = @user_id";
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@first_name", firstName.Text);
+                    cmd.Parameters.AddWithValue("@last_name", lastName.Text);
+                    cmd.Parameters.AddWithValue("@email", txtBoxEmail.Text);
+                    cmd.Parameters.AddWithValue("@phoneno", txtBoxPhone.Text);
+                    cmd.Parameters.AddWithValue("@userImage",a);
+                    cmd.Parameters.AddWithValue("@bio", txtBoxBio.Text);
+                    cmd.Parameters.AddWithValue("@user_id", this.NativeUser.Key);
+                    cmd.ExecuteNonQuery();
+
+                }
+                conn.Close();
+            }
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -87,6 +135,17 @@ namespace media
         private void guna2Button8_Click(object sender, EventArgs e)
         {
             Application.Restart();
+        }
+
+        private void guna2Button10_Click(object sender, EventArgs e)
+        {
+            this.firstName.Text = this.NativeUser.UserFirstName;
+            this.lastName.Text = this.NativeUser.UserLastName;
+            this.txtBoxPhone.Text = this.NativeUser.PhoneNumber;
+            this.txtBoxEmail.Text = this.NativeUser.Email;
+            this.txtBoxBio.Text = this.NativeUser.Bio;
+            this.scLink.Text = this.NativeUser.Email;
+            this.userProfilePhoto.Image = this.NativeUser.ProfilePhoto;
         }
     }
 }

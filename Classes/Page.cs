@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace media.Classes
 {
-    internal class Page
+    public class Page
     {
         private string pageName;
         private string pageType;

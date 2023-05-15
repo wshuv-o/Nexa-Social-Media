@@ -79,5 +79,10 @@ namespace media
         {
             Methods.OpenChildForm(new AdminHome(), panel1);
         }
+
+        private void FormAdminHome_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

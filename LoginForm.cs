@@ -53,6 +53,7 @@ namespace media
                                     User user=this.GetUserByEmail(email);
                                     //MessageBox.Show("userFound!"+"user name is"+user.UserFirstName);
                                     openChildForm(new FormBase(user));
+                                    ClassNativeUser.NativeUser=user;
                                 }
                                 else
                                 {
@@ -67,8 +68,10 @@ namespace media
                                 x.ShowDialog();
                                 return;
                             }
+                            reader.Close();
                         }
                     }
+                    conn.Close();
                 }
             }
             catch(Exception ex)

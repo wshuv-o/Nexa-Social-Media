@@ -681,7 +681,7 @@ namespace media
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1062, 1033);
-            this.Controls.Add(this.guna2CustomGradientPanel1);
+//            this.Controls.Add(this.guna2CustomGradientPanel1);
             this.MaximumSize = new System.Drawing.Size(1920, 1080);
             this.MinimumSize = new System.Drawing.Size(1080, 1018);
             this.Name = "FormCreateProduct";

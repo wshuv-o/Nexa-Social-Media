@@ -30,20 +30,20 @@
         {
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2TileButton7 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2TileButton5 = new Guna.UI2.WinForms.Guna2Button();
             this.userButton = new Guna.UI2.WinForms.Guna2Button();
             this.guna2TileButton2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2TileButton1 = new Guna.UI2.WinForms.Guna2Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2TileButton7 = new Guna.UI2.WinForms.Guna2Button();
             this.ImageAdmin = new media.CustomRoundPictureBox();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ImageAdmin)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2Panel1
@@ -79,6 +79,49 @@
             this.guna2Panel2.Size = new System.Drawing.Size(231, 913);
             this.guna2Panel2.TabIndex = 0;
             this.guna2Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel2_Paint);
+            // 
+            // guna2Button1
+            // 
+            this.guna2Button1.BackColor = System.Drawing.Color.White;
+            this.guna2Button1.BorderColor = System.Drawing.Color.White;
+            this.guna2Button1.BorderRadius = 20;
+            this.guna2Button1.BorderThickness = 1;
+            this.guna2Button1.CustomizableEdges.BottomRight = false;
+            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.FillColor = System.Drawing.Color.MediumSeaGreen;
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.Location = new System.Drawing.Point(7, 304);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.PressedColor = System.Drawing.Color.White;
+            this.guna2Button1.Size = new System.Drawing.Size(214, 68);
+            this.guna2Button1.TabIndex = 17;
+            this.guna2Button1.Text = "Home";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            // 
+            // guna2TileButton7
+            // 
+            this.guna2TileButton7.BackColor = System.Drawing.Color.White;
+            this.guna2TileButton7.BorderColor = System.Drawing.Color.White;
+            this.guna2TileButton7.BorderRadius = 20;
+            this.guna2TileButton7.BorderThickness = 1;
+            this.guna2TileButton7.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2TileButton7.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2TileButton7.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2TileButton7.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2TileButton7.FillColor = System.Drawing.Color.MediumSeaGreen;
+            this.guna2TileButton7.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2TileButton7.ForeColor = System.Drawing.Color.White;
+            this.guna2TileButton7.Image = global::media.Properties.Resources.icons8_logout_32;
+            this.guna2TileButton7.ImageSize = new System.Drawing.Size(25, 25);
+            this.guna2TileButton7.Location = new System.Drawing.Point(6, 825);
+            this.guna2TileButton7.Name = "guna2TileButton7";
+            this.guna2TileButton7.Size = new System.Drawing.Size(214, 68);
+            this.guna2TileButton7.TabIndex = 16;
+            this.guna2TileButton7.Text = "Exit";
             // 
             // guna2TileButton5
             // 
@@ -182,63 +225,6 @@
             this.label1.Text = "Wahiduzzaman Suva";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.40602F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 87.59399F));
-            this.tableLayoutPanel1.Controls.Add(this.panel1, 1, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1862, 913);
-            this.tableLayoutPanel1.TabIndex = 4;
-            // 
-            // guna2Button1
-            // 
-            this.guna2Button1.BackColor = System.Drawing.Color.White;
-            this.guna2Button1.BorderColor = System.Drawing.Color.White;
-            this.guna2Button1.BorderRadius = 20;
-            this.guna2Button1.BorderThickness = 1;
-            this.guna2Button1.CustomizableEdges.BottomRight = false;
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.Color.MediumSeaGreen;
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(7, 304);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.PressedColor = System.Drawing.Color.White;
-            this.guna2Button1.Size = new System.Drawing.Size(214, 68);
-            this.guna2Button1.TabIndex = 17;
-            this.guna2Button1.Text = "Home";
-            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
-            // 
-            // guna2TileButton7
-            // 
-            this.guna2TileButton7.BackColor = System.Drawing.Color.White;
-            this.guna2TileButton7.BorderColor = System.Drawing.Color.White;
-            this.guna2TileButton7.BorderRadius = 20;
-            this.guna2TileButton7.BorderThickness = 1;
-            this.guna2TileButton7.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2TileButton7.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2TileButton7.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2TileButton7.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2TileButton7.FillColor = System.Drawing.Color.MediumSeaGreen;
-            this.guna2TileButton7.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TileButton7.ForeColor = System.Drawing.Color.White;
-            this.guna2TileButton7.Image = global::media.Properties.Resources.icons8_logout_32;
-            this.guna2TileButton7.ImageSize = new System.Drawing.Size(25, 25);
-            this.guna2TileButton7.Location = new System.Drawing.Point(6, 825);
-            this.guna2TileButton7.Name = "guna2TileButton7";
-            this.guna2TileButton7.Size = new System.Drawing.Size(214, 68);
-            this.guna2TileButton7.TabIndex = 16;
-            this.guna2TileButton7.Text = "Exit";
-            // 
             // ImageAdmin
             // 
             this.ImageAdmin.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
@@ -255,6 +241,20 @@
             this.ImageAdmin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ImageAdmin.TabIndex = 1;
             this.ImageAdmin.TabStop = false;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.40602F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 87.59399F));
+            this.tableLayoutPanel1.Controls.Add(this.panel1, 1, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1862, 913);
+            this.tableLayoutPanel1.TabIndex = 4;
             // 
             // panel1
             // 
@@ -274,11 +274,12 @@
             this.Padding = new System.Windows.Forms.Padding(20);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdminFormHome";
+            this.Load += new System.EventHandler(this.FormAdminHome_Load);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel2.PerformLayout();
-            this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ImageAdmin)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

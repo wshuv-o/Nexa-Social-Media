@@ -7,6 +7,7 @@ using System.Linq;
 using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 using System.Windows.Forms;
 
 namespace media
@@ -25,11 +26,9 @@ namespace media
             this.classPosts = classPost;
             InitializeComponent();
             Methods.RoundImageBoxCorners(UserProfileImage, 20);
-            postImagePanel.BackColor=Methods.GetBackgroundAverageColor((Bitmap)postImagePanel.BackgroundImage);
             Methods.SetDoubleBuffer(panel1, true);
             Methods.SetDoubleBuffer(panel2, true);
             Methods.SetDoubleBuffer(panel4, true);
-            Methods.SetDoubleBuffer(postImagePanel, true);
             Methods.SetDoubleBuffer(guna2ShadowPanel1, true);
             Methods.SetDoubleBuffer(basePanel, true);
             Methods.SetDoubleBuffer(tableLayoutPanel1, true);
@@ -37,12 +36,52 @@ namespace media
 
             if (classPost != null)
             {
-                //MessageBox.Show("prob");
+
                 this.postTime.Text = classPost.PostTime.ToString();
                 this.postText.Text = classPost.PostText;
-                this.postImagePanel.BackgroundImage = classPost.PostImages[0];
+                if (classPost.PostImage != null)
+                {
+                    this.postImagePanel.BackgroundImage = classPost.PostImage;
+                    Methods.SetDoubleBuffer(postImagePanel, true);
+                    postImagePanel.BackColor = Methods.GetBackgroundAverageColor((Bitmap)postImagePanel.BackgroundImage);
+                    //MessageBox.Show("image");
+                    this.postImagePanel.BackColor = Methods.GetBackgroundAverageColor((Bitmap)this.postImagePanel.BackgroundImage);
+
+
+                }
+                else
+                {
+                    int removeColumnIndex = 0;
+                    int removeRowIndex = 2;
+
+                    Control controlToRemove = tableLayoutPanel2.GetControlFromPosition(removeColumnIndex, removeRowIndex);
+                    if (controlToRemove != null)
+                    {
+                        tableLayoutPanel2.Controls.Remove(controlToRemove);
+                        controlToRemove.Dispose();
+
+                        for (int rowIndex = removeRowIndex + 1; rowIndex < tableLayoutPanel2.RowCount; rowIndex++)
+                        {
+                            Control control = tableLayoutPanel2.GetControlFromPosition(removeColumnIndex, rowIndex);
+                            if (control != null)
+                            {
+                                tableLayoutPanel2.SetCellPosition(control, new TableLayoutPanelCellPosition(removeColumnIndex, rowIndex - 1));
+                            }
+                        }
+
+                        Control adjacentControl = tableLayoutPanel2.GetControlFromPosition(removeColumnIndex, removeRowIndex - 1);
+                        if (adjacentControl != null)
+                        {
+                            tableLayoutPanel2.SetRowSpan(adjacentControl, tableLayoutPanel2.GetRowSpan(adjacentControl) + 1);
+                        }
+
+                        tableLayoutPanel2.RowCount--;
+                    }
+
+
+                }
+
                 this.reactCount.Text = classPost.NoOfReacts.ToString();
-                this.postImagePanel.BackColor = Methods.GetBackgroundAverageColor((Bitmap)this.postImagePanel.BackgroundImage);
                 this.UserProfileImage.BackgroundImage = classPost.PostCreator.ProfilePhoto;
                 this.lblUserName.Text = classPost.PostCreator.UserFirstName + " " + classPost.PostCreator.UserLastName;
 
@@ -95,7 +134,7 @@ namespace media
 
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+/*        private void button1_Click_1(object sender, EventArgs e)
         {
             string richTextBoxText = richTextBox1.Text;
             postText.Text = richTextBoxText;
@@ -103,7 +142,7 @@ namespace media
             postText.MaximumSize = new Size(panel2.Width, int.MaxValue);
             panel2.Height = postText.Height;
         }
-
+*/
         private void label3_Click_1(object sender, EventArgs e)
         {
 
@@ -136,6 +175,11 @@ namespace media
         }
 
         private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
         {
 
         }

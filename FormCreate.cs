@@ -1,5 +1,7 @@
 ﻿using media.Classes;
+using MySql.Data.MySqlClient;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +17,7 @@ namespace media
     public partial class FormCreate : Form
     {
         private User nativeUser;
+        private Classes.ClassPost postDetails;
         public User NativeUser
         {
             get { return nativeUser; }
@@ -23,8 +26,11 @@ namespace media
 
         public FormCreate(User user)
         {
+            postDetails= new ClassPost();
             this.NativeUser= user;
             InitializeComponent();
+            this.pboxUserProfilePhoto.Image = this.NativeUser.ProfilePhoto;
+            this.lblUserName.Text = this.NativeUser.UserFirstName + " "+this.NativeUser.UserLastName;
 
            
         }
@@ -45,14 +51,15 @@ namespace media
 
         private void guna2CircleButton1_Click(object sender, EventArgs e)
         {
-            DBImageOperation dbio= new DBImageOperation();
-            
+            Image image= ImageCompress.SelectAndCompressImage();
+            postDetails.PostImage=image;
+
             Guna.UI2.WinForms.Guna2PictureBox pictureTemplate= new Guna.UI2.WinForms.Guna2PictureBox();
             pictureTemplate.ImageRotate = 0F;
             pictureTemplate.Location = new System.Drawing.Point(3, 3);
             pictureTemplate.Name = "pictureTemplate";
             pictureTemplate.Size = new System.Drawing.Size(633, 334);
-            pictureTemplate.Image = dbio.SelectImageFromFile();
+            pictureTemplate.Image = ImageCompress.SelectAndCompressImage();
             pictureTemplate.BackgroundImageLayout=ImageLayout.Stretch; 
             pictureTemplate.TabIndex = 0;
             pictureTemplate.TabStop = false;
@@ -65,15 +72,67 @@ namespace media
         {
 
         }
-        /*public void BlurPanel(Panel panel)
+
+        private void guna2Button1_Click(object sender, EventArgs e)
         {
-            Bitmap bitmap = new Bitmap(panel.Width, panel.Height);
-            this.DrawToBitmap(bitmap, new Rectangle(panel.Location.X, panel.Location.Y, panel.Width, panel.Height));            // Apply the blur effect to the bitmap
-            Bitmap blurred = ApplyGaussianBlurOnPanel(bitmap, 10, Size);
-            this.BackgroundImage = blurred;
-            this.Opacity = 1;
-            this.ShowDialog();
-        }*/
+            int postId = 0;
+            postDetails.PostTime = DateTime.Now;
+            postDetails.PostText = txtbxPostText.Text;
+            postDetails.Permission = permission.SelectedText;
+
+            using (MySqlConnection conn = new MySqlConnection(DatabaseCredentials.connectionStringLocalServer))
+            {
+                conn.Open();
+                string query = "INSERT INTO postofuser (postText, postTime, postPermission, userid) VALUES (@a, @b, @c, @d)";
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@a", postDetails.PostText);
+                    cmd.Parameters.AddWithValue("@b", postDetails.PostTime);
+                    cmd.Parameters.AddWithValue("@c", postDetails.Permission);
+                    cmd.Parameters.AddWithValue("@d", this.NativeUser.Key);
+                    cmd.ExecuteNonQuery();
+
+                    // Retrieve the generated postid
+                    string retrieveQuery = "SELECT LAST_INSERT_ID()";
+                    using (MySqlCommand retrieveCmd = new MySqlCommand(retrieveQuery, conn))
+                    {
+                        postId = Convert.ToInt32(retrieveCmd.ExecuteScalar());
+                    }
+                }
+                conn.Close();
+            }
+
+            if (postDetails.PostImage != null)
+            {
+                using (MySqlConnection conn = new MySqlConnection(DatabaseCredentials.connectionStringLocalServer))
+                {
+                    DBImageOperation dbio = new DBImageOperation();
+                    string query = "INSERT INTO mediacontent_postuser (image, postid) VALUES (@a, @b)";
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        conn.Open();
+                        cmd.Parameters.AddWithValue("@a", dbio.ImageToByteArray(postDetails.PostImage));
+                        cmd.Parameters.AddWithValue("@b", postId);
+                        cmd.ExecuteNonQuery();
+                    }
+                    conn.Close();
+                }
+            }
+
+        }
+        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+        /*public void BlurPanel(Panel panel)
+{
+Bitmap bitmap = new Bitmap(panel.Width, panel.Height);
+this.DrawToBitmap(bitmap, new Rectangle(panel.Location.X, panel.Location.Y, panel.Width, panel.Height));            // Apply the blur effect to the bitmap
+Bitmap blurred = ApplyGaussianBlurOnPanel(bitmap, 10, Size);
+this.BackgroundImage = blurred;
+this.Opacity = 1;
+this.ShowDialog();
+}*/
 
 
         /* public Bitmap GetBlurredImage(Panel panel, int blurAmount)

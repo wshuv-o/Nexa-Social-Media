@@ -1,5 +1,6 @@
 ﻿using Guna.UI2.WinForms;
 using media.Classes;
+using media.Friends;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -7,27 +8,42 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static media.Friends.FriendRequestForm;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace media
 {
     public partial class Home : Form
     {
-       
 
-        public Home()
+        private Classes.User nativeUser;
+        List<ClassFriendRequest> classFriendRequestlist = new List<ClassFriendRequest>();
+        List<FriendRequestAdopter> friendRequestAdopter = new List<FriendRequestAdopter>();
+        List<ContactAdaptorPanel> contactAdaptorPanel = new List<ContactAdaptorPanel>();
+        List<FriendRequestForm> friendRequestForms = new List<FriendRequestForm>();
+        List<FormContactList> formContactLists = new List<FormContactList>();
+
+        public Classes.User NativeUser
         {
-            media.Classes.ClassPost[] classPostList= new media.Classes.ClassPost[100]; 
+            get { return this.nativeUser; }
+            set { this.nativeUser = value; }
+        }
+
+        public Home(Classes.User nativeUser)
+        {
+            this.NativeUser = nativeUser;
+            List<media.Classes.ClassPost> classPostList= new List<media.Classes.ClassPost>(); 
             InitializeComponent();
             panelBaseHome.ColumnStyles[0] = new ColumnStyle(SizeType.Percent, 40F);
             panelBaseHome.ColumnStyles[2] = new ColumnStyle(SizeType.Percent,40F);
             panelBaseHome.ColumnStyles[1] = new ColumnStyle(SizeType.Percent, 100F);
             panelFeed.Resize += new System.EventHandler(this.panelNavBar_Resize);
             Methods.RoundPanelCorners(ref panelNavBar, 20);
-            Methods.RoundPanelCorners(ref flowLayoutPanel2, 20);
+            Methods.RoundPanelCorners(ref contactPanel, 20);
 
             this.panelNavBar.Resize += (sender, e) =>
             {
@@ -37,17 +53,17 @@ namespace media
             };
 
             
-            this.flowLayoutPanel2.Resize += (sender, e) =>
+            this.contactPanel.Resize += (sender, e) =>
             {
-                flowLayoutPanel2.Height = this.panel3.Height;
-                flowLayoutPanel2.Width=this.panel3.Width;
-                Methods.RoundPanelCorners(ref this.flowLayoutPanel2, 20);
+                contactPanel.Height = this.panel3.Height;
+                contactPanel.Width=this.panel3.Width;
+                Methods.RoundPanelCorners(ref this.contactPanel, 20);
 
             };
 
             this.guna2Panel2.Resize += (sender, e) =>
             {
-                guna2Panel2.Width = flowLayoutPanel1.Width;
+                guna2Panel2.Width = friendRequestPanel.Width;
 
             };
 
@@ -56,97 +72,26 @@ namespace media
             Methods.SetDoubleBuffer(panel3, true);
             Methods.SetDoubleBuffer(panelBaseHome, true);
             Methods.SetDoubleBuffer(panelFC, true);
-            Methods.SetDoubleBuffer(flowLayoutPanel1, true);
+            Methods.SetDoubleBuffer(friendRequestPanel, true);
             Methods.SetDoubleBuffer(tableLayoutPanel1, true);
             Methods.SetDoubleBuffer(panelFC, true);
             Methods.SetDoubleBuffer(panelFeed, true);
-            Methods.SetDoubleBuffer(flowLayoutPanel2, true);
-
-            string connectionString = DatabaseCredentials.connectionStringLocalServer;
-            MySqlConnection connection = new MySqlConnection(connectionString);
-            connection.Open();
-            string query = @"SELECT p.postid, p.posttext, p.posttime, p.postPermission, p.postReactCount, p.userid, i.image
-                FROM postofuser p
-                JOIN mediacontent_postuser i ON i.postid = p.postid
-                JOIN friends f ON f.nativeuserid = p.userid";
-            MySqlCommand command = new MySqlCommand(query, connection);
-            MySqlDataReader reader = command.ExecuteReader();
-            int j = 0;
-            while (reader.Read())
-            {
-                DBImageOperation dbio= new DBImageOperation();
-                int postID = reader.GetInt32("postid");
-                string postText = (string)reader["posttext"];
-                DateTime postTime = reader.GetDateTime("posttime");
-                string postPermission = (string)reader["postPermission"];
-                int postReact = (int)reader["postReactCount"];
-                int Key = reader.GetInt32("userid");
-                //string mediaContent = (string)reader["image"];
-                System.Drawing.Image[] postImage = new System.Drawing.Image[2];
-                postImage[0] = dbio.LoadPostImageFromDataBase(postID);
-                User postCreator = dbio.GetUserByUserId(Key);
-                Classes.ClassPost p = new Classes.ClassPost(postID, postText, postTime, postImage, postPermission, postReact, postCreator);
-                //MessageBox.Show(p.PostText);
-                classPostList[j] = new Classes.ClassPost();
-                classPostList[j]=p;
-                j++;
-
-            }
-            reader.Close();
-            connection.Close();
-
-            Post[] posts = new Post[5];
-            PostAdopter[] postAdopters = new PostAdopter[5];
-            string s = new string('e','e');
-            //ClassPost[] distinctPosts = new ClassPost[20];
-            //ClassPost[] distinctPostList = classPostList.GroupBy(p => p.PostId).Select(g => g.First()).ToArray();
-            ClassPost[] distinctPostList = null ;
-            if (classPostList != null && classPostList.Length > 0)
-            {
-               distinctPostList = classPostList
-                    .Where(p => p != null) // Filter out any null objects
-                    .GroupBy(p => p.PostId)
-                    .Select(g => g.First())
-                    .ToArray();
-            }
-            //MessageBox.Show(distinctPostList.Length.ToString());
-
-            foreach (media.Classes.ClassPost c in classPostList)
-            {
-                if (c != null)
-                {
-                    s = s + c.PostText + "\n";
-                }
-            }
-            //MessageBox.Show(s);
-            s = "";
-            foreach (media.Classes.ClassPost c in distinctPostList)
-            {
-                if (c != null)
-                {
-                    s = s + +c.PostId+"  "+c.PostText + "\n\n";
-                }
-            }
-            //MessageBox.Show(s);
-
-            for (int i = 0; i < 4; i++)
-            {
-                postAdopters[i] = new PostAdopter(distinctPostList[i]);
-                posts[i] = new Post(distinctPostList[i]);
-                Methods.OpenChildForm2(posts[i], postAdopters[i].panelBase);
-                panelFeed.Controls.Add(postAdopters[i].panelBase);
-            }
+            Methods.SetDoubleBuffer(contactPanel, true);
+            
+            
+            //MessageBox.Show(x);
+           
         }
         public Home(int userId)
         {
-            media.Classes.ClassPost[] classPostList = new media.Classes.ClassPost[20];
+            List<media.Classes.ClassPost> classPostList = new List<media.Classes.ClassPost>();
             InitializeComponent();
             panelBaseHome.ColumnStyles[0] = new ColumnStyle(SizeType.Percent, 40F);
             panelBaseHome.ColumnStyles[2] = new ColumnStyle(SizeType.Percent, 40F);
             panelBaseHome.ColumnStyles[1] = new ColumnStyle(SizeType.Percent, 100F);
             panelFeed.Resize += new System.EventHandler(this.panelNavBar_Resize);
             Methods.RoundPanelCorners(ref panelNavBar, 20);
-            Methods.RoundPanelCorners(ref flowLayoutPanel2, 20);
+            Methods.RoundPanelCorners(ref contactPanel, 20);
 
             this.panelNavBar.Resize += (sender, e) =>
             {
@@ -156,35 +101,45 @@ namespace media
             };
 
 
-            this.flowLayoutPanel2.Resize += (sender, e) =>
+            this.contactPanel.Resize += (sender, e) =>
             {
-                flowLayoutPanel2.Height = this.panel3.Height;
-                flowLayoutPanel2.Width = this.panel3.Width;
-                Methods.RoundPanelCorners(ref this.flowLayoutPanel2, 20);
+                contactPanel.Height = this.panel3.Height;
+                contactPanel.Width = this.panel3.Width;
+                Methods.RoundPanelCorners(ref this.contactPanel, 20);
 
             };
 
             this.guna2Panel2.Resize += (sender, e) =>
             {
-                guna2Panel2.Width = flowLayoutPanel1.Width;
+                guna2Panel2.Width = friendRequestPanel.Width;
 
             };
+            friendRequestPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+| System.Windows.Forms.AnchorStyles.Left)
+| System.Windows.Forms.AnchorStyles.Right)));
+            friendRequestPanel.BackColor = System.Drawing.Color.White;
+            friendRequestPanel.Controls.Add(this.guna2Panel2);
+            friendRequestPanel.Location = new System.Drawing.Point(10, 66);
+            friendRequestPanel.Name = "friendRequestPanel";
+            friendRequestPanel.Size = new System.Drawing.Size(668, 385);
+            friendRequestPanel.TabIndex = 1;
+            friendRequestPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint); 
 
 
             Methods.SetDoubleBuffer(panel1, true);
             Methods.SetDoubleBuffer(panel3, true);
             Methods.SetDoubleBuffer(panelBaseHome, true);
             Methods.SetDoubleBuffer(panelFC, true);
-            Methods.SetDoubleBuffer(flowLayoutPanel1, true);
+            Methods.SetDoubleBuffer(friendRequestPanel, true);
             Methods.SetDoubleBuffer(tableLayoutPanel1, true);
             Methods.SetDoubleBuffer(panelFC, true);
             Methods.SetDoubleBuffer(panelFeed, true);
-            Methods.SetDoubleBuffer(flowLayoutPanel2, true);
+            Methods.SetDoubleBuffer(contactPanel, true);
 
             string connectionString = DatabaseCredentials.connectionStringLocalServer;
             MySqlConnection connection = new MySqlConnection(connectionString);
             connection.Open();
-            string query = "SELECT p.postid, p.posttext, p.posttime, p.postPermission, p.postReactCount, p.userid, i.image FROM postofuser p, mediacontent_postuser i where p.userid=@userId";
+            string query = "SELECT p.postid, p.posttext, p.posttime, p.postPermission, p.postReactCount, p.userid, i.image FROM postofuser p, mediacontent_postuser i where p.userid=@userId and i.postid=p.postid";
             MySqlCommand command = new MySqlCommand(query, connection);
             command.Parameters.AddWithValue("@userId", userId);
             MySqlDataReader reader = command.ExecuteReader();
@@ -198,27 +153,22 @@ namespace media
                 string postPermission = (string)reader["postPermission"];
                 int postReact = (int)reader["postReactCount"];
                 int Key = reader.GetInt32("userid");
-                //string mediaContent = (string)reader["image"];
-                System.Drawing.Image[] postImage = new System.Drawing.Image[2];
-                postImage[0] = dbio.LoadPostImageFromDataBase(postID);
+                System.Drawing.Image postImage= dbio.LoadPostImageFromDataBase(postID);
                 User postCreator = dbio.GetUserByUserId(Key);
                 Classes.ClassPost p = new Classes.ClassPost(postID, postText, postTime, postImage, postPermission, postReact, postCreator);
                 //MessageBox.Show(p.PostText);
-                classPostList[j] = new Classes.ClassPost();
-                classPostList[j] = p;
-                j++;
+                classPostList.Add(p);
 
             }
             reader.Close();
             connection.Close();
 
-            Post[] posts = new Post[5];
-            PostAdopter[] postAdopters = new PostAdopter[5];
+            List<Post> posts = new List<Post>();
+            List<FormPost> formPost = new List<FormPost>();
+            List<PostAdopter> postAdopters = new List<PostAdopter>();
             string s = new string('e', 'e');
-            //ClassPost[] distinctPosts = new ClassPost[20];
-            //ClassPost[] distinctPostList = classPostList.GroupBy(p => p.PostId).Select(g => g.First()).ToArray();
             ClassPost[] distinctPostList = null;
-            if (classPostList != null && classPostList.Length > 0)
+            if (classPostList != null && classPostList.Count > 0)
             {
                 distinctPostList = classPostList
                      .Where(p => p != null) // Filter out any null objects
@@ -226,33 +176,29 @@ namespace media
                      .Select(g => g.First())
                      .ToArray();
             }
-            //MessageBox.Show(distinctPostList.Length.ToString());
 
-            foreach (media.Classes.ClassPost c in classPostList)
-            {
-                if (c != null)
-                {
-                    s = s + c.PostText + "\n";
-                }
-            }
-            //MessageBox.Show(s);
-            s = "";
-            foreach (media.Classes.ClassPost c in distinctPostList)
-            {
-                if (c != null)
-                {
-                    s = s + +c.PostId + "  " + c.PostText + "\n\n";
-                }
-            }
-            //MessageBox.Show(s);
 
             for (int i = 0; i < distinctPostList.Length; i++)
             {
-                postAdopters[i] = new PostAdopter(distinctPostList[i]);
-                posts[i] = new Post(distinctPostList[i]);
-                Methods.OpenChildForm2(posts[i], postAdopters[i].panelBase);
-                panelFeed.Controls.Add(postAdopters[i].panelBase);
+                postAdopters.Add(new PostAdopter(distinctPostList[i]));
+
+                if (distinctPostList[i].PostImage != null)
+                {
+                    formPost.Add(new FormPost(distinctPostList[i]));
+                    Methods.OpenChildForm2(formPost[i], postAdopters[i].panelBase);
+                    panelFeed.Controls.Add(postAdopters[i].panelBase);
+                }
+                else
+                {
+
+                    posts.Add(new Post(distinctPostList[i]));
+                    Methods.OpenChildForm2(posts[i], postAdopters[i].panelBase);
+                    panelFeed.Controls.Add(postAdopters[i].panelBase);
+
+                }
+                //MessageBox.Show(x);
             }
+            //MessageBox.Show(x);
         }
 
 
@@ -309,8 +255,172 @@ namespace media
         }
 
         private void Home_Load(object sender, EventArgs e)
-        {
+        {/*
+            List<media.Classes.ClassPost> classPostList = new List<media.Classes.ClassPost>();
+            string connectionString = DatabaseCredentials.connectionStringLocalServer;
+            MySqlConnection connection = new MySqlConnection(connectionString);
+            connection.Open();
+            string query = @"SELECT p.postid, p.posttext, p.posttime, p.postPermission, p.postReactCount, p.userid FROM postofuser p, mediacontent_postuser mcpu WHERE p.postid= mcpu.postid AND p.userid IN(SELECT FriendUserId FROM friends WHERE NativeUserId = " + this.NativeUser.Key + " OR FriendUserId = " + this.NativeUser.Key + " ORDER BY userfriendId ASC);";
+            MySqlCommand command = new MySqlCommand(query, connection);
+            MySqlDataReader reader = command.ExecuteReader();
+            int j = 0;
+            while (reader.Read())
+            {
+                DBImageOperation dbio = new DBImageOperation();
+                int postID = reader.GetInt32("postid");
+                string postText = (string)reader["posttext"];
+                DateTime postTime = reader.GetDateTime("posttime");
+                string postPermission = (string)reader["postPermission"];
+                int postReact = (int)reader["postReactCount"];
+                int Key = reader.GetInt32("userid");
+                //string mediaContent = (string)reader["image"];
+                System.Drawing.Image postImage = dbio.LoadPostImageFromDataBase(postID);
+                User postCreator = dbio.GetUserByUserId(Key);
+                if (postImage != null)
+                {
+                    j += 1;
 
+                    Classes.ClassPost p = new Classes.ClassPost(postID, postText, postTime, postImage, postPermission, postReact, postCreator);
+                    //MessageBox.Show(p.PostText);
+                    classPostList.Add(p);
+                }
+                else
+                {
+                    j += 1;
+                    Classes.ClassPost p = new Classes.ClassPost(postID, postText, postTime, postPermission, postReact, postCreator);
+                    //MessageBox.Show(p.PostText);
+                    classPostList.Add(p);
+                }
+            }
+            reader.Close();
+
+            query = @"SELECT p.postid, p.posttext, p.posttime, p.postPermission, p.postReactCount, p.userid FROM postofuser p WHERE p.postid NOT IN (SELECT DISTINCT postid FROM  mediacontent_postuser) AND p.userid IN(SELECT FriendUserId FROM friends WHERE NativeUserId = " + this.NativeUser.Key + " OR FriendUserId = " + this.NativeUser.Key + " ORDER BY userfriendId ASC);";
+            command = new MySqlCommand(query, connection);
+            reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                DBImageOperation dbio = new DBImageOperation();
+                int postID = reader.GetInt32("postid");
+                string postText = (string)reader["posttext"];
+                DateTime postTime = reader.GetDateTime("posttime");
+                string postPermission = (string)reader["postPermission"];
+                int postReact = (int)reader["postReactCount"];
+                int Key = reader.GetInt32("userid");
+                User postCreator = dbio.GetUserByUserId(Key);
+                Classes.ClassPost p = new Classes.ClassPost(postID, postText, postTime, postPermission, postReact, postCreator);
+                //MessageBox.Show(p.PostText);
+                classPostList.Add(p);
+
+            }
+            connection.Close();
+
+            List<Post> posts = new List<Post>();
+            List<FormPost> formPost = new List<FormPost>();
+            List<PostAdopter> postAdopters = new List<PostAdopter>();
+            ClassPost[] distinctPostList = classPostList.ToArray();
+            if (classPostList != null && classPostList.Count > 0)
+            {
+                distinctPostList = classPostList
+                     .Where(p => p != null)
+                     .GroupBy(p => p.PostId)
+                     .Select(g => g.First())
+                     .ToArray();
+            }
+            MessageBox.Show(distinctPostList.Length.ToString());
+
+            List<User> distinctUserList = new List<User>();
+
+            if (classPostList != null && classPostList.Count > 0)
+            {
+                distinctUserList = classPostList
+                    .Where(p => p != null && p.PostCreator != null && p.PostCreator.Key != null)
+                    .Select(p => p.PostCreator)
+                    .GroupBy(u => u.Key)
+                    .Select(g => g.First())
+                    .ToList();
+            }
+            ClassNativeUser.DistinctUserList = distinctUserList;
+            MessageBox.Show("sdgfdg" + distinctUserList.Count.ToString());
+            MessageBox.Show("there :" + ClassNativeUser.DistinctUserList.Count.ToString());
+
+
+
+
+
+
+            for (int i = 0; i < distinctPostList.Length; i++)
+            {
+                postAdopters.Add(new PostAdopter(distinctPostList[i]));
+                //MessageBox.Show(x);
+
+                if (distinctPostList[i].PostImage != null)
+                {
+                    // x = x + "x" + distinctPostList[i].PostId;
+                    posts.Add(new Post(distinctPostList[i]));
+                    Methods.OpenChildForm2(posts[i], postAdopters[i].panelBase);
+                    panelFeed.Controls.Add(postAdopters[i].panelBase);
+                }
+                else
+                {
+                    // x = x + "y" + distinctPostList[i].PostId;
+                    posts.Add(new Post(distinctPostList[i]));
+                    Methods.OpenChildForm2(posts[i], postAdopters[i].panelBase);
+                    panelFeed.Controls.Add(postAdopters[i].panelBase);
+
+                }
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+            connection.Open();
+            string queryx = "SELECT requestid, requestStatus, requestfrom FROM friendrequest where requestto = " + this.NativeUser.Key + " ;";
+            MySqlCommand commandx = new MySqlCommand(queryx, connection);
+            MySqlDataReader readerx = commandx.ExecuteReader();
+            while (readerx.Read())
+            {
+                DBImageOperation dbio = new DBImageOperation();
+                int requestid = readerx.GetInt32("requestid");
+                int requestStatus = readerx.GetInt32("requestStatus");
+                int Key = readerx.GetInt32("requestfrom");
+                User requesterProfile = dbio.GetUserByUserId(Key);
+                ClassFriendRequest cfr = new ClassFriendRequest(requestid, this.NativeUser.Key, Key, requestStatus, requesterProfile);
+                //MessageBox.Show(p.PostText);
+                classFriendRequestlist.Add(cfr);
+                //MessageBox.Show(classFriendRequestlist.Count.ToString());
+
+            }
+            readerx.Close();
+            connection.Close();
+            for (int i = 0; i < classFriendRequestlist.Count; i++)
+            {
+
+                friendRequestForms.Add(new Friends.FriendRequestForm(classFriendRequestlist[i]));
+                friendRequestAdopter.Add(new FriendRequestAdopter(friendRequestForms[i]));
+                //Methods.OpenChildForm(friendRequestForms[i], friendRequestAdopter[i].panelEachContact);
+                this.friendRequestPanel.Controls.Add(friendRequestAdopter[i].panelEachContact);
+
+
+            }
+            MessageBox.Show(classFriendRequestlist.Count.ToString());
+            MessageBox.Show(friendRequestAdopter.Count.ToString());
+            for (int i = 0; i < ClassNativeUser.DistinctUserList.Count; i++)
+            {
+                formContactLists.Add(new Friends.FormContactList(ClassNativeUser.DistinctUserList[i]));
+                contactAdaptorPanel.Add(new ContactAdaptorPanel(formContactLists[i]));
+                //Methods.OpenChildForm(friendRequestForms[i], friendRequestAdopter[i].panelEachContact);
+                this.contactPanel.Controls.Add(contactAdaptorPanel[i].panelEachContact);
+
+            }
+            */
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -344,7 +454,7 @@ namespace media
             Guna2Panel panelChild=new Guna2Panel();
             panelBase.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
-            panelBase.BackColor = System.Drawing.Color.WhiteSmoke;
+            panelBase.BackColor = System.Drawing.Color.White;
             panelBase.Controls.Add(panelChild);
             panelBase.Location = new System.Drawing.Point(43, 347);
             panelBase.Name = "panel1";
@@ -635,7 +745,7 @@ namespace media
             Methods.RoundPanelCorners(ref panelEachContact, 20);
             Methods.RoundImageBoxCorners(contactPicture, 25);
 
-            flowLayoutPanel2.Controls.Add(panelEachContact);
+            contactPanel.Controls.Add(panelEachContact);
 
 
 
@@ -643,7 +753,7 @@ namespace media
 
         private void button5_Click(object sender, EventArgs e)
         {
-            this.AddNewFriendRequest();
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -687,46 +797,15 @@ namespace media
 
         private void button4_Click_1(object sender, EventArgs e)
         {
-                Panel panelBase = new Panel();
-                Panel panelChild = new Panel();
-                panelBase.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                | System.Windows.Forms.AnchorStyles.Right)));
-                panelBase.BackColor = System.Drawing.Color.Blue;
-                panelBase.Controls.Add(panelChild);
-                panelBase.Location = new System.Drawing.Point(43, 347);
-                panelBase.Name = "panel1";
-                panelBase.Padding = new System.Windows.Forms.Padding(50, 10, 50, 10);
-                panelBase.Size = new System.Drawing.Size(866, 750);
-                panelBase.TabIndex = 1;
-                panelBase.Paint += new System.Windows.Forms.PaintEventHandler(panelBase_Paint);
-                // 
-                // panel2
-                // 
-                panelChild.BackColor = System.Drawing.SystemColors.ControlLightLight;
-                panelChild.Dock = System.Windows.Forms.DockStyle.Fill;
-                panelChild.Location = new System.Drawing.Point(50, 0);
-                panelChild.Name = "panel2";
-                panelChild.Size = new System.Drawing.Size(766, 500);
-                panelChild.TabIndex = 0;
-                panelChild.BackColor = Color.White;
-                panelChild.Paint += new System.Windows.Forms.PaintEventHandler(panelChild_Paint_1);
-                panelChild.MouseEnter += new System.EventHandler(panelChild_MouseEnter);
-                panelChild.MouseLeave += new System.EventHandler(panelChild_MouseLeave);
-                Methods.RoundPanelCorners(ref panelChild, 30);
+            //Friends.FreindRequestPanel f = new Friends.FreindRequestPanel();
 
-            //    Story a = new Story();
-              //  Methods.OpenChildForm(a, panelChild);
-
-                // panelBase.Height = a.basePanel.Height;
-                // panelBase.Width = 866;
-                //panelChild.Height = a.basePanel.Height;
-                //panelChild.Width = 766;
-                //panelChild.Height = a.Height;
-                panelFeed.Controls.Add(panelBase);
+                
 
             
 
         }
+
+
 
         private void guna2Panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -772,5 +851,40 @@ namespace media
         {
 
         }
+
+        private void friendRequestPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
+        {
+            string searchText = guna2TextBox1.Text.Trim();
+            DataTable dataTable = RetrieveUserData(searchText);
+            guna2DataGridView1.DataSource = dataTable;
+        }
+
+        private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+        private DataTable RetrieveUserData(string searchText)
+        {
+
+            using (MySqlConnection connection = new MySqlConnection(DatabaseCredentials.connectionStringLocalServer))
+            {
+                string query = "SELECT CONCAT(userFirstName, ' ', userLastName) AS FullName FROM user WHERE userFirstName LIKE @searchText OR userLastName LIKE @searchText";
+
+                MySqlCommand command = new MySqlCommand(query, connection);
+                command.Parameters.AddWithValue("@searchText", "%" + searchText + "%");
+
+                DataTable dataTable = new DataTable();
+                MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                adapter.Fill(dataTable);
+
+                return dataTable;
+            }
+        }
+
     }
 }

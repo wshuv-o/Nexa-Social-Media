@@ -1,6 +1,6 @@
-﻿namespace media
+﻿namespace media.Page
 {
-    partial class FormBase
+    partial class FormPageHome
     {
         /// <summary>
         /// Required designer variable.
@@ -29,28 +29,28 @@
         private void InitializeComponent()
         {
             this.panelSideMenu = new System.Windows.Forms.Panel();
-            this.buttonGames = new System.Windows.Forms.Button();
+            this.panelSubMain = new System.Windows.Forms.Panel();
+            this.buttonStatistics = new System.Windows.Forms.Button();
             this.buttonMarketPlace = new System.Windows.Forms.Button();
             this.buttonNotification = new System.Windows.Forms.Button();
             this.buttonMessages = new System.Windows.Forms.Button();
-            this.buttonReels = new System.Windows.Forms.Button();
+            this.buttonProduct = new System.Windows.Forms.Button();
             this.buttonSearch = new System.Windows.Forms.Button();
             this.buttonCreate = new System.Windows.Forms.Button();
             this.buttonHome = new System.Windows.Forms.Button();
             this.buttonTwizzle = new System.Windows.Forms.Button();
             this.buttonSettings = new System.Windows.Forms.Button();
-            this.panelSubMain = new System.Windows.Forms.Panel();
             this.panelSideMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelSideMenu
             // 
-            this.panelSideMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(27)))), ((int)(((byte)(242)))));
-            this.panelSideMenu.Controls.Add(this.buttonGames);
+            this.panelSideMenu.BackColor = System.Drawing.Color.RoyalBlue;
+            this.panelSideMenu.Controls.Add(this.buttonStatistics);
             this.panelSideMenu.Controls.Add(this.buttonMarketPlace);
             this.panelSideMenu.Controls.Add(this.buttonNotification);
             this.panelSideMenu.Controls.Add(this.buttonMessages);
-            this.panelSideMenu.Controls.Add(this.buttonReels);
+            this.panelSideMenu.Controls.Add(this.buttonProduct);
             this.panelSideMenu.Controls.Add(this.buttonSearch);
             this.panelSideMenu.Controls.Add(this.buttonCreate);
             this.panelSideMenu.Controls.Add(this.buttonHome);
@@ -65,22 +65,34 @@
             this.panelSideMenu.TabIndex = 0;
             this.panelSideMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelSideMenu_Paint);
             // 
-            // buttonGames
+            // panelSubMain
             // 
-            this.buttonGames.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonGames.FlatAppearance.BorderSize = 0;
-            this.buttonGames.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(24)))), ((int)(((byte)(217)))));
-            this.buttonGames.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(24)))), ((int)(((byte)(217)))));
-            this.buttonGames.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonGames.Image = global::media.Properties.Resources.icons8_games_32;
-            this.buttonGames.Location = new System.Drawing.Point(5, 684);
-            this.buttonGames.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonGames.Name = "buttonGames";
-            this.buttonGames.Size = new System.Drawing.Size(116, 82);
-            this.buttonGames.TabIndex = 29;
-            this.buttonGames.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.buttonGames.UseVisualStyleBackColor = true;
-            this.buttonGames.Click += new System.EventHandler(this.buttonGames_Click);
+            this.panelSubMain.BackColor = System.Drawing.Color.White;
+            this.panelSubMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelSubMain.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panelSubMain.Location = new System.Drawing.Point(141, 20);
+            this.panelSubMain.Margin = new System.Windows.Forms.Padding(2);
+            this.panelSubMain.Name = "panelSubMain";
+            this.panelSubMain.Size = new System.Drawing.Size(1741, 992);
+            this.panelSubMain.TabIndex = 2;
+            this.panelSubMain.Paint += new System.Windows.Forms.PaintEventHandler(this.panelSubMain_Paint);
+            // 
+            // buttonStatistics
+            // 
+            this.buttonStatistics.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonStatistics.FlatAppearance.BorderSize = 0;
+            this.buttonStatistics.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(24)))), ((int)(((byte)(217)))));
+            this.buttonStatistics.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(24)))), ((int)(((byte)(217)))));
+            this.buttonStatistics.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonStatistics.Image = global::media.Properties.Resources.icons8_statistics_32__2_;
+            this.buttonStatistics.Location = new System.Drawing.Point(0, 684);
+            this.buttonStatistics.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonStatistics.Name = "buttonStatistics";
+            this.buttonStatistics.Size = new System.Drawing.Size(121, 82);
+            this.buttonStatistics.TabIndex = 29;
+            this.buttonStatistics.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.buttonStatistics.UseVisualStyleBackColor = true;
+            this.buttonStatistics.Click += new System.EventHandler(this.buttonGames_Click);
             // 
             // buttonMarketPlace
             // 
@@ -90,10 +102,10 @@
             this.buttonMarketPlace.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(24)))), ((int)(((byte)(217)))));
             this.buttonMarketPlace.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonMarketPlace.Image = global::media.Properties.Resources.icons8_buying_32;
-            this.buttonMarketPlace.Location = new System.Drawing.Point(5, 602);
+            this.buttonMarketPlace.Location = new System.Drawing.Point(0, 602);
             this.buttonMarketPlace.Margin = new System.Windows.Forms.Padding(4);
             this.buttonMarketPlace.Name = "buttonMarketPlace";
-            this.buttonMarketPlace.Size = new System.Drawing.Size(116, 82);
+            this.buttonMarketPlace.Size = new System.Drawing.Size(121, 82);
             this.buttonMarketPlace.TabIndex = 28;
             this.buttonMarketPlace.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.buttonMarketPlace.UseVisualStyleBackColor = true;
@@ -107,10 +119,10 @@
             this.buttonNotification.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(24)))), ((int)(((byte)(217)))));
             this.buttonNotification.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonNotification.Image = global::media.Properties.Resources.icons8_bell_32;
-            this.buttonNotification.Location = new System.Drawing.Point(5, 520);
+            this.buttonNotification.Location = new System.Drawing.Point(0, 520);
             this.buttonNotification.Margin = new System.Windows.Forms.Padding(4);
             this.buttonNotification.Name = "buttonNotification";
-            this.buttonNotification.Size = new System.Drawing.Size(116, 82);
+            this.buttonNotification.Size = new System.Drawing.Size(121, 82);
             this.buttonNotification.TabIndex = 27;
             this.buttonNotification.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.buttonNotification.UseVisualStyleBackColor = true;
@@ -124,31 +136,31 @@
             this.buttonMessages.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(24)))), ((int)(((byte)(217)))));
             this.buttonMessages.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonMessages.Image = global::media.Properties.Resources.icons8_chat_message_32;
-            this.buttonMessages.Location = new System.Drawing.Point(5, 438);
+            this.buttonMessages.Location = new System.Drawing.Point(0, 438);
             this.buttonMessages.Margin = new System.Windows.Forms.Padding(4);
             this.buttonMessages.Name = "buttonMessages";
-            this.buttonMessages.Size = new System.Drawing.Size(116, 82);
+            this.buttonMessages.Size = new System.Drawing.Size(121, 82);
             this.buttonMessages.TabIndex = 26;
             this.buttonMessages.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.buttonMessages.UseVisualStyleBackColor = true;
             this.buttonMessages.Click += new System.EventHandler(this.buttonMessages_Click);
             // 
-            // buttonReels
+            // buttonProduct
             // 
-            this.buttonReels.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonReels.FlatAppearance.BorderSize = 0;
-            this.buttonReels.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(24)))), ((int)(((byte)(217)))));
-            this.buttonReels.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(24)))), ((int)(((byte)(217)))));
-            this.buttonReels.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonReels.Image = global::media.Properties.Resources.icons8_instagram_reels_32;
-            this.buttonReels.Location = new System.Drawing.Point(5, 356);
-            this.buttonReels.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonReels.Name = "buttonReels";
-            this.buttonReels.Size = new System.Drawing.Size(116, 82);
-            this.buttonReels.TabIndex = 25;
-            this.buttonReels.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.buttonReels.UseVisualStyleBackColor = true;
-            this.buttonReels.Click += new System.EventHandler(this.buttonReels_Click);
+            this.buttonProduct.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonProduct.FlatAppearance.BorderSize = 0;
+            this.buttonProduct.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(24)))), ((int)(((byte)(217)))));
+            this.buttonProduct.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(24)))), ((int)(((byte)(217)))));
+            this.buttonProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonProduct.Image = global::media.Properties.Resources.icons8_product_32;
+            this.buttonProduct.Location = new System.Drawing.Point(0, 356);
+            this.buttonProduct.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonProduct.Name = "buttonProduct";
+            this.buttonProduct.Size = new System.Drawing.Size(121, 82);
+            this.buttonProduct.TabIndex = 25;
+            this.buttonProduct.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.buttonProduct.UseVisualStyleBackColor = true;
+            this.buttonProduct.Click += new System.EventHandler(this.buttonReels_Click);
             // 
             // buttonSearch
             // 
@@ -158,10 +170,10 @@
             this.buttonSearch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(24)))), ((int)(((byte)(217)))));
             this.buttonSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSearch.Image = global::media.Properties.Resources.icons8_search_32;
-            this.buttonSearch.Location = new System.Drawing.Point(5, 274);
+            this.buttonSearch.Location = new System.Drawing.Point(0, 274);
             this.buttonSearch.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSearch.Name = "buttonSearch";
-            this.buttonSearch.Size = new System.Drawing.Size(116, 82);
+            this.buttonSearch.Size = new System.Drawing.Size(121, 82);
             this.buttonSearch.TabIndex = 24;
             this.buttonSearch.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.buttonSearch.UseVisualStyleBackColor = true;
@@ -175,10 +187,10 @@
             this.buttonCreate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(24)))), ((int)(((byte)(217)))));
             this.buttonCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCreate.Image = global::media.Properties.Resources.icons8_add_new_32;
-            this.buttonCreate.Location = new System.Drawing.Point(5, 192);
+            this.buttonCreate.Location = new System.Drawing.Point(0, 192);
             this.buttonCreate.Margin = new System.Windows.Forms.Padding(4);
             this.buttonCreate.Name = "buttonCreate";
-            this.buttonCreate.Size = new System.Drawing.Size(116, 82);
+            this.buttonCreate.Size = new System.Drawing.Size(121, 82);
             this.buttonCreate.TabIndex = 23;
             this.buttonCreate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.buttonCreate.UseVisualStyleBackColor = true;
@@ -192,10 +204,10 @@
             this.buttonHome.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(24)))), ((int)(((byte)(217)))));
             this.buttonHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonHome.Image = global::media.Properties.Resources.icons8_home_page_32;
-            this.buttonHome.Location = new System.Drawing.Point(5, 110);
+            this.buttonHome.Location = new System.Drawing.Point(0, 110);
             this.buttonHome.Margin = new System.Windows.Forms.Padding(4);
             this.buttonHome.Name = "buttonHome";
-            this.buttonHome.Size = new System.Drawing.Size(116, 82);
+            this.buttonHome.Size = new System.Drawing.Size(121, 82);
             this.buttonHome.TabIndex = 22;
             this.buttonHome.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.buttonHome.UseVisualStyleBackColor = true;
@@ -209,10 +221,10 @@
             this.buttonTwizzle.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(24)))), ((int)(((byte)(217)))));
             this.buttonTwizzle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonTwizzle.Image = global::media.Properties.Resources.icons8_z_32;
-            this.buttonTwizzle.Location = new System.Drawing.Point(5, 0);
+            this.buttonTwizzle.Location = new System.Drawing.Point(0, 0);
             this.buttonTwizzle.Margin = new System.Windows.Forms.Padding(4);
             this.buttonTwizzle.Name = "buttonTwizzle";
-            this.buttonTwizzle.Size = new System.Drawing.Size(116, 110);
+            this.buttonTwizzle.Size = new System.Drawing.Size(121, 110);
             this.buttonTwizzle.TabIndex = 21;
             this.buttonTwizzle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.buttonTwizzle.UseVisualStyleBackColor = true;
@@ -220,34 +232,23 @@
             // 
             // buttonSettings
             // 
+            this.buttonSettings.BackColor = System.Drawing.Color.Transparent;
             this.buttonSettings.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.buttonSettings.FlatAppearance.BorderSize = 0;
             this.buttonSettings.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(24)))), ((int)(((byte)(217)))));
             this.buttonSettings.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(24)))), ((int)(((byte)(217)))));
             this.buttonSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSettings.Image = global::media.Properties.Resources.icons8_gear_32;
-            this.buttonSettings.Location = new System.Drawing.Point(5, 916);
+            this.buttonSettings.Location = new System.Drawing.Point(0, 916);
             this.buttonSettings.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSettings.Name = "buttonSettings";
-            this.buttonSettings.Size = new System.Drawing.Size(116, 76);
+            this.buttonSettings.Size = new System.Drawing.Size(121, 76);
             this.buttonSettings.TabIndex = 17;
             this.buttonSettings.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.buttonSettings.UseVisualStyleBackColor = true;
+            this.buttonSettings.UseVisualStyleBackColor = false;
             this.buttonSettings.Click += new System.EventHandler(this.buttonSettings_Click);
             // 
-            // panelSubMain
-            // 
-            this.panelSubMain.BackColor = System.Drawing.Color.White;
-            this.panelSubMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelSubMain.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panelSubMain.Location = new System.Drawing.Point(141, 20);
-            this.panelSubMain.Margin = new System.Windows.Forms.Padding(2);
-            this.panelSubMain.Name = "panelSubMain";
-            this.panelSubMain.Size = new System.Drawing.Size(1741, 992);
-            this.panelSubMain.TabIndex = 2;
-            this.panelSubMain.Paint += new System.Windows.Forms.PaintEventHandler(this.panelSubMain_Paint);
-            // 
-            // FormBase
+            // FormPageHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
@@ -257,7 +258,7 @@
             this.Controls.Add(this.panelSideMenu);
             this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "FormBase";
+            this.Name = "FormPageHome";
             this.Padding = new System.Windows.Forms.Padding(20);
             this.Text = "Form1";
             this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(100)))));
@@ -273,11 +274,11 @@
         public System.Windows.Forms.Panel panelSubMain;
         private System.Windows.Forms.Button buttonSettings;
         private System.Windows.Forms.Button buttonTwizzle;
-        private System.Windows.Forms.Button buttonGames;
+        private System.Windows.Forms.Button buttonStatistics;
         private System.Windows.Forms.Button buttonMarketPlace;
         private System.Windows.Forms.Button buttonNotification;
         private System.Windows.Forms.Button buttonMessages;
-        private System.Windows.Forms.Button buttonReels;
+        private System.Windows.Forms.Button buttonProduct;
         private System.Windows.Forms.Button buttonSearch;
         private System.Windows.Forms.Button buttonCreate;
         private System.Windows.Forms.Button buttonHome;
