@@ -86,6 +86,31 @@ namespace media
             Image image = ByteArrayToImage(imageBytes);
             return image;
         }
+        public Image LoadPageProfileImageFromDataBase(int pageId)
+        {
+            //this.PostId = postId;
+            byte[] imageBytes = GetPageProfileImage(pageId);
+            if (imageBytes == null)
+            {
+                //MessageBox.Show("No image found for the post ID " + PostId + ".", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+
+            Image image = ByteArrayToImage(imageBytes);
+            return image;
+        }
+
+        public Image LoadProductImageFromDataBase(int productId)
+        {
+            byte[] imageBytes = GetProductImage(productId);
+            if (imageBytes == null)
+            {
+                return null;
+            }
+
+            Image image = ByteArrayToImage(imageBytes);
+            return image;
+        }
 
         public byte[] ImageToByteArrayxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx(Image image)
         {
@@ -189,6 +214,67 @@ namespace media
                                 return (byte[])reader[0];
                             }
                         }
+                        reader.Close();
+                    }
+                }
+                connection.Close();
+            }
+
+            return null;
+        }
+        public byte[] GetPageProfileImage(int pageId)
+        {
+
+            using (MySqlConnection connection = new MySqlConnection(ConnectionString))
+            {
+                connection.Open();
+
+                string query = "SELECT page_profile_image FROM pages WHERE page_Id = @pageId";
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@pageId", pageId);
+
+                    using (MySqlDataReader reader = command.ExecuteReader(CommandBehavior.SingleRow))
+                    {
+                        if (reader.Read())
+                        {
+                            if (!reader.IsDBNull(0))
+                            {
+                                return (byte[])reader[0];
+                            }
+                        }
+                        reader.Close();
+                    }
+                }
+                connection.Close();
+            }
+
+            return null;
+        }
+        public byte[] GetProductImage(int productId)
+        {
+
+            using (MySqlConnection connection = new MySqlConnection(ConnectionString))
+            {
+                connection.Open();
+
+                string query = "SELECT productimage FROM product WHERE productId = @productId";
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@productId", productId);
+
+                    using (MySqlDataReader reader = command.ExecuteReader(CommandBehavior.SingleRow))
+                    {
+                        if (reader.Read())
+                        {
+                            if (!reader.IsDBNull(0))
+                            {
+                                return (byte[])reader[0];
+                            }
+                        }
+                        reader.Close();
                     }
                 }
                 connection.Close();

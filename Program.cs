@@ -32,6 +32,7 @@ namespace media
                     SetProcessDPIAware();
                 }
             }
+            media.Classes.Page p = new media.Classes.Page();
             Application.Run(new Nexa());
         }
         [DllImport("user32.dll")]

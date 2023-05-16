@@ -16,12 +16,19 @@ namespace media
 {
     public partial class FormCreate : Form
     {
+        private int type;
         private User nativeUser;
+        private Classes.Page nativePage;
         private Classes.ClassPost postDetails;
         public User NativeUser
         {
             get { return nativeUser; }
             set { nativeUser = value; }
+        }       
+        public Classes.Page NativePage
+        {
+            get { return nativePage; }
+            set { nativePage = value; }
         }
 
         public FormCreate(User user)
@@ -31,8 +38,16 @@ namespace media
             InitializeComponent();
             this.pboxUserProfilePhoto.Image = this.NativeUser.ProfilePhoto;
             this.lblUserName.Text = this.NativeUser.UserFirstName + " "+this.NativeUser.UserLastName;
-
-           
+            type = 5;
+        }        
+        public FormCreate(Classes.Page nativePage)
+        {
+            postDetails= new ClassPost();
+            this.NativePage= nativePage;
+            InitializeComponent();
+            this.pboxUserProfilePhoto.Image = this.NativePage.PageProfileImage;
+            this.lblUserName.Text = this.NativePage.PageName;
+            type = 7;
         }
 
 
@@ -59,7 +74,7 @@ namespace media
             pictureTemplate.Location = new System.Drawing.Point(3, 3);
             pictureTemplate.Name = "pictureTemplate";
             pictureTemplate.Size = new System.Drawing.Size(633, 334);
-            pictureTemplate.Image = ImageCompress.SelectAndCompressImage();
+            pictureTemplate.Image = image;
             pictureTemplate.BackgroundImageLayout=ImageLayout.Stretch; 
             pictureTemplate.TabIndex = 0;
             pictureTemplate.TabStop = false;
@@ -78,44 +93,86 @@ namespace media
             int postId = 0;
             postDetails.PostTime = DateTime.Now;
             postDetails.PostText = txtbxPostText.Text;
-            postDetails.Permission = permission.SelectedText;
-
-            using (MySqlConnection conn = new MySqlConnection(DatabaseCredentials.connectionStringLocalServer))
-            {
-                conn.Open();
-                string query = "INSERT INTO postofuser (postText, postTime, postPermission, userid) VALUES (@a, @b, @c, @d)";
-                using (MySqlCommand cmd = new MySqlCommand(query, conn))
-                {
-                    cmd.Parameters.AddWithValue("@a", postDetails.PostText);
-                    cmd.Parameters.AddWithValue("@b", postDetails.PostTime);
-                    cmd.Parameters.AddWithValue("@c", postDetails.Permission);
-                    cmd.Parameters.AddWithValue("@d", this.NativeUser.Key);
-                    cmd.ExecuteNonQuery();
-
-                    // Retrieve the generated postid
-                    string retrieveQuery = "SELECT LAST_INSERT_ID()";
-                    using (MySqlCommand retrieveCmd = new MySqlCommand(retrieveQuery, conn))
-                    {
-                        postId = Convert.ToInt32(retrieveCmd.ExecuteScalar());
-                    }
-                }
-                conn.Close();
-            }
-
-            if (postDetails.PostImage != null)
+            postDetails.Permission = permission.SelectedItem.ToString();
+            if (type == 5)
             {
                 using (MySqlConnection conn = new MySqlConnection(DatabaseCredentials.connectionStringLocalServer))
                 {
-                    DBImageOperation dbio = new DBImageOperation();
-                    string query = "INSERT INTO mediacontent_postuser (image, postid) VALUES (@a, @b)";
+                    conn.Open();
+                    string query = "INSERT INTO postofuser (postText, postTime, postPermission, userid) VALUES (@a, @b, @c, @d)";
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
-                        conn.Open();
-                        cmd.Parameters.AddWithValue("@a", dbio.ImageToByteArray(postDetails.PostImage));
-                        cmd.Parameters.AddWithValue("@b", postId);
+                        cmd.Parameters.AddWithValue("@a", postDetails.PostText);
+                        cmd.Parameters.AddWithValue("@b", postDetails.PostTime);
+                        cmd.Parameters.AddWithValue("@c", postDetails.Permission);
+                        cmd.Parameters.AddWithValue("@d", this.NativeUser.Key);
                         cmd.ExecuteNonQuery();
+
+                        // Retrieve the generated postid
+                        string retrieveQuery = "SELECT LAST_INSERT_ID()";
+                        using (MySqlCommand retrieveCmd = new MySqlCommand(retrieveQuery, conn))
+                        {
+                            postId = Convert.ToInt32(retrieveCmd.ExecuteScalar());
+                        }
                     }
                     conn.Close();
+                }
+
+                if (postDetails.PostImage != null)
+                {
+                    using (MySqlConnection conn = new MySqlConnection(DatabaseCredentials.connectionStringLocalServer))
+                    {
+                        DBImageOperation dbio = new DBImageOperation();
+                        string query = "INSERT INTO mediacontent_postuser (image, postid) VALUES (@a, @b)";
+                        using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                        {
+                            conn.Open();
+                            cmd.Parameters.AddWithValue("@a", dbio.ImageToByteArray(postDetails.PostImage));
+                            cmd.Parameters.AddWithValue("@b", postId);
+                            cmd.ExecuteNonQuery();
+                        }
+                        conn.Close();
+                    }
+                }
+            }
+            else if(type==7)
+            {
+                using (MySqlConnection conn = new MySqlConnection(DatabaseCredentials.connectionStringLocalServer))
+                {
+                    conn.Open();
+                    string query = "INSERT INTO postofpage (postText, postTime, postPermission, page_id) VALUES (@a, @b, @c, @d)";
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@a", postDetails.PostText);
+                        cmd.Parameters.AddWithValue("@b", postDetails.PostTime);
+                        cmd.Parameters.AddWithValue("@c", postDetails.Permission);
+                        cmd.Parameters.AddWithValue("@d", this.NativePage.PageId);
+                        cmd.ExecuteNonQuery();
+
+                        string retrieveQuery = "SELECT LAST_INSERT_ID()";
+                        using (MySqlCommand retrieveCmd = new MySqlCommand(retrieveQuery, conn))
+                        {
+                            postId = Convert.ToInt32(retrieveCmd.ExecuteScalar());
+                        }
+                    }
+                    conn.Close();
+                }
+
+                if (postDetails.PostImage != null)
+                {
+                    using (MySqlConnection conn = new MySqlConnection(DatabaseCredentials.connectionStringLocalServer))
+                    {
+                        DBImageOperation dbio = new DBImageOperation();
+                        string query = "INSERT INTO mediacontent_postpage (image, postid) VALUES (@a, @b)";
+                        using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                        {
+                            conn.Open();
+                            cmd.Parameters.AddWithValue("@a", dbio.ImageToByteArray(postDetails.PostImage));
+                            cmd.Parameters.AddWithValue("@b", postId);
+                            cmd.ExecuteNonQuery();
+                        }
+                        conn.Close();
+                    }
                 }
             }
 

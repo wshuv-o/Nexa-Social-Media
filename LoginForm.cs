@@ -31,13 +31,14 @@ namespace media
         private void btnSignIn_Click(object sender, EventArgs e)
         {
             string email = txtbxEmail.Text;
-            string connString = DatabaseCredentials.connectionStringLocalServer;
+             
             try
             {
-                using (MySqlConnection conn = new MySqlConnection(connString))
+                using (MySqlConnection conn = new MySqlConnection(DatabaseCredentials.connectionStringLocalServer))
                 {
                     conn.Open();
                     string query = "SELECT  password  FROM user WHERE email=@Email";
+                    string queryPage = "SELECT  page_password  FROM pages WHERE page_email=@Email";
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@Email", email);
@@ -51,26 +52,34 @@ namespace media
 
                                     this.panel1.Dispose();
                                     User user=this.GetUserByEmail(email);
-                                    //MessageBox.Show("userFound!"+"user name is"+user.UserFirstName);
                                     openChildForm(new FormBase(user));
                                     ClassNativeUser.NativeUser=user;
                                 }
-                                else
-                                {
-                                    CustomMessageBox x = new CustomMessageBox();
-                                    x.ShowDialog();
-                                    return;
-                                }
-                            }
-                            else
-                            {
-                                CustomMessageBox x = new CustomMessageBox();
-                                x.ShowDialog();
-                                return;
                             }
                             reader.Close();
                         }
                     }
+                    using (MySqlCommand cmd = new MySqlCommand(queryPage, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@Email", email);
+                        using (MySqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                string password = reader.GetString(0);
+                                if (password.Equals(txtbxPassword.Text))
+                                {
+
+                                    this.panel1.Dispose();
+                                    Classes.Page page = this.GetPageByEmail(email);
+                                    openChildForm(new Page.FormPageHome(page));
+                                    ClassNativeUser.NativePage = page;
+                                }
+                            }
+                            reader.Close();
+                        }
+                    }
+
                     conn.Close();
                 }
             }
@@ -145,7 +154,41 @@ namespace media
             }
             return user;
         }
-       
+
+        public Classes.Page GetPageByEmail(string email)
+        {
+            DBImageOperation dbio = new DBImageOperation();
+            Classes.Page page = new Classes.Page();
+            try
+            {
+                string query = "SELECT * FROM pages WHERE page_email = @Email";
+                MySqlConnection connection = new MySqlConnection(DatabaseCredentials.connectionStringLocalServer);
+                MySqlCommand command = new MySqlCommand(query, connection);
+                command.Parameters.AddWithValue("@Email", email);
+                connection.Open();
+                MySqlDataReader reader = command.ExecuteReader();
+                if (reader.Read())
+                {
+                    page.PageId = reader.GetInt32("page_id");
+                    page.PageName = reader.GetString("page_name");
+                    page.PageEmail = reader.GetString("page_email");
+                    page.CreationDate = reader.GetDateTime("page_creation_date");
+                    page.PagePhoneNumber = reader.GetString("page_phone_no");
+                    page.PageAddress = reader.GetString("page_address");
+                    page.PageType = reader.GetString("page_type");
+                    page.PageProfileImage = dbio.LoadPageProfileImageFromDataBase(page.PageId);
+
+                }
+                reader.Close();
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("An error occurred: " + ex.Message);
+            }
+            return page;
+        }
+
 
         private void btnSignUp(object sender, EventArgs e){
             Methods.OpenChildForm(new FormSignUp(), this.panelBase);

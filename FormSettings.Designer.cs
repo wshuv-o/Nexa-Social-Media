@@ -110,7 +110,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1295, 790);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1036, 632);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // tableLayoutPanel2
@@ -125,7 +125,7 @@
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.65035F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90.34965F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(264, 784);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(210, 626);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // guna2Panel1
@@ -134,7 +134,7 @@
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel1.Location = new System.Drawing.Point(3, 3);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(258, 69);
+            this.guna2Panel1.Size = new System.Drawing.Size(204, 54);
             this.guna2Panel1.TabIndex = 0;
             // 
             // label1
@@ -161,7 +161,7 @@
             this.tableLayoutPanel3.Controls.Add(this.guna2Button2, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.guna2Button1, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 78);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 63);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 8;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -172,7 +172,7 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(258, 703);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(204, 560);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
             // guna2Button8
@@ -189,10 +189,10 @@
             this.guna2Button8.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button8.ImageOffset = new System.Drawing.Point(15, 0);
             this.guna2Button8.ImageSize = new System.Drawing.Size(25, 25);
-            this.guna2Button8.Location = new System.Drawing.Point(3, 612);
+            this.guna2Button8.Location = new System.Drawing.Point(3, 493);
             this.guna2Button8.Name = "guna2Button8";
             this.guna2Button8.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.guna2Button8.Size = new System.Drawing.Size(252, 88);
+            this.guna2Button8.Size = new System.Drawing.Size(198, 64);
             this.guna2Button8.TabIndex = 7;
             this.guna2Button8.Text = "Logout ";
             this.guna2Button8.Click += new System.EventHandler(this.guna2Button8_Click);
@@ -211,10 +211,10 @@
             this.guna2Button7.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button7.ImageOffset = new System.Drawing.Point(10, 0);
             this.guna2Button7.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2Button7.Location = new System.Drawing.Point(3, 525);
+            this.guna2Button7.Location = new System.Drawing.Point(3, 423);
             this.guna2Button7.Name = "guna2Button7";
             this.guna2Button7.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.guna2Button7.Size = new System.Drawing.Size(252, 81);
+            this.guna2Button7.Size = new System.Drawing.Size(198, 64);
             this.guna2Button7.TabIndex = 6;
             this.guna2Button7.Text = "Notifications";
             // 
@@ -232,10 +232,10 @@
             this.guna2Button6.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button6.ImageOffset = new System.Drawing.Point(10, 0);
             this.guna2Button6.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2Button6.Location = new System.Drawing.Point(3, 438);
+            this.guna2Button6.Location = new System.Drawing.Point(3, 353);
             this.guna2Button6.Name = "guna2Button6";
             this.guna2Button6.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.guna2Button6.Size = new System.Drawing.Size(252, 81);
+            this.guna2Button6.Size = new System.Drawing.Size(198, 64);
             this.guna2Button6.TabIndex = 5;
             this.guna2Button6.Text = "Themes";
             // 
@@ -253,10 +253,10 @@
             this.guna2Button5.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button5.ImageOffset = new System.Drawing.Point(10, 0);
             this.guna2Button5.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2Button5.Location = new System.Drawing.Point(3, 351);
+            this.guna2Button5.Location = new System.Drawing.Point(3, 283);
             this.guna2Button5.Name = "guna2Button5";
             this.guna2Button5.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.guna2Button5.Size = new System.Drawing.Size(252, 81);
+            this.guna2Button5.Size = new System.Drawing.Size(198, 64);
             this.guna2Button5.TabIndex = 4;
             this.guna2Button5.Text = "Language";
             // 
@@ -274,10 +274,10 @@
             this.guna2Button4.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button4.ImageOffset = new System.Drawing.Point(10, 0);
             this.guna2Button4.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2Button4.Location = new System.Drawing.Point(3, 264);
+            this.guna2Button4.Location = new System.Drawing.Point(3, 213);
             this.guna2Button4.Name = "guna2Button4";
             this.guna2Button4.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.guna2Button4.Size = new System.Drawing.Size(252, 81);
+            this.guna2Button4.Size = new System.Drawing.Size(198, 64);
             this.guna2Button4.TabIndex = 3;
             this.guna2Button4.Text = "General Details";
             // 
@@ -295,10 +295,10 @@
             this.guna2Button3.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button3.ImageOffset = new System.Drawing.Point(10, 0);
             this.guna2Button3.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2Button3.Location = new System.Drawing.Point(3, 177);
+            this.guna2Button3.Location = new System.Drawing.Point(3, 143);
             this.guna2Button3.Name = "guna2Button3";
             this.guna2Button3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.guna2Button3.Size = new System.Drawing.Size(252, 81);
+            this.guna2Button3.Size = new System.Drawing.Size(198, 64);
             this.guna2Button3.TabIndex = 2;
             this.guna2Button3.Text = "Payment";
             // 
@@ -316,10 +316,10 @@
             this.guna2Button2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button2.ImageOffset = new System.Drawing.Point(10, 0);
             this.guna2Button2.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2Button2.Location = new System.Drawing.Point(3, 90);
+            this.guna2Button2.Location = new System.Drawing.Point(3, 73);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.guna2Button2.Size = new System.Drawing.Size(252, 81);
+            this.guna2Button2.Size = new System.Drawing.Size(198, 64);
             this.guna2Button2.TabIndex = 1;
             this.guna2Button2.Text = "Privacy";
             // 
@@ -340,7 +340,7 @@
             this.guna2Button1.Location = new System.Drawing.Point(3, 3);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.guna2Button1.Size = new System.Drawing.Size(252, 81);
+            this.guna2Button1.Size = new System.Drawing.Size(198, 64);
             this.guna2Button1.TabIndex = 0;
             this.guna2Button1.Text = "General Details";
             // 
@@ -350,9 +350,9 @@
             this.panel1.Controls.Add(this.tableLayoutPanel4);
             this.panel1.Controls.Add(this.guna2TextBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(273, 3);
+            this.panel1.Location = new System.Drawing.Point(219, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1019, 784);
+            this.panel1.Size = new System.Drawing.Size(814, 626);
             this.panel1.TabIndex = 1;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -391,7 +391,7 @@
             this.tableLayoutPanel4.Padding = new System.Windows.Forms.Padding(30);
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(1013, 706);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(808, 548);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
             // tableLayoutPanel5
@@ -406,7 +406,7 @@
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(947, 640);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(742, 482);
             this.tableLayoutPanel5.TabIndex = 0;
             // 
             // panel3
@@ -416,10 +416,10 @@
             this.panel3.Controls.Add(this.guna2Button10);
             this.panel3.Controls.Add(this.guna2Button9);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(661, 3);
+            this.panel3.Location = new System.Drawing.Point(518, 3);
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.panel3.Size = new System.Drawing.Size(283, 634);
+            this.panel3.Size = new System.Drawing.Size(221, 476);
             this.panel3.TabIndex = 1;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
@@ -427,7 +427,7 @@
             // 
             this.guna2GradientPanel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.guna2GradientPanel2.Controls.Add(this.userProfilePhoto);
-            this.guna2GradientPanel2.Location = new System.Drawing.Point(25, 75);
+            this.guna2GradientPanel2.Location = new System.Drawing.Point(-6, 75);
             this.guna2GradientPanel2.Name = "guna2GradientPanel2";
             this.guna2GradientPanel2.Size = new System.Drawing.Size(235, 235);
             this.guna2GradientPanel2.TabIndex = 2;
@@ -466,7 +466,7 @@
             this.guna2Button10.FillColor = System.Drawing.Color.Lavender;
             this.guna2Button10.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button10.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button10.Location = new System.Drawing.Point(40, 7);
+            this.guna2Button10.Location = new System.Drawing.Point(-22, 7);
             this.guna2Button10.Name = "guna2Button10";
             this.guna2Button10.Size = new System.Drawing.Size(107, 38);
             this.guna2Button10.TabIndex = 1;
@@ -484,7 +484,7 @@
             this.guna2Button9.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.guna2Button9.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button9.ForeColor = System.Drawing.Color.White;
-            this.guna2Button9.Location = new System.Drawing.Point(153, 7);
+            this.guna2Button9.Location = new System.Drawing.Point(91, 7);
             this.guna2Button9.Name = "guna2Button9";
             this.guna2Button9.Size = new System.Drawing.Size(107, 38);
             this.guna2Button9.TabIndex = 0;
@@ -500,7 +500,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(652, 634);
+            this.panel2.Size = new System.Drawing.Size(509, 476);
             this.panel2.TabIndex = 0;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -550,7 +550,7 @@
             this.guna2GradientPanel1.Location = new System.Drawing.Point(3, 75);
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
             this.guna2GradientPanel1.Padding = new System.Windows.Forms.Padding(10);
-            this.guna2GradientPanel1.Size = new System.Drawing.Size(646, 559);
+            this.guna2GradientPanel1.Size = new System.Drawing.Size(503, 401);
             this.guna2GradientPanel1.TabIndex = 0;
             // 
             // txtBoxBio
@@ -558,9 +558,9 @@
             this.txtBoxBio.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtBoxBio.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBoxBio.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.txtBoxBio.Location = new System.Drawing.Point(10, 453);
+            this.txtBoxBio.Location = new System.Drawing.Point(10, 295);
             this.txtBoxBio.Name = "txtBoxBio";
-            this.txtBoxBio.Size = new System.Drawing.Size(626, 96);
+            this.txtBoxBio.Size = new System.Drawing.Size(483, 96);
             this.txtBoxBio.TabIndex = 16;
             this.txtBoxBio.Text = "";
             // 
@@ -579,7 +579,7 @@
             this.tableLayoutPanel11.RowCount = 1;
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel11.Size = new System.Drawing.Size(614, 50);
+            this.tableLayoutPanel11.Size = new System.Drawing.Size(471, 50);
             this.tableLayoutPanel11.TabIndex = 15;
             // 
             // guna2CircleButton3
@@ -591,7 +591,7 @@
             this.guna2CircleButton3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2CircleButton3.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.guna2CircleButton3.ForeColor = System.Drawing.Color.White;
-            this.guna2CircleButton3.Location = new System.Drawing.Point(564, 0);
+            this.guna2CircleButton3.Location = new System.Drawing.Point(421, 0);
             this.guna2CircleButton3.Margin = new System.Windows.Forms.Padding(0, 0, 3, 3);
             this.guna2CircleButton3.Name = "guna2CircleButton3";
             this.guna2CircleButton3.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
@@ -618,7 +618,7 @@
             this.scLink3.PasswordChar = '\0';
             this.scLink3.PlaceholderText = "Link";
             this.scLink3.SelectedText = "";
-            this.scLink3.Size = new System.Drawing.Size(558, 42);
+            this.scLink3.Size = new System.Drawing.Size(415, 42);
             this.scLink3.TabIndex = 6;
             // 
             // tableLayoutPanel9
@@ -636,7 +636,7 @@
             this.tableLayoutPanel9.RowCount = 1;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(614, 50);
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(471, 50);
             this.tableLayoutPanel9.TabIndex = 14;
             // 
             // guna2CircleButton1
@@ -648,7 +648,7 @@
             this.guna2CircleButton1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2CircleButton1.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.guna2CircleButton1.ForeColor = System.Drawing.Color.White;
-            this.guna2CircleButton1.Location = new System.Drawing.Point(564, 0);
+            this.guna2CircleButton1.Location = new System.Drawing.Point(421, 0);
             this.guna2CircleButton1.Margin = new System.Windows.Forms.Padding(0, 0, 3, 3);
             this.guna2CircleButton1.Name = "guna2CircleButton1";
             this.guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
@@ -675,7 +675,7 @@
             this.scLink2.PasswordChar = '\0';
             this.scLink2.PlaceholderText = "Link";
             this.scLink2.SelectedText = "";
-            this.scLink2.Size = new System.Drawing.Size(558, 42);
+            this.scLink2.Size = new System.Drawing.Size(415, 42);
             this.scLink2.TabIndex = 6;
             // 
             // guna2HtmlLabel8
@@ -702,7 +702,7 @@
             this.tableLayoutPanel10.RowCount = 1;
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(614, 50);
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(471, 50);
             this.tableLayoutPanel10.TabIndex = 11;
             // 
             // guna2CircleButton2
@@ -714,7 +714,7 @@
             this.guna2CircleButton2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2CircleButton2.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.guna2CircleButton2.ForeColor = System.Drawing.Color.White;
-            this.guna2CircleButton2.Location = new System.Drawing.Point(564, 0);
+            this.guna2CircleButton2.Location = new System.Drawing.Point(421, 0);
             this.guna2CircleButton2.Margin = new System.Windows.Forms.Padding(0, 0, 3, 3);
             this.guna2CircleButton2.Name = "guna2CircleButton2";
             this.guna2CircleButton2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
@@ -741,7 +741,7 @@
             this.scLink.PasswordChar = '\0';
             this.scLink.PlaceholderText = "Link";
             this.scLink.SelectedText = "";
-            this.scLink.Size = new System.Drawing.Size(558, 42);
+            this.scLink.Size = new System.Drawing.Size(415, 42);
             this.scLink.TabIndex = 6;
             // 
             // guna2HtmlLabel7
@@ -765,7 +765,7 @@
             this.tableLayoutPanel8.RowCount = 1;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(620, 50);
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(477, 50);
             this.tableLayoutPanel8.TabIndex = 9;
             // 
             // txtBoxEmail
@@ -787,7 +787,7 @@
             this.txtBoxEmail.PasswordChar = '\0';
             this.txtBoxEmail.PlaceholderText = "Email";
             this.txtBoxEmail.SelectedText = "";
-            this.txtBoxEmail.Size = new System.Drawing.Size(614, 42);
+            this.txtBoxEmail.Size = new System.Drawing.Size(471, 42);
             this.txtBoxEmail.TabIndex = 6;
             // 
             // guna2HtmlLabel6
@@ -811,7 +811,7 @@
             this.tableLayoutPanel7.RowCount = 1;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(620, 50);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(477, 50);
             this.tableLayoutPanel7.TabIndex = 7;
             // 
             // txtBoxPhone
@@ -833,7 +833,7 @@
             this.txtBoxPhone.PasswordChar = '\0';
             this.txtBoxPhone.PlaceholderText = "Phone Number";
             this.txtBoxPhone.SelectedText = "";
-            this.txtBoxPhone.Size = new System.Drawing.Size(614, 42);
+            this.txtBoxPhone.Size = new System.Drawing.Size(471, 42);
             this.txtBoxPhone.TabIndex = 6;
             // 
             // guna2HtmlLabel5
@@ -859,7 +859,7 @@
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(620, 50);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(477, 50);
             this.tableLayoutPanel6.TabIndex = 5;
             // 
             // lastName
@@ -875,13 +875,13 @@
             this.lastName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.lastName.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lastName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.lastName.Location = new System.Drawing.Point(322, 4);
+            this.lastName.Location = new System.Drawing.Point(248, 4);
             this.lastName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lastName.Name = "lastName";
             this.lastName.PasswordChar = '\0';
             this.lastName.PlaceholderText = "Last Name";
             this.lastName.SelectedText = "";
-            this.lastName.Size = new System.Drawing.Size(295, 42);
+            this.lastName.Size = new System.Drawing.Size(226, 42);
             this.lastName.TabIndex = 5;
             // 
             // firstName
@@ -903,7 +903,7 @@
             this.firstName.PasswordChar = '\0';
             this.firstName.PlaceholderText = "First Name";
             this.firstName.SelectedText = "";
-            this.firstName.Size = new System.Drawing.Size(313, 42);
+            this.firstName.Size = new System.Drawing.Size(239, 42);
             this.firstName.TabIndex = 4;
             // 
             // guna2HtmlLabel4
@@ -956,6 +956,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "FormSettings";
             this.Text = "FormSettings";
+            this.Load += new System.EventHandler(this.FormSettings_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.guna2Panel1.ResumeLayout(false);

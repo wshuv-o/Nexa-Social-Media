@@ -21,10 +21,19 @@ namespace media
     public partial class FormChat : Form
     {
         private static Classes.User nativeUser = new User();
+        private static Classes.Page nativePage = new Classes.Page();
         private ClassChatList[] classChatList = new ClassChatList[20];
         private Guna2GradientPanel[] panelArray = new Guna2GradientPanel[20];
         public static int key = 0;
+        public  int type = 0;
         public static Classes.User ChatUser;
+
+        public static Classes.Page ChatPage;
+        static Classes.Page NativePage
+        {
+            get { return nativePage; }
+            set { nativePage = value; }
+        }       
 
 
         static Classes.User NativeUser
@@ -32,8 +41,9 @@ namespace media
             get { return nativeUser; }
             set { nativeUser = value; }
         }
-
-        public FormChat(Classes.User nativeUser)
+        public FormChat(Classes.Page nativePage)
+        { }
+            public FormChat(Classes.User nativeUser)
         {
 
 
@@ -675,6 +685,11 @@ namespace media
         }
 
         private void pictureBox7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormChat_Load_1(object sender, EventArgs e)
         {
 
         }

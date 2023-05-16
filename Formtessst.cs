@@ -1,40 +1,72 @@
-﻿using MySqlX.XDevAPI.Relational;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
+using System.Runtime.CompilerServices;
+using System.Web.Services.Description;
 using System.Windows.Forms;
+using media.Classes;
+using MySql.Data.MySqlClient;
 
 namespace media
 {
     public partial class Formtessst : Form
     {
-        public Formtessst()
-        {
+        public Formtessst() {
+            // Connection string
             InitializeComponent();
+            
+
+            //Console.ReadLine();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string emoji = richTextBox1.Text;label1.UseCompatibleTextRendering = true;
-            label1.Text = emoji;
-/*            string emo = this.richTextBox1.Text;
-            
-            this.label1.Text = emo ;*/
-        }
+            string connectionString = "server=hopeful-shape-79805.pktriot.net;database=nexaa;user=root;port = 3306;password=";
+            // SQL query
+            string query = "SELECT * FROM user";
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
+            // Create a connection object
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    try
+                    {
+                        // Open the connection
+                        connection.Open();
 
-        }
+                        // Execute the query
+                        using (MySqlDataReader reader = command.ExecuteReader())
+                        {
+                            // Check if any rows were returned
+                            if (reader.HasRows)
+                            {
+                                // Iterate over the rows and retrieve data
+                                while (reader.Read())
+                                {
+                                    int id = reader.GetInt32("userid");
+                                    string name = reader.GetString("userfirstname");
+                                    // Retrieve other columns as needed
+                                    this.label2.Text = name;
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
+                                }
+                            }
+                            else
+                            {
+                                Console.WriteLine("No rows found.");
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("Error: " + ex.Message);
+                    }
+                }
+            }
         }
     }
+    
 }

@@ -29,17 +29,16 @@
         private void InitializeComponent()
         {
             this.panelSideMenu = new System.Windows.Forms.Panel();
-            this.panelSubMain = new System.Windows.Forms.Panel();
             this.buttonStatistics = new System.Windows.Forms.Button();
             this.buttonMarketPlace = new System.Windows.Forms.Button();
             this.buttonNotification = new System.Windows.Forms.Button();
             this.buttonMessages = new System.Windows.Forms.Button();
-            this.buttonProduct = new System.Windows.Forms.Button();
-            this.buttonSearch = new System.Windows.Forms.Button();
+            this.buttonCreateProduct = new System.Windows.Forms.Button();
             this.buttonCreate = new System.Windows.Forms.Button();
             this.buttonHome = new System.Windows.Forms.Button();
             this.buttonTwizzle = new System.Windows.Forms.Button();
             this.buttonSettings = new System.Windows.Forms.Button();
+            this.panelSubMain = new System.Windows.Forms.Panel();
             this.panelSideMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,8 +49,7 @@
             this.panelSideMenu.Controls.Add(this.buttonMarketPlace);
             this.panelSideMenu.Controls.Add(this.buttonNotification);
             this.panelSideMenu.Controls.Add(this.buttonMessages);
-            this.panelSideMenu.Controls.Add(this.buttonProduct);
-            this.panelSideMenu.Controls.Add(this.buttonSearch);
+            this.panelSideMenu.Controls.Add(this.buttonCreateProduct);
             this.panelSideMenu.Controls.Add(this.buttonCreate);
             this.panelSideMenu.Controls.Add(this.buttonHome);
             this.panelSideMenu.Controls.Add(this.buttonTwizzle);
@@ -65,18 +63,6 @@
             this.panelSideMenu.TabIndex = 0;
             this.panelSideMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelSideMenu_Paint);
             // 
-            // panelSubMain
-            // 
-            this.panelSubMain.BackColor = System.Drawing.Color.White;
-            this.panelSubMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelSubMain.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panelSubMain.Location = new System.Drawing.Point(141, 20);
-            this.panelSubMain.Margin = new System.Windows.Forms.Padding(2);
-            this.panelSubMain.Name = "panelSubMain";
-            this.panelSubMain.Size = new System.Drawing.Size(1741, 992);
-            this.panelSubMain.TabIndex = 2;
-            this.panelSubMain.Paint += new System.Windows.Forms.PaintEventHandler(this.panelSubMain_Paint);
-            // 
             // buttonStatistics
             // 
             this.buttonStatistics.Dock = System.Windows.Forms.DockStyle.Top;
@@ -85,7 +71,7 @@
             this.buttonStatistics.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(24)))), ((int)(((byte)(217)))));
             this.buttonStatistics.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonStatistics.Image = global::media.Properties.Resources.icons8_statistics_32__2_;
-            this.buttonStatistics.Location = new System.Drawing.Point(0, 684);
+            this.buttonStatistics.Location = new System.Drawing.Point(0, 602);
             this.buttonStatistics.Margin = new System.Windows.Forms.Padding(4);
             this.buttonStatistics.Name = "buttonStatistics";
             this.buttonStatistics.Size = new System.Drawing.Size(121, 82);
@@ -102,7 +88,7 @@
             this.buttonMarketPlace.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(24)))), ((int)(((byte)(217)))));
             this.buttonMarketPlace.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonMarketPlace.Image = global::media.Properties.Resources.icons8_buying_32;
-            this.buttonMarketPlace.Location = new System.Drawing.Point(0, 602);
+            this.buttonMarketPlace.Location = new System.Drawing.Point(0, 520);
             this.buttonMarketPlace.Margin = new System.Windows.Forms.Padding(4);
             this.buttonMarketPlace.Name = "buttonMarketPlace";
             this.buttonMarketPlace.Size = new System.Drawing.Size(121, 82);
@@ -119,7 +105,7 @@
             this.buttonNotification.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(24)))), ((int)(((byte)(217)))));
             this.buttonNotification.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonNotification.Image = global::media.Properties.Resources.icons8_bell_32;
-            this.buttonNotification.Location = new System.Drawing.Point(0, 520);
+            this.buttonNotification.Location = new System.Drawing.Point(0, 438);
             this.buttonNotification.Margin = new System.Windows.Forms.Padding(4);
             this.buttonNotification.Name = "buttonNotification";
             this.buttonNotification.Size = new System.Drawing.Size(121, 82);
@@ -136,7 +122,7 @@
             this.buttonMessages.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(24)))), ((int)(((byte)(217)))));
             this.buttonMessages.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonMessages.Image = global::media.Properties.Resources.icons8_chat_message_32;
-            this.buttonMessages.Location = new System.Drawing.Point(0, 438);
+            this.buttonMessages.Location = new System.Drawing.Point(0, 356);
             this.buttonMessages.Margin = new System.Windows.Forms.Padding(4);
             this.buttonMessages.Name = "buttonMessages";
             this.buttonMessages.Size = new System.Drawing.Size(121, 82);
@@ -145,39 +131,22 @@
             this.buttonMessages.UseVisualStyleBackColor = true;
             this.buttonMessages.Click += new System.EventHandler(this.buttonMessages_Click);
             // 
-            // buttonProduct
+            // buttonCreateProduct
             // 
-            this.buttonProduct.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonProduct.FlatAppearance.BorderSize = 0;
-            this.buttonProduct.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(24)))), ((int)(((byte)(217)))));
-            this.buttonProduct.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(24)))), ((int)(((byte)(217)))));
-            this.buttonProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonProduct.Image = global::media.Properties.Resources.icons8_product_32;
-            this.buttonProduct.Location = new System.Drawing.Point(0, 356);
-            this.buttonProduct.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonProduct.Name = "buttonProduct";
-            this.buttonProduct.Size = new System.Drawing.Size(121, 82);
-            this.buttonProduct.TabIndex = 25;
-            this.buttonProduct.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.buttonProduct.UseVisualStyleBackColor = true;
-            this.buttonProduct.Click += new System.EventHandler(this.buttonReels_Click);
-            // 
-            // buttonSearch
-            // 
-            this.buttonSearch.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonSearch.FlatAppearance.BorderSize = 0;
-            this.buttonSearch.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(24)))), ((int)(((byte)(217)))));
-            this.buttonSearch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(24)))), ((int)(((byte)(217)))));
-            this.buttonSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSearch.Image = global::media.Properties.Resources.icons8_search_32;
-            this.buttonSearch.Location = new System.Drawing.Point(0, 274);
-            this.buttonSearch.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonSearch.Name = "buttonSearch";
-            this.buttonSearch.Size = new System.Drawing.Size(121, 82);
-            this.buttonSearch.TabIndex = 24;
-            this.buttonSearch.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.buttonSearch.UseVisualStyleBackColor = true;
-            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
+            this.buttonCreateProduct.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonCreateProduct.FlatAppearance.BorderSize = 0;
+            this.buttonCreateProduct.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(24)))), ((int)(((byte)(217)))));
+            this.buttonCreateProduct.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(24)))), ((int)(((byte)(217)))));
+            this.buttonCreateProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCreateProduct.Image = global::media.Properties.Resources.icons8_product_32;
+            this.buttonCreateProduct.Location = new System.Drawing.Point(0, 274);
+            this.buttonCreateProduct.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonCreateProduct.Name = "buttonCreateProduct";
+            this.buttonCreateProduct.Size = new System.Drawing.Size(121, 82);
+            this.buttonCreateProduct.TabIndex = 25;
+            this.buttonCreateProduct.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.buttonCreateProduct.UseVisualStyleBackColor = true;
+            this.buttonCreateProduct.Click += new System.EventHandler(this.buttonCreateProduct_Click);
             // 
             // buttonCreate
             // 
@@ -248,6 +217,18 @@
             this.buttonSettings.UseVisualStyleBackColor = false;
             this.buttonSettings.Click += new System.EventHandler(this.buttonSettings_Click);
             // 
+            // panelSubMain
+            // 
+            this.panelSubMain.BackColor = System.Drawing.Color.White;
+            this.panelSubMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelSubMain.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panelSubMain.Location = new System.Drawing.Point(141, 20);
+            this.panelSubMain.Margin = new System.Windows.Forms.Padding(2);
+            this.panelSubMain.Name = "panelSubMain";
+            this.panelSubMain.Size = new System.Drawing.Size(1741, 992);
+            this.panelSubMain.TabIndex = 2;
+            this.panelSubMain.Paint += new System.Windows.Forms.PaintEventHandler(this.panelSubMain_Paint);
+            // 
             // FormPageHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -278,8 +259,7 @@
         private System.Windows.Forms.Button buttonMarketPlace;
         private System.Windows.Forms.Button buttonNotification;
         private System.Windows.Forms.Button buttonMessages;
-        private System.Windows.Forms.Button buttonProduct;
-        private System.Windows.Forms.Button buttonSearch;
+        private System.Windows.Forms.Button buttonCreateProduct;
         private System.Windows.Forms.Button buttonCreate;
         private System.Windows.Forms.Button buttonHome;
     }

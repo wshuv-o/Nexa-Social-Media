@@ -415,8 +415,8 @@ namespace media
 
 
             }
-            MessageBox.Show(classFriendRequestlist.Count.ToString());
-            MessageBox.Show(friendRequestAdopter.Count.ToString());
+            //MessageBox.Show(classFriendRequestlist.Count.ToString());
+            //MessageBox.Show(friendRequestAdopter.Count.ToString());
             for (int i = 0; i < ClassNativeUser.DistinctUserList.Count; i++)
             {
                 formContactLists.Add(new Friends.FormContactList(ClassNativeUser.DistinctUserList[i]));

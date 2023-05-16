@@ -20,10 +20,18 @@ namespace media
 {
     public partial class FormSettings : Form
     {
+        private Image imageUser;
+        private int s = 2;
         private byte[] image;
         private DBImageOperation dbio = new DBImageOperation();
         private Classes.User nativeUser= new Classes.User();
+        private Classes.Page nativePage;
 
+        public Classes.Page NativePage
+        {
+            get { return nativePage; }
+            set { nativePage = value; }
+        }
         public User NativeUser
         {
             get { return this.nativeUser; }
@@ -44,6 +52,22 @@ namespace media
             this.scLink.Text = user.Email;
            // DBImageOperation dbio= new DBImageOperation();
             this.userProfilePhoto.Image = user.ProfilePhoto;
+            s = 5;
+        }
+        public FormSettings(Classes.Page page)
+        {
+            this.NativePage = page;
+
+            InitializeComponent();
+
+            this.firstName.Text = page.PageName;
+            this.lastName.Text ="";
+            this.txtBoxPhone.Text = page.PagePhoneNumber;
+            this.txtBoxEmail.Text = page.PageEmail;
+            //this.scLink.Text = user.Email;
+            // DBImageOperation dbio= new DBImageOperation();
+            this.userProfilePhoto.Image = page.PageProfileImage;
+            s = 7;
         }
 
         private void guna2TextBox1_TextChanged(object sender, EventArgs e)
@@ -81,9 +105,12 @@ namespace media
             //DisplayUserImageFromDatabase();
             */
             //byte[] a = BTN_SHOW_Click(sender, e);
-            this.userProfilePhoto.Image= ImageCompress.SelectAndCompressImage();
-            
-            
+             imageUser = ImageCompress.SelectAndCompressImage();
+            this.userProfilePhoto.Image = imageUser;
+
+
+
+
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
@@ -101,29 +128,49 @@ namespace media
         private void guna2Button9_Click(object sender, EventArgs e)
         {
             DBImageOperation dbio= new DBImageOperation();
-
-            Image imageUser = ImageCompress.SelectAndCompressImage();
-            MessageBox.Show(imageUser.RawFormat.ToString());
-            this.userProfilePhoto.Image = imageUser;
+            //MessageBox.Show(imageUser.RawFormat.ToString());
             byte[] a = ConvertImageToByteArray(imageUser);
-            using (MySqlConnection conn = new MySqlConnection(DatabaseCredentials.connectionStringLocalServer))
+            if (s == 5)
             {
-                conn.Open();
-                string query = "UPDATE user SET userfirstname = @first_name, userlastname = @last_name, email = @email, "
-                             + "phoneno = @phoneno, userImage = @userImage, bio = @bio WHERE userid = @user_id";
-                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                using (MySqlConnection conn = new MySqlConnection(DatabaseCredentials.connectionStringLocalServer))
                 {
-                    cmd.Parameters.AddWithValue("@first_name", firstName.Text);
-                    cmd.Parameters.AddWithValue("@last_name", lastName.Text);
-                    cmd.Parameters.AddWithValue("@email", txtBoxEmail.Text);
-                    cmd.Parameters.AddWithValue("@phoneno", txtBoxPhone.Text);
-                    cmd.Parameters.AddWithValue("@userImage",a);
-                    cmd.Parameters.AddWithValue("@bio", txtBoxBio.Text);
-                    cmd.Parameters.AddWithValue("@user_id", this.NativeUser.Key);
-                    cmd.ExecuteNonQuery();
+                    conn.Open();
+                    string query = "UPDATE user SET userfirstname = @first_name, userlastname = @last_name, email = @email, "
+                                 + "phoneno = @phoneno, userImage = @userImage, bio = @bio WHERE userid = @user_id";
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@first_name", firstName.Text);
+                        cmd.Parameters.AddWithValue("@last_name", lastName.Text);
+                        cmd.Parameters.AddWithValue("@email", txtBoxEmail.Text);
+                        cmd.Parameters.AddWithValue("@phoneno", txtBoxPhone.Text);
+                        cmd.Parameters.AddWithValue("@userImage", a);
+                        cmd.Parameters.AddWithValue("@bio", txtBoxBio.Text);
+                        cmd.Parameters.AddWithValue("@user_id", this.NativeUser.Key);
+                        cmd.ExecuteNonQuery();
 
+                    }
+                    conn.Close();
                 }
-                conn.Close();
+            }
+            else if (s == 7)
+            {
+                using (MySqlConnection conn = new MySqlConnection(DatabaseCredentials.connectionStringLocalServer))
+                {
+                    conn.Open();
+                    string query = "UPDATE pages SET page_name = @first_name, page_email = @email, "
+                                 + "page_phone_no = @phoneno, page_profile_image = @userImage WHERE page_id = @page_id";
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@first_name", firstName.Text);
+                        cmd.Parameters.AddWithValue("@email", txtBoxEmail.Text);
+                        cmd.Parameters.AddWithValue("@phoneno", txtBoxPhone.Text);
+                        cmd.Parameters.AddWithValue("@userImage", a);
+                        cmd.Parameters.AddWithValue("@page_id", this.NativePage.PageId);
+                        cmd.ExecuteNonQuery();
+
+                    }
+                    conn.Close();
+                }
             }
         }
 
@@ -146,6 +193,11 @@ namespace media
             this.txtBoxBio.Text = this.NativeUser.Bio;
             this.scLink.Text = this.NativeUser.Email;
             this.userProfilePhoto.Image = this.NativeUser.ProfilePhoto;
+        }
+
+        private void FormSettings_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

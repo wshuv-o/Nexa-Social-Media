@@ -9,6 +9,7 @@ namespace media.Classes
 {
     public class Page
     {
+        private int pageId;
         private string pageName;
         private string pageType;
         private string pageEmail;
@@ -16,6 +17,16 @@ namespace media.Classes
         private string pagePhoneNumber;
         private DateTime creationDate;
         private Image pageProfileImage;
+        
+        public string PageAddress
+        {
+            get;set;
+        }
+        public int PageId
+        {
+            get { return this.pageId; }
+            set { this.pageId = value; }
+        }
         public string PageName { get { return pageName; } set { this.pageName = value; } }
         public string PageType { get { return this.pageType; } set { this.pageType = value; } }
         public string PageEmail { get { return this.pageEmail; } set { this.pageEmail = value; } }
@@ -51,6 +62,10 @@ namespace media.Classes
             this.PageType = pageType;
             this.PageEmail = pageEmail;
             this.PageProfileImage = pageProfileImage;
+        }
+        public Page()
+        {
+
         }
     }
 }

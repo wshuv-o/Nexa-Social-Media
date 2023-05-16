@@ -1,4 +1,7 @@
-﻿using MySql.Data.MySqlClient;
+﻿using media.Classes;
+using media.Friends;
+using media.MarketPlace;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,17 +14,21 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static media.Friends.FriendRequestForm;
 
 namespace media
 {
     public partial class FormMarketPlace : Form
     {
+        List<ClassProduct> classProductLists = new List<ClassProduct>();
+        List<FormProduct> formProducts = new List<FormProduct>();
+        List<ProductFormAdopter> productFormAdopters = new List<ProductFormAdopter>();
         public FormMarketPlace()
         {
             InitializeComponent();
             SetDoubleBuffer(guna2GradientPanel1, true);
 
-            this.DisplayImageFromDatabase(202);
+            //this.DisplayImageFromDatabase(202);
         }
         private async void SetImage()
         {
@@ -71,7 +78,7 @@ namespace media
                             using (MemoryStream ms = new MemoryStream(imageData))
                             {
                                 Image img = Image.FromStream(ms);
-                                guna2PictureBox1.Image = img;
+                                //guna2PictureBox1.Image = img;
                             }
                         }
                     }
@@ -82,18 +89,14 @@ namespace media
                 MessageBox.Show("Error retrieving image from database: " + ex.Message);
             }
         }
-        
-
         private void guna2GradientPanel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
-
         private void guna2RadioButton2_CheckedChanged(object sender, EventArgs e)
         {
 
         }
-
         private void guna2Panel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -133,6 +136,49 @@ namespace media
         private void guna2Panel2_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void guna2GradientPanel1_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void FormMarketPlace_Load(object sender, EventArgs e)
+        {
+            MySqlConnection connection = new MySqlConnection(DatabaseCredentials.connectionStringLocalServer);
+            connection.Open();
+            string queryx = "SELECT productid, productName, productPrice, productdescription, productRating, productSold, page_id FROM product ";
+            MySqlCommand commandx = new MySqlCommand(queryx, connection);
+            MySqlDataReader readerx = commandx.ExecuteReader();
+            DBImageOperation dbio = new DBImageOperation();
+            while (readerx.Read())
+            {
+                int productId = readerx.GetInt32("productid");
+                string productName = readerx.GetString("productName");
+                int productPrice = readerx.GetInt32("productPrice");
+                string productDescription = readerx.GetString("productdescription");
+                double productRating = readerx.GetDouble("productRating");
+                int productSold = readerx.GetInt32("productSold");
+                int page_id = readerx.GetInt32("page_id");
+
+                Image productImage = dbio.LoadProductImageFromDataBase(productId);
+                ClassProduct cp = new ClassProduct(productId, productName, productDescription, productPrice, productImage, productRating, productSold, page_id);
+                classProductLists.Add(cp);
+                MessageBox.Show(classProductLists.Count.ToString());
+
+            }
+            readerx.Close();
+            connection.Close();
+            for (int i = 0; i < classProductLists.Count; i++)
+            {
+
+                formProducts.Add(new MarketPlace.FormProduct(classProductLists[i]));
+                productFormAdopters.Add(new ProductFormAdopter(formProducts[i]));
+                //Methods.OpenChildForm(friendRequestForms[i], friendRequestAdopter[i].panelEachContact);
+                this.productPanel.Controls.Add(productFormAdopters[i].panelEachProduct);
+
+
+            }
         }
     }
 }

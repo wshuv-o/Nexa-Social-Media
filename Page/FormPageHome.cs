@@ -10,21 +10,20 @@ namespace media.Page
         private Form activeForm = null;
         private Color defColor = Color.RoyalBlue;
         public Color myColor = Color.FromArgb(65, 90, 180);
-        private User nativeUser;
+        private Classes.Page nativePage;
 
-        public User NativeUser
+        public Classes.Page NativePage
         {
-            get { return nativeUser; }
-            set { nativeUser = value; }
+            get { return nativePage; }
+            set { nativePage = value; }
         }
 
 
-        public FormPageHome(User nativeUser)
+        public FormPageHome(Classes.Page page)
         {
-            this.nativeUser = nativeUser;
+            this.NativePage = page;
             InitializeComponent();
             Methods.SetDoubleBuffer(panelSubMain, true);
-            //Methods.SetDoubleBuffer(panelSideMenu, true);
 
 
         }
@@ -98,13 +97,12 @@ namespace media.Page
         {
             buttonTwizzle.BackColor = defColor;
             buttonHome.BackColor = defColor;
-            buttonSearch.BackColor = defColor;
             buttonSettings.BackColor = defColor;
             buttonMessages.BackColor = defColor;
             buttonCreate.BackColor = defColor;
             buttonNotification.BackColor = defColor;
             buttonMarketPlace.BackColor = defColor;
-            buttonProduct.BackColor = defColor;
+            buttonCreateProduct.BackColor = defColor;
             buttonTwizzle.BackColor = defColor;
             buttonStatistics.BackColor = defColor;
 
@@ -113,24 +111,21 @@ namespace media.Page
 
         private void buttonTwizzle_Click(object sender, EventArgs e)
         {
-            DefaultButtonColor(ref buttonTwizzle);
-            FormProfile profile = new FormProfile(this.nativeUser);
-            MessageBox.Show(this.nativeUser.UserFirstName);
+/*            DefaultButtonColor(ref buttonTwizzle);
+            FormProfile profile = new FormProfile(this.NativePage);
+            MessageBox.Show(this.NativePage.PageName);
             openChildForm(profile);
-            profile.Visible = true;
+            profile.Visible = true;*/
         }
         private void buttonReels_Click(object sender, EventArgs e)
         {
-            DefaultButtonColor(ref buttonProduct);
-            FormStorySingle profile = new FormStorySingle();
-            openChildForm(profile);
-            profile.Visible = true;
+
         }
         private void buttonSettings_Click(object sender, EventArgs e)
         {
             DefaultButtonColor(ref buttonSettings);
-            FormSettings games = new FormSettings(out this.nativeUser, this.nativeUser);
-            MessageBox.Show(this.nativeUser.UserFirstName);
+            FormSettings games = new FormSettings(this.NativePage);
+            MessageBox.Show(this.NativePage.PageName);
             openChildForm(games);
             games.Visible = true;
         }
@@ -155,10 +150,10 @@ namespace media.Page
 
         public void buttonHome_Click(object sender, EventArgs e)
         {
-            DefaultButtonColor(ref buttonHome);
-            Home h = new Home(this.NativeUser);
+/*            DefaultButtonColor(ref buttonHome);
+            Home h = new Home(this.NativePage);
             openChildForm(h);
-            //h.Visible= true;
+            //h.Visible= true;*/
         }
 
 
@@ -166,17 +161,14 @@ namespace media.Page
         private void buttonCreate_Click(object sender, EventArgs e)
         {
             DefaultButtonColor(ref buttonCreate);
-            FormCreate fc = new FormCreate(this.NativeUser);
+            FormCreate fc = new FormCreate(this.NativePage);
             openChildForm(fc);
             fc.Visible = true;
 
 
         }
 
-        private void buttonSearch_Click(object sender, EventArgs e)
-        {
-            DefaultButtonColor(ref buttonSearch);
-        }
+
         private void buttonMarketPlace_Click(object sender, EventArgs e)
         {
             DefaultButtonColor(ref buttonMarketPlace);
@@ -187,7 +179,7 @@ namespace media.Page
 
         private void buttonMessages_Click(object sender, EventArgs e)
         {
-            FormChat c = new FormChat(this.NativeUser);
+            FormChat c = new FormChat(this.NativePage);
             DefaultButtonColor(ref buttonMessages);
             openChildForm(c);
             c.Visible = true;
@@ -196,6 +188,14 @@ namespace media.Page
         private void panelSubMain_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void buttonCreateProduct_Click(object sender, EventArgs e)
+        {
+            DefaultButtonColor(ref buttonCreateProduct);
+            CreateProduct profile = new CreateProduct(this.nativePage);
+            openChildForm(profile);
+            profile.Visible = true;
         }
     }
 }
