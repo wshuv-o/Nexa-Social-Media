@@ -9,14 +9,16 @@ using System.Linq;
 using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
-using System.Web.UI.WebControls;
 using System.Windows.Forms;
 
 namespace media
 {
     public partial class Post : Form
     {
+        private FlowLayoutPanel flowLayoutPanel;
         private media.Classes.ClassPost classPosts;
+        private Panel panelMain;
+        private FlowLayoutPanel panelSecondary;
         public media.Classes.ClassPost ClassPosts
         {
             get { return classPosts; }
@@ -24,6 +26,14 @@ namespace media
         }
         public Post(media.Classes.ClassPost classPost)
         {
+            // Create and configure the flow layout panel
+            flowLayoutPanel = new FlowLayoutPanel();
+            flowLayoutPanel.FlowDirection = FlowDirection.LeftToRight;
+            flowLayoutPanel.AutoScroll = true;
+            flowLayoutPanel.Visible = false;
+
+
+
             this.classPosts = new Classes.ClassPost();
             this.classPosts = classPost;
             InitializeComponent();
@@ -106,6 +116,42 @@ namespace media
         {
 
         }
+
+
+        private void MainButton_Click(object sender, EventArgs e)
+        {
+
+            panelSecondary = new FlowLayoutPanel();
+            //panelSecondary.Dock = DockStyle.Fill;
+            panelSecondary.Visible = false; // Initially hidden
+
+            // Create three buttons and add them to the secondary panel
+            Button button1 = new Button();
+            button1.Text = "Button 1";
+            button1.Location = new Point(10, 10);
+            panelSecondary.Controls.Add(button1);
+
+            Button button2 = new Button();
+            button2.Text = "Button 2";
+            button2.Location = new Point(10, 40);
+            panelSecondary.Controls.Add(button2);
+
+            Button button3 = new Button();
+            button3.Text = "Button 3";
+            button3.Location = new Point(10, 70);
+            panelSecondary.Controls.Add(button3);
+
+            // Add the main panel to your form
+            this.panel1.Controls.Add(panelSecondary);
+
+
+           
+            panelSecondary.Visible = true;
+        }
+
+
+
+
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -286,6 +332,77 @@ namespace media
         private int GetUserId()
         {
             return ClassNativeUser.NativeUser.Key;
+        }
+
+        private void guna2CircleButton1_Click(object sender, EventArgs e)
+        {
+            // Create a new instance of the form
+            Form f = new Form();
+
+            // Set the StartPosition property of the new form to CenterParent
+            f.StartPosition = FormStartPosition.CenterParent;
+
+            // Set the size of the form
+            f.Size = new Size(100, 150);
+
+            // Create a TableLayoutPanel and add it to the form
+            TableLayoutPanel tableLayoutPanel = new TableLayoutPanel();
+            tableLayoutPanel.Dock = DockStyle.Fill;
+            tableLayoutPanel.RowCount = 3;
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 33.33f));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 33.33f));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 33.33f));
+            f.Controls.Add(tableLayoutPanel);
+
+            // Create three buttons and add them to the TableLayoutPanel
+            Button button1 = new Button();
+            button1.Text = "Button 1";
+            button1.Dock = DockStyle.Fill;
+            button1.Click += (btnSender, btnEvent) =>
+            {
+                f.DialogResult = DialogResult.OK;
+                f.Close();
+            };
+            tableLayoutPanel.Controls.Add(button1, 0, 0);
+
+            Button button2 = new Button();
+            button2.Text = "Button 2";
+            button2.Dock = DockStyle.Fill;
+            button2.Click += (btnSender, btnEvent) =>
+            {
+                f.DialogResult = DialogResult.Yes;
+                f.Close();
+            };
+            tableLayoutPanel.Controls.Add(button2, 0, 1);
+
+            Button button3 = new Button();
+            button3.Text = "Button 3";
+            button3.Dock = DockStyle.Fill;
+            button3.Click += (btnSender, btnEvent) =>
+            {
+                f.DialogResult = DialogResult.No;
+                f.Close();
+            };
+            tableLayoutPanel.Controls.Add(button3, 0, 2);
+
+            // Show the new form as a dialog and get the result
+            DialogResult result = f.ShowDialog();
+
+            // Display the returned value in a MessageBox
+            int returnValue = 0;
+            switch (result)
+            {
+                case DialogResult.OK:
+                    returnValue = 1;
+                    break;
+                case DialogResult.Yes:
+                    returnValue = 2;
+                    break;
+                case DialogResult.No:
+                    returnValue = 3;
+                    break;
+            }
+            MessageBox.Show("Returned value: " + returnValue.ToString());
         }
 
     }

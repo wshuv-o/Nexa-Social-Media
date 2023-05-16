@@ -209,41 +209,12 @@ namespace media
 
         private void panelFeed_Paint(object sender, PaintEventArgs e)
         {
-            if (panelFeed.VerticalScroll.Visible)
-            {
-                int scrollbarWidth = SystemInformation.VerticalScrollBarWidth;
-                int scrollbarX = panelFeed.Width - scrollbarWidth;
-                int scrollbarY = panelFeed.VerticalScroll.Value * (panelFeed.Height - scrollbarWidth) /
-                    (panelFeed.VerticalScroll.Maximum - panelFeed.VerticalScroll.Minimum);
-                int scrollbarHeight = panelFeed.Height * scrollbarWidth / (panelFeed.Height - scrollbarWidth);
-                Rectangle scrollbarRect = new Rectangle(scrollbarX, scrollbarY, scrollbarWidth, scrollbarHeight);
-                using (SolidBrush brush = new SolidBrush(Color.Red))
-                {
-                    e.Graphics.FillRectangle(brush, scrollbarRect);
-                }
-            }
 
-            if (panelFeed.HorizontalScroll.Visible)
-            {
-                int scrollbarHeight = SystemInformation.HorizontalScrollBarHeight;
-                int scrollbarX = panelFeed.HorizontalScroll.Value * (panelFeed.Width - scrollbarHeight) /
-                    (panelFeed.HorizontalScroll.Maximum - panelFeed.HorizontalScroll.Minimum);
-                int scrollbarY = panelFeed.Height - scrollbarHeight;
-                int scrollbarWidth = panelFeed.Width * scrollbarHeight / (panelFeed.Width - scrollbarHeight);
-                Rectangle scrollbarRect = new Rectangle(scrollbarX, scrollbarY, scrollbarWidth, scrollbarHeight);
-                using (SolidBrush brush = new SolidBrush(Color.Red))
-                {
-                    e.Graphics.FillRectangle(brush, scrollbarRect);
-                }
-            }
         }
 
         private void flowLayoutPanel1_MouseWheel(object sender, MouseEventArgs e)
         {
-            int numberOfTextLinesToMove = e.Delta * SystemInformation.MouseWheelScrollLines / 120;
-            Point currentAutoScrollPosition = panelFeed.AutoScrollPosition;
-            currentAutoScrollPosition.Offset(0, -numberOfTextLinesToMove);
-            panelFeed.AutoScrollPosition = currentAutoScrollPosition;
+
         }
         private void panelNavBar_Resize(object sender, EventArgs e)
         {
@@ -648,7 +619,7 @@ namespace media
                     string query = "SELECT CONCAT(userFirstName, ' ', userLastName) AS FullName FROM user WHERE userFirstName LIKE @searchText OR userLastName LIKE @searchText";
                     MySqlCommand command = new MySqlCommand(query, connection);
                     command.Parameters.AddWithValue("@searchText", "%" + searchText + "%");
-                    dataTable.Columns.Add("FullName", typeof(string)); // Column for FullName
+                    dataTable.Columns.Add("FullName", typeof(string)); 
                     MySqlDataAdapter adapter = new MySqlDataAdapter(command);
                     adapter.Fill(dataTable);
                     //return dataTable;
@@ -661,7 +632,7 @@ namespace media
                     string query = "SELECT page_name AS FullName FROM pages WHERE page_name LIKE @searchText";
                     MySqlCommand command = new MySqlCommand(query, connection);
                     command.Parameters.AddWithValue("@searchText", "%" + searchText + "%");
-                    dataTable.Columns.Add("FullName", typeof(string)); // Column for FullName
+                    dataTable.Columns.Add("FullName", typeof(string));
                     MySqlDataAdapter adapter = new MySqlDataAdapter(command);
                     adapter.Fill(dataTable);
                     //return dataTable;
@@ -674,7 +645,7 @@ namespace media
                     string query = "SELECT postText AS FullName FROM postofuser WHERE postText LIKE @searchText";
                     MySqlCommand command = new MySqlCommand(query, connection);
                     command.Parameters.AddWithValue("@searchText", "%" + searchText + "%");
-                    dataTable.Columns.Add("FullName", typeof(string)); // Column for FullName
+                    dataTable.Columns.Add("FullName", typeof(string));
                     MySqlDataAdapter adapter = new MySqlDataAdapter(command);
                     adapter.Fill(dataTable);
                     //return dataTable;

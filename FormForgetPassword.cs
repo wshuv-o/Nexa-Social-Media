@@ -52,7 +52,13 @@ namespace media
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            Methods.OpenChildForm(new FormForgetPassword2(), this.panel2);
+            FormForgetPassword2 f = new FormForgetPassword2();
+            Methods.OpenChildForm(f, this.guna2GradientPanel1);
+        }
+
+        private void guna2GradientPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

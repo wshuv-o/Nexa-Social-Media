@@ -20,7 +20,8 @@ namespace media
 
         private void btnForgotPassword_Click(object sender, EventArgs e)
         {
-            new FormForgetPassword();
+            FormForgetPassword f= new FormForgetPassword();
+            f.Show();
         }
 
         private void flowLayoutPanel1_Paint(object sender, EventArgs e)
@@ -31,59 +32,69 @@ namespace media
         private void btnSignIn_Click(object sender, EventArgs e)
         {
             string email = txtbxEmail.Text;
-             
+            string password = txtbxPassword.Text;
+
             try
             {
-                using (MySqlConnection conn = new MySqlConnection(DatabaseCredentials.connectionStringLocalServer))
+                if (!string.IsNullOrEmpty(email) && !string.IsNullOrEmpty(password))
                 {
-                    conn.Open();
-                    string query = "SELECT  password  FROM user WHERE email=@Email";
-                    string queryPage = "SELECT  page_password  FROM pages WHERE page_email=@Email";
-                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    using (MySqlConnection conn = new MySqlConnection(DatabaseCredentials.connectionStringLocalServer))
                     {
-                        cmd.Parameters.AddWithValue("@Email", email);
-                        using (MySqlDataReader reader = cmd.ExecuteReader())
-                        {
-                            if (reader.Read())
-                            {
-                                string password = reader.GetString(0);
-                                if (password.Equals(txtbxPassword.Text))
-                                {
+                        conn.Open();
+                        string query = "SELECT password FROM user WHERE email = @Email";
+                        string queryPage = "SELECT page_password FROM pages WHERE page_email = @Email";
 
-                                    this.panel1.Dispose();
-                                    User user=this.GetUserByEmail(email);
-                                    openChildForm(new FormBase(user));
-                                    ClassNativeUser.NativeUser=user;
+                        using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                        {
+                            cmd.Parameters.AddWithValue("@Email", email);
+
+                            using (MySqlDataReader reader = cmd.ExecuteReader())
+                            {
+                                if (reader.Read())
+                                {
+                                    string userPassword = reader.GetString(0);
+                                    if (password.Equals(userPassword))
+                                    {
+                                        this.panel1.Dispose();
+                                        User user = this.GetUserByEmail(email);
+                                        openChildForm(new FormBase(user));
+                                        ClassNativeUser.NativeUser = user;
+                                        return;
+                                    }
                                 }
                             }
-                            reader.Close();
                         }
-                    }
-                    using (MySqlCommand cmd = new MySqlCommand(queryPage, conn))
-                    {
-                        cmd.Parameters.AddWithValue("@Email", email);
-                        using (MySqlDataReader reader = cmd.ExecuteReader())
-                        {
-                            if (reader.Read())
-                            {
-                                string password = reader.GetString(0);
-                                if (password.Equals(txtbxPassword.Text))
-                                {
 
-                                    this.panel1.Dispose();
-                                    Classes.Page page = this.GetPageByEmail(email);
-                                    openChildForm(new Page.FormPageHome(page));
-                                    ClassNativeUser.NativePage = page;
+                        using (MySqlCommand cmd = new MySqlCommand(queryPage, conn))
+                        {
+                            cmd.Parameters.AddWithValue("@Email", email);
+
+                            using (MySqlDataReader reader = cmd.ExecuteReader())
+                            {
+                                if (reader.Read())
+                                {
+                                    string pagePassword = reader.GetString(0);
+                                    if (password.Equals(pagePassword))
+                                    {
+                                        this.panel1.Dispose();
+                                        Classes.Page page = this.GetPageByEmail(email);
+                                        openChildForm(new Page.FormPageHome(page));
+                                        ClassNativeUser.NativePage = page;
+                                        return;
+                                    }
                                 }
                             }
-                            reader.Close();
                         }
-                    }
 
-                    conn.Close();
+                        MessageBox.Show("Invalid email or password.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please enter both email and password.");
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -215,12 +226,12 @@ namespace media
         private void btnSignUp_Click(object sender, EventArgs e)
         {
             Methods.OpenChildForm( new FormSignUp(), panelBase);
-            //this.Close();
+            
         }        
         private void btnPageSignUp_Click(object sender, EventArgs e)
         {
             Methods.OpenChildForm( new FormPageSignUp(), panelBase);
-            //this.Close();
+            
         }    
         private void panel1_Paint(object sender, EventArgs e)
         {
@@ -232,6 +243,11 @@ namespace media
         }
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
         {
 
         }

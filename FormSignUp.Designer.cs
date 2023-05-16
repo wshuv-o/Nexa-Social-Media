@@ -88,6 +88,7 @@
             this.guna2Panel1.Padding = new System.Windows.Forms.Padding(10);
             this.guna2Panel1.Size = new System.Drawing.Size(1101, 673);
             this.guna2Panel1.TabIndex = 0;
+            this.guna2Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel1_Paint);
             // 
             // guna2Panel3
             // 

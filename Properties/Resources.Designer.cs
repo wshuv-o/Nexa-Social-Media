@@ -353,6 +353,16 @@ namespace media.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_database_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-database-32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_expand_32 {
             get {
                 object obj = ResourceManager.GetObject("icons8-expand-32", resourceCulture);

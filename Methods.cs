@@ -225,7 +225,6 @@ namespace media
         }
         public static void GradientOnPanel(Panel panel)
         {
-            // Set the background of gradientPanel to a gradient brush
             Color color1 = Color.FromArgb(255, 192, 192);
             Color color2 = Color.FromArgb(192, 192, 255);
             LinearGradientBrush brush = new LinearGradientBrush(new Point(0, 0), new Point(panel.Width, panel.Height), color1, color2);
@@ -241,10 +240,10 @@ namespace media
         }
         public static void SendEmailWithCode(string recipient, string code)
         {
-            string senderEmail = "22-49070-1@student.iub.edu"; // Your email address
-            string senderPassword = "4@hjbAbnc45"; // Your email account password
-            string smtpServer = "smtp.office365.com"; // Your SMTP server address
-            int smtpPort = 587; // Your SMTP server port number
+            string senderEmail = "22-49070-1@student.iub.edu"; 
+            string senderPassword = "4@hjbAbnc45"; 
+            string smtpServer = "smtp.office365.com"; 
+            int smtpPort = 587; 
 
             SmtpClient smtpClient = new SmtpClient(smtpServer, smtpPort);
             smtpClient.Credentials = new NetworkCredential(senderEmail, senderPassword);
@@ -257,10 +256,8 @@ namespace media
         }
         public static Color GetBackgroundAverageColor(Bitmap image)
         {
-            // Load the image into a bitmap object
             Bitmap bmp = new Bitmap(image);
 
-            // Convert the bitmap to a Color array
             Color[] pixels = new Color[bmp.Width * bmp.Height];
             int index = 0;
             for (int y = 0; y < bmp.Height; y++)
@@ -290,8 +287,7 @@ namespace media
                 }
             }
 
-            // Calculate the average color of the pixels that are not part of the human body
-            if (count == 0) return Color.Transparent; // Return transparent color if there are no background pixels
+            if (count == 0) return Color.Transparent; 
             int averageRed = totalRed / count;
             int averageGreen = totalGreen / count;
             int averageBlue = totalBlue / count;

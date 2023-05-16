@@ -15,6 +15,12 @@ namespace media
         public FormForgetPassword2()
         {
             InitializeComponent();
+            this.label4.Visible = false;
+            this.label5.Visible = false;
+            this.guna2TextBox6.Visible = false;
+            this.guna2TextBox5.Visible = false;
+            this.guna2Button3.Visible = false;
+            this.guna2Button4.Visible = false;
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -60,6 +66,31 @@ namespace media
         private void guna2TextBox2_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            this.label4.Visible= true;
+            this.label5.Visible= true;
+            this.guna2TextBox6.Visible= true;
+            this.guna2TextBox5.Visible= true;
+            this.guna2Button3.Visible= true;
+            this.guna2Button4.Visible= true;
+
+            this.guna2TextBox1.Visible = false;
+            this.guna2TextBox2.Visible = false;
+            this.guna2TextBox3.Visible = false;
+            this.guna2TextBox4.Visible = false;
+            this.guna2Button1.Visible = false;
+            this.guna2Button2.Visible = false;
+            this.label3.Visible= false;
+            this.label1.Visible= false; 
+
+        }
+
+        private void guna2CircleButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

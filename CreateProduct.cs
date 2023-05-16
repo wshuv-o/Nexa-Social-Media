@@ -141,13 +141,8 @@ namespace media
             this.label3.Text = guna2TextBox4.Text;
             label1.AutoSize = false;
             int desiredWidth = 250;
-
-            // Calculate the size required for the wrapped text
             System.Drawing.Size textSize = TextRenderer.MeasureText(label3.Text, label3.Font, new System.Drawing.Size(desiredWidth, int.MaxValue), TextFormatFlags.WordBreak);
-
-            // Set the size of the label
             label1.Size = new System.Drawing.Size(desiredWidth, textSize.Height);
-
             guna2TextBox4.Multiline = true;
             guna2TextBox4.WordWrap = true;
         }
@@ -162,7 +157,12 @@ namespace media
             try
             {
                 DBImageOperation dbio = new DBImageOperation();
-                this.InsertProduct(label22.Text, Convert.ToInt32(label8.Text), label3.Text, dbio.ImageToByteArray(productImage), this.NativePage.PageId);
+                this.InsertProduct(label22.Text, Convert.ToInt32(label8.Text), label3.Text, dbio.ImageToByteArray(productImage),Convert.ToInt32(this.txtBoxQuantity.Text), this.NativePage.PageId);
+            }
+
+            catch (FormatException)
+            {
+                MessageBox.Show("Invalid quantity. Please enter a valid integer!");
             }
             catch
             {
@@ -170,7 +170,7 @@ namespace media
             }
         }
 
-        public void InsertProduct(string productName, int productPrice, string productDescription, byte[] productImage, int pageId)
+        public void InsertProduct(string productName, int productPrice, string productDescription, byte[] productImage, int quantity, int pageId)
         {
             using (MySqlConnection connection = new MySqlConnection(DatabaseCredentials.connectionStringLocalServer))
             {
@@ -178,14 +178,15 @@ namespace media
                 {
                     connection.Open();
 
-                    string query = "INSERT INTO `product` (`productName`, `productPrice`, `productDescription`, `productImage`, `page_id`) " +
-                                   "VALUES (@productName, @productPrice, @productDescription, @productImage, @pageId)";
+                    string query = "INSERT INTO `product` (`productName`, `productPrice`, `productDescription`, `productImage`,`quantiy`, `page_id`) " +
+                                   "VALUES (@productName, @productPrice, @productDescription, @productImage,@quantity, @pageId)";
 
                     MySqlCommand command = new MySqlCommand(query, connection);
                     command.Parameters.AddWithValue("@productName", productName);
                     command.Parameters.AddWithValue("@productPrice", productPrice);
                     command.Parameters.AddWithValue("@productDescription", productDescription);
                     command.Parameters.AddWithValue("@productImage", productImage);
+                    command.Parameters.AddWithValue("@quantity", quantity);
                     command.Parameters.AddWithValue("@pageId", pageId);
 
                     int rowsAffected = command.ExecuteNonQuery();
@@ -214,6 +215,11 @@ namespace media
         }
 
         private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtBoxQuantity_TextChanged(object sender, EventArgs e)
         {
 
         }

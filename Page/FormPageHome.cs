@@ -143,7 +143,7 @@ namespace media.Page
         private void buttonGames_Click(object sender, EventArgs e)
         {
             DefaultButtonColor(ref buttonStatistics);
-            GamesPage games = new GamesPage();
+            MarketPlaceStats games = new MarketPlaceStats();
             openChildForm(games);
             games.Visible = true;
         }
@@ -194,6 +194,14 @@ namespace media.Page
         {
             DefaultButtonColor(ref buttonCreateProduct);
             CreateProduct profile = new CreateProduct(this.nativePage);
+            openChildForm(profile);
+            profile.Visible = true;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DefaultButtonColor(ref buttonCreateProduct);
+            FormInventory profile = new FormInventory();//FormInventory
             openChildForm(profile);
             profile.Visible = true;
         }

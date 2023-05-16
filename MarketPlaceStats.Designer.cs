@@ -30,6 +30,10 @@
         {
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label17 = new System.Windows.Forms.Label();
+            this.guna2RatingStar1 = new Guna.UI2.WinForms.Guna2RatingStar();
+            this.label16 = new System.Windows.Forms.Label();
             this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2ComboBox3 = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -68,12 +72,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.guna2CircleProgressBar1 = new Guna.UI2.WinForms.Guna2CircleProgressBar();
             this.guna2CircleProgressBar2 = new Guna.UI2.WinForms.Guna2CircleProgressBar();
-            this.guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label16 = new System.Windows.Forms.Label();
-            this.guna2RatingStar1 = new Guna.UI2.WinForms.Guna2RatingStar();
-            this.label17 = new System.Windows.Forms.Label();
             this.guna2Panel1.SuspendLayout();
             this.guna2ShadowPanel1.SuspendLayout();
+            this.guna2Panel7.SuspendLayout();
             this.guna2Panel6.SuspendLayout();
             this.guna2Panel5.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
@@ -82,18 +83,15 @@
             this.guna2CircleProgressBar4.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.guna2CircleProgressBar1.SuspendLayout();
-            this.guna2Panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2Panel1
             // 
-           // this.guna2Panel1.BackgroundImage = global::media.Properties.Resources.download__4_;
             this.guna2Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.guna2Panel1.Controls.Add(this.guna2ShadowPanel1);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Padding = new System.Windows.Forms.Padding(50);
             this.guna2Panel1.Size = new System.Drawing.Size(1902, 1033);
             this.guna2Panel1.TabIndex = 0;
             // 
@@ -108,12 +106,53 @@
             this.guna2ShadowPanel1.Controls.Add(this.guna2Panel2);
             this.guna2ShadowPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2ShadowPanel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(224)))), ((int)(((byte)(176)))), ((int)(((byte)(242)))));
-            this.guna2ShadowPanel1.Location = new System.Drawing.Point(50, 50);
+            this.guna2ShadowPanel1.Location = new System.Drawing.Point(0, 0);
             this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
             this.guna2ShadowPanel1.Padding = new System.Windows.Forms.Padding(150);
             this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
-            this.guna2ShadowPanel1.Size = new System.Drawing.Size(1802, 933);
+            this.guna2ShadowPanel1.Size = new System.Drawing.Size(1902, 1033);
             this.guna2ShadowPanel1.TabIndex = 0;
+            // 
+            // guna2Panel7
+            // 
+            this.guna2Panel7.BorderRadius = 10;
+            this.guna2Panel7.Controls.Add(this.label17);
+            this.guna2Panel7.Controls.Add(this.guna2RatingStar1);
+            this.guna2Panel7.Controls.Add(this.label16);
+            this.guna2Panel7.FillColor = System.Drawing.Color.White;
+            this.guna2Panel7.Location = new System.Drawing.Point(1128, 432);
+            this.guna2Panel7.Name = "guna2Panel7";
+            this.guna2Panel7.Size = new System.Drawing.Size(445, 386);
+            this.guna2Panel7.TabIndex = 17;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(174, 207);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(100, 22);
+            this.label17.TabIndex = 3;
+            this.label17.Text = "4.2 out of 5";
+            // 
+            // guna2RatingStar1
+            // 
+            this.guna2RatingStar1.Enabled = false;
+            this.guna2RatingStar1.Location = new System.Drawing.Point(33, 113);
+            this.guna2RatingStar1.Name = "guna2RatingStar1";
+            this.guna2RatingStar1.RatingColor = System.Drawing.Color.Yellow;
+            this.guna2RatingStar1.Size = new System.Drawing.Size(391, 72);
+            this.guna2RatingStar1.TabIndex = 2;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(26, 17);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(204, 38);
+            this.label16.TabIndex = 1;
+            this.label16.Text = "Overall Rating";
             // 
             // guna2Panel6
             // 
@@ -271,12 +310,10 @@
             this.guna2CircleButton7.DisabledState.CustomBorderColor = System.Drawing.Color.Transparent;
             this.guna2CircleButton7.DisabledState.FillColor = System.Drawing.Color.Transparent;
             this.guna2CircleButton7.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            //this.guna2CircleButton7.DisabledState.Image = global::media.Properties.Resources.chart_user1;
             this.guna2CircleButton7.Enabled = false;
             this.guna2CircleButton7.FillColor = System.Drawing.Color.White;
             this.guna2CircleButton7.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2CircleButton7.ForeColor = System.Drawing.Color.Black;
-           // this.guna2CircleButton7.Image = global::media.Properties.Resources.chart_user;
             this.guna2CircleButton7.ImageSize = new System.Drawing.Size(80, 80);
             this.guna2CircleButton7.Location = new System.Drawing.Point(33, 14);
             this.guna2CircleButton7.Name = "guna2CircleButton7";
@@ -323,12 +360,10 @@
             this.guna2CircleButton6.DisabledState.CustomBorderColor = System.Drawing.Color.Transparent;
             this.guna2CircleButton6.DisabledState.FillColor = System.Drawing.Color.Transparent;
             this.guna2CircleButton6.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            //this.guna2CircleButton6.DisabledState.Image = global::media.Properties.Resources.badge_dollar2;
             this.guna2CircleButton6.Enabled = false;
             this.guna2CircleButton6.FillColor = System.Drawing.Color.White;
             this.guna2CircleButton6.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2CircleButton6.ForeColor = System.Drawing.Color.Black;
-           // this.guna2CircleButton6.Image = global::media.Properties.Resources.badge_dollar2;
             this.guna2CircleButton6.ImageSize = new System.Drawing.Size(80, 80);
             this.guna2CircleButton6.Location = new System.Drawing.Point(33, 17);
             this.guna2CircleButton6.Name = "guna2CircleButton6";
@@ -682,58 +717,19 @@
             this.guna2CircleProgressBar2.Text = "guna2CircleProgressBar2";
             this.guna2CircleProgressBar2.ValueChanged += new System.EventHandler(this.guna2CircleProgressBar2_ValueChanged);
             // 
-            // guna2Panel7
-            // 
-            this.guna2Panel7.BorderRadius = 10;
-            this.guna2Panel7.Controls.Add(this.label17);
-            this.guna2Panel7.Controls.Add(this.guna2RatingStar1);
-            this.guna2Panel7.Controls.Add(this.label16);
-            this.guna2Panel7.FillColor = System.Drawing.Color.White;
-            this.guna2Panel7.Location = new System.Drawing.Point(1128, 432);
-            this.guna2Panel7.Name = "guna2Panel7";
-            this.guna2Panel7.Size = new System.Drawing.Size(445, 386);
-            this.guna2Panel7.TabIndex = 17;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(26, 17);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(204, 38);
-            this.label16.TabIndex = 1;
-            this.label16.Text = "Overall Rating";
-            // 
-            // guna2RatingStar1
-            // 
-            this.guna2RatingStar1.Enabled = false;
-            this.guna2RatingStar1.Location = new System.Drawing.Point(33, 113);
-            this.guna2RatingStar1.Name = "guna2RatingStar1";
-            this.guna2RatingStar1.RatingColor = System.Drawing.Color.Yellow;
-            this.guna2RatingStar1.Size = new System.Drawing.Size(391, 72);
-            this.guna2RatingStar1.TabIndex = 2;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(174, 207);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(100, 22);
-            this.label17.TabIndex = 3;
-            this.label17.Text = "4.2 out of 5";
-            // 
-            // FormSaleMarketPlace
+            // MarketPlaceStats
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1902, 1033);
             this.Controls.Add(this.guna2Panel1);
-            this.Name = "FormSaleMarketPlace";
+            this.Name = "MarketPlaceStats";
             this.Text = "FormSaleMarketPlace";
             this.Load += new System.EventHandler(this.FormSaleMarketPlace_Load);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2ShadowPanel1.ResumeLayout(false);
+            this.guna2Panel7.ResumeLayout(false);
+            this.guna2Panel7.PerformLayout();
             this.guna2Panel6.ResumeLayout(false);
             this.guna2Panel6.PerformLayout();
             this.guna2Panel5.ResumeLayout(false);
@@ -747,8 +743,6 @@
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel2.PerformLayout();
             this.guna2CircleProgressBar1.ResumeLayout(false);
-            this.guna2Panel7.ResumeLayout(false);
-            this.guna2Panel7.PerformLayout();
             this.ResumeLayout(false);
 
         }
