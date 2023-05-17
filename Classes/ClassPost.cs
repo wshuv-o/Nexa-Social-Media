@@ -108,7 +108,8 @@ namespace media.Classes
             this.PostCreator = postCreator;
             this.NoOfReacts = noOfReacts;
 
-        }
+        }        
+
         public ClassPost(int postId, string postText, DateTime postTime, string permission, int noOfReacts, User postCreator)
         {
             this.PostId = postId;

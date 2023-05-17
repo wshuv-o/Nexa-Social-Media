@@ -158,9 +158,9 @@ namespace media
                 string postPermission = (string)reader["postPermission"];
                 int postReact = reader.GetInt32("postReactCount");
                 int Key = reader.GetInt32("userid");
-                System.Drawing.Image postImage= dbio.LoadPostImageFromDataBase(postID);
+                //System.Drawing.Image postImage= dbio.LoadPostImageFromDataBase(postID);
                 User postCreator = dbio.GetUserByUserId(Key);
-                Classes.ClassPost p = new Classes.ClassPost(postID, postText, postTime, postImage, postPermission, postReact, postCreator);
+                Classes.ClassPost p = new Classes.ClassPost(postID, postText, postTime, postPermission, postReact, postCreator);
                 //MessageBox.Show(p.PostText);
                 classPostList.Add(p);
 
@@ -250,23 +250,23 @@ namespace media
                 int postReact = (int)reader["postReactCount"];
                 int Key = reader.GetInt32("userid");
                 //string mediaContent = (string)reader["image"];
-                System.Drawing.Image postImage = dbio.LoadPostImageFromDataBase(postID);
+                //System.Drawing.Image postImage = dbio.LoadPostImageFromDataBase(postID);
                 User postCreator = dbio.GetUserByUserId(Key);
-                if (postImage != null)
+/*                if (postImage != null)
                 {
                     j += 1;
 
-                    Classes.ClassPost p = new Classes.ClassPost(postID, postText, postTime, postImage, postPermission, postReact, postCreator);
-                    //MessageBox.Show(p.PostText);
-                    classPostList.Add(p);
-                }
-                else
-                {
-                    j += 1;
                     Classes.ClassPost p = new Classes.ClassPost(postID, postText, postTime, postPermission, postReact, postCreator);
                     //MessageBox.Show(p.PostText);
                     classPostList.Add(p);
                 }
+                else
+                {*/
+                    j += 1;
+                    Classes.ClassPost p = new Classes.ClassPost(postID, postText, postTime, postPermission, postReact, postCreator);
+                    //MessageBox.Show(p.PostText);
+                    classPostList.Add(p);
+                //}
             }
             reader.Close();
 

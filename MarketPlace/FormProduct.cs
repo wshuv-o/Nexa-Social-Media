@@ -37,5 +37,12 @@ namespace media.MarketPlace
         {
 
         }
+
+        private void Product_Click(object sender, EventArgs e)
+        {
+            SingleProduct p= new SingleProduct();
+            p.Show();
+
+        }
     }
 }

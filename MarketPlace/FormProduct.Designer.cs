@@ -86,6 +86,7 @@
             this.productImage.Size = new System.Drawing.Size(296, 252);
             this.productImage.TabIndex = 0;
             this.productImage.TabStop = false;
+            this.productImage.Click += new System.EventHandler(this.Product_Click);
             // 
             // guna2Panel1
             // 
@@ -99,13 +100,14 @@
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(296, 152);
             this.guna2Panel1.TabIndex = 1;
+            this.guna2Panel1.Click += new System.EventHandler(this.Product_Click);
             // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 3;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.48485F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.51515F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 99F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 101F));
             this.tableLayoutPanel2.Controls.Add(this.btnProductRating, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.productSold, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnCart, 2, 0);
@@ -132,21 +134,23 @@
             this.btnProductRating.ImageSize = new System.Drawing.Size(25, 25);
             this.btnProductRating.Location = new System.Drawing.Point(3, 3);
             this.btnProductRating.Name = "btnProductRating";
-            this.btnProductRating.Size = new System.Drawing.Size(89, 39);
+            this.btnProductRating.Size = new System.Drawing.Size(88, 39);
             this.btnProductRating.TabIndex = 0;
             this.btnProductRating.Text = "6.5";
+            this.btnProductRating.Click += new System.EventHandler(this.Product_Click);
             // 
             // productSold
             // 
             this.productSold.AutoSize = true;
             this.productSold.Dock = System.Windows.Forms.DockStyle.Fill;
             this.productSold.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.productSold.Location = new System.Drawing.Point(98, 0);
+            this.productSold.Location = new System.Drawing.Point(97, 0);
             this.productSold.Name = "productSold";
-            this.productSold.Size = new System.Drawing.Size(95, 45);
+            this.productSold.Size = new System.Drawing.Size(94, 45);
             this.productSold.TabIndex = 1;
             this.productSold.Text = "Sold 32";
             this.productSold.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.productSold.Click += new System.EventHandler(this.Product_Click);
             // 
             // btnCart
             // 
@@ -164,6 +168,7 @@
             this.btnCart.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnCart.Size = new System.Drawing.Size(39, 39);
             this.btnCart.TabIndex = 2;
+            this.btnCart.Click += new System.EventHandler(this.Product_Click);
             // 
             // lblProductDesc
             // 
@@ -174,6 +179,7 @@
             this.lblProductDesc.Size = new System.Drawing.Size(43, 17);
             this.lblProductDesc.TabIndex = 3;
             this.lblProductDesc.Text = "label2";
+            this.lblProductDesc.Click += new System.EventHandler(this.Product_Click);
             // 
             // lblProductName
             // 
@@ -184,6 +190,7 @@
             this.lblProductName.Size = new System.Drawing.Size(70, 28);
             this.lblProductName.TabIndex = 2;
             this.lblProductName.Text = "label1";
+            this.lblProductName.Click += new System.EventHandler(this.Product_Click);
             // 
             // lblPrice
             // 
@@ -194,6 +201,7 @@
             this.lblPrice.Size = new System.Drawing.Size(42, 28);
             this.lblPrice.TabIndex = 1;
             this.lblPrice.Text = "150";
+            this.lblPrice.Click += new System.EventHandler(this.Product_Click);
             // 
             // labelSign
             // 

@@ -18,11 +18,11 @@
                 components.Dispose();
             }
             base.Dispose(disposing);
-        }            
-            System.Windows.Forms.Label lblUserName;
+        }
+        System.Windows.Forms.Label lblUserName;
 
         #region Windows Form Designer generated code
-private void InitializeComponent()
+        private void InitializeComponent()
         {
             this.basePanel = new System.Windows.Forms.Panel();
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();

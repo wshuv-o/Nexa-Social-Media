@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Messaging;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace media
@@ -73,10 +74,16 @@ namespace media
             Image image = ByteArrayToImage(imageBytes);
             return image;
         }
-        public Image LoadPostImageFromDataBase(int postId)
+        public async Task<System.Drawing.Image> LoadPostImageFromDataBaseAsync(int postId)
+        {
+            return await Task.Run(() => LoadPostImageFromDataBase(postId));
+        }
+
+        private Image LoadPostImageFromDataBase(int postId)
         {
             this.PostId = postId;
             byte[] imageBytes = GetPostImage(this.PostId);
+
             if (imageBytes == null)
             {
                 return null;
@@ -85,6 +92,7 @@ namespace media
             Image image = ByteArrayToImage(imageBytes);
             return image;
         }
+
         public Image LoadPageProfileImageFromDataBase(int pageId)
         {
             byte[] imageBytes = GetPageProfileImage(pageId);

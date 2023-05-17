@@ -51,47 +51,7 @@ namespace media
 
                 this.postTime.Text = classPost.PostTime.ToString();
                 this.postText.Text = classPost.PostText;
-                if (classPost.PostImage != null)
-                {
-                    this.postImagePanel.BackgroundImage = classPost.PostImage;
-                    Methods.SetDoubleBuffer(postImagePanel, true);
-                    postImagePanel.BackColor = Methods.GetBackgroundAverageColor((Bitmap)postImagePanel.BackgroundImage);
-                    //MessageBox.Show("image");
-                    this.postImagePanel.BackColor = Methods.GetBackgroundAverageColor((Bitmap)this.postImagePanel.BackgroundImage);
 
-
-                }
-                else
-                {
-                    int removeColumnIndex = 0;
-                    int removeRowIndex = 2;
-
-                    Control controlToRemove = tableLayoutPanel2.GetControlFromPosition(removeColumnIndex, removeRowIndex);
-                    if (controlToRemove != null)
-                    {
-                        tableLayoutPanel2.Controls.Remove(controlToRemove);
-                        controlToRemove.Dispose();
-
-                        for (int rowIndex = removeRowIndex + 1; rowIndex < tableLayoutPanel2.RowCount; rowIndex++)
-                        {
-                            Control control = tableLayoutPanel2.GetControlFromPosition(removeColumnIndex, rowIndex);
-                            if (control != null)
-                            {
-                                tableLayoutPanel2.SetCellPosition(control, new TableLayoutPanelCellPosition(removeColumnIndex, rowIndex - 1));
-                            }
-                        }
-
-                        Control adjacentControl = tableLayoutPanel2.GetControlFromPosition(removeColumnIndex, removeRowIndex - 1);
-                        if (adjacentControl != null)
-                        {
-                            tableLayoutPanel2.SetRowSpan(adjacentControl, tableLayoutPanel2.GetRowSpan(adjacentControl) + 1);
-                        }
-
-                        tableLayoutPanel2.RowCount--;
-                    }
-
-
-                }
 
                 this.reactCount.Text = classPost.NoOfReacts.ToString();
                 this.UserProfileImage.BackgroundImage = classPost.PostCreator.ProfilePhoto;
@@ -110,7 +70,16 @@ namespace media
             {
                 button2.Image = global::media.Properties.Resources.icons8_favorite_96;
             }
+            this.Refresh();
 
+
+        }
+        private bool IsLabelVisibleOnScreen(System.Windows.Forms.Label label)
+        {
+            Rectangle labelRect = label.RectangleToScreen(label.ClientRectangle);
+            Rectangle screenRect = Screen.FromControl(label).WorkingArea;  // Use WorkingArea to exclude taskbars and other screen elements
+
+            return screenRect.IntersectsWith(labelRect);
         }
         public Post()
         {
@@ -193,9 +162,118 @@ namespace media
 
         }
 
-        private void Post_Load(object sender, EventArgs e)
+        private async void Post_Load(object sender, EventArgs e)
         {
+            // += ParentContainer_Scroll;
+            if (IsLabelVisibleOnScreen(lblUserName))
+            {
+                //MessageBox.Show("Post_Load");
+                DBImageOperation dbio = new DBImageOperation();
+                Task<System.Drawing.Image> image =  dbio.LoadPostImageFromDataBaseAsync(this.ClassPosts.PostId);
+                System.Drawing.Image postImage = await image;
+                if (postImage != null)
+                {
+                    this.postImagePanel.BackgroundImage = postImage;
+                    Methods.SetDoubleBuffer(postImagePanel, true);
+                    postImagePanel.BackColor = Methods.GetBackgroundAverageColor((Bitmap)postImagePanel.BackgroundImage);
+                    this.postImagePanel.BackColor = Methods.GetBackgroundAverageColor((Bitmap)this.postImagePanel.BackgroundImage);
 
+
+                }
+                else
+                {
+                    int removeColumnIndex = 0;
+                    int removeRowIndex = 2;
+
+                    Control controlToRemove = tableLayoutPanel2.GetControlFromPosition(removeColumnIndex, removeRowIndex);
+                    if (controlToRemove != null)
+                    {
+                        tableLayoutPanel2.Controls.Remove(controlToRemove);
+                        controlToRemove.Dispose();
+
+                        for (int rowIndex = removeRowIndex + 1; rowIndex < tableLayoutPanel2.RowCount; rowIndex++)
+                        {
+                            Control control = tableLayoutPanel2.GetControlFromPosition(removeColumnIndex, rowIndex);
+                            if (control != null)
+                            {
+                                tableLayoutPanel2.SetCellPosition(control, new TableLayoutPanelCellPosition(removeColumnIndex, rowIndex - 1));
+                            }
+                        }
+
+                        Control adjacentControl = tableLayoutPanel2.GetControlFromPosition(removeColumnIndex, removeRowIndex - 1);
+                        if (adjacentControl != null)
+                        {
+                            tableLayoutPanel2.SetRowSpan(adjacentControl, tableLayoutPanel2.GetRowSpan(adjacentControl) + 1);
+                        }
+
+                        tableLayoutPanel2.RowCount--;
+                    }
+
+
+                }
+
+
+            }
+        }
+            private void ParentContainer_Scroll(object sender, ScrollEventArgs e)
+            {
+
+                if (IsLabelVisibleOnScreen(lblUserName))
+                {
+                MessageBox.Show("ParentContainer_Scroll");
+
+                DBImageOperation dbio = new DBImageOperation();
+                    //System.Drawing.Image postImage = dbio.LoadPostImageFromDataBase(this.ClassPosts.PostId);
+
+/*                    if (postImage != null)
+                    {
+                        this.postImagePanel.BackgroundImage = postImage;
+                        Methods.SetDoubleBuffer(postImagePanel, true);
+                        postImagePanel.BackColor = Methods.GetBackgroundAverageColor((Bitmap)postImagePanel.BackgroundImage);
+                        this.postImagePanel.BackColor = Methods.GetBackgroundAverageColor((Bitmap)this.postImagePanel.BackgroundImage);
+
+
+                    }*/
+                    //else
+                    {
+                        int removeColumnIndex = 0;
+                        int removeRowIndex = 2;
+
+                        Control controlToRemove = tableLayoutPanel2.GetControlFromPosition(removeColumnIndex, removeRowIndex);
+                        if (controlToRemove != null)
+                        {
+                            tableLayoutPanel2.Controls.Remove(controlToRemove);
+                            controlToRemove.Dispose();
+
+                            for (int rowIndex = removeRowIndex + 1; rowIndex < tableLayoutPanel2.RowCount; rowIndex++)
+                            {
+                                Control control = tableLayoutPanel2.GetControlFromPosition(removeColumnIndex, rowIndex);
+                                if (control != null)
+                                {
+                                    tableLayoutPanel2.SetCellPosition(control, new TableLayoutPanelCellPosition(removeColumnIndex, rowIndex - 1));
+                                }
+                            }
+
+                            Control adjacentControl = tableLayoutPanel2.GetControlFromPosition(removeColumnIndex, removeRowIndex - 1);
+                            if (adjacentControl != null)
+                            {
+                                tableLayoutPanel2.SetRowSpan(adjacentControl, tableLayoutPanel2.GetRowSpan(adjacentControl) + 1);
+                            }
+
+                            tableLayoutPanel2.RowCount--;
+                        }
+
+
+                    }
+
+
+                }
+            
+        }
+        private bool IsPanelVisibleOnScreen(Panel panel)
+        {
+            Rectangle visibleRect = panel.Parent.RectangleToScreen(panel.Parent.ClientRectangle);
+            return visibleRect.IntersectsWith(panel.RectangleToScreen(panel.ClientRectangle));
         }
 
         private void label2_Click(object sender, EventArgs e)

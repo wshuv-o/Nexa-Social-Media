@@ -34,7 +34,7 @@ namespace media
                 }
             }
             FormTest p = new FormTest();
-            Application.Run(p);
+            Application.Run(new Nexa());
         }
         [DllImport("user32.dll")]
         private static extern bool SetProcessDPIAware();
