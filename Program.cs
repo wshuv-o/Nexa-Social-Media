@@ -33,8 +33,8 @@ namespace media
                     SetProcessDPIAware();
                 }
             }
-            media.Classes.Page p = new media.Classes.Page();
-            Application.Run(new Nexa());
+            FormTest p = new FormTest();
+            Application.Run(p);
         }
         [DllImport("user32.dll")]
         private static extern bool SetProcessDPIAware();

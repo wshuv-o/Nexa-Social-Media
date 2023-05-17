@@ -240,19 +240,25 @@ namespace media
         }
         public static void SendEmailWithCode(string recipient, string code)
         {
-            string senderEmail = "22-49070-1@student.iub.edu"; 
+            string senderEmail = "22-47171-1@student.iub.edu"; 
             string senderPassword = "4@hjbAbnc45"; 
             string smtpServer = "smtp.office365.com"; 
             int smtpPort = 587; 
+            try
+            {
+                SmtpClient smtpClient = new SmtpClient(smtpServer, smtpPort);
+                smtpClient.Credentials = new NetworkCredential(senderEmail, senderPassword);
+                smtpClient.EnableSsl = true;
 
-            SmtpClient smtpClient = new SmtpClient(smtpServer, smtpPort);
-            smtpClient.Credentials = new NetworkCredential(senderEmail, senderPassword);
-            smtpClient.EnableSsl = true;
+                MailMessage message = new MailMessage(senderEmail, recipient);
+                message.Subject = "Your verification code";
+                message.Body = $"Your verification code is {code}";
+                smtpClient.Send(message);
+            }
+            catch
+            {
 
-            MailMessage message = new MailMessage(senderEmail, recipient);
-            message.Subject = "Your verification code";
-            message.Body = $"Your verification code is {code}";
-            smtpClient.Send(message);
+            }
         }
         public static Color GetBackgroundAverageColor(Bitmap image)
         {

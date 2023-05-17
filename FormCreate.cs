@@ -108,7 +108,13 @@ namespace media
                         cmd.Parameters.AddWithValue("@d", this.NativeUser.Key);
                         cmd.ExecuteNonQuery();
 
-                        // Retrieve the generated postid
+                        if (postDetails.PostImage == null)
+                        {
+                            MessageBox.Show("Successfully posted");
+                            this.Close();
+                            return;
+                        }
+                        
                         string retrieveQuery = "SELECT LAST_INSERT_ID()";
                         using (MySqlCommand retrieveCmd = new MySqlCommand(retrieveQuery, conn))
                         {
@@ -131,6 +137,8 @@ namespace media
                             cmd.Parameters.AddWithValue("@b", postId);
                             cmd.ExecuteNonQuery();
                         }
+                        MessageBox.Show("Successfully posted");
+                        this.Close();
                         conn.Close();
                     }
                 }

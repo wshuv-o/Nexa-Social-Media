@@ -43,6 +43,7 @@ namespace media
                         conn.Open();
                         string query = "SELECT password FROM user WHERE email = @Email";
                         string queryPage = "SELECT page_password FROM pages WHERE page_email = @Email";
+                        string queryAdmin = "SELECT adminpassword FROM admin WHERE adminemail = @Email";
 
                         using (MySqlCommand cmd = new MySqlCommand(query, conn))
                         {
@@ -80,6 +81,26 @@ namespace media
                                         Classes.Page page = this.GetPageByEmail(email);
                                         openChildForm(new Page.FormPageHome(page));
                                         ClassNativeUser.NativePage = page;
+                                        return;
+                                    }
+                                }
+                            }
+                        }
+                        using (MySqlCommand cmd = new MySqlCommand(queryAdmin, conn))
+                        {
+                            cmd.Parameters.AddWithValue("@Email", email);
+
+                            using (MySqlDataReader reader = cmd.ExecuteReader())
+                            {
+                                if (reader.Read())
+                                {
+                                    string adminPassword = reader.GetString(0);
+                                    if (password.Equals(adminPassword))
+                                    {
+                                        this.panel1.Dispose();
+                                        Classes.Admin admin = this.GetAdminByEmail(email);
+                                        openChildForm(new FormAdminHome(admin));
+                                        ClassNativeUser.NativeAdmin = admin;
                                         return;
                                     }
                                 }
@@ -198,6 +219,36 @@ namespace media
                 Console.WriteLine("An error occurred: " + ex.Message);
             }
             return page;
+        }
+        public Classes.Admin GetAdminByEmail(string email)
+        {
+            DBImageOperation dbio = new DBImageOperation();
+            Classes.Admin admin = new Classes.Admin();
+            try
+            {
+                string query = "SELECT * FROM pages WHERE page_email = @Email";
+                MySqlConnection connection = new MySqlConnection(DatabaseCredentials.connectionStringLocalServer);
+                MySqlCommand command = new MySqlCommand(query, connection);
+                command.Parameters.AddWithValue("@Email", email);
+                connection.Open();
+                MySqlDataReader reader = command.ExecuteReader();
+                if (reader.Read())
+                {
+                    admin.AdminId = reader.GetInt32("adminid");
+                    admin.FirstName = reader.GetString("adminfirstname");
+                    admin.FirstName = reader.GetString("adminlastname");
+                    admin.Email = reader.GetString("adminemail");
+                    admin.AdminImage = dbio.LoadAdminImageFromDataBase(admin.AdminId);
+
+                }
+                reader.Close();
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("An error occurred: " + ex.Message);
+            }
+            return admin;
         }
 
 

@@ -11,6 +11,7 @@ namespace media
     internal static class ClassNativeUser
     {
         static User nativeUser;
+        static Classes.Admin nativeAdmin;
         static Classes.Page nativePage;
         public static List<int>nativeUsersFriendsId= new List<int>();
         public static List<User> distinctUserList;
@@ -50,6 +51,11 @@ namespace media
         {
             get { return nativePage; }
             set { nativePage = value; }
+        }
+        public static Classes.Admin NativeAdmin
+        {
+            get { return nativeAdmin; }
+            set { nativeAdmin = value; }
         }
         static ClassNativeUser()
         {

@@ -118,36 +118,6 @@ namespace media
         }
 
 
-        private void MainButton_Click(object sender, EventArgs e)
-        {
-
-            panelSecondary = new FlowLayoutPanel();
-            //panelSecondary.Dock = DockStyle.Fill;
-            panelSecondary.Visible = false; // Initially hidden
-
-            // Create three buttons and add them to the secondary panel
-            Button button1 = new Button();
-            button1.Text = "Button 1";
-            button1.Location = new Point(10, 10);
-            panelSecondary.Controls.Add(button1);
-
-            Button button2 = new Button();
-            button2.Text = "Button 2";
-            button2.Location = new Point(10, 40);
-            panelSecondary.Controls.Add(button2);
-
-            Button button3 = new Button();
-            button3.Text = "Button 3";
-            button3.Location = new Point(10, 70);
-            panelSecondary.Controls.Add(button3);
-
-            // Add the main panel to your form
-            this.panel1.Controls.Add(panelSecondary);
-
-
-           
-            panelSecondary.Visible = true;
-        }
 
 
 
@@ -313,7 +283,6 @@ namespace media
             using (MySqlConnection connection = new MySqlConnection(DatabaseCredentials.connectionStringLocalServer))
             {
                 string query = "UPDATE postofuser SET postReactCount = postReactCount + @incrementValue WHERE PostId = @postId";
-
                 MySqlCommand command = new MySqlCommand(query, connection);
                 command.Parameters.AddWithValue("@incrementValue", incrementValue);
                 command.Parameters.AddWithValue("@postId", postId);
@@ -334,61 +303,80 @@ namespace media
             return ClassNativeUser.NativeUser.Key;
         }
 
-        private void guna2CircleButton1_Click(object sender, EventArgs e)
+/*        private void guna2CircleButton1_Click(object sender, EventArgs e)
         {
-            // Create a new instance of the form
+            
             Form f = new Form();
+            Guna.UI2.WinForms.Guna2ShadowForm a = new Guna.UI2.WinForms.Guna2ShadowForm(this); 
 
-            // Set the StartPosition property of the new form to CenterParent
+            
             f.StartPosition = FormStartPosition.CenterParent;
+            f.FormBorderStyle= FormBorderStyle.None;
 
-            // Set the size of the form
-            f.Size = new Size(100, 150);
+            
+            f.Size = new Size(100, 200);
 
-            // Create a TableLayoutPanel and add it to the form
+            
             TableLayoutPanel tableLayoutPanel = new TableLayoutPanel();
             tableLayoutPanel.Dock = DockStyle.Fill;
-            tableLayoutPanel.RowCount = 3;
-            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 33.33f));
-            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 33.33f));
-            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 33.33f));
+            tableLayoutPanel.RowCount = 4;
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 25f));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 25f));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 25f));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 25f));
             f.Controls.Add(tableLayoutPanel);
 
-            // Create three buttons and add them to the TableLayoutPanel
-            Button button1 = new Button();
-            button1.Text = "Button 1";
-            button1.Dock = DockStyle.Fill;
-            button1.Click += (btnSender, btnEvent) =>
+            
+            Button buttonSave = new Button();
+            buttonSave.Text = "Save";
+            buttonSave.FlatStyle = FlatStyle.Flat;
+            buttonSave.FlatAppearance.BorderSize = 0;
+            buttonSave.Dock = DockStyle.Fill;
+            buttonSave.Click += (btnSender, btnEvent) =>
             {
                 f.DialogResult = DialogResult.OK;
                 f.Close();
             };
-            tableLayoutPanel.Controls.Add(button1, 0, 0);
+            tableLayoutPanel.Controls.Add(buttonSave, 0, 0);
 
-            Button button2 = new Button();
-            button2.Text = "Button 2";
-            button2.Dock = DockStyle.Fill;
-            button2.Click += (btnSender, btnEvent) =>
+            Button buttonReport = new Button();
+            buttonReport.Text = "Report";
+            buttonReport.FlatStyle = FlatStyle.Flat;
+            buttonReport.FlatAppearance.BorderSize = 0;
+            buttonReport.Dock = DockStyle.Fill;
+            buttonReport.Click += (btnSender, btnEvent) =>
             {
                 f.DialogResult = DialogResult.Yes;
                 f.Close();
             };
-            tableLayoutPanel.Controls.Add(button2, 0, 1);
+            tableLayoutPanel.Controls.Add(buttonReport, 0, 1);
 
-            Button button3 = new Button();
-            button3.Text = "Button 3";
-            button3.Dock = DockStyle.Fill;
-            button3.Click += (btnSender, btnEvent) =>
+            Button buttonDelete = new Button();
+            buttonDelete.Text = "Delete";
+            buttonDelete.FlatStyle = FlatStyle.Flat;
+            buttonDelete.FlatAppearance.BorderSize = 0;
+            buttonDelete.Dock = DockStyle.Fill;
+            buttonDelete.Click += (btnSender, btnEvent) =>
             {
                 f.DialogResult = DialogResult.No;
                 f.Close();
             };
-            tableLayoutPanel.Controls.Add(button3, 0, 2);
+            tableLayoutPanel.Controls.Add(buttonDelete, 0, 2);
 
-            // Show the new form as a dialog and get the result
+            Button buttonRemove = new Button();
+            buttonRemove.Text = "Edit";
+            buttonRemove.FlatStyle = FlatStyle.Flat;
+            buttonRemove.FlatAppearance.BorderSize = 0;
+            buttonRemove.Dock = DockStyle.Fill;
+            buttonRemove.Click += (btnSender, btnEvent) =>
+            {
+                f.DialogResult = DialogResult.Abort;
+                f.Close();
+            };
+            tableLayoutPanel.Controls.Add(buttonRemove, 0, 3);
+
             DialogResult result = f.ShowDialog();
 
-            // Display the returned value in a MessageBox
             int returnValue = 0;
             switch (result)
             {
@@ -401,8 +389,266 @@ namespace media
                 case DialogResult.No:
                     returnValue = 3;
                     break;
+                case DialogResult.Abort:
+                    returnValue = 4;
+                    break;
             }
-            MessageBox.Show("Returned value: " + returnValue.ToString());
+            if (this.ClassPosts.PostCreator.Key == ClassNativeUser.NativeUser.Key && returnValue == 3)
+            {
+                try
+                {
+                    using (MySqlConnection conn = new MySqlConnection(DatabaseCredentials.connectionStringLocalServer))
+                    {
+                        conn.Open();
+
+                        // Check if a row exists in mediacontent_postuser for the given postid
+                        string checkQuery = "SELECT COUNT(*) FROM mediacontent_postuser WHERE postid = @PostId";
+                        using (MySqlCommand checkCommand = new MySqlCommand(checkQuery, conn))
+                        {
+                            checkCommand.Parameters.AddWithValue("@PostId", this.ClassPosts.PostId);
+                            int rowCount = Convert.ToInt32(checkCommand.ExecuteScalar());
+
+                            if (rowCount > 0)
+                            {
+                                // Delete the row from mediacontent_postuser
+                                string deleteMediaQuery = "DELETE FROM mediacontent_postuser WHERE postid = @PostId";
+                                using (MySqlCommand deleteMediaCommand = new MySqlCommand(deleteMediaQuery, conn))
+                                {
+                                    deleteMediaCommand.Parameters.AddWithValue("@PostId", this.ClassPosts.PostId);
+                                    deleteMediaCommand.ExecuteNonQuery();
+                                }
+                            }
+                        }
+
+                        // Delete the row from postofuser
+                        string deletePostQuery = "DELETE FROM postofuser WHERE postid = @PostId";
+                        using (MySqlCommand deletePostCommand = new MySqlCommand(deletePostQuery, conn))
+                        {
+                            deletePostCommand.Parameters.AddWithValue("@PostId", this.ClassPosts.PostId);
+                            deletePostCommand.ExecuteNonQuery();
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+
+        }
+
+*/        
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void yyy_guna2CircleButton1_Click(object sender, EventArgs e)
+        {
+            Form f = new Form();
+            Guna.UI2.WinForms.Guna2ShadowForm a = new Guna.UI2.WinForms.Guna2ShadowForm(f);
+            Guna.UI2.WinForms.Guna2Elipse y = new Guna.UI2.WinForms.Guna2Elipse();
+
+            f.FormBorderStyle = FormBorderStyle.None;
+            y.TargetControl = f;
+            y.BorderRadius = 20;
+
+            f.Size = new Size(100, 200);
+
+            TableLayoutPanel tableLayoutPanel = new TableLayoutPanel();
+            tableLayoutPanel.Dock = DockStyle.Fill;
+            tableLayoutPanel.RowCount = 4;
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 25f));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 25f));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 25f));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 25f));
+            f.Controls.Add(tableLayoutPanel);
+
+            Button buttonSave = new Button();
+            buttonSave.Text = "Save";
+            buttonSave.FlatStyle = FlatStyle.Flat;
+            buttonSave.FlatAppearance.BorderSize = 0;
+            buttonSave.Dock = DockStyle.Fill;
+            buttonSave.Click += (btnSender, btnEvent) =>
+            {
+                f.DialogResult = DialogResult.OK;
+                f.Close();
+            };
+            tableLayoutPanel.Controls.Add(buttonSave, 0, 0);
+
+            Button buttonReport = new Button();
+            buttonReport.Text = "Report";
+            buttonReport.FlatStyle = FlatStyle.Flat;
+            buttonReport.FlatAppearance.BorderSize = 0;
+            buttonReport.Dock = DockStyle.Fill;
+            buttonReport.Click += (btnSender, btnEvent) =>
+            {
+                f.DialogResult = DialogResult.Yes;
+                f.Close();
+            };
+            tableLayoutPanel.Controls.Add(buttonReport, 0, 1);
+
+            Button buttonDelete = new Button();
+            buttonDelete.Text = "Delete";
+            buttonDelete.FlatStyle = FlatStyle.Flat;
+            buttonDelete.FlatAppearance.BorderSize = 0;
+            buttonDelete.Dock = DockStyle.Fill;
+            buttonDelete.Click += (btnSender, btnEvent) =>
+            {
+                f.DialogResult = DialogResult.No;
+                f.Close();
+            };
+            tableLayoutPanel.Controls.Add(buttonDelete, 0, 2);
+
+            Button buttonRemove = new Button();
+            buttonRemove.Text = "Edit";
+            buttonRemove.FlatStyle = FlatStyle.Flat;
+            buttonRemove.FlatAppearance.BorderSize = 0;
+            buttonRemove.Dock = DockStyle.Fill;
+            buttonRemove.Click += (btnSender, btnEvent) =>
+            {
+                f.DialogResult = DialogResult.Abort;
+                f.Close();
+            };
+            tableLayoutPanel.Controls.Add(buttonRemove, 0, 3);
+
+            f.StartPosition = FormStartPosition.Manual;
+            f.Location = new Point(
+                this.Location.X + (this.Width - f.Width) / 2,
+                this.Location.Y + (this.Height - f.Height) / 2
+            );
+
+            this.Click += (clickSender, clickEvent) =>
+            {
+                if (f.Visible)
+                {
+                    f.Close();
+                }
+            };
+
+            f.Show(this);
+
+            f.FormClosing += (closingSender, closingEvent) =>
+            {
+                f.Owner = null;
+            };
+
+            int returnValue = 0;
+            if (f.DialogResult == DialogResult.OK)
+            {
+                returnValue = 1;
+            }
+            else if (f.DialogResult == DialogResult.Yes)
+            {
+                returnValue = 2;
+            }
+            else if (f.DialogResult == DialogResult.No)
+            {
+                returnValue = 3;
+            }
+            else if (f.DialogResult == DialogResult.Abort)
+            {
+                returnValue = 4;
+            }
+        }
+
+
+        private void guna2CircleButton1_Click(object sender, EventArgs e)
+        {
+            FormTest f = new FormTest();
+            Guna.UI2.WinForms.Guna2ShadowForm a = new Guna.UI2.WinForms.Guna2ShadowForm(f);
+
+
+            f.FormBorderStyle = FormBorderStyle.None;
+            TableLayoutPanel tableLayoutPanel = new TableLayoutPanel();
+            tableLayoutPanel.Dock = DockStyle.Fill;
+            tableLayoutPanel.RowCount = 5;
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 20f));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 20f));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 20f));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 20f));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 20f));
+            tableLayoutPanel.Anchor= AnchorStyles.None;
+            tableLayoutPanel.Size = new Size(200, 300);
+            tableLayoutPanel.Location= new Point(860, 310);
+            f.Controls.Add(tableLayoutPanel);
+
+            Guna.UI2.WinForms.Guna2Button buttonSave = new Guna.UI2.WinForms.Guna2Button();
+            buttonSave.Text = "Save";
+            buttonSave.FillColor = Color.FromArgb(80, 200, 120);
+            buttonSave.HoverState.FillColor = Color.FromArgb(100, 220, 140);
+            buttonSave.HoverState.Parent = buttonSave;
+            buttonSave.BorderRadius = 15;
+            buttonSave.BorderThickness = 1;
+            buttonSave.Dock = DockStyle.Fill;
+            buttonSave.Click += (btnSender, btnEvent) =>
+            {
+                f.Close();
+            };
+            tableLayoutPanel.Controls.Add(buttonSave, 0, 0);
+
+            Guna.UI2.WinForms.Guna2Button buttonReport = new Guna.UI2.WinForms.Guna2Button();
+            buttonReport.Text = "Report";
+            buttonReport.FillColor = Color.FromArgb(200, 120, 80);
+            buttonReport.HoverState.FillColor = Color.FromArgb(220, 140, 100);
+            buttonReport.HoverState.Parent = buttonReport;
+            buttonReport.BorderRadius = 15;
+            buttonReport.BorderThickness = 2;
+            buttonReport.Dock = DockStyle.Fill;
+            buttonReport.Click += (btnSender, btnEvent) =>
+            {
+                f.Close();
+            };
+            tableLayoutPanel.Controls.Add(buttonReport, 0, 1);
+
+            Guna.UI2.WinForms.Guna2Button buttonDelete = new Guna.UI2.WinForms.Guna2Button();
+            buttonDelete.Text = "Delete";
+            buttonDelete.FillColor = Color.FromArgb(200, 80, 80);
+            buttonDelete.HoverState.FillColor = Color.FromArgb(220, 100, 100);
+            buttonDelete.HoverState.Parent = buttonDelete;
+            buttonDelete.BorderRadius = 15;
+            buttonDelete.BorderThickness = 1;
+            buttonDelete.Dock = DockStyle.Fill;
+            buttonDelete.Click += (btnSender, btnEvent) =>
+            {
+                f.Close();
+            };
+            tableLayoutPanel.Controls.Add(buttonDelete, 0, 2);
+
+            Guna.UI2.WinForms.Guna2Button buttonRemove = new Guna.UI2.WinForms.Guna2Button();
+            buttonRemove.Text = "Edit";
+            buttonRemove.FillColor = Color.FromArgb(120, 120, 200);
+            buttonRemove.HoverState.FillColor = Color.FromArgb(140, 140, 220);
+            buttonRemove.HoverState.Parent = buttonRemove;
+            buttonRemove.BorderRadius = 15;
+            buttonRemove.BorderThickness = 1;
+            buttonRemove.Dock = DockStyle.Fill;
+            buttonRemove.Click += (btnSender, btnEvent) =>
+            {
+                f.Close();
+            };
+            tableLayoutPanel.Controls.Add(buttonRemove, 0, 3);
+
+            Guna.UI2.WinForms.Guna2Button buttonCancel = new Guna.UI2.WinForms.Guna2Button();
+            buttonCancel.Text = "Cancel";
+            buttonCancel.FillColor = Color.FromArgb(150, 150, 150);
+            buttonCancel.HoverState.FillColor = Color.FromArgb(170, 170, 170);
+            buttonCancel.HoverState.Parent = buttonCancel;
+            buttonCancel.BorderRadius = 15;
+            buttonCancel.BorderThickness = 1;
+            buttonCancel.Dock = DockStyle.Fill;
+            buttonCancel.Click += (btnSender, btnEvent) =>
+            {
+                f.Close();
+            };
+            tableLayoutPanel.Controls.Add(buttonCancel, 0, 4);
+            tableLayoutPanel.BringToFront();
+            // Center the child form on the parent form
+            //f.StartPosition = FormStartPosition.CenterParent;
+
+            // Show the form as a modal dialog
+            f.ShowDialog(this);
+            
+
         }
 
     }

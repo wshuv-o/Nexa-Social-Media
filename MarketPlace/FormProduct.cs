@@ -37,10 +37,5 @@ namespace media.MarketPlace
         {
 
         }
-
-        private void FormProduct_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

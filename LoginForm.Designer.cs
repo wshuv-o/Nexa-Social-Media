@@ -127,9 +127,9 @@ namespace media
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label4.Location = new System.Drawing.Point(175, 521);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(116, 38);
+            this.label4.Size = new System.Drawing.Size(98, 38);
             this.label4.TabIndex = 9;
-            this.label4.Text = "Subha";
+            this.label4.Text = "Nexa";
             // 
             // label3
             // 

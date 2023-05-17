@@ -30,26 +30,26 @@
         {
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.lblPrice = new System.Windows.Forms.Label();
-            this.lblProductName = new System.Windows.Forms.Label();
-            this.lblProductDesc = new System.Windows.Forms.Label();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.productSold = new System.Windows.Forms.Label();
             this.productImage = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.btnProductRating = new Guna.UI2.WinForms.Guna2Button();
+            this.productSold = new System.Windows.Forms.Label();
             this.btnCart = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.lblProductDesc = new System.Windows.Forms.Label();
+            this.lblProductName = new System.Windows.Forms.Label();
+            this.lblPrice = new System.Windows.Forms.Label();
             this.labelSign = new System.Windows.Forms.Label();
             this.guna2ShadowPanel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.productImage)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.productImage)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2ShadowPanel1
             // 
-            this.guna2ShadowPanel1.BackColor = System.Drawing.Color.White;
+            this.guna2ShadowPanel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2ShadowPanel1.Controls.Add(this.tableLayoutPanel1);
             this.guna2ShadowPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2ShadowPanel1.FillColor = System.Drawing.Color.White;
@@ -76,6 +76,17 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(302, 416);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
+            // productImage
+            // 
+            this.productImage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.productImage.Image = global::media.Properties.Resources._338458104_1527903524367608_1923566569049492375_n_removebg_preview;
+            this.productImage.ImageRotate = 0F;
+            this.productImage.Location = new System.Drawing.Point(3, 3);
+            this.productImage.Name = "productImage";
+            this.productImage.Size = new System.Drawing.Size(296, 252);
+            this.productImage.TabIndex = 0;
+            this.productImage.TabStop = false;
+            // 
             // guna2Panel1
             // 
             this.guna2Panel1.Controls.Add(this.tableLayoutPanel2);
@@ -89,42 +100,12 @@
             this.guna2Panel1.Size = new System.Drawing.Size(296, 152);
             this.guna2Panel1.TabIndex = 1;
             // 
-            // lblPrice
-            // 
-            this.lblPrice.AutoSize = true;
-            this.lblPrice.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrice.Location = new System.Drawing.Point(25, 11);
-            this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(42, 28);
-            this.lblPrice.TabIndex = 1;
-            this.lblPrice.Text = "150";
-            // 
-            // lblProductName
-            // 
-            this.lblProductName.AutoSize = true;
-            this.lblProductName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProductName.Location = new System.Drawing.Point(5, 39);
-            this.lblProductName.Name = "lblProductName";
-            this.lblProductName.Size = new System.Drawing.Size(70, 28);
-            this.lblProductName.TabIndex = 2;
-            this.lblProductName.Text = "label1";
-            // 
-            // lblProductDesc
-            // 
-            this.lblProductDesc.AutoSize = true;
-            this.lblProductDesc.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProductDesc.Location = new System.Drawing.Point(9, 70);
-            this.lblProductDesc.Name = "lblProductDesc";
-            this.lblProductDesc.Size = new System.Drawing.Size(43, 17);
-            this.lblProductDesc.TabIndex = 3;
-            this.lblProductDesc.Text = "label2";
-            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 3;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.48485F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.51515F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 98F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 99F));
             this.tableLayoutPanel2.Controls.Add(this.btnProductRating, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.productSold, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnCart, 2, 0);
@@ -135,29 +116,6 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(296, 45);
             this.tableLayoutPanel2.TabIndex = 4;
-            // 
-            // productSold
-            // 
-            this.productSold.AutoSize = true;
-            this.productSold.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.productSold.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.productSold.Location = new System.Drawing.Point(99, 0);
-            this.productSold.Name = "productSold";
-            this.productSold.Size = new System.Drawing.Size(96, 45);
-            this.productSold.TabIndex = 1;
-            this.productSold.Text = "Sold 32";
-            this.productSold.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // productImage
-            // 
-            this.productImage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.productImage.Image = global::media.Properties.Resources._338458104_1527903524367608_1923566569049492375_n_removebg_preview;
-            this.productImage.ImageRotate = 0F;
-            this.productImage.Location = new System.Drawing.Point(3, 3);
-            this.productImage.Name = "productImage";
-            this.productImage.Size = new System.Drawing.Size(296, 252);
-            this.productImage.TabIndex = 0;
-            this.productImage.TabStop = false;
             // 
             // btnProductRating
             // 
@@ -174,9 +132,21 @@
             this.btnProductRating.ImageSize = new System.Drawing.Size(25, 25);
             this.btnProductRating.Location = new System.Drawing.Point(3, 3);
             this.btnProductRating.Name = "btnProductRating";
-            this.btnProductRating.Size = new System.Drawing.Size(90, 39);
+            this.btnProductRating.Size = new System.Drawing.Size(89, 39);
             this.btnProductRating.TabIndex = 0;
             this.btnProductRating.Text = "6.5";
+            // 
+            // productSold
+            // 
+            this.productSold.AutoSize = true;
+            this.productSold.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.productSold.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.productSold.Location = new System.Drawing.Point(98, 0);
+            this.productSold.Name = "productSold";
+            this.productSold.Size = new System.Drawing.Size(95, 45);
+            this.productSold.TabIndex = 1;
+            this.productSold.Text = "Sold 32";
+            this.productSold.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnCart
             // 
@@ -194,6 +164,36 @@
             this.btnCart.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnCart.Size = new System.Drawing.Size(39, 39);
             this.btnCart.TabIndex = 2;
+            // 
+            // lblProductDesc
+            // 
+            this.lblProductDesc.AutoSize = true;
+            this.lblProductDesc.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProductDesc.Location = new System.Drawing.Point(9, 70);
+            this.lblProductDesc.Name = "lblProductDesc";
+            this.lblProductDesc.Size = new System.Drawing.Size(43, 17);
+            this.lblProductDesc.TabIndex = 3;
+            this.lblProductDesc.Text = "label2";
+            // 
+            // lblProductName
+            // 
+            this.lblProductName.AutoSize = true;
+            this.lblProductName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProductName.Location = new System.Drawing.Point(5, 39);
+            this.lblProductName.Name = "lblProductName";
+            this.lblProductName.Size = new System.Drawing.Size(70, 28);
+            this.lblProductName.TabIndex = 2;
+            this.lblProductName.Text = "label1";
+            // 
+            // lblPrice
+            // 
+            this.lblPrice.AutoSize = true;
+            this.lblPrice.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrice.Location = new System.Drawing.Point(25, 11);
+            this.lblPrice.Name = "lblPrice";
+            this.lblPrice.Size = new System.Drawing.Size(42, 28);
+            this.lblPrice.TabIndex = 1;
+            this.lblPrice.Text = "150";
             // 
             // labelSign
             // 
@@ -216,14 +216,13 @@
             this.Controls.Add(this.guna2ShadowPanel1);
             this.Name = "FormProduct";
             this.Text = "FormProduct";
-            this.Load += new System.EventHandler(this.FormProduct_Load);
             this.guna2ShadowPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.productImage)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.productImage)).EndInit();
             this.ResumeLayout(false);
 
         }

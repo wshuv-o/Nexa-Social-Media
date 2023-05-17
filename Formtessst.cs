@@ -50,7 +50,7 @@ namespace media
                                     int id = reader.GetInt32("userid");
                                     string name = reader.GetString("userfirstname");
                                     // Retrieve other columns as needed
-                                    this.label2.Text = name;
+                                    //this.label2.Text = name;
 
                                 }
                             }

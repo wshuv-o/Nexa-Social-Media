@@ -122,6 +122,7 @@
             this.guna2TileButton7.Size = new System.Drawing.Size(214, 68);
             this.guna2TileButton7.TabIndex = 16;
             this.guna2TileButton7.Text = "Exit";
+            this.guna2TileButton7.Click += new System.EventHandler(this.guna2TileButton7_Click);
             // 
             // guna2TileButton5
             // 
@@ -263,6 +264,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1625, 907);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // FormAdminHome
             // 

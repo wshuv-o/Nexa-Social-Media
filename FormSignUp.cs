@@ -74,8 +74,11 @@ namespace media
                 //n.Dock=DockStyle.Fill;
                 Methods.OpenChildForm(n, guna2GradientPanel1);
             }
-            catch (Exception ex) {// MessageBox.Show(Convert.ToString(ex));
-                                  }
+            catch (Exception ex) 
+            {
+                // MessageBox.Show(Convert.ToString(ex));
+
+            }
 
         }
 
@@ -221,6 +224,11 @@ namespace media
             guna2Button4.Size = new System.Drawing.Size(237, 45);
             guna2Button4.TabIndex = 32;
             guna2Button4.Text = "Sign in";
+            guna2Button4.Click += (sender, e) =>
+            {
+                Nexa n = new Nexa();
+                Methods.OpenChildForm(n, guna2GradientPanel1);
+            };
 
             this.guna2Panel3.Controls.Add(panel1);
         }

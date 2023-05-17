@@ -18,15 +18,10 @@
                 components.Dispose();
             }
             base.Dispose(disposing);
-        }
+        }            
+            System.Windows.Forms.Label lblUserName;
 
         #region Windows Form Designer generated code
-
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
-                    System.Windows.Forms.Label lblUserName;
 private void InitializeComponent()
         {
             this.basePanel = new System.Windows.Forms.Panel();
@@ -232,7 +227,7 @@ private void InitializeComponent()
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.Turquoise;
+            this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.postText);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -256,7 +251,7 @@ private void InitializeComponent()
             // postText
             // 
             this.postText.AutoSize = true;
-            this.postText.BackColor = System.Drawing.Color.Wheat;
+            this.postText.BackColor = System.Drawing.Color.White;
             this.postText.Dock = System.Windows.Forms.DockStyle.Fill;
             this.postText.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.postText.Font = new System.Drawing.Font("Microsoft YaHei", 11F);
@@ -294,7 +289,7 @@ private void InitializeComponent()
             this.guna2Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.guna2Button2.BorderRadius = 10;
             this.guna2Button2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Button2.FillColor = System.Drawing.Color.SkyBlue;
+            this.guna2Button2.FillColor = System.Drawing.Color.WhiteSmoke;
             this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button2.ForeColor = System.Drawing.Color.White;
             this.guna2Button2.Image = global::media.Properties.Resources.icons8_share_96;
@@ -304,6 +299,7 @@ private void InitializeComponent()
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.Size = new System.Drawing.Size(291, 36);
             this.guna2Button2.TabIndex = 4;
+            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // guna2Button1
             // 
@@ -311,7 +307,7 @@ private void InitializeComponent()
             this.guna2Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.guna2Button1.BorderRadius = 10;
             this.guna2Button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Button1.FillColor = System.Drawing.Color.SkyBlue;
+            this.guna2Button1.FillColor = System.Drawing.Color.WhiteSmoke;
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
             this.guna2Button1.Image = global::media.Properties.Resources.icons8_speech_bubble_96;
@@ -328,7 +324,7 @@ private void InitializeComponent()
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button2.BorderRadius = 10;
             this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button2.FillColor = System.Drawing.Color.SkyBlue;
+            this.button2.FillColor = System.Drawing.Color.WhiteSmoke;
             this.button2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Image = global::media.Properties.Resources.icons8_heart_96;

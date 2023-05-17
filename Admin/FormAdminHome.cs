@@ -13,9 +13,19 @@ namespace media
 {
     public partial class FormAdminHome : Form
     {
-        public FormAdminHome()
+        private Classes.Admin nativeAdmin;
+        public Classes.Admin NativeAdmin
         {
+            get { return nativeAdmin; }
+            set { nativeAdmin = value; }
+        }
+
+        public FormAdminHome(Classes.Admin nativeAdmin)
+        {
+            this.NativeAdmin = nativeAdmin;
             InitializeComponent();
+            this.label1.Text = NativeAdmin.FirstName + " " + NativeAdmin.FirstName;
+            this.ImageAdmin.Image = NativeAdmin.AdminImage;
         }
 
         private void label5_Click(object sender, EventArgs e)
@@ -83,6 +93,16 @@ namespace media
         private void FormAdminHome_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2TileButton7_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
         }
     }
 }

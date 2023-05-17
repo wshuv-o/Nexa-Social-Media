@@ -79,7 +79,6 @@ namespace media
             byte[] imageBytes = GetPostImage(this.PostId);
             if (imageBytes == null)
             {
-                //MessageBox.Show("No image found for the post ID " + PostId + ".", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
 
@@ -88,11 +87,21 @@ namespace media
         }
         public Image LoadPageProfileImageFromDataBase(int pageId)
         {
-            //this.PostId = postId;
             byte[] imageBytes = GetPageProfileImage(pageId);
             if (imageBytes == null)
             {
-                //MessageBox.Show("No image found for the post ID " + PostId + ".", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+
+            Image image = ByteArrayToImage(imageBytes);
+            return image;
+        }
+
+        public Image LoadAdminImageFromDataBase(int adminId)
+        {
+            byte[] imageBytes = GetAdminImage(adminId);
+            if (imageBytes == null)
+            {
                 return null;
             }
 
@@ -126,17 +135,12 @@ namespace media
                     return stream.ToArray();
                 }
             
-/*            catch(Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-                return null;
-            }*/
         }
         public byte[] ImageToByteArray(Image image)
         {
             using (MemoryStream stream = new MemoryStream())
             {
-                image.Save(stream, ImageFormat.Png); // Save the image as PNG format
+                image.Save(stream, ImageFormat.Png); 
                 return stream.ToArray();
             }
         }
@@ -252,6 +256,38 @@ namespace media
 
             return null;
         }
+        public byte[] GetAdminImage(int adminId)
+        {
+
+            using (MySqlConnection connection = new MySqlConnection(ConnectionString))
+            {
+                connection.Open();
+
+                string query = "SELECT profilephoto FROM admin WHERE adminId = @adminId";
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@adminId", adminId);
+
+                    using (MySqlDataReader reader = command.ExecuteReader(CommandBehavior.SingleRow))
+                    {
+                        if (reader.Read())
+                        {
+                            if (!reader.IsDBNull(0))
+                            {
+                                return (byte[])reader[0];
+                            }
+                        }
+                        reader.Close();
+                    }
+                }
+                connection.Close();
+            }
+
+            return null;
+        }
+
+
         public byte[] GetProductImage(int productId)
         {
 
