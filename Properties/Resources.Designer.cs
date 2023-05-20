@@ -263,6 +263,16 @@ namespace media.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_back_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-back-32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_bangladesh_32 {
             get {
                 object obj = ResourceManager.GetObject("icons8-bangladesh-32", resourceCulture);
@@ -476,6 +486,26 @@ namespace media.Properties {
         internal static System.Drawing.Bitmap icons8_language_skill_32 {
             get {
                 object obj = ResourceManager.GetObject("icons8-language-skill-32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_less_than_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-less-than-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_less_than_50__1_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-less-than-50 (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -793,6 +823,16 @@ namespace media.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ngW6xzWdgN__1_ {
+            get {
+                object obj = ResourceManager.GetObject("ngW6xzWdgN (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap noMic {
             get {
                 object obj = ResourceManager.GetObject("noMic", resourceCulture);
@@ -956,6 +996,16 @@ namespace media.Properties {
         internal static System.Drawing.Bitmap rsz_1picsart_09_0m7_094049 {
             get {
                 object obj = ResourceManager.GetObject("rsz_1picsart_09-0m7-094049", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rsz_1picsart_09_0m7_0940491 {
+            get {
+                object obj = ResourceManager.GetObject("rsz_1picsart_09-0m7-0940491", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

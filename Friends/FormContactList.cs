@@ -31,5 +31,9 @@ namespace media.Friends
         {
 
         }
+        private  void OpenContact(object sender, EventArgs e)
+        {
+            Methods.OpenChildForm2(new FormProfile(this.Contact), FormBase.panelSubMain);
+        }
     }
 }

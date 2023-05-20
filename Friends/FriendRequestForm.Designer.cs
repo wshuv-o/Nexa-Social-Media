@@ -36,17 +36,17 @@ namespace media.Friends
             this.btnAccept = new Guna.UI2.WinForms.Guna2Button();
             this.frProfileName = new System.Windows.Forms.Label();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            this.frProfileImage = new media.CustomRoundPictureBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.frProfileImage = new media.CustomRoundPictureBox();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.frProfileImage)).BeginInit();
             this.tableLayoutPanel4.SuspendLayout();
             this.tabControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.frProfileImage)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel2
@@ -100,8 +100,6 @@ namespace media.Friends
             this.btnDecline.Size = new System.Drawing.Size(124, 36);
             this.btnDecline.TabIndex = 1;
             this.btnDecline.Text = "Decline";
-            this.btnDecline.EnabledChanged += button1_EnabledChanged;
-
             // 
             // btnAccept
             // 
@@ -131,6 +129,7 @@ namespace media.Friends
             this.frProfileName.Size = new System.Drawing.Size(132, 28);
             this.frProfileName.TabIndex = 1;
             this.frProfileName.Text = "Wahid Shuvo";
+            this.frProfileName.Click += new System.EventHandler(this.frProfileName_Click);
             // 
             // guna2Panel3
             // 
@@ -148,6 +147,26 @@ namespace media.Friends
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.Size = new System.Drawing.Size(95, 84);
             this.guna2Panel3.TabIndex = 1;
+            // 
+            // frProfileImage
+            // 
+            this.frProfileImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.frProfileImage.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.frProfileImage.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.frProfileImage.BorderColor2 = System.Drawing.Color.HotPink;
+            this.frProfileImage.BorderDashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.frProfileImage.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.frProfileImage.BorderSize = 2;
+            this.frProfileImage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.frProfileImage.GradientAngle = 50F;
+            this.frProfileImage.Image = global::media.Properties.Resources.PicsArt_09_0m7_09_40_49;
+            this.frProfileImage.Location = new System.Drawing.Point(0, 0);
+            this.frProfileImage.Name = "frProfileImage";
+            this.frProfileImage.Size = new System.Drawing.Size(95, 84);
+            this.frProfileImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.frProfileImage.TabIndex = 1;
+            this.frProfileImage.TabStop = false;
+            this.frProfileImage.Click += new System.EventHandler(this.frProfileImage_Click);
             // 
             // tableLayoutPanel4
             // 
@@ -195,25 +214,6 @@ namespace media.Friends
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // frProfileImage
-            // 
-            this.frProfileImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.frProfileImage.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.frProfileImage.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.frProfileImage.BorderColor2 = System.Drawing.Color.HotPink;
-            this.frProfileImage.BorderDashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.frProfileImage.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.frProfileImage.BorderSize = 2;
-            this.frProfileImage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.frProfileImage.GradientAngle = 50F;
-            this.frProfileImage.Image = global::media.Properties.Resources.PicsArt_09_0m7_09_40_49;
-            this.frProfileImage.Location = new System.Drawing.Point(0, 0);
-            this.frProfileImage.Name = "frProfileImage";
-            this.frProfileImage.Size = new System.Drawing.Size(95, 84);
-            this.frProfileImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.frProfileImage.TabIndex = 1;
-            this.frProfileImage.TabStop = false;
-            // 
             // FriendRequestForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -228,9 +228,9 @@ namespace media.Friends
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.guna2Panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.frProfileImage)).EndInit();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.frProfileImage)).EndInit();
             this.ResumeLayout(false);
 
         }

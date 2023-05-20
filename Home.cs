@@ -197,6 +197,7 @@ namespace media
                 {
 
                     posts.Add(new Post(distinctPostList[i]));
+                    //Methods.OpenChildForm2(posts[i], postAdopters[i].panelBase);
                     Methods.OpenChildForm2(posts[i], postAdopters[i].panelBase);
                     panelFeed.Controls.Add(postAdopters[i].panelBase);
 
@@ -249,24 +250,9 @@ namespace media
                 string postPermission = (string)reader["postPermission"];
                 int postReact = (int)reader["postReactCount"];
                 int Key = reader.GetInt32("userid");
-                //string mediaContent = (string)reader["image"];
-                //System.Drawing.Image postImage = dbio.LoadPostImageFromDataBase(postID);
                 User postCreator = dbio.GetUserByUserId(Key);
-/*                if (postImage != null)
-                {
-                    j += 1;
-
-                    Classes.ClassPost p = new Classes.ClassPost(postID, postText, postTime, postPermission, postReact, postCreator);
-                    //MessageBox.Show(p.PostText);
-                    classPostList.Add(p);
-                }
-                else
-                {*/
-                    j += 1;
-                    Classes.ClassPost p = new Classes.ClassPost(postID, postText, postTime, postPermission, postReact, postCreator);
-                    //MessageBox.Show(p.PostText);
-                    classPostList.Add(p);
-                //}
+                Classes.ClassPost p = new Classes.ClassPost(postID, postText, postTime, postPermission, postReact, postCreator);
+                classPostList.Add(p);
             }
             reader.Close();
 
@@ -302,7 +288,6 @@ namespace media
                      .Select(g => g.First())
                      .ToArray();
             }
-            MessageBox.Show(distinctPostList.Length.ToString());
 
             List<User> distinctUserList = new List<User>();
 
@@ -316,29 +301,37 @@ namespace media
                     .ToList();
             }
             ClassNativeUser.DistinctUserList = distinctUserList;
-            MessageBox.Show("sdgfdg" + distinctUserList.Count.ToString());
-            MessageBox.Show("there :" + ClassNativeUser.DistinctUserList.Count.ToString());
 
 
+            Panel f = new Panel();
+            f.Size = new Size(870, 350);
+            f.Location = new Point(25, 20);
+            f.BackColor = Color.WhiteSmoke;
+            Methods.OpenChildForm2(new Story(), f);
+            panelFeed.Controls.Add(f);
 
+            Panel f2 = new Panel();
+            f2.Size = new Size(730, 150);
+            f2.Location = new Point(200, 20);
+            f2.Margin=new Padding(70,0,0,10);
+            f2.BackColor = Color.WhiteSmoke;
+            Methods.OpenChildForm2(new Form3(), f2);
+            panelFeed.Controls.Add(f2);
 
 
 
             for (int i = 0; i < distinctPostList.Length; i++)
             {
                 postAdopters.Add(new PostAdopter(distinctPostList[i]));
-                //MessageBox.Show(x);
 
                 if (distinctPostList[i].PostImage != null)
                 {
-                    // x = x + "x" + distinctPostList[i].PostId;
                     posts.Add(new Post(distinctPostList[i]));
                     Methods.OpenChildForm2(posts[i], postAdopters[i].panelBase);
                     panelFeed.Controls.Add(postAdopters[i].panelBase);
                 }
                 else
                 {
-                    // x = x + "y" + distinctPostList[i].PostId;
                     posts.Add(new Post(distinctPostList[i]));
                     Methods.OpenChildForm2(posts[i], postAdopters[i].panelBase);
                     panelFeed.Controls.Add(postAdopters[i].panelBase);
@@ -369,32 +362,21 @@ namespace media
                 int Key = readerx.GetInt32("requestfrom");
                 User requesterProfile = dbio.GetUserByUserId(Key);
                 ClassFriendRequest cfr = new ClassFriendRequest(requestid, this.NativeUser.Key, Key, requestStatus, requesterProfile);
-                //MessageBox.Show(p.PostText);
                 classFriendRequestlist.Add(cfr);
-                //MessageBox.Show(classFriendRequestlist.Count.ToString());
-
             }
             readerx.Close();
             connection.Close();
             for (int i = 0; i < classFriendRequestlist.Count; i++)
             {
-
                 friendRequestForms.Add(new Friends.FriendRequestForm(classFriendRequestlist[i]));
                 friendRequestAdopter.Add(new FriendRequestAdopter(friendRequestForms[i]));
-                //Methods.OpenChildForm(friendRequestForms[i], friendRequestAdopter[i].panelEachContact);
                 this.friendRequestPanel.Controls.Add(friendRequestAdopter[i].panelEachContact);
-
-
             }
-            //MessageBox.Show(classFriendRequestlist.Count.ToString());
-            //MessageBox.Show(friendRequestAdopter.Count.ToString());
             for (int i = 0; i < ClassNativeUser.DistinctUserList.Count; i++)
             {
                 formContactLists.Add(new Friends.FormContactList(ClassNativeUser.DistinctUserList[i]));
                 contactAdaptorPanel.Add(new ContactAdaptorPanel(formContactLists[i]));
-                //Methods.OpenChildForm(friendRequestForms[i], friendRequestAdopter[i].panelEachContact);
                 this.contactPanel.Controls.Add(contactAdaptorPanel[i].panelEachContact);
-
             }
             
         }
@@ -477,16 +459,6 @@ namespace media
         {
 
         }
-        private void panelChild_MouseEnter(object sender, EventArgs e)
-        {
-            panelFeed.VerticalScroll.Visible = true;
-        }
-
-        private void panelChild_MouseLeave(object sender, EventArgs e)
-        {
-            panelFeed.VerticalScroll.Visible = false;
-        }
-
 
 
 
@@ -601,12 +573,6 @@ namespace media
 
 
 
-
-
-        private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
         private DataTable RetrieveUserData(string searchText)
         {                
             DataTable dataTable = new DataTable();
@@ -656,6 +622,12 @@ namespace media
 
         }
 
+
+
+        private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
         private void btnPeople_Click(object sender, EventArgs e)
         {
             btnPeople.FillColor= Color.Black;
@@ -692,6 +664,43 @@ namespace media
             btnPage.ForeColor = Color.White;
             searchKey = 4;
 
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            guna2Button1.ForeColor = Color.White;
+            guna2Button1.FillColor = Color.Indigo;
+
+            guna2Button2.ForeColor = Color.Black;
+            guna2Button2.FillColor = Color.White;
+
+            guna2Button3.ForeColor = Color.Black;
+            guna2Button3.FillColor = Color.White;
+
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            guna2Button2.ForeColor = Color.White;
+            guna2Button2.FillColor = Color.Indigo;
+
+            guna2Button1.ForeColor = Color.Black;
+            guna2Button1.FillColor = Color.White;
+
+            guna2Button3.ForeColor = Color.Black;
+            guna2Button3.FillColor = Color.White;
+        }
+
+        private void guna2Button3_Click(object sender, EventArgs e)
+        {
+            guna2Button3.ForeColor = Color.White;
+            guna2Button3.FillColor = Color.Indigo;
+
+            guna2Button2.ForeColor = Color.Black;
+            guna2Button2.FillColor = Color.White;
+
+            guna2Button1.ForeColor = Color.Black;
+            guna2Button1.FillColor = Color.White;
         }
     }
 }

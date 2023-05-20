@@ -116,7 +116,7 @@ namespace media
             DefaultButtonColor(ref buttonTwizzle);
             FormProfile profile = new FormProfile(this.NativeUser);
             MessageBox.Show(this.NativeUser.UserFirstName);
-            openChildForm(profile);
+            Methods.OpenChildForm2(profile, panelSubMain);
             profile.Visible = true;
         }
         private void buttonReels_Click(object sender, EventArgs e)

@@ -40,7 +40,6 @@ namespace media
             this.panel3 = new System.Windows.Forms.Panel();
             this.guna2Button12 = new Guna.UI2.WinForms.Guna2Button();
             this.contactPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Button9 = new Guna.UI2.WinForms.Guna2Button();
             this.friendRequestPanel = new System.Windows.Forms.FlowLayoutPanel();
@@ -65,6 +64,9 @@ namespace media
             this.btnAccept = new Guna.UI2.WinForms.Guna2Button();
             this.frProfileName = new System.Windows.Forms.Label();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.frProfileImage = new media.CustomRoundPictureBox();
             this.panelBaseHome.SuspendLayout();
             this.panelFC.SuspendLayout();
@@ -89,7 +91,7 @@ namespace media
             this.panelBaseHome.ColumnCount = 3;
             this.panelBaseHome.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.43478F));
             this.panelBaseHome.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 87.56522F));
-            this.panelBaseHome.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 717F));
+            this.panelBaseHome.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 737F));
             this.panelBaseHome.Controls.Add(this.panelFC, 2, 0);
             this.panelBaseHome.Controls.Add(this.panelFeed, 1, 0);
             this.panelBaseHome.Controls.Add(this.panelNavBar, 0, 0);
@@ -111,28 +113,30 @@ namespace media
             this.panelFC.Controls.Add(this.panel3, 0, 1);
             this.panelFC.Controls.Add(this.guna2Panel1, 0, 0);
             this.panelFC.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelFC.Location = new System.Drawing.Point(1210, 4);
+            this.panelFC.Location = new System.Drawing.Point(1190, 4);
             this.panelFC.Margin = new System.Windows.Forms.Padding(4);
             this.panelFC.Name = "panelFC";
             this.panelFC.RowCount = 2;
             this.panelFC.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 51.56951F));
             this.panelFC.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 48.43049F));
-            this.panelFC.Size = new System.Drawing.Size(710, 998);
+            this.panelFC.Size = new System.Drawing.Size(730, 998);
             this.panelFC.TabIndex = 1;
             this.panelFC.Resize += new System.EventHandler(this.panelNavBar_Resize);
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Controls.Add(this.guna2Button3);
+            this.panel3.Controls.Add(this.guna2Button2);
+            this.panel3.Controls.Add(this.guna2Button1);
             this.panel3.Controls.Add(this.guna2Button12);
             this.panel3.Controls.Add(this.contactPanel);
-            this.panel3.Controls.Add(this.guna2HtmlLabel1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(4, 518);
             this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(10);
-            this.panel3.Size = new System.Drawing.Size(702, 476);
+            this.panel3.Size = new System.Drawing.Size(722, 476);
             this.panel3.TabIndex = 3;
             // 
             // guna2Button12
@@ -149,7 +153,7 @@ namespace media
             this.guna2Button12.Location = new System.Drawing.Point(10, 427);
             this.guna2Button12.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
             this.guna2Button12.Name = "guna2Button12";
-            this.guna2Button12.Size = new System.Drawing.Size(682, 39);
+            this.guna2Button12.Size = new System.Drawing.Size(702, 39);
             this.guna2Button12.TabIndex = 3;
             this.guna2Button12.Text = "See All";
             // 
@@ -162,19 +166,8 @@ namespace media
             this.contactPanel.Location = new System.Drawing.Point(9, 74);
             this.contactPanel.Margin = new System.Windows.Forms.Padding(0);
             this.contactPanel.Name = "contactPanel";
-            this.contactPanel.Size = new System.Drawing.Size(668, 444);
+            this.contactPanel.Size = new System.Drawing.Size(688, 444);
             this.contactPanel.TabIndex = 2;
-            // 
-            // guna2HtmlLabel1
-            // 
-            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.Black;
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(13, 24);
-            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(96, 33);
-            this.guna2HtmlLabel1.TabIndex = 14;
-            this.guna2HtmlLabel1.Text = "Contacts";
             // 
             // guna2Panel1
             // 
@@ -188,7 +181,7 @@ namespace media
             this.guna2Panel1.Location = new System.Drawing.Point(3, 3);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Padding = new System.Windows.Forms.Padding(10, 10, 10, 0);
-            this.guna2Panel1.Size = new System.Drawing.Size(704, 508);
+            this.guna2Panel1.Size = new System.Drawing.Size(724, 508);
             this.guna2Panel1.TabIndex = 4;
             this.guna2Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel1_Paint);
             // 
@@ -205,7 +198,7 @@ namespace media
             this.guna2Button9.ForeColor = System.Drawing.Color.Black;
             this.guna2Button9.Location = new System.Drawing.Point(10, 469);
             this.guna2Button9.Name = "guna2Button9";
-            this.guna2Button9.Size = new System.Drawing.Size(684, 39);
+            this.guna2Button9.Size = new System.Drawing.Size(704, 39);
             this.guna2Button9.TabIndex = 2;
             this.guna2Button9.Text = "See All";
             // 
@@ -222,24 +215,24 @@ namespace media
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(8, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(178, 31);
+            this.label1.Size = new System.Drawing.Size(109, 31);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Friend Requests";
+            this.label1.Text = "Requests";
             // 
             // panelFeed
             // 
             this.panelFeed.AutoScroll = true;
-            this.panelFeed.BackColor = System.Drawing.Color.White;
+            this.panelFeed.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panelFeed.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelFeed.Location = new System.Drawing.Point(154, 4);
+            this.panelFeed.Location = new System.Drawing.Point(151, 4);
             this.panelFeed.Margin = new System.Windows.Forms.Padding(4);
             this.panelFeed.Name = "panelFeed";
-            this.panelFeed.Padding = new System.Windows.Forms.Padding(53, 25, 27, 25);
-            this.panelFeed.Size = new System.Drawing.Size(1048, 998);
+            this.panelFeed.Padding = new System.Windows.Forms.Padding(34, 25, 25, 25);
+            this.panelFeed.Size = new System.Drawing.Size(1031, 998);
             this.panelFeed.TabIndex = 2;
             this.panelFeed.Paint += new System.Windows.Forms.PaintEventHandler(this.panelFeed_Paint);
             this.panelFeed.Resize += new System.EventHandler(this.panelNavBar_Resize);
@@ -252,7 +245,7 @@ namespace media
             this.panelNavBar.Location = new System.Drawing.Point(4, 4);
             this.panelNavBar.Margin = new System.Windows.Forms.Padding(4);
             this.panelNavBar.Name = "panelNavBar";
-            this.panelNavBar.Size = new System.Drawing.Size(142, 998);
+            this.panelNavBar.Size = new System.Drawing.Size(139, 998);
             this.panelNavBar.TabIndex = 0;
             this.panelNavBar.Resize += new System.EventHandler(this.panelNavBar_Resize);
             // 
@@ -268,7 +261,7 @@ namespace media
             this.panel1.Radius = 10;
             this.panel1.ShadowColor = System.Drawing.Color.Black;
             this.panel1.ShadowDepth = 40;
-            this.panel1.Size = new System.Drawing.Size(142, 998);
+            this.panel1.Size = new System.Drawing.Size(139, 998);
             this.panel1.TabIndex = 1;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint_1);
             // 
@@ -284,7 +277,7 @@ namespace media
             this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.23447F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 82.76553F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(142, 998);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(139, 998);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
             // panel2
@@ -296,7 +289,7 @@ namespace media
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(136, 166);
+            this.panel2.Size = new System.Drawing.Size(133, 166);
             this.panel2.TabIndex = 4;
             // 
             // flowLayoutPanel1
@@ -309,7 +302,7 @@ namespace media
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 132);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(136, 34);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(133, 34);
             this.flowLayoutPanel1.TabIndex = 7;
             // 
             // btnPage
@@ -395,7 +388,7 @@ namespace media
             this.guna2TextBox1.PasswordChar = '\0';
             this.guna2TextBox1.PlaceholderText = "Search here!";
             this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.Size = new System.Drawing.Size(133, 36);
+            this.guna2TextBox1.Size = new System.Drawing.Size(130, 36);
             this.guna2TextBox1.TabIndex = 1;
             this.guna2TextBox1.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged);
             // 
@@ -451,7 +444,7 @@ namespace media
             this.guna2DataGridView1.RowHeadersVisible = false;
             this.guna2DataGridView1.RowHeadersWidth = 51;
             this.guna2DataGridView1.RowTemplate.Height = 24;
-            this.guna2DataGridView1.Size = new System.Drawing.Size(136, 820);
+            this.guna2DataGridView1.Size = new System.Drawing.Size(133, 820);
             this.guna2DataGridView1.TabIndex = 5;
             this.guna2DataGridView1.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.White;
             this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -605,6 +598,63 @@ namespace media
             this.guna2Panel3.TabIndex = 1;
             this.guna2Panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel3_Paint);
             // 
+            // guna2Button1
+            // 
+            this.guna2Button1.BorderColor = System.Drawing.Color.Indigo;
+            this.guna2Button1.BorderRadius = 20;
+            this.guna2Button1.BorderThickness = 1;
+            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.FillColor = System.Drawing.Color.White;
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button1.ForeColor = System.Drawing.Color.Black;
+            this.guna2Button1.Location = new System.Drawing.Point(12, 13);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.Size = new System.Drawing.Size(104, 46);
+            this.guna2Button1.TabIndex = 4;
+            this.guna2Button1.Text = "Contacts";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            // 
+            // guna2Button2
+            // 
+            this.guna2Button2.BorderColor = System.Drawing.Color.Indigo;
+            this.guna2Button2.BorderRadius = 20;
+            this.guna2Button2.BorderThickness = 1;
+            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button2.FillColor = System.Drawing.Color.White;
+            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button2.ForeColor = System.Drawing.Color.Black;
+            this.guna2Button2.Location = new System.Drawing.Point(120, 13);
+            this.guna2Button2.Name = "guna2Button2";
+            this.guna2Button2.Size = new System.Drawing.Size(104, 46);
+            this.guna2Button2.TabIndex = 5;
+            this.guna2Button2.Text = "Pages";
+            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
+            // 
+            // guna2Button3
+            // 
+            this.guna2Button3.BorderColor = System.Drawing.Color.Indigo;
+            this.guna2Button3.BorderRadius = 20;
+            this.guna2Button3.BorderThickness = 1;
+            this.guna2Button3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button3.FillColor = System.Drawing.Color.White;
+            this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button3.ForeColor = System.Drawing.Color.Black;
+            this.guna2Button3.Location = new System.Drawing.Point(229, 13);
+            this.guna2Button3.Name = "guna2Button3";
+            this.guna2Button3.Size = new System.Drawing.Size(104, 46);
+            this.guna2Button3.TabIndex = 6;
+            this.guna2Button3.Text = "Groups";
+            this.guna2Button3.Click += new System.EventHandler(this.guna2Button3_Click);
+            // 
             // frProfileImage
             // 
             this.frProfileImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -639,7 +689,6 @@ namespace media
             this.panelBaseHome.ResumeLayout(false);
             this.panelFC.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             this.panelNavBar.ResumeLayout(false);
@@ -680,7 +729,6 @@ namespace media
         private Guna.UI2.WinForms.Guna2Button guna2Button9;
         private Guna.UI2.WinForms.Guna2Button guna2Button12;
         private FlowLayoutPanel contactPanel;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         public Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         public FlowLayoutPanel panelFeed;
         private TableLayoutPanel panelFC;
@@ -695,6 +743,8 @@ namespace media
         private Guna.UI2.WinForms.Guna2Button btnPage;
         private Guna.UI2.WinForms.Guna2Button btnPeople;
         private Guna.UI2.WinForms.Guna2Button btnPost;
-
+        private Guna.UI2.WinForms.Guna2Button guna2Button3;
+        private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
     }
 }

@@ -11,7 +11,7 @@ namespace media.Classes
         private DateTime commentTime;
         private string commentText;
         private int commentId;
-        private User commenters;
+        private int commenterId;
         private int likesCount;
         private bool isLiked;
         public DateTime CommentTime
@@ -29,10 +29,10 @@ namespace media.Classes
             get { return this.commentId; }
             set { this.commentId = value; }
         }
-        public User Commenters
+        public int CommenterId
         {
-            get { return this.commenters; }
-            set { this.commenters = value; }
+            get { return this.commenterId; }
+            set { this.commenterId = value; }
         }
         public bool IsLiked
         {
@@ -44,12 +44,12 @@ namespace media.Classes
             get { return this.likesCount; }
             set { this.likesCount = value;}
         }
-        public ClassComment(string commentText, int commentId, User commenter)
+        public ClassComment(string commentText, int commentId,  int commenterId)
         {
             this.CommentTime = DateTime.Now;
             this.CommentText = commentText;
             this.CommentId = commentId;
-            this.Commenters= commenter;
+            this.CommenterId = commenterId;
         }
     }
 }

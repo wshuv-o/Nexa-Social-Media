@@ -30,14 +30,16 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2GradientPanel3 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblBio = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.label4 = new System.Windows.Forms.Label();
+            this.userProfilePhoto = new media.CustomPanel();
             this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnFollow = new Guna.UI2.WinForms.Guna2Button();
+            this.btnMessage = new Guna.UI2.WinForms.Guna2Button();
             this.lblUserName = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
@@ -51,7 +53,6 @@
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.userProfilePhoto = new media.CustomPanel();
             this.tableLayoutPanel1.SuspendLayout();
             this.guna2GradientPanel1.SuspendLayout();
             this.guna2GradientPanel3.SuspendLayout();
@@ -86,14 +87,11 @@
             // 
             this.guna2GradientPanel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2GradientPanel1.BorderRadius = 30;
+            this.guna2GradientPanel1.Controls.Add(this.guna2CircleButton1);
             this.guna2GradientPanel1.Controls.Add(this.guna2GradientPanel3);
             this.guna2GradientPanel1.Controls.Add(this.userProfilePhoto);
             this.guna2GradientPanel1.Controls.Add(this.guna2GradientPanel2);
             this.guna2GradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2GradientPanel1.FillColor = System.Drawing.Color.DarkSlateBlue;
-            this.guna2GradientPanel1.FillColor2 = System.Drawing.Color.BlueViolet;
-            this.guna2GradientPanel1.FillColor3 = System.Drawing.Color.MediumOrchid;
-            this.guna2GradientPanel1.FillColor4 = System.Drawing.Color.DimGray;
             this.guna2GradientPanel1.Location = new System.Drawing.Point(26, 12);
             this.guna2GradientPanel1.Margin = new System.Windows.Forms.Padding(13, 0, 13, 0);
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
@@ -101,6 +99,24 @@
             this.guna2GradientPanel1.Size = new System.Drawing.Size(514, 905);
             this.guna2GradientPanel1.TabIndex = 0;
             this.guna2GradientPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2GradientPanel1_Paint);
+            // 
+            // guna2CircleButton1
+            // 
+            this.guna2CircleButton1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2CircleButton1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2CircleButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2CircleButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2CircleButton1.FillColor = System.Drawing.Color.MediumSlateBlue;
+            this.guna2CircleButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2CircleButton1.ForeColor = System.Drawing.Color.White;
+            this.guna2CircleButton1.Image = global::media.Properties.Resources.icons8_back_32;
+            this.guna2CircleButton1.ImageSize = new System.Drawing.Size(40, 40);
+            this.guna2CircleButton1.Location = new System.Drawing.Point(52, 8);
+            this.guna2CircleButton1.Name = "guna2CircleButton1";
+            this.guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CircleButton1.Size = new System.Drawing.Size(78, 79);
+            this.guna2CircleButton1.TabIndex = 8;
+            this.guna2CircleButton1.Click += new System.EventHandler(this.guna2CircleButton1_Click);
             // 
             // guna2GradientPanel3
             // 
@@ -155,6 +171,24 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "About";
             // 
+            // userProfilePhoto
+            // 
+            this.userProfilePhoto.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.userProfilePhoto.BackColor = System.Drawing.Color.White;
+            this.userProfilePhoto.BackgroundImage = global::media.Properties.Resources.PicsArt_09_0m7_09_40_49;
+            this.userProfilePhoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.userProfilePhoto.BorderColor = System.Drawing.Color.White;
+            this.userProfilePhoto.BorderFocusColor = System.Drawing.Color.White;
+            this.userProfilePhoto.BorderRadius = 30;
+            this.userProfilePhoto.BorderSize = 1;
+            this.userProfilePhoto.Location = new System.Drawing.Point(164, 107);
+            this.userProfilePhoto.Margin = new System.Windows.Forms.Padding(4);
+            this.userProfilePhoto.Name = "userProfilePhoto";
+            this.userProfilePhoto.Size = new System.Drawing.Size(200, 196);
+            this.userProfilePhoto.TabIndex = 7;
+            this.userProfilePhoto.UnderlinedStyle = false;
+            this.userProfilePhoto.Paint += new System.Windows.Forms.PaintEventHandler(this.userProfilePhoto_Paint);
+            // 
             // guna2GradientPanel2
             // 
             this.guna2GradientPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -164,14 +198,14 @@
             this.guna2GradientPanel2.Controls.Add(this.tableLayoutPanel2);
             this.guna2GradientPanel2.Controls.Add(this.lblUserName);
             this.guna2GradientPanel2.Controls.Add(this.tableLayoutPanel3);
-            this.guna2GradientPanel2.FillColor = System.Drawing.Color.Indigo;
+            this.guna2GradientPanel2.FillColor = System.Drawing.Color.MediumSlateBlue;
             this.guna2GradientPanel2.FillColor2 = System.Drawing.Color.Indigo;
             this.guna2GradientPanel2.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            this.guna2GradientPanel2.Location = new System.Drawing.Point(52, 81);
+            this.guna2GradientPanel2.Location = new System.Drawing.Point(52, 94);
             this.guna2GradientPanel2.Margin = new System.Windows.Forms.Padding(4);
             this.guna2GradientPanel2.Name = "guna2GradientPanel2";
             this.guna2GradientPanel2.Padding = new System.Windows.Forms.Padding(27, 25, 27, 25);
-            this.guna2GradientPanel2.Size = new System.Drawing.Size(426, 449);
+            this.guna2GradientPanel2.Size = new System.Drawing.Size(426, 436);
             this.guna2GradientPanel2.TabIndex = 6;
             this.guna2GradientPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2GradientPanel2_Paint);
             // 
@@ -180,10 +214,10 @@
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.guna2Button1, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.guna2Button2, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnFollow, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnMessage, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(27, 362);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(27, 349);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
@@ -191,43 +225,43 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(372, 62);
             this.tableLayoutPanel2.TabIndex = 5;
             // 
-            // guna2Button1
+            // btnFollow
             // 
-            this.guna2Button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2Button1.BorderColor = System.Drawing.Color.White;
-            this.guna2Button1.BorderRadius = 10;
-            this.guna2Button1.BorderThickness = 1;
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(4, 4);
-            this.guna2Button1.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(178, 54);
-            this.guna2Button1.TabIndex = 0;
-            this.guna2Button1.Text = "Follow";
+            this.btnFollow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFollow.BorderColor = System.Drawing.Color.White;
+            this.btnFollow.BorderRadius = 10;
+            this.btnFollow.BorderThickness = 1;
+            this.btnFollow.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnFollow.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnFollow.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnFollow.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnFollow.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnFollow.ForeColor = System.Drawing.Color.White;
+            this.btnFollow.Location = new System.Drawing.Point(4, 4);
+            this.btnFollow.Margin = new System.Windows.Forms.Padding(4);
+            this.btnFollow.Name = "btnFollow";
+            this.btnFollow.Size = new System.Drawing.Size(178, 54);
+            this.btnFollow.TabIndex = 0;
+            this.btnFollow.Text = "Follow";
             // 
-            // guna2Button2
+            // btnMessage
             // 
-            this.guna2Button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2Button2.BorderColor = System.Drawing.Color.White;
-            this.guna2Button2.BorderRadius = 10;
-            this.guna2Button2.BorderThickness = 1;
-            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.Location = new System.Drawing.Point(190, 4);
-            this.guna2Button2.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(178, 54);
-            this.guna2Button2.TabIndex = 1;
-            this.guna2Button2.Text = "Message";
+            this.btnMessage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMessage.BorderColor = System.Drawing.Color.White;
+            this.btnMessage.BorderRadius = 10;
+            this.btnMessage.BorderThickness = 1;
+            this.btnMessage.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnMessage.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnMessage.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnMessage.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnMessage.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnMessage.ForeColor = System.Drawing.Color.White;
+            this.btnMessage.Location = new System.Drawing.Point(190, 4);
+            this.btnMessage.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMessage.Name = "btnMessage";
+            this.btnMessage.Size = new System.Drawing.Size(178, 54);
+            this.btnMessage.TabIndex = 1;
+            this.btnMessage.Text = "Message";
             // 
             // lblUserName
             // 
@@ -235,7 +269,7 @@
             this.lblUserName.AutoSize = true;
             this.lblUserName.Font = new System.Drawing.Font("Segoe UI Semibold", 16.25F, System.Drawing.FontStyle.Bold);
             this.lblUserName.ForeColor = System.Drawing.Color.White;
-            this.lblUserName.Location = new System.Drawing.Point(120, 250);
+            this.lblUserName.Location = new System.Drawing.Point(120, 244);
             this.lblUserName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUserName.Name = "lblUserName";
             this.lblUserName.Size = new System.Drawing.Size(184, 38);
@@ -251,7 +285,7 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.label3, 1, 0);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(31, 310);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(31, 304);
             this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
@@ -320,8 +354,8 @@
             this.guna2GradientPanel4.BorderRadius = 20;
             this.guna2GradientPanel4.Controls.Add(this.tableLayoutPanel5);
             this.guna2GradientPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2GradientPanel4.FillColor = System.Drawing.Color.Indigo;
-            this.guna2GradientPanel4.FillColor2 = System.Drawing.Color.Indigo;
+            this.guna2GradientPanel4.FillColor = System.Drawing.Color.MediumSlateBlue;
+            this.guna2GradientPanel4.FillColor2 = System.Drawing.Color.MediumSlateBlue;
             this.guna2GradientPanel4.Location = new System.Drawing.Point(4, 4);
             this.guna2GradientPanel4.Margin = new System.Windows.Forms.Padding(4);
             this.guna2GradientPanel4.Name = "guna2GradientPanel4";
@@ -372,6 +406,7 @@
             this.guna2Button6.Size = new System.Drawing.Size(172, 55);
             this.guna2Button6.TabIndex = 5;
             this.guna2Button6.Text = "Contacts";
+            this.guna2Button6.Click += new System.EventHandler(this.guna2Button6_Click);
             // 
             // guna2Button5
             // 
@@ -395,6 +430,7 @@
             this.guna2Button5.Size = new System.Drawing.Size(172, 55);
             this.guna2Button5.TabIndex = 4;
             this.guna2Button5.Text = "Videos";
+            this.guna2Button5.Click += new System.EventHandler(this.guna2Button5_Click);
             // 
             // guna2Button4
             // 
@@ -453,24 +489,6 @@
             this.panel1.TabIndex = 1;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint_1);
             // 
-            // userProfilePhoto
-            // 
-            this.userProfilePhoto.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.userProfilePhoto.BackColor = System.Drawing.Color.White;
-            this.userProfilePhoto.BackgroundImage = global::media.Properties.Resources.PicsArt_09_0m7_09_40_49;
-            this.userProfilePhoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.userProfilePhoto.BorderColor = System.Drawing.Color.White;
-            this.userProfilePhoto.BorderFocusColor = System.Drawing.Color.White;
-            this.userProfilePhoto.BorderRadius = 30;
-            this.userProfilePhoto.BorderSize = 1;
-            this.userProfilePhoto.Location = new System.Drawing.Point(164, 107);
-            this.userProfilePhoto.Margin = new System.Windows.Forms.Padding(4);
-            this.userProfilePhoto.Name = "userProfilePhoto";
-            this.userProfilePhoto.Size = new System.Drawing.Size(200, 196);
-            this.userProfilePhoto.TabIndex = 7;
-            this.userProfilePhoto.UnderlinedStyle = false;
-            this.userProfilePhoto.Paint += new System.Windows.Forms.PaintEventHandler(this.userProfilePhoto_Paint);
-            // 
             // FormProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -508,8 +526,8 @@
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel2;
         private System.Windows.Forms.Label lblUserName;
         private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button btnMessage;
+        private Guna.UI2.WinForms.Guna2Button btnFollow;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
@@ -525,5 +543,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel[] web;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private System.Windows.Forms.Panel panel1;
+        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton1;
     }
 }

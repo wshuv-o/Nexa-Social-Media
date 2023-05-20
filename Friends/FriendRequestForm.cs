@@ -124,5 +124,17 @@ namespace media.Friends
                 btnDecline.FillColor = Color.Red;
             }
         }
+
+        private void frProfileImage_Click(object sender, EventArgs e)
+        {
+            
+             Methods.OpenChildForm2(new FormProfile(this.ClassFriendRequests.RequesterProfile), FormBase.panelSubMain);
+            
+        }
+
+        private void frProfileName_Click(object sender, EventArgs e)
+        {
+            Methods.OpenChildForm2(new FormProfile(this.ClassFriendRequests.RequesterProfile), FormBase.panelSubMain);
+        }
     }
 }

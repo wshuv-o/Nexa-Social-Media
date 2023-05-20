@@ -4,13 +4,16 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace media
 {
-    public partial class Story : Form
+
+
+public partial class Story : Form
     {
         public Button btnScrollLeft;
         public Button btnScrollRight;
@@ -20,21 +23,6 @@ namespace media
         public Story()
         {
             InitializeComponent();
-
-
-            // Create a new ColumnStyle object for the new column
-            //ColumnStyle columnStyle = new ColumnStyle(SizeType.Percent, 50F);
-
-            // Add the new ColumnStyle object to the TableLayoutPanel's ColumnStyles collection
-            //tableLayoutPanel3.ColumnStyles.Add(columnStyle);
-
-            // Set the new column count for the TableLayoutPanel
-            //tableLayoutPanel3.ColumnCount = newColumnCount;
-            //this.flowLayoutPanel1.HorizontalScroll.Visible = false;
-            //this.flowLayoutPanel1.VerticalScroll.Visible = false;
-            //this.SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
-            //this.flowLayoutPanel1.MouseWheel+= new System.Windows.Forms.MouseEventHandler(this.flowLayoutPanel1_MouseWheel3);
-            Load += Story_Load;
             Methods.RoundButtonCorners(button1, 20);
             Methods.RoundButtonCorners(button2, 20);
             Methods.RoundButtonCorners(button3, 20);
@@ -42,26 +30,9 @@ namespace media
             Methods.RoundButtonCorners(button5, 20);
             Methods.RoundButtonCorners(button6, 20);
             Methods.RoundButtonCorners(button7, 20);
-            Methods.RoundButtonCorners(button8, 20);
-            Methods.RoundButtonCorners(button9, 20);
 
-            button8.Resize += (sender, e) =>
-            {
-                int width = panel1.Width; int height = panel1.Height;
-                button8.Width = width; button8.Height = height;
-                Methods.RoundButtonCorners(button8, 20);
 
-            };
-            button9.Resize += (sender, e) =>
-            {
-                int width = panel1.Width; int height = panel1.Height;
-                button9.Width = width; button9.Height = height;
-                Methods.RoundButtonCorners(button9, 20);
-
-            };
-            //Methods.RoundButtonCorners(button8, 20);
             AddColorOverlayToButton(170, Color.FromArgb(23, 32, 42), button2);
-            // AddColorOverlayToButton(170, Color.FromArgb(23, 32, 42), button1);
             this.AddOrRemoveColorOverlay(Color.FromArgb(23, 32, 42), button1, false);
 
             AddColorOverlayToButton(170, Color.FromArgb(23, 32, 42), button3);
@@ -164,51 +135,96 @@ namespace media
         {
 
         }
+        private int scrollOffset = 0;
+        private const int scrollStep = 80;
+
+        private void buttonLeft_Click(object sender, EventArgs e)
+        {
+            if (!flowLayoutPanel1.AutoScroll)
+            {
+                scrollOffset -= scrollStep;
+                if (scrollOffset < flowLayoutPanel1.HorizontalScroll.Minimum)
+                    scrollOffset = flowLayoutPanel1.HorizontalScroll.Minimum;
+                flowLayoutPanel1.HorizontalScroll.Value = scrollOffset;
+                flowLayoutPanel1.PerformLayout();
+            }
+        }
+
+        private void buttonRight_Click(object sender, EventArgs e)
+        {
+            if (!flowLayoutPanel1.AutoScroll)
+            {
+                scrollOffset += scrollStep;
+                int maxOffset = flowLayoutPanel1.HorizontalScroll.Maximum - flowLayoutPanel1.Width;
+                if (scrollOffset > maxOffset)
+                    scrollOffset = maxOffset;
+                flowLayoutPanel1.HorizontalScroll.Value = scrollOffset;
+                flowLayoutPanel1.PerformLayout();
+            }
+        }
+
+
+
+
+        private void buttonLeft_Click3(object sender, EventArgs e)
+        {
+            int scrollAmount = -scrollStep;
+            int newPosition = flowLayoutPanel1.HorizontalScroll.Value + scrollAmount;
+
+            int minimumValue = flowLayoutPanel1.HorizontalScroll.Minimum; // Account for left padding
+
+            if (newPosition < minimumValue)
+                newPosition = minimumValue;
+
+            flowLayoutPanel1.HorizontalScroll.Value = newPosition;
+            flowLayoutPanel1.PerformLayout();
+            //this.flowLayoutPanel1.AutoScroll = false;
+        }
+
+        private void buttonRight_Click3(object sender, EventArgs e)
+        {
+            
+            int scrollAmount = scrollStep;
+            int newPosition = flowLayoutPanel1.HorizontalScroll.Value + scrollAmount;
+
+            int maximumValue = flowLayoutPanel1.HorizontalScroll.Maximum;
+
+            if (newPosition > maximumValue)
+                newPosition = maximumValue;
+
+            flowLayoutPanel1.HorizontalScroll.Value = newPosition;
+            flowLayoutPanel1.PerformLayout();
+            //this.flowLayoutPanel1.AutoScroll = false;
+        }
+
+        private void __buttonLeft_Click(object sender, EventArgs e)
+        {
+            int scrollAmount = -scrollStep;
+            int newPosition = flowLayoutPanel1.HorizontalScroll.Value + scrollAmount;
+
+            if (newPosition < flowLayoutPanel1.HorizontalScroll.Minimum)
+                newPosition = flowLayoutPanel1.HorizontalScroll.Minimum;
+
+            flowLayoutPanel1.HorizontalScroll.Value = newPosition - 50;
+            flowLayoutPanel1.PerformLayout();
+        }
+
+        private void __buttonRight_Click(object sender, EventArgs e)
+        {
+            int scrollAmount = scrollStep;
+            int newPosition = flowLayoutPanel1.HorizontalScroll.Value + scrollAmount;
+
+            if (newPosition > flowLayoutPanel1.HorizontalScroll.Maximum)
+                newPosition = flowLayoutPanel1.HorizontalScroll.Maximum;
+
+            flowLayoutPanel1.HorizontalScroll.Value = newPosition;
+            flowLayoutPanel1.PerformLayout();
+        }
 
         public void Story_Load(object sender, EventArgs e)
         {
             this.flowLayoutPanel1.Focus();
         }
-        private void flowLayoutPanel1_MouseWheel(object sender, MouseEventArgs e)
-        {
-            int numberOfTextLinesToMove = e.Delta * SystemInformation.MouseWheelScrollLines / 120;
-            Point currentAutoScrollPosition = flowLayoutPanel1.AutoScrollPosition;
-            currentAutoScrollPosition.Offset(0, -numberOfTextLinesToMove);
-            flowLayoutPanel1.AutoScrollPosition = currentAutoScrollPosition;
-        }
-        private void flowLayoutPanel1_MouseWheel2(object sender, MouseEventArgs e)
-        {
-            int numberOfPixelsToMove = SystemInformation.MouseWheelScrollLines * e.Delta / 120;
-            Point currentAutoScrollPosition = flowLayoutPanel1.AutoScrollPosition;
-
-            if (e.Delta > 0)
-            {
-                currentAutoScrollPosition.Offset(-numberOfPixelsToMove, 0);
-            }
-            else if (e.Delta < 0)
-            {
-                currentAutoScrollPosition.Offset(numberOfPixelsToMove, 0);
-            }
-
-            flowLayoutPanel1.AutoScrollPosition = currentAutoScrollPosition;
-        }
-        private void flowLayoutPanel1_MouseWheel3(object sender, MouseEventArgs e)
-        {
-            int numberOfPixelsToMove = SystemInformation.MouseWheelScrollLines * e.Delta / 120;
-            Point currentAutoScrollPosition = flowLayoutPanel1.AutoScrollPosition;
-
-            if (e.Delta > 0)
-            {
-                currentAutoScrollPosition.Offset(-numberOfPixelsToMove, 0);
-            }
-            else if (e.Delta < 0)
-            {
-                currentAutoScrollPosition.Offset(numberOfPixelsToMove, 0);
-            }
-
-            flowLayoutPanel1.AutoScrollPosition = currentAutoScrollPosition;
-        }
-
 
         public void button2_Click(object sender, EventArgs e)
         {
@@ -257,7 +273,6 @@ namespace media
 
         private void button8_Click(object sender, EventArgs e)
         {
-
         }
 
         private void button9_Click(object sender, EventArgs e)

@@ -20,8 +20,8 @@ namespace media.Friends
             panelEachContact.BackColor = System.Drawing.Color.White;
             panelEachContact.Location = new System.Drawing.Point(0, 87);
             panelEachContact.Name = "panelEachContact";
-            panelEachContact.Padding = new System.Windows.Forms.Padding(10);
-            panelEachContact.Size = new System.Drawing.Size(350, 80);
+            panelEachContact.Padding = new System.Windows.Forms.Padding(0);
+            panelEachContact.Size = new System.Drawing.Size(350, 60);
             panelEachContact.TabIndex = 6;
             Methods.OpenChildForm2(fcl, panelEachContact);
         }

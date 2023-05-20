@@ -104,7 +104,7 @@ namespace media
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-
+            Methods.OpenChildForm2(new FormProfile(this.ClassPosts.PostCreator), FormBase.panelSubMain);
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -141,11 +141,6 @@ namespace media
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-            Form f = new Form();
-            f.ShowDialog();
-        }
 
         private void panel3_Paint(object sender, PaintEventArgs e)
         {
@@ -164,6 +159,7 @@ namespace media
 
         private async void Post_Load(object sender, EventArgs e)
         {
+            //await Task.Delay(500);
             // += ParentContainer_Scroll;
             if (IsLabelVisibleOnScreen(lblUserName))
             {
@@ -175,6 +171,7 @@ namespace media
                 {
                     this.postImagePanel.BackgroundImage = postImage;
                     Methods.SetDoubleBuffer(postImagePanel, true);
+                    this.ClassPosts.PostImage=postImage;
                     postImagePanel.BackColor = Methods.GetBackgroundAverageColor((Bitmap)postImagePanel.BackgroundImage);
                     this.postImagePanel.BackColor = Methods.GetBackgroundAverageColor((Bitmap)this.postImagePanel.BackgroundImage);
 
@@ -209,8 +206,10 @@ namespace media
                         tableLayoutPanel2.RowCount--;
                     }
 
+                this.ClientSize = new System.Drawing.Size(965, 500);
 
                 }
+
 
 
             }
@@ -338,7 +337,6 @@ namespace media
             }
         }
 
-        // Method to remove the like from the Likes table
         private void RemoveLike(int postId, int userId)
         {
             using (MySqlConnection connection = new MySqlConnection(DatabaseCredentials.connectionStringLocalServer))
@@ -358,6 +356,7 @@ namespace media
 
         private void UpdateReactCount(int postId, int incrementValue)
         {
+            this.reactCount.Text= (Convert.ToInt32(this.reactCount.Text)+ incrementValue).ToString();
             using (MySqlConnection connection = new MySqlConnection(DatabaseCredentials.connectionStringLocalServer))
             {
                 string query = "UPDATE postofuser SET postReactCount = postReactCount + @incrementValue WHERE PostId = @postId";
@@ -689,6 +688,52 @@ namespace media
             buttonDelete.Click += (btnSender, btnEvent) =>
             {
                 f.Close();
+                if (this.ClassPosts.PostCreator.Key == ClassNativeUser.NativeUser.Key)
+                {
+                    try
+                    {
+                        using (MySqlConnection conn = new MySqlConnection(DatabaseCredentials.connectionStringLocalServer))
+                        {
+                            conn.Open();
+
+                            // Check if a row exists in mediacontent_postuser for the given postid
+                            string checkQuery = "SELECT COUNT(*) FROM mediacontent_postuser WHERE postid = @PostId";
+                            using (MySqlCommand checkCommand = new MySqlCommand(checkQuery, conn))
+                            {
+                                checkCommand.Parameters.AddWithValue("@PostId", this.ClassPosts.PostId);
+                                int rowCount = Convert.ToInt32(checkCommand.ExecuteScalar());
+
+                                if (rowCount > 0)
+                                {
+                                    // Delete the row from mediacontent_postuser
+                                    string deleteMediaQuery = "DELETE FROM mediacontent_postuser WHERE postid = @PostId";
+                                    using (MySqlCommand deleteMediaCommand = new MySqlCommand(deleteMediaQuery, conn))
+                                    {
+                                        deleteMediaCommand.Parameters.AddWithValue("@PostId", this.ClassPosts.PostId);
+                                        deleteMediaCommand.ExecuteNonQuery();
+                                    }
+                                }
+                            }
+
+                            // Delete the row from postofuser
+                            string deletePostQuery = "DELETE FROM postofuser WHERE postid = @PostId";
+                            using (MySqlCommand deletePostCommand = new MySqlCommand(deletePostQuery, conn))
+                            {
+                                deletePostCommand.Parameters.AddWithValue("@PostId", this.ClassPosts.PostId);
+                                deletePostCommand.ExecuteNonQuery();
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error: " + ex.Message);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("You can't delete this post!");
+                }
+
             };
             tableLayoutPanel.Controls.Add(buttonDelete, 0, 2);
 
@@ -729,5 +774,38 @@ namespace media
 
         }
 
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            FormTest f = new FormTest();
+
+
+            f.FormBorderStyle = FormBorderStyle.None;
+            Guna.UI2.WinForms.Guna2ShadowPanel shadowPanel = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            f.StartPosition = FormStartPosition.Manual;
+            FormPostSingle fsp = new FormPostSingle(this.classPosts);
+            shadowPanel.Location= new Point(580, 100);
+            shadowPanel.Size = fsp.Size;
+            shadowPanel.ShadowDepth = 100;
+            shadowPanel.ShadowShift = 10;
+            shadowPanel.ShadowColor = Color.Black;
+            shadowPanel.Radius = 20;
+            Methods.OpenChildForm(fsp, shadowPanel);
+            f.Controls.Add(shadowPanel);
+
+            shadowPanel.BringToFront();
+            // Center the child form on the parent form
+            f.Location = new Point(3,32);
+
+            // Show the form as a modal dialog
+            f.ShowDialog(this);
+
+
+        }
     }
 }
+/*
+ *   <data name="microfunnel-flaticon-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\microfunnel-flaticon-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+
+ */

@@ -19,7 +19,7 @@
             }
             base.Dispose(disposing);
         }
-        System.Windows.Forms.Label lblUserName;
+            System.Windows.Forms.Label lblUserName;
 
         #region Windows Form Designer generated code
         private void InitializeComponent()
@@ -54,13 +54,13 @@
             // 
             // basePanel
             // 
-            this.basePanel.BackColor = System.Drawing.Color.White;
+            this.basePanel.BackColor = System.Drawing.Color.WhiteSmoke;
             this.basePanel.Controls.Add(this.guna2ShadowPanel1);
             this.basePanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.basePanel.Location = new System.Drawing.Point(0, 0);
             this.basePanel.Margin = new System.Windows.Forms.Padding(4);
             this.basePanel.Name = "basePanel";
-            this.basePanel.Padding = new System.Windows.Forms.Padding(20);
+            this.basePanel.Padding = new System.Windows.Forms.Padding(20, 10, 20, 10);
             this.basePanel.Size = new System.Drawing.Size(965, 839);
             this.basePanel.TabIndex = 0;
             this.basePanel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
@@ -71,13 +71,13 @@
             this.guna2ShadowPanel1.Controls.Add(this.tableLayoutPanel2);
             this.guna2ShadowPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2ShadowPanel1.FillColor = System.Drawing.Color.White;
-            this.guna2ShadowPanel1.Location = new System.Drawing.Point(20, 20);
+            this.guna2ShadowPanel1.Location = new System.Drawing.Point(20, 10);
             this.guna2ShadowPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
             this.guna2ShadowPanel1.Padding = new System.Windows.Forms.Padding(20);
             this.guna2ShadowPanel1.Radius = 20;
             this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
-            this.guna2ShadowPanel1.Size = new System.Drawing.Size(925, 799);
+            this.guna2ShadowPanel1.Size = new System.Drawing.Size(925, 819);
             this.guna2ShadowPanel1.TabIndex = 11;
             this.guna2ShadowPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2ShadowPanel1_Paint);
             // 
@@ -100,7 +100,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 479F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 18F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(885, 759);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(885, 779);
             this.tableLayoutPanel2.TabIndex = 10;
             // 
             // panel4
@@ -211,7 +211,7 @@
             lblUserName.Size = new System.Drawing.Size(168, 31);
             lblUserName.TabIndex = 1;
             lblUserName.Text = "Sakib Sarwar";
-            lblUserName.Click += new System.EventHandler(this.label1_Click);
+            lblUserName.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // postImagePanel
             // 
@@ -280,7 +280,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(877, 44);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(877, 64);
             this.tableLayoutPanel1.TabIndex = 9;
             // 
             // guna2Button2
@@ -297,7 +297,7 @@
             this.guna2Button2.Location = new System.Drawing.Point(582, 4);
             this.guna2Button2.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(291, 36);
+            this.guna2Button2.Size = new System.Drawing.Size(291, 56);
             this.guna2Button2.TabIndex = 4;
             this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
@@ -315,8 +315,9 @@
             this.guna2Button1.Location = new System.Drawing.Point(293, 4);
             this.guna2Button1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(281, 36);
+            this.guna2Button1.Size = new System.Drawing.Size(281, 56);
             this.guna2Button1.TabIndex = 3;
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // button2
             // 
@@ -332,7 +333,7 @@
             this.button2.Location = new System.Drawing.Point(4, 4);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(281, 36);
+            this.button2.Size = new System.Drawing.Size(281, 56);
             this.button2.TabIndex = 0;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 

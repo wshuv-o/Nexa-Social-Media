@@ -51,7 +51,7 @@
             this.guna2Button14.Margin = new System.Windows.Forms.Padding(0);
             this.guna2Button14.Name = "guna2Button14";
             this.guna2Button14.PressedColor = System.Drawing.Color.Transparent;
-            this.guna2Button14.Size = new System.Drawing.Size(392, 61);
+            this.guna2Button14.Size = new System.Drawing.Size(335, 55);
             this.guna2Button14.TabIndex = 4;
             // 
             // contactProfileImage
@@ -65,39 +65,42 @@
             this.contactProfileImage.BorderSize = 0;
             this.contactProfileImage.GradientAngle = 50F;
             this.contactProfileImage.Image = global::media.Properties.Resources.PicsArt_09_0m7_09_40_49;
-            this.contactProfileImage.Location = new System.Drawing.Point(17, 4);
+            this.contactProfileImage.Location = new System.Drawing.Point(9, 2);
             this.contactProfileImage.Name = "contactProfileImage";
             this.contactProfileImage.Size = new System.Drawing.Size(51, 51);
             this.contactProfileImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.contactProfileImage.TabIndex = 8;
             this.contactProfileImage.TabStop = false;
+            this.contactProfileImage.Click += new System.EventHandler(this.OpenContact);
             // 
             // label17
             // 
             this.label17.AutoSize = true;
             this.label17.BackColor = System.Drawing.Color.White;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.label17.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label17.Location = new System.Drawing.Point(320, 19);
+            this.label17.Location = new System.Drawing.Point(293, 18);
             this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(32, 22);
+            this.label17.Size = new System.Drawing.Size(24, 17);
             this.label17.TabIndex = 6;
             this.label17.Text = "🔴";
+            this.label17.Click += new System.EventHandler(this.OpenContact);
             // 
             // lblContactName
             // 
             this.lblContactName.AutoSize = true;
             this.lblContactName.BackColor = System.Drawing.Color.White;
-            this.lblContactName.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.25F, System.Drawing.FontStyle.Bold);
+            this.lblContactName.Font = new System.Drawing.Font("Segoe UI", 11.2F);
             this.lblContactName.ForeColor = System.Drawing.Color.Black;
-            this.lblContactName.Location = new System.Drawing.Point(77, 18);
+            this.lblContactName.Location = new System.Drawing.Point(69, 13);
             this.lblContactName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblContactName.Name = "lblContactName";
-            this.lblContactName.Size = new System.Drawing.Size(62, 25);
+            this.lblContactName.Size = new System.Drawing.Size(59, 25);
             this.lblContactName.TabIndex = 5;
             this.lblContactName.Text = "name";
             this.lblContactName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblContactName.Click += new System.EventHandler(this.OpenContact);
             // 
             // contactButton
             // 
@@ -114,14 +117,15 @@
             this.contactButton.Margin = new System.Windows.Forms.Padding(0);
             this.contactButton.Name = "contactButton";
             this.contactButton.PressedColor = System.Drawing.Color.Transparent;
-            this.contactButton.Size = new System.Drawing.Size(392, 61);
+            this.contactButton.Size = new System.Drawing.Size(335, 55);
             this.contactButton.TabIndex = 7;
+            this.contactButton.Click += new System.EventHandler(this.OpenContact);
             // 
             // FormContactList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(392, 61);
+            this.ClientSize = new System.Drawing.Size(335, 55);
             this.Controls.Add(this.contactProfileImage);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.lblContactName);

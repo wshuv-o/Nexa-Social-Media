@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -49,10 +50,80 @@ namespace media
                 }
 
             }
-            //this.web1.Text = this.NativeUser.PersonalWebsites[0].Link;
+            //bool isFriend=false;
+            
+            if (IsFriend())
+            {
+                btnFollow.Text = "Unfollow";
+                btnFollow.FillColor = Color.WhiteSmoke;
+                btnFollow.ForeColor = Color.Black;
+                btnFollow.Click += delegate
+                {
+                    btnFollow.Text = "Follow";
+                    btnFollow.FillColor = Color.FromArgb(94, 148, 255);
+                    btnFollow.ForeColor = Color.White;
+                    RemoveFriendship();
+
+                };
+            }
+            else
+            {
+                btnFollow.Text = "Follow";
+                btnFollow.FillColor = Color.FromArgb(94, 148, 255);
+                btnFollow.ForeColor = Color.White;
+                btnFollow.Click += delegate
+                {
+                    btnFollow.Text = "Requested";
+                    btnFollow.FillColor = Color.WhiteSmoke;
+                    btnFollow.ForeColor = Color.Black;
+                };
+            }
 
         }
+        private bool IsFriend()
+        {
+            using (MySqlConnection connection = new MySqlConnection(DatabaseCredentials.connectionStringLocalServer))
+            {
+                connection.Open();
 
+                using (var command = new MySqlCommand("SELECT * FROM friends WHERE nativeuserid = " + this.NativeUser.Key + " AND frienduserid = " + ClassNativeUser.NativeUser.Key, connection))
+                {
+                    int count = Convert.ToInt32(command.ExecuteScalar());
+                    if (count > 0) return true;
+                }
+                using (var command = new MySqlCommand("SELECT * FROM friends WHERE nativeuserid = " + ClassNativeUser.NativeUser.Key + " AND frienduserid = " + this.NativeUser.Key, connection))
+                {
+                    int count = Convert.ToInt32(command.ExecuteScalar());
+                    if (count > 0) return true;
+                }
+                connection.Close();
+            }
+            return false;
+        }
+
+        private void RemoveFriendship()
+        {
+            using (var connection = new MySqlConnection(DatabaseCredentials.connectionStringLocalServer))
+            {
+                connection.Open();
+
+                using (var command = new MySqlCommand("DELETE FROM friends WHERE (nativeuserid = @x AND frienduserid = @y) OR (nativeuserid = @y AND frienduserid = @x)", connection))
+                {
+                    command.Parameters.AddWithValue("@x", this.NativeUser.Key);
+                    command.Parameters.AddWithValue("@y", ClassNativeUser.NativeUser.Key);
+                    command.ExecuteNonQuery();
+                }
+            }
+            btnFollow.Text = "Follow";
+            btnFollow.FillColor = Color.FromArgb(94, 148, 255);
+            btnFollow.ForeColor = Color.White;
+            btnFollow.Click += delegate
+            {
+                btnFollow.Text = "Requested";
+                btnFollow.FillColor = Color.WhiteSmoke;
+                btnFollow.ForeColor = Color.Black;
+            };
+        }
         private void guna2ShadowPanel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -150,10 +221,25 @@ namespace media
 
         private void guna2Button3_Click(object sender, EventArgs e)
         {
-            Home h = new Home(this.NativeUser.Key);
+
+            guna2Button3.FillColor = Color.White;
+            guna2Button3.ForeColor = Color.Black;
+
+            guna2Button4.FillColor = Color.Transparent;
+            guna2Button4.ForeColor = Color.White;
+            
+            guna2Button5.FillColor = Color.Transparent;
+            guna2Button5.ForeColor = Color.White;
+            
+            guna2Button6.FillColor = Color.Transparent;
+            guna2Button6.ForeColor = Color.White;
+
+
+
+            FormPostPanelForProfile h = new FormPostPanelForProfile(this.NativeUser.Key);
             h.panelFeed.Padding = new Padding(170,0,0,0);
             Methods.OpenChildForm(h, this.panel1);
-            this.panel1.Refresh();
+            //this.panel1.Refresh();
             
         }
 
@@ -170,8 +256,55 @@ namespace media
 
         private void guna2Button4_Click(object sender, EventArgs e)
         {
+            guna2Button4.FillColor = Color.White;
+            guna2Button4.ForeColor = Color.Black;
+
+            guna2Button3.FillColor = Color.Transparent;
+            guna2Button3.ForeColor = Color.White;
+
+            guna2Button5.FillColor = Color.Transparent;
+            guna2Button5.ForeColor = Color.White;
+
+            guna2Button6.FillColor = Color.Transparent;
+            guna2Button6.ForeColor = Color.White;
+
             Profile.FormPostImages fpi = new Profile.FormPostImages();
             Methods.OpenChildForm(fpi, this.panel1);
+        }
+
+        private void guna2CircleButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void guna2Button5_Click(object sender, EventArgs e)
+        {
+            guna2Button5.FillColor = Color.White;
+            guna2Button5.ForeColor = Color.Black;
+
+            guna2Button4.FillColor = Color.Transparent;
+            guna2Button4.ForeColor = Color.White;
+
+            guna2Button3.FillColor = Color.Transparent;
+            guna2Button3.ForeColor = Color.White;
+
+            guna2Button6.FillColor = Color.Transparent;
+            guna2Button6.ForeColor = Color.White;
+        }
+
+        private void guna2Button6_Click(object sender, EventArgs e)
+        {
+            guna2Button6.FillColor = Color.White;
+            guna2Button6.ForeColor = Color.Black;
+
+            guna2Button4.FillColor = Color.Transparent;
+            guna2Button4.ForeColor = Color.White;
+
+            guna2Button5.FillColor = Color.Transparent;
+            guna2Button5.ForeColor = Color.White;
+
+            guna2Button3.FillColor = Color.Transparent;
+            guna2Button3.ForeColor = Color.White;
         }
     }
 }

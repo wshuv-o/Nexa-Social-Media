@@ -68,7 +68,7 @@ namespace media
             this.panelBase.Location = new System.Drawing.Point(0, 0);
             this.panelBase.Margin = new System.Windows.Forms.Padding(4);
             this.panelBase.Name = "panelBase";
-            this.panelBase.Size = new System.Drawing.Size(1429, 882);
+            this.panelBase.Size = new System.Drawing.Size(1920, 1055);
             this.panelBase.TabIndex = 1;
             this.panelBase.Paint += new System.Windows.Forms.PaintEventHandler(this.panelBase_Paint);
             // 
@@ -87,7 +87,7 @@ namespace media
             this.panel1.Controls.Add(this.tableLayoutPanel1);
             this.panel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(134)))), ((int)(((byte)(27)))), ((int)(((byte)(242)))));
             this.panel1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(27)))), ((int)(((byte)(242)))));
-            this.panel1.Location = new System.Drawing.Point(142, 80);
+            this.panel1.Location = new System.Drawing.Point(413, 194);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(29, 30, 29, 30);
@@ -363,10 +363,9 @@ namespace media
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Violet;
-            this.ClientSize = new System.Drawing.Size(1429, 882);
+            this.ClientSize = new System.Drawing.Size(1920, 1055);
             this.Controls.Add(this.panelBase);
             this.DoubleBuffered = true;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Nexa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -27,7 +27,7 @@ namespace media
                     | System.Windows.Forms.AnchorStyles.Right)));
                 panelBase.BackColor = System.Drawing.Color.White;
                 panelBase.Controls.Add(panelChild);
-                panelBase.Location = new System.Drawing.Point(43, 347);
+                panelBase.Location = new System.Drawing.Point(10, 347);
                 panelBase.Name = "panelBase";
                 panelBase.Padding = new System.Windows.Forms.Padding(50, -10, 50, 0);
                 panelBase.Size = new System.Drawing.Size(866, 850);
@@ -35,7 +35,7 @@ namespace media
 
                 panelChild.BackColor = System.Drawing.Color.White;
                 panelChild.Dock = System.Windows.Forms.DockStyle.Fill;
-                panelChild.Location = new System.Drawing.Point(50, 0);
+                panelChild.Location = new System.Drawing.Point(10, 0);
                 panelChild.Name = "panelChild";
                 panelChild.Size = new System.Drawing.Size(766, 600);
                 panelChild.TabIndex = 0;
@@ -63,7 +63,7 @@ namespace media
 
                 panelBase.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                     | System.Windows.Forms.AnchorStyles.Right)));
-                panelBase.BackColor = System.Drawing.Color.White;
+                panelBase.BackColor = System.Drawing.Color.WhiteSmoke;
                 panelBase.Controls.Add(panelChild);
                 panelBase.Location = new System.Drawing.Point(43, 347);
                 panelBase.Name = "panelBase";

@@ -79,7 +79,7 @@
             // productImage
             // 
             this.productImage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.productImage.Image = global::media.Properties.Resources._338458104_1527903524367608_1923566569049492375_n_removebg_preview;
+            //this.productImage.Image = global::media.Properties.Resources._338458104_1527903524367608_1923566569049492375_n_removebg_preview;
             this.productImage.ImageRotate = 0F;
             this.productImage.Location = new System.Drawing.Point(3, 3);
             this.productImage.Name = "productImage";
