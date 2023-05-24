@@ -67,7 +67,6 @@
             this.guna2GradientPanel1.Padding = new System.Windows.Forms.Padding(350, 50, 350, 50);
             this.guna2GradientPanel1.Size = new System.Drawing.Size(837, 728);
             this.guna2GradientPanel1.TabIndex = 0;
-            this.guna2GradientPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2GradientPanel1_Paint);
             // 
             // guna2GradientCircleButton3
             // 
@@ -198,7 +197,6 @@
             this.guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CircleButton1.Size = new System.Drawing.Size(36, 36);
             this.guna2CircleButton1.TabIndex = 2;
-            this.guna2CircleButton1.Click += new System.EventHandler(this.guna2CircleButton1_Click);
             // 
             // guna2PictureBox1
             // 

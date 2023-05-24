@@ -35,21 +35,20 @@ namespace media
             this.guna2GradientButton2 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
+            this.panel = new Guna.UI2.WinForms.Guna2Panel();
             this.btnRight = new Guna.UI2.WinForms.Guna2Button();
             this.btnLeft = new Guna.UI2.WinForms.Guna2Button();
+            this.customPanel1 = new media.CustomPanel();
+            this.customRoundPictureBox1 = new media.CustomRoundPictureBox();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
+            this.panel.SuspendLayout();
+            this.customPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customRoundPictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -108,6 +107,7 @@ namespace media
             this.guna2GradientButton2.Size = new System.Drawing.Size(556, 47);
             this.guna2GradientButton2.TabIndex = 1;
             this.guna2GradientButton2.Text = "Videos";
+            this.guna2GradientButton2.Click += new System.EventHandler(this.guna2GradientButton2_Click);
             // 
             // guna2GradientButton1
             // 
@@ -119,6 +119,8 @@ namespace media
             this.guna2GradientButton1.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.guna2GradientButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.guna2GradientButton1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.guna2GradientButton1.FillColor = System.Drawing.Color.SlateBlue;
+            this.guna2GradientButton1.FillColor2 = System.Drawing.Color.SlateBlue;
             this.guna2GradientButton1.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.guna2GradientButton1.ForeColor = System.Drawing.Color.White;
             this.guna2GradientButton1.Location = new System.Drawing.Point(65, 3);
@@ -127,20 +129,12 @@ namespace media
             this.guna2GradientButton1.Size = new System.Drawing.Size(555, 47);
             this.guna2GradientButton1.TabIndex = 0;
             this.guna2GradientButton1.Text = "Story";
+            this.guna2GradientButton1.Click += new System.EventHandler(this.guna2GradientButton1_Click);
             // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.flowLayoutPanel1.Controls.Add(this.button7);
-            this.flowLayoutPanel1.Controls.Add(this.button1);
-            this.flowLayoutPanel1.Controls.Add(this.button2);
-            this.flowLayoutPanel1.Controls.Add(this.button3);
-            this.flowLayoutPanel1.Controls.Add(this.button4);
-            this.flowLayoutPanel1.Controls.Add(this.button5);
-            this.flowLayoutPanel1.Controls.Add(this.button6);
-            this.flowLayoutPanel1.Controls.Add(this.button10);
-            this.flowLayoutPanel1.Controls.Add(this.button11);
-            this.flowLayoutPanel1.Controls.Add(this.button12);
+            this.flowLayoutPanel1.Controls.Add(this.panel);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(4, 65);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
@@ -151,105 +145,13 @@ namespace media
             this.flowLayoutPanel1.WrapContents = false;
             this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
-            // button7
+            // panel
             // 
-            this.button7.BackColor = System.Drawing.Color.Violet;
-            this.button7.Location = new System.Drawing.Point(64, 4);
-            this.button7.Margin = new System.Windows.Forms.Padding(4);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(139, 231);
-            this.button7.TabIndex = 6;
-            this.button7.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Turquoise;
-            this.button1.Location = new System.Drawing.Point(211, 4);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(139, 231);
-            this.button1.TabIndex = 7;
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Tomato;
-            this.button2.Location = new System.Drawing.Point(358, 4);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(139, 231);
-            this.button2.TabIndex = 8;
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.SpringGreen;
-            this.button3.Location = new System.Drawing.Point(505, 4);
-            this.button3.Margin = new System.Windows.Forms.Padding(4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(139, 231);
-            this.button3.TabIndex = 9;
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.Snow;
-            this.button4.Location = new System.Drawing.Point(652, 4);
-            this.button4.Margin = new System.Windows.Forms.Padding(4);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(139, 231);
-            this.button4.TabIndex = 10;
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.Silver;
-            this.button5.Location = new System.Drawing.Point(799, 4);
-            this.button5.Margin = new System.Windows.Forms.Padding(4);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(139, 231);
-            this.button5.TabIndex = 11;
-            this.button5.UseVisualStyleBackColor = false;
-            // 
-            // button6
-            // 
-            this.button6.BackColor = System.Drawing.Color.Salmon;
-            this.button6.Location = new System.Drawing.Point(946, 4);
-            this.button6.Margin = new System.Windows.Forms.Padding(4);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(139, 231);
-            this.button6.TabIndex = 12;
-            this.button6.UseVisualStyleBackColor = false;
-            // 
-            // button10
-            // 
-            this.button10.BackColor = System.Drawing.Color.YellowGreen;
-            this.button10.Location = new System.Drawing.Point(1093, 4);
-            this.button10.Margin = new System.Windows.Forms.Padding(4);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(139, 231);
-            this.button10.TabIndex = 13;
-            this.button10.UseVisualStyleBackColor = false;
-            // 
-            // button11
-            // 
-            this.button11.BackColor = System.Drawing.Color.White;
-            this.button11.Location = new System.Drawing.Point(1240, 4);
-            this.button11.Margin = new System.Windows.Forms.Padding(4);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(139, 231);
-            this.button11.TabIndex = 14;
-            this.button11.UseVisualStyleBackColor = false;
-            // 
-            // button12
-            // 
-            this.button12.BackColor = System.Drawing.Color.White;
-            this.button12.Location = new System.Drawing.Point(1387, 4);
-            this.button12.Margin = new System.Windows.Forms.Padding(4);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(139, 231);
-            this.button12.TabIndex = 15;
-            this.button12.UseVisualStyleBackColor = false;
+            this.panel.Controls.Add(this.customPanel1);
+            this.panel.Location = new System.Drawing.Point(63, 3);
+            this.panel.Name = "panel";
+            this.panel.Size = new System.Drawing.Size(177, 266);
+            this.panel.TabIndex = 0;
             // 
             // btnRight
             // 
@@ -290,6 +192,74 @@ namespace media
             this.btnLeft.Text = "btnLeft";
             this.btnLeft.Click += new System.EventHandler(this.buttonLeft_Click);
             // 
+            // customPanel1
+            // 
+            this.customPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.customPanel1.BorderColor = System.Drawing.Color.Gainsboro;
+            this.customPanel1.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.customPanel1.BorderRadius = 10;
+            this.customPanel1.BorderSize = 2;
+            this.customPanel1.Controls.Add(this.customRoundPictureBox1);
+            this.customPanel1.Controls.Add(this.guna2Button1);
+            this.customPanel1.Controls.Add(this.guna2PictureBox1);
+            this.customPanel1.Location = new System.Drawing.Point(0, 0);
+            this.customPanel1.Name = "customPanel1";
+            this.customPanel1.Padding = new System.Windows.Forms.Padding(10);
+            this.customPanel1.Size = new System.Drawing.Size(176, 263);
+            this.customPanel1.TabIndex = 1;
+            this.customPanel1.UnderlinedStyle = false;
+            this.customPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.customPanel1_Paint);
+            // 
+            // customRoundPictureBox1
+            // 
+            this.customRoundPictureBox1.BackColor = System.Drawing.Color.White;
+            this.customRoundPictureBox1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.customRoundPictureBox1.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.customRoundPictureBox1.BorderColor2 = System.Drawing.Color.HotPink;
+            this.customRoundPictureBox1.BorderDashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.customRoundPictureBox1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.customRoundPictureBox1.BorderSize = 0;
+            this.customRoundPictureBox1.GradientAngle = 50F;
+            this.customRoundPictureBox1.Image = global::media.Properties.Resources.icons8_add_96;
+            this.customRoundPictureBox1.Location = new System.Drawing.Point(60, 148);
+            this.customRoundPictureBox1.Name = "customRoundPictureBox1";
+            this.customRoundPictureBox1.Size = new System.Drawing.Size(53, 53);
+            this.customRoundPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.customRoundPictureBox1.TabIndex = 1;
+            this.customRoundPictureBox1.TabStop = false;
+            // 
+            // guna2Button1
+            // 
+            this.guna2Button1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button1.BorderRadius = 10;
+            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.guna2Button1.FillColor = System.Drawing.Color.SlateBlue;
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.Location = new System.Drawing.Point(10, 177);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.Size = new System.Drawing.Size(156, 76);
+            this.guna2Button1.TabIndex = 0;
+            this.guna2Button1.Text = "Add Story";
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.BackColor = System.Drawing.Color.White;
+            this.guna2PictureBox1.BackgroundImage = global::media.Properties.Resources.PicsArt_09_07_09_40_49;
+            this.guna2PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.guna2PictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2PictureBox1.FillColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(10, 10);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(156, 168);
+            this.guna2PictureBox1.TabIndex = 2;
+            this.guna2PictureBox1.TabStop = false;
+            // 
             // Story
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -308,6 +278,10 @@ namespace media
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
+            this.panel.ResumeLayout(false);
+            this.customPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.customRoundPictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -319,19 +293,14 @@ namespace media
         public System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         public System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button10;
         private Guna.UI2.WinForms.Guna2Button btnLeft;
         private Guna.UI2.WinForms.Guna2Button btnRight;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button12;
         private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton1;
         private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton2;
+        private Guna.UI2.WinForms.Guna2Panel panel;
+        private CustomPanel customPanel1;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private CustomRoundPictureBox customRoundPictureBox1;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
     }
 }

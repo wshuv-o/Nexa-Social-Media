@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace media
 {
-    public partial class FormStorySingle : Form
+    public partial class FormStorySingle: Form
     {
         public FormStorySingle()
         {
             InitializeComponent();
-        }
-
-        private void guna2CircleButton1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2GradientPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

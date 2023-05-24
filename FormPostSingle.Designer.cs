@@ -18,15 +18,13 @@
                 components.Dispose();
             }
             base.Dispose(disposing);
-        }                         System.Windows.Forms.Label lblUsernameComment;
-            System.Windows.Forms.Label commenterName;                               
-        #region Windows Form Designer generated code
-System.Windows.Forms.Label lblUserName;
+        }                     System.Windows.Forms.Label lblUsernameComment;
+            System.Windows.Forms.Label commenterName;
+                       System.Windows.Forms.Label lblUserName;
+                                                             #region Windows Form Designer generated code
         private void InitializeComponent()
         {            
-            
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPostSingle));
-
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -43,16 +41,16 @@ System.Windows.Forms.Label lblUserName;
             this.button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2CustomGradientPanel2 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.sendPanel = new Guna.UI2.WinForms.Guna2Panel();
-            this.commentSend = new Guna.UI2.WinForms.Guna2CircleButton();
             this.userProfileImageComment = new media.CustomRoundPictureBox();
             this.commentBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2CustomGradientPanel4 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.guna2CircleButton2 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.reactComment = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblNumberOfLike = new System.Windows.Forms.Label();
             this.commenterText = new System.Windows.Forms.Label();
             this.commenterImage = new media.CustomRoundPictureBox();
-            this.guna2CircleButton2 = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.lblNumberOfLike = new System.Windows.Forms.Label();
+            this.commentSend = new Guna.UI2.WinForms.Guna2CircleButton();
             lblUserName = new System.Windows.Forms.Label();
             lblUsernameComment = new System.Windows.Forms.Label();
             commenterName = new System.Windows.Forms.Label();
@@ -74,14 +72,14 @@ System.Windows.Forms.Label lblUserName;
             // guna2ShadowPanel1
             // 
             this.guna2ShadowPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
-            this.guna2ShadowPanel1.BorderRadius = 30;
+            this.guna2ShadowPanel1.BorderRadius = 20;
             this.guna2ShadowPanel1.Controls.Add(this.flowLayoutPanel1);
             this.guna2ShadowPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2ShadowPanel1.FillColor = System.Drawing.Color.White;
             this.guna2ShadowPanel1.Location = new System.Drawing.Point(0, 0);
             this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
             this.guna2ShadowPanel1.Padding = new System.Windows.Forms.Padding(30, 30, 20, 30);
-            this.guna2ShadowPanel1.Size = new System.Drawing.Size(874, 739);
+            this.guna2ShadowPanel1.Size = new System.Drawing.Size(874, 840);
             this.guna2ShadowPanel1.TabIndex = 0;
             // 
             // flowLayoutPanel1
@@ -99,7 +97,7 @@ System.Windows.Forms.Label lblUserName;
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(11, 10, 11, 10);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(824, 679);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(824, 780);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
             // panel1
@@ -311,14 +309,14 @@ System.Windows.Forms.Label lblUserName;
             // 
             this.sendPanel.BackColor = System.Drawing.Color.White;
             this.sendPanel.BorderColor = System.Drawing.Color.LightGray;
-            this.sendPanel.BorderRadius = 30;
+            this.sendPanel.BorderRadius = 20;
             this.sendPanel.BorderThickness = 1;
             this.sendPanel.Controls.Add(this.commentSend);
             this.sendPanel.Controls.Add(lblUsernameComment);
             this.sendPanel.Controls.Add(this.userProfileImageComment);
             this.sendPanel.Controls.Add(this.commentBox);
             this.sendPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sendPanel.FillColor = System.Drawing.Color.White;
+            this.sendPanel.FillColor = System.Drawing.Color.WhiteSmoke;
             this.sendPanel.ForeColor = System.Drawing.SystemColors.Info;
             this.sendPanel.Location = new System.Drawing.Point(0, 0);
             this.sendPanel.Margin = new System.Windows.Forms.Padding(4, 4, 30, 4);
@@ -327,30 +325,10 @@ System.Windows.Forms.Label lblUserName;
             this.sendPanel.Size = new System.Drawing.Size(787, 164);
             this.sendPanel.TabIndex = 3;
             // 
-            // commentSend
-            // 
-            this.commentSend.BorderColor = System.Drawing.Color.LightGray;
-            this.commentSend.BorderThickness = 1;
-            this.commentSend.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.commentSend.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.commentSend.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.commentSend.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.commentSend.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.commentSend.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.commentSend.ForeColor = System.Drawing.Color.Red;
-            this.commentSend.Image = global::media.Properties.Resources.icons8_share_96;
-            this.commentSend.ImageSize = new System.Drawing.Size(25, 25);
-            this.commentSend.Location = new System.Drawing.Point(573, 64);
-            this.commentSend.Name = "commentSend";
-            this.commentSend.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.commentSend.Size = new System.Drawing.Size(48, 49);
-            this.commentSend.TabIndex = 47;
-            this.commentSend.Click += new System.EventHandler(this.commentSend_Click);
-            // 
             // lblUsernameComment
             // 
             lblUsernameComment.AutoSize = true;
-            lblUsernameComment.BackColor = System.Drawing.Color.White;
+            lblUsernameComment.BackColor = System.Drawing.Color.WhiteSmoke;
             lblUsernameComment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             lblUsernameComment.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.25F, System.Drawing.FontStyle.Bold);
             lblUsernameComment.ForeColor = System.Drawing.Color.Black;
@@ -384,6 +362,7 @@ System.Windows.Forms.Label lblUserName;
             this.commentBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.commentBox.BackColor = System.Drawing.Color.WhiteSmoke;
             this.commentBox.BorderRadius = 20;
             this.commentBox.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.commentBox.DefaultText = "";
@@ -416,6 +395,25 @@ System.Windows.Forms.Label lblUserName;
             this.guna2CustomGradientPanel4.Name = "guna2CustomGradientPanel4";
             this.guna2CustomGradientPanel4.Size = new System.Drawing.Size(787, 111);
             this.guna2CustomGradientPanel4.TabIndex = 11;
+            // 
+            // guna2CircleButton2
+            // 
+            this.guna2CircleButton2.BorderColor = System.Drawing.Color.LightGray;
+            this.guna2CircleButton2.BorderThickness = 1;
+            this.guna2CircleButton2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2CircleButton2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2CircleButton2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2CircleButton2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2CircleButton2.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.guna2CircleButton2.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.guna2CircleButton2.ForeColor = System.Drawing.Color.Red;
+            this.guna2CircleButton2.Image = global::media.Properties.Resources.dots;
+            this.guna2CircleButton2.ImageSize = new System.Drawing.Size(25, 25);
+            this.guna2CircleButton2.Location = new System.Drawing.Point(631, 30);
+            this.guna2CircleButton2.Name = "guna2CircleButton2";
+            this.guna2CircleButton2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CircleButton2.Size = new System.Drawing.Size(48, 49);
+            this.guna2CircleButton2.TabIndex = 6;
             // 
             // reactComment
             // 
@@ -450,6 +448,18 @@ System.Windows.Forms.Label lblUserName;
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(472, 86);
             this.guna2Panel2.TabIndex = 4;
+            // 
+            // lblNumberOfLike
+            // 
+            this.lblNumberOfLike.AutoEllipsis = true;
+            this.lblNumberOfLike.AutoSize = true;
+            this.lblNumberOfLike.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.lblNumberOfLike.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblNumberOfLike.Location = new System.Drawing.Point(414, 7);
+            this.lblNumberOfLike.Name = "lblNumberOfLike";
+            this.lblNumberOfLike.Size = new System.Drawing.Size(44, 16);
+            this.lblNumberOfLike.TabIndex = 7;
+            this.lblNumberOfLike.Text = "label3";
             // 
             // commenterText
             // 
@@ -493,36 +503,26 @@ System.Windows.Forms.Label lblUserName;
             this.commenterImage.TabIndex = 3;
             this.commenterImage.TabStop = false;
             // 
-            // guna2CircleButton2
+            // commentSend
             // 
-            this.guna2CircleButton2.BorderColor = System.Drawing.Color.LightGray;
-            this.guna2CircleButton2.BorderThickness = 1;
-            this.guna2CircleButton2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2CircleButton2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2CircleButton2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2CircleButton2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2CircleButton2.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.guna2CircleButton2.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.guna2CircleButton2.ForeColor = System.Drawing.Color.Red;
-            this.guna2CircleButton2.Image = global::media.Properties.Resources.dots;
-            this.guna2CircleButton2.ImageSize = new System.Drawing.Size(25, 25);
-            this.guna2CircleButton2.Location = new System.Drawing.Point(631, 30);
-            this.guna2CircleButton2.Name = "guna2CircleButton2";
-            this.guna2CircleButton2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CircleButton2.Size = new System.Drawing.Size(48, 49);
-            this.guna2CircleButton2.TabIndex = 6;
-            // 
-            // lblNumberOfLike
-            // 
-            this.lblNumberOfLike.AutoEllipsis = true;
-            this.lblNumberOfLike.AutoSize = true;
-            this.lblNumberOfLike.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.lblNumberOfLike.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblNumberOfLike.Location = new System.Drawing.Point(414, 7);
-            this.lblNumberOfLike.Name = "lblNumberOfLike";
-            this.lblNumberOfLike.Size = new System.Drawing.Size(44, 16);
-            this.lblNumberOfLike.TabIndex = 7;
-            this.lblNumberOfLike.Text = "label3";
+            this.commentSend.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.commentSend.BorderColor = System.Drawing.Color.LightGray;
+            this.commentSend.BorderThickness = 1;
+            this.commentSend.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.commentSend.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.commentSend.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.commentSend.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.commentSend.FillColor = System.Drawing.Color.White;
+            this.commentSend.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.commentSend.ForeColor = System.Drawing.Color.Red;
+            this.commentSend.Image = global::media.Properties.Resources.icons8_share_96;
+            this.commentSend.ImageSize = new System.Drawing.Size(25, 25);
+            this.commentSend.Location = new System.Drawing.Point(573, 64);
+            this.commentSend.Name = "commentSend";
+            this.commentSend.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.commentSend.Size = new System.Drawing.Size(48, 49);
+            this.commentSend.TabIndex = 47;
+            this.commentSend.Click += new System.EventHandler(this.commentSend_Click);
             // 
             // FormPostSingle
             // 
@@ -530,7 +530,7 @@ System.Windows.Forms.Label lblUserName;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.Green;
-            this.ClientSize = new System.Drawing.Size(874, 739);
+            this.ClientSize = new System.Drawing.Size(874, 840);
             this.Controls.Add(this.guna2ShadowPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -583,8 +583,8 @@ System.Windows.Forms.Label lblUserName;
         private Guna.UI2.WinForms.Guna2Panel sendPanel;
         private CustomRoundPictureBox userProfileImageComment;
         private Guna.UI2.WinForms.Guna2TextBox commentBox;
-        private Guna.UI2.WinForms.Guna2CircleButton commentSend;
         private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton2;
         private System.Windows.Forms.Label lblNumberOfLike;
+        private Guna.UI2.WinForms.Guna2CircleButton commentSend;
     }
 }

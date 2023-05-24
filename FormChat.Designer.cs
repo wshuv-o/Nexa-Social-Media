@@ -344,12 +344,12 @@ namespace media
             guna2GradientPanel1.BorderColor = System.Drawing.Color.Black;
             guna2GradientPanel1.BorderRadius = 20;
             guna2GradientPanel1.BorderThickness = 1;
+            guna2GradientPanel1.Controls.Add(customRoundPictureBox1);
             guna2GradientPanel1.Controls.Add(label8);
             guna2GradientPanel1.Controls.Add(label6);
-            guna2GradientPanel1.Controls.Add(customRoundPictureBox1);
             guna2GradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            guna2GradientPanel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            guna2GradientPanel1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            guna2GradientPanel1.FillColor = System.Drawing.Color.White;
+            guna2GradientPanel1.FillColor2 = System.Drawing.Color.White;
             guna2GradientPanel1.Location = new System.Drawing.Point(3, 119);
             guna2GradientPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             guna2GradientPanel1.Name = "guna2GradientPanel1";
@@ -371,7 +371,7 @@ namespace media
             label6.AutoSize = true;
             label6.BackColor = System.Drawing.Color.Transparent;
             label6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label6.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            label6.ForeColor = System.Drawing.Color.Black;
             label6.Location = new System.Drawing.Point(151, 114);
             label6.Name = "label6";
             label6.Size = new System.Drawing.Size(132, 28);
@@ -380,17 +380,18 @@ namespace media
             // 
             // customRoundPictureBox1
             // 
+            customRoundPictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             customRoundPictureBox1.BackColor = System.Drawing.Color.Indigo;
             customRoundPictureBox1.BackgroundImage = global::media.Properties.Resources.ProfileImage;
             customRoundPictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             customRoundPictureBox1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            customRoundPictureBox1.BorderColor = System.Drawing.Color.RoyalBlue;
-            customRoundPictureBox1.BorderColor2 = System.Drawing.Color.HotPink;
+            customRoundPictureBox1.BorderColor = System.Drawing.Color.Transparent;
+            customRoundPictureBox1.BorderColor2 = System.Drawing.Color.Transparent;
             customRoundPictureBox1.BorderDashStyle = System.Drawing.Drawing2D.DashStyle.Custom;
             customRoundPictureBox1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Custom;
             customRoundPictureBox1.BorderSize = 3;
             customRoundPictureBox1.GradientAngle = 50F;
-            customRoundPictureBox1.Location = new System.Drawing.Point(173, 6);
+            customRoundPictureBox1.Location = new System.Drawing.Point(156, 0);
             customRoundPictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             customRoundPictureBox1.Name = "customRoundPictureBox1";
             customRoundPictureBox1.Size = new System.Drawing.Size(109, 110);
@@ -458,6 +459,7 @@ namespace media
             // guna2PictureBox2
             // 
             guna2PictureBox2.BorderRadius = 10;
+            guna2PictureBox2.Image = global::media.Properties.Resources.sbg7;
             guna2PictureBox2.ImageRotate = 0F;
             guna2PictureBox2.Location = new System.Drawing.Point(3, 2);
             guna2PictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -469,6 +471,7 @@ namespace media
             // guna2PictureBox4
             // 
             guna2PictureBox4.BorderRadius = 10;
+            guna2PictureBox4.Image = global::media.Properties.Resources.sbg5;
             guna2PictureBox4.ImageRotate = 0F;
             guna2PictureBox4.Location = new System.Drawing.Point(102, 2);
             guna2PictureBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -480,6 +483,7 @@ namespace media
             // guna2PictureBox5
             // 
             guna2PictureBox5.BorderRadius = 10;
+            guna2PictureBox5.Image = global::media.Properties.Resources.sbg2;
             guna2PictureBox5.ImageRotate = 0F;
             guna2PictureBox5.Location = new System.Drawing.Point(201, 2);
             guna2PictureBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -491,6 +495,7 @@ namespace media
             // guna2PictureBox6
             // 
             guna2PictureBox6.BorderRadius = 10;
+            guna2PictureBox6.Image = global::media.Properties.Resources.sbg6;
             guna2PictureBox6.ImageRotate = 0F;
             guna2PictureBox6.Location = new System.Drawing.Point(300, 2);
             guna2PictureBox6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -502,6 +507,7 @@ namespace media
             // guna2PictureBox7
             // 
             guna2PictureBox7.BorderRadius = 10;
+            guna2PictureBox7.Image = global::media.Properties.Resources.sbg1;
             guna2PictureBox7.ImageRotate = 0F;
             guna2PictureBox7.Location = new System.Drawing.Point(3, 100);
             guna2PictureBox7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -513,6 +519,7 @@ namespace media
             // guna2PictureBox8
             // 
             guna2PictureBox8.BorderRadius = 10;
+            guna2PictureBox8.Image = global::media.Properties.Resources.sbg6;
             guna2PictureBox8.ImageRotate = 0F;
             guna2PictureBox8.Location = new System.Drawing.Point(102, 100);
             guna2PictureBox8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -524,6 +531,7 @@ namespace media
             // guna2PictureBox14
             // 
             guna2PictureBox14.BorderRadius = 10;
+            guna2PictureBox14.Image = global::media.Properties.Resources.sbg4;
             guna2PictureBox14.ImageRotate = 0F;
             guna2PictureBox14.Location = new System.Drawing.Point(201, 100);
             guna2PictureBox14.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -1151,14 +1159,14 @@ namespace media
         private Guna2Panel guna2Panel6;
         private Label label4;
         private Guna2CirclePictureBox guna2CirclePictureBox2;
-        private Guna2Panel guna2Panel9;
+        private static Guna2Panel guna2Panel9;
         private Label label5;
         private Guna2CirclePictureBox guna2CirclePictureBox3;
         private Guna2Button guna2Button2;
         private Label label8;
-        private Label label6;
+        private static Label label6;
         private FlowLayoutPanel flowLayoutPanel3;
-        private CustomRoundPictureBox customRoundPictureBox1;
+        private static CustomRoundPictureBox customRoundPictureBox1;
         private TableLayoutPanel tableLayoutPanel4;
         private Guna2Panel panelSendContent;
         private CustomRoundPictureBox customRoundPictureBox2;

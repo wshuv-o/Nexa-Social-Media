@@ -74,6 +74,19 @@ namespace media
             Image image = ByteArrayToImage(imageBytes);
             return image;
         }
+        public Image LoadStoryImageFromDataBase(int storyId)
+        {
+            byte[] imageBytes = GetStoryImage(storyId);
+            if (imageBytes == null)
+            {
+                MessageBox.Show("No image found for user ID " + userId + ".", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+
+            Image image = ByteArrayToImage(imageBytes);
+            return image;
+        }
+
         public async Task<System.Drawing.Image> LoadPostImageFromDataBaseAsync(int postId)
         {
             return await Task.Run(() => LoadPostImageFromDataBase(postId));
@@ -186,6 +199,35 @@ namespace media
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@userId", userId);
+
+                    using (MySqlDataReader reader = command.ExecuteReader(CommandBehavior.SingleRow))
+                    {
+                        if (reader.Read())
+                        {
+                            if (!reader.IsDBNull(0))
+                            {
+                                return (byte[])reader[0];
+                            }
+                        }
+                    }
+                }
+                connection.Close();
+            }
+
+            return null;
+        }
+        public byte[] GetStoryImage(int storyid)
+        {
+
+            using (MySqlConnection connection = new MySqlConnection(ConnectionString))
+            {
+                connection.Open();
+
+                string query = "SELECT storyBackground FROM story WHERE storyid = @storyid";
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@storyid", storyid);
 
                     using (MySqlDataReader reader = command.ExecuteReader(CommandBehavior.SingleRow))
                     {

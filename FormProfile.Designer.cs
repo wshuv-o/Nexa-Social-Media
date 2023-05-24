@@ -35,7 +35,6 @@
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblBio = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.label4 = new System.Windows.Forms.Label();
-            this.userProfilePhoto = new media.CustomPanel();
             this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.btnFollow = new Guna.UI2.WinForms.Guna2Button();
@@ -53,6 +52,7 @@
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.userProfilePhoto = new media.CustomPanel();
             this.tableLayoutPanel1.SuspendLayout();
             this.guna2GradientPanel1.SuspendLayout();
             this.guna2GradientPanel3.SuspendLayout();
@@ -171,24 +171,6 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "About";
             // 
-            // userProfilePhoto
-            // 
-            this.userProfilePhoto.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.userProfilePhoto.BackColor = System.Drawing.Color.White;
-            this.userProfilePhoto.BackgroundImage = global::media.Properties.Resources.PicsArt_09_0m7_09_40_49;
-            this.userProfilePhoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.userProfilePhoto.BorderColor = System.Drawing.Color.White;
-            this.userProfilePhoto.BorderFocusColor = System.Drawing.Color.White;
-            this.userProfilePhoto.BorderRadius = 30;
-            this.userProfilePhoto.BorderSize = 1;
-            this.userProfilePhoto.Location = new System.Drawing.Point(164, 107);
-            this.userProfilePhoto.Margin = new System.Windows.Forms.Padding(4);
-            this.userProfilePhoto.Name = "userProfilePhoto";
-            this.userProfilePhoto.Size = new System.Drawing.Size(200, 196);
-            this.userProfilePhoto.TabIndex = 7;
-            this.userProfilePhoto.UnderlinedStyle = false;
-            this.userProfilePhoto.Paint += new System.Windows.Forms.PaintEventHandler(this.userProfilePhoto_Paint);
-            // 
             // guna2GradientPanel2
             // 
             this.guna2GradientPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -243,6 +225,7 @@
             this.btnFollow.Size = new System.Drawing.Size(178, 54);
             this.btnFollow.TabIndex = 0;
             this.btnFollow.Text = "Follow";
+            this.btnFollow.Click += new System.EventHandler(this.btnFollow_Click);
             // 
             // btnMessage
             // 
@@ -488,6 +471,24 @@
             this.panel1.Size = new System.Drawing.Size(1256, 804);
             this.panel1.TabIndex = 1;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint_1);
+            // 
+            // userProfilePhoto
+            // 
+            this.userProfilePhoto.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.userProfilePhoto.BackColor = System.Drawing.Color.White;
+            this.userProfilePhoto.BackgroundImage = global::media.Properties.Resources.PicsArt_09_0m7_09_40_49;
+            this.userProfilePhoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.userProfilePhoto.BorderColor = System.Drawing.Color.White;
+            this.userProfilePhoto.BorderFocusColor = System.Drawing.Color.White;
+            this.userProfilePhoto.BorderRadius = 30;
+            this.userProfilePhoto.BorderSize = 1;
+            this.userProfilePhoto.Location = new System.Drawing.Point(164, 107);
+            this.userProfilePhoto.Margin = new System.Windows.Forms.Padding(4);
+            this.userProfilePhoto.Name = "userProfilePhoto";
+            this.userProfilePhoto.Size = new System.Drawing.Size(200, 196);
+            this.userProfilePhoto.TabIndex = 7;
+            this.userProfilePhoto.UnderlinedStyle = false;
+            this.userProfilePhoto.Paint += new System.Windows.Forms.PaintEventHandler(this.userProfilePhoto_Paint);
             // 
             // FormProfile
             // 

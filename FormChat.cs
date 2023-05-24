@@ -651,7 +651,9 @@ namespace media
             ChatUser = dbio.GetUserByUserId(FormChat.key);
             pictureBox7.Image = ChatUser.ProfilePhoto;
             userName.Text=ChatUser.UserFirstName+ " "+ChatUser.UserLastName;
-            
+            label6.Text= ChatUser.UserFirstName + " " + ChatUser.UserLastName;
+            customRoundPictureBox1.Image= ChatUser.ProfilePhoto;
+
         }
 
         private void button2_Click(object sender, EventArgs e)

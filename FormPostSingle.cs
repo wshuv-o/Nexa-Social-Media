@@ -214,14 +214,14 @@ namespace media
                             guna2Panel2.Controls.Add(commenterText);
                             guna2Panel2.Controls.Add(commenterName);
                             guna2Panel2.CustomizableEdges.TopLeft = false;
-                            guna2Panel2.FillColor = System.Drawing.Color.WhiteSmoke;
+                            guna2Panel2.FillColor = System.Drawing.Color.White;
                             guna2Panel2.Location = new System.Drawing.Point(71, 9);
                             guna2Panel2.Name = "guna2Panel2_" + commentId;
                             guna2Panel2.Size = new System.Drawing.Size(472, 86);
                             guna2Panel2.TabIndex = 4;
 
                             commenterText.AutoSize = true;
-                            commenterText.BackColor = System.Drawing.Color.WhiteSmoke;
+                            commenterText.BackColor = System.Drawing.Color.White;
                             commenterText.Location = new System.Drawing.Point(14, 31);
                             commenterText.Name = "commenterText_" + commentId;
                             commenterText.Size = new System.Drawing.Size(44, 16);

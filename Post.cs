@@ -62,7 +62,6 @@ namespace media
             {
                 this.postTime.Text = "N/A";
             }
-            //postText.AutoSize = false;
             postText.MaximumSize = new Size(700, 100);
 
             bool alreadyLiked = CheckIfAlreadyLiked(this.ClassPosts.PostId, ClassNativeUser.NativeUser.Key);
@@ -159,8 +158,7 @@ namespace media
 
         private async void Post_Load(object sender, EventArgs e)
         {
-            //await Task.Delay(500);
-            // += ParentContainer_Scroll;
+
             if (IsLabelVisibleOnScreen(lblUserName))
             {
                 //MessageBox.Show("Post_Load");
@@ -777,13 +775,11 @@ namespace media
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             FormTest f = new FormTest();
-
-
             f.FormBorderStyle = FormBorderStyle.None;
             Guna.UI2.WinForms.Guna2ShadowPanel shadowPanel = new Guna.UI2.WinForms.Guna2ShadowPanel();
             f.StartPosition = FormStartPosition.Manual;
             FormPostSingle fsp = new FormPostSingle(this.classPosts);
-            shadowPanel.Location= new Point(580, 100);
+            shadowPanel.Location= new Point(580, 70);
             shadowPanel.Size = fsp.Size;
             shadowPanel.ShadowDepth = 100;
             shadowPanel.ShadowShift = 10;
@@ -791,14 +787,9 @@ namespace media
             shadowPanel.Radius = 20;
             Methods.OpenChildForm(fsp, shadowPanel);
             f.Controls.Add(shadowPanel);
-
             shadowPanel.BringToFront();
-            // Center the child form on the parent form
             f.Location = new Point(3,32);
-
-            // Show the form as a modal dialog
             f.ShowDialog(this);
-
 
         }
     }

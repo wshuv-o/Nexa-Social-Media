@@ -33,9 +33,9 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.customRoundPictureBox1 = new media.CustomRoundPictureBox();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.customRoundPictureBox1 = new media.CustomRoundPictureBox();
             this.guna2ShadowPanel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -128,24 +128,6 @@
             this.guna2TextBox1.Size = new System.Drawing.Size(687, 47);
             this.guna2TextBox1.TabIndex = 1;
             // 
-            // customRoundPictureBox1
-            // 
-            this.customRoundPictureBox1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.customRoundPictureBox1.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.customRoundPictureBox1.BorderColor2 = System.Drawing.Color.HotPink;
-            this.customRoundPictureBox1.BorderDashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.customRoundPictureBox1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.customRoundPictureBox1.BorderSize = 0;
-            this.customRoundPictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.customRoundPictureBox1.GradientAngle = 50F;
-            this.customRoundPictureBox1.Image = global::media.Properties.Resources.rsz_1picsart_09_0m7_0940491;
-            this.customRoundPictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.customRoundPictureBox1.Name = "customRoundPictureBox1";
-            this.customRoundPictureBox1.Size = new System.Drawing.Size(61, 61);
-            this.customRoundPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.customRoundPictureBox1.TabIndex = 0;
-            this.customRoundPictureBox1.TabStop = false;
-            // 
             // guna2Button1
             // 
             this.guna2Button1.BorderRadius = 15;
@@ -178,7 +160,26 @@
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.Size = new System.Drawing.Size(387, 57);
             this.guna2Button2.TabIndex = 1;
-            this.guna2Button2.Text = "Post";
+            this.guna2Button2.Text = "Story";
+            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
+            // 
+            // customRoundPictureBox1
+            // 
+            this.customRoundPictureBox1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.customRoundPictureBox1.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.customRoundPictureBox1.BorderColor2 = System.Drawing.Color.HotPink;
+            this.customRoundPictureBox1.BorderDashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.customRoundPictureBox1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.customRoundPictureBox1.BorderSize = 0;
+            this.customRoundPictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.customRoundPictureBox1.GradientAngle = 50F;
+            this.customRoundPictureBox1.Image = global::media.Properties.Resources.rsz_1picsart_09_0m7_0940491;
+            this.customRoundPictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.customRoundPictureBox1.Name = "customRoundPictureBox1";
+            this.customRoundPictureBox1.Size = new System.Drawing.Size(61, 61);
+            this.customRoundPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.customRoundPictureBox1.TabIndex = 0;
+            this.customRoundPictureBox1.TabStop = false;
             // 
             // Form3
             // 

@@ -129,7 +129,6 @@ namespace media
             friendRequestPanel.Name = "friendRequestPanel";
             friendRequestPanel.Size = new System.Drawing.Size(668, 385);
             friendRequestPanel.TabIndex = 1;
-            friendRequestPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint); 
 
 
             Methods.SetDoubleBuffer(panel1, true);
@@ -197,26 +196,15 @@ namespace media
                 {
 
                     posts.Add(new Post(distinctPostList[i]));
-                    //Methods.OpenChildForm2(posts[i], postAdopters[i].panelBase);
                     Methods.OpenChildForm2(posts[i], postAdopters[i].panelBase);
                     panelFeed.Controls.Add(postAdopters[i].panelBase);
 
                 }
-                //MessageBox.Show(x);
             }
-            //MessageBox.Show(x);
+            
         }
 
 
-        private void panelFeed_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void flowLayoutPanel1_MouseWheel(object sender, MouseEventArgs e)
-        {
-
-        }
         private void panelNavBar_Resize(object sender, EventArgs e)
         {
             if (panelFeed.Width <= 600)
@@ -233,6 +221,7 @@ namespace media
 
         private void Home_Load(object sender, EventArgs e)
         {
+            this.guna2Panel4.BringToFront();
             List<media.Classes.ClassPost> classPostList = new List<media.Classes.ClassPost>();
             string connectionString = DatabaseCredentials.connectionStringLocalServer;
             MySqlConnection connection = new MySqlConnection(connectionString);
@@ -307,7 +296,7 @@ namespace media
             f.Size = new Size(870, 350);
             f.Location = new Point(25, 20);
             f.BackColor = Color.WhiteSmoke;
-            Methods.OpenChildForm2(new Story(), f);
+            Methods.OpenChildForm2(new Story(this.NativeUser), f);
             panelFeed.Controls.Add(f);
 
             Panel f2 = new Panel();
@@ -315,7 +304,7 @@ namespace media
             f2.Location = new Point(200, 20);
             f2.Margin=new Padding(70,0,0,10);
             f2.BackColor = Color.WhiteSmoke;
-            Methods.OpenChildForm2(new Form3(), f2);
+            Methods.OpenChildForm2(new Form3(this.NativeUser), f2);
             panelFeed.Controls.Add(f2);
 
 
@@ -338,12 +327,6 @@ namespace media
 
                 }
             }
-
-
-
-
-
-
 
 
 
@@ -382,175 +365,6 @@ namespace media
         }
 
 
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-
-
-        private void panelBaseStory_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panelBaseHome_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Guna2Panel panelBase =new Guna2Panel();    
-            Guna2Panel panelChild=new Guna2Panel();
-            panelBase.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            panelBase.BackColor = System.Drawing.Color.White;
-            panelBase.Controls.Add(panelChild);
-            panelBase.Location = new System.Drawing.Point(43, 347);
-            panelBase.Name = "panel1";
-            panelBase.Padding = new System.Windows.Forms.Padding(50, 10, 50, 10);
-            panelBase.Size = new System.Drawing.Size(866, 850);
-            panelBase.TabIndex = 1;
-            panelBase.Paint += new System.Windows.Forms.PaintEventHandler(panelBase_Paint);
-
-
-            panelChild.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            panelChild.Dock = System.Windows.Forms.DockStyle.Fill;
-            panelChild.Location = new System.Drawing.Point(50, 0);
-            panelChild.Name = "panel2";
-            panelChild.Size = new System.Drawing.Size(766, 600);
-            panelChild.TabIndex = 0;
-            panelChild.BorderColor = Color.Red;
-            panelChild.BorderThickness = 1;
-            panelChild.BorderRadius = 20;
-            panelChild.BackColor = Color.White;
-            panelChild.Paint += new System.Windows.Forms.PaintEventHandler(panelChild_Paint_1);
-            panelChild.MouseEnter += new System.EventHandler(panelChild_MouseEnter);
-            panelChild.MouseLeave += new System.EventHandler(panelChild_MouseLeave);
-
-            Post a = new Post();
-            Methods.OpenChildForm(a, panelChild);
-
-           // panelBase.Height = a.basePanel.Height;
-           // panelBase.Width = 866;
-            //panelChild.Height = a.basePanel.Height;
-            //panelChild.Width = 766;
-            //panelChild.Height = a.Height;
-            panelFeed.Controls.Add(panelBase);
-
-        }
-
-      
-        private void panelBase_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint_1(object sender, PaintEventArgs e)
-        {
-
-        }
-
-
-    
-        private void panelChild_Paint_1(object sender, PaintEventArgs e)
-        {
-
-        }
-
-
-
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }        
-        private void labelContact_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click_2(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel4_Paint(object sender, PaintEventArgs e)
-        {
-            
-        }
-
-        private void panel4_Paint_1(object sender, PaintEventArgs e)
-        {
-            new Form();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void button4_Click_1(object sender, EventArgs e)
-        {
-            //Friends.FreindRequestPanel f = new Friends.FreindRequestPanel();
-
-                
-
-            
-
-        }
-
-
-
-        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void customRoundPictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void guna2Panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void customRoundPictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-
-        private void panel1_Paint_1(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void friendRequestPanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void guna2TextBox1_TextChanged(object sender, EventArgs e)
         {
             string searchText = guna2TextBox1.Text.Trim();
@@ -561,82 +375,134 @@ namespace media
                 foreach (DataRow row in dataTable.Rows)
                 {
                     string fullName = row["FullName"].ToString();
+                    int id = Convert.ToInt32(row["ID"]);
+
                     DataGridViewRow dataGridViewRow = new DataGridViewRow();
-                    dataGridViewRow.Height = 50; 
+                    dataGridViewRow.Height = 50;
+
                     DataGridViewButtonCell buttonCell = new DataGridViewButtonCell();
                     buttonCell.Value = fullName;
+                    buttonCell.Tag = id; 
+
                     dataGridViewRow.Cells.Add(buttonCell);
                     guna2DataGridView1.Rows.Add(dataGridViewRow);
                 }
             }
         }
 
+        private async void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 0 && e.RowIndex >= 0) 
+            {
+                DBImageOperation dbio = new DBImageOperation();
+                DataGridViewButtonCell buttonCell = (DataGridViewButtonCell)guna2DataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                int id = Convert.ToInt32(buttonCell.Tag);
+                if (searchKey == 2)
+                {
+                    Methods.OpenChildForm2(new FormProfile(dbio.GetUserByUserId(id)), FormBase.panelSubMain);
+                }
+                if (searchKey == 3)
+                {
+                    Classes.ClassPost p= new ClassPost();
+                    string connectionString = DatabaseCredentials.connectionStringLocalServer;
+                    MySqlConnection connection = new MySqlConnection(connectionString);
+                    connection.Open();
+                    string query = "SELECT p.postid, p.posttext, p.posttime, p.postPermission, p.postReactCount, p.userid, i.image FROM postofuser p, mediacontent_postuser i where p.postid= "+ id+" and i.postid=p.postid";
+                    MySqlCommand command = new MySqlCommand(query, connection);
+                    MySqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        int postID = reader.GetInt32("postid");
+                        string postText = (string)reader["posttext"];
+                        DateTime postTime = reader.GetDateTime("posttime");
+                        string postPermission = (string)reader["postPermission"];
+                        int postReact = reader.GetInt32("postReactCount");
+                        int Key = reader.GetInt32("userid");
+                        Task <System.Drawing.Image> postImage= dbio.LoadPostImageFromDataBaseAsync(postID);
+                        System.Drawing.Image image = await postImage;
+                        User postCreator = dbio.GetUserByUserId(Key);
+                         p = new Classes.ClassPost(postID, postText, postTime, image, postPermission,  postReact, postCreator);
+                    }
+                    reader.Close();
+                    connection.Close();
 
+                    FormTest f = new FormTest();
+                    f.FormBorderStyle = FormBorderStyle.None;
+                    Guna.UI2.WinForms.Guna2ShadowPanel shadowPanel = new Guna.UI2.WinForms.Guna2ShadowPanel();
+                    f.StartPosition = FormStartPosition.Manual;
+                    FormPostSingle fsp = new FormPostSingle(p);
+                    shadowPanel.Location = new Point(580, 100);
+                    shadowPanel.Size = fsp.Size;
+                    shadowPanel.ShadowDepth = 100;
+                    shadowPanel.ShadowShift = 10;
+                    shadowPanel.ShadowColor = Color.Black;
+                    shadowPanel.Radius = 20;
+                    Methods.OpenChildForm(fsp, shadowPanel);
+                    f.Controls.Add(shadowPanel);
+                    shadowPanel.BringToFront();
+                    f.Location = new Point(3, 32);
+                    f.ShowDialog(this);
+                }
+            }
+        }
 
         private DataTable RetrieveUserData(string searchText)
-        {                
+        {
             DataTable dataTable = new DataTable();
 
             if (searchKey == 2)
             {
-
                 using (MySqlConnection connection = new MySqlConnection(DatabaseCredentials.connectionStringLocalServer))
                 {
-                    string query = "SELECT CONCAT(userFirstName, ' ', userLastName) AS FullName FROM user WHERE userFirstName LIKE @searchText OR userLastName LIKE @searchText";
-                    MySqlCommand command = new MySqlCommand(query, connection);
-                    command.Parameters.AddWithValue("@searchText", "%" + searchText + "%");
-                    dataTable.Columns.Add("FullName", typeof(string)); 
-                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
-                    adapter.Fill(dataTable);
-                    //return dataTable;
-                }
-            }
-            else if(searchKey == 4)
-            {
-                using (MySqlConnection connection = new MySqlConnection(DatabaseCredentials.connectionStringLocalServer))
-                {
-                    string query = "SELECT page_name AS FullName FROM pages WHERE page_name LIKE @searchText";
+                    string query = "SELECT CONCAT(userFirstName, ' ', userLastName) AS FullName, userID AS ID FROM user WHERE userFirstName LIKE @searchText OR userLastName LIKE @searchText";
                     MySqlCommand command = new MySqlCommand(query, connection);
                     command.Parameters.AddWithValue("@searchText", "%" + searchText + "%");
                     dataTable.Columns.Add("FullName", typeof(string));
+                    dataTable.Columns.Add("ID", typeof(int));
                     MySqlDataAdapter adapter = new MySqlDataAdapter(command);
                     adapter.Fill(dataTable);
-                    //return dataTable;
+                }
+            }
+            else if (searchKey == 4)
+            {
+                using (MySqlConnection connection = new MySqlConnection(DatabaseCredentials.connectionStringLocalServer))
+                {
+                    string query = "SELECT page_name AS FullName, page_id AS ID FROM pages WHERE page_name LIKE @searchText";
+                    MySqlCommand command = new MySqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@searchText", "%" + searchText + "%");
+                    dataTable.Columns.Add("FullName", typeof(string));
+                    dataTable.Columns.Add("ID", typeof(int));
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                    adapter.Fill(dataTable);
                 }
             }
             else if (searchKey == 3)
             {
                 using (MySqlConnection connection = new MySqlConnection(DatabaseCredentials.connectionStringLocalServer))
                 {
-                    string query = "SELECT postText AS FullName FROM postofuser WHERE postText LIKE @searchText";
+                    string query = "SELECT postText AS FullName, postID AS ID FROM postofuser WHERE postText LIKE @searchText";
                     MySqlCommand command = new MySqlCommand(query, connection);
                     command.Parameters.AddWithValue("@searchText", "%" + searchText + "%");
                     dataTable.Columns.Add("FullName", typeof(string));
+                    dataTable.Columns.Add("ID", typeof(int));
                     MySqlDataAdapter adapter = new MySqlDataAdapter(command);
                     adapter.Fill(dataTable);
-                    //return dataTable;
                 }
             }
             return dataTable;
-
-
         }
 
 
 
-        private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
         private void btnPeople_Click(object sender, EventArgs e)
         {
-            btnPeople.FillColor= Color.Black;
+            btnPeople.FillColor= Color.SlateBlue;
             btnPage.FillColor= Color.White;
             btnPost.FillColor= Color.White;
 
             btnPeople.ForeColor = Color.White;
-            btnPost.ForeColor = Color.Black;
-            btnPage.ForeColor = Color.Black;
+            btnPost.ForeColor = Color.SlateBlue;
+            btnPage.ForeColor = Color.SlateBlue;
             searchKey = 2;
         }
 
@@ -644,11 +510,11 @@ namespace media
         {
             btnPeople.FillColor = Color.White;
             btnPage.FillColor = Color.White;
-            btnPost.FillColor = Color.Black;
+            btnPost.FillColor = Color.SlateBlue;
 
-            btnPeople.ForeColor = Color.Black;
+            btnPeople.ForeColor = Color.SlateBlue;
             btnPost.ForeColor = Color.White;
-            btnPage.ForeColor = Color.Black;
+            btnPage.ForeColor = Color.SlateBlue;
             searchKey = 3;
 
         }
@@ -656,11 +522,11 @@ namespace media
         private void btnPage_Click(object sender, EventArgs e)
         {
             btnPeople.FillColor = Color.White;
-            btnPage.FillColor = Color.Black;
+            btnPage.FillColor = Color.SlateBlue;
             btnPost.FillColor = Color.White;
 
-            btnPeople.ForeColor = Color.Black;
-            btnPost.ForeColor = Color.Black;
+            btnPeople.ForeColor = Color.SlateBlue;
+            btnPost.ForeColor = Color.SlateBlue;
             btnPage.ForeColor = Color.White;
             searchKey = 4;
 
@@ -669,7 +535,7 @@ namespace media
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             guna2Button1.ForeColor = Color.White;
-            guna2Button1.FillColor = Color.Indigo;
+            guna2Button1.FillColor = Color.SlateBlue;
 
             guna2Button2.ForeColor = Color.Black;
             guna2Button2.FillColor = Color.White;
@@ -682,7 +548,7 @@ namespace media
         private void guna2Button2_Click(object sender, EventArgs e)
         {
             guna2Button2.ForeColor = Color.White;
-            guna2Button2.FillColor = Color.Indigo;
+            guna2Button2.FillColor = Color.SlateBlue;
 
             guna2Button1.ForeColor = Color.Black;
             guna2Button1.FillColor = Color.White;
@@ -694,13 +560,23 @@ namespace media
         private void guna2Button3_Click(object sender, EventArgs e)
         {
             guna2Button3.ForeColor = Color.White;
-            guna2Button3.FillColor = Color.Indigo;
+            guna2Button3.FillColor = Color.SlateBlue;
 
             guna2Button2.ForeColor = Color.Black;
             guna2Button2.FillColor = Color.White;
 
             guna2Button1.ForeColor = Color.Black;
             guna2Button1.FillColor = Color.White;
+        }
+
+        private void panelFeed_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel4_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

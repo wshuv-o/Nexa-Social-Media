@@ -50,33 +50,74 @@ namespace media
                 }
 
             }
-            //bool isFriend=false;
             
             if (IsFriend())
             {
                 btnFollow.Text = "Unfollow";
                 btnFollow.FillColor = Color.WhiteSmoke;
                 btnFollow.ForeColor = Color.Black;
-                btnFollow.Click += delegate
-                {
-                    btnFollow.Text = "Follow";
-                    btnFollow.FillColor = Color.FromArgb(94, 148, 255);
-                    btnFollow.ForeColor = Color.White;
-                    RemoveFriendship();
-
-                };
+                
             }
             else
             {
                 btnFollow.Text = "Follow";
                 btnFollow.FillColor = Color.FromArgb(94, 148, 255);
                 btnFollow.ForeColor = Color.White;
-                btnFollow.Click += delegate
+
+            }
+            if (IsFriendRequestSended())
+            {
+                btnFollow.Text = "Requested";
+                btnFollow.FillColor = Color.WhiteSmoke;
+                btnFollow.ForeColor = Color.Black;
+            }
+
+        }
+        private void btnFollow_Click(object sender, EventArgs e)
+        {
+            if (btnFollow.Text.Equals("Follow"))
+            {
+                btnFollow.Text = "Requested";
+                btnFollow.FillColor = Color.WhiteSmoke;
+                btnFollow.ForeColor = Color.Black;
+                SendFriendRequest();
+            }
+            else if (btnFollow.Text.Equals("Unfollow"))
+             {
+                btnFollow.Text = "Follow";
+                btnFollow.FillColor = Color.FromArgb(94, 148, 255);
+                btnFollow.ForeColor = Color.White;
+                RemoveFriendship();
+            }
+            else if (btnFollow.Text.Equals("Requested"))
+            {
+                btnFollow.Text = "Follow";
+                btnFollow.FillColor = Color.FromArgb(94, 148, 255);
+                btnFollow.ForeColor = Color.White;
+                RemoveFriendRequest();
+            }
+
+        }
+        private bool SendFriendRequest()
+        {
+            using (MySqlConnection connection = new MySqlConnection(DatabaseCredentials.connectionStringLocalServer))
+            {
+                string query = "INSERT INTO friendrequest (requeststatus, requestfrom, requestto) VALUES (@requestStatus, @requestfrom, @requestto)";
+                MySqlCommand command = new MySqlCommand(query, connection);
+                command.Parameters.AddWithValue("@requestStatus",5);
+                command.Parameters.AddWithValue("@requestfrom", ClassNativeUser.NativeUser.Key);
+                command.Parameters.AddWithValue("@requestto", this.NativeUser.Key);
+
+                connection.Open();
+                int rowsAffected = command.ExecuteNonQuery();
+                if (rowsAffected > 0)
                 {
-                    btnFollow.Text = "Requested";
-                    btnFollow.FillColor = Color.WhiteSmoke;
-                    btnFollow.ForeColor = Color.Black;
-                };
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
 
         }
@@ -100,6 +141,35 @@ namespace media
             }
             return false;
         }
+        private bool IsFriendRequestSended()
+        {
+            using (MySqlConnection connection = new MySqlConnection(DatabaseCredentials.connectionStringLocalServer))
+            {
+                connection.Open();
+                using (var command = new MySqlCommand("SELECT * FROM friendrequest WHERE requestfrom = " + ClassNativeUser.NativeUser.Key + " AND requestto = " + this.NativeUser.Key, connection))
+                {
+                    int count = Convert.ToInt32(command.ExecuteScalar());
+                    if (count > 0) return true;
+                }
+                connection.Close();
+            }
+            return false;
+        }
+        private bool RemoveFriendRequest()
+        {
+            using (MySqlConnection connection = new MySqlConnection(DatabaseCredentials.connectionStringLocalServer))
+            {
+                connection.Open();
+                using (var command = new MySqlCommand("Delete FROM friendrequest WHERE requestfrom = " + ClassNativeUser.NativeUser.Key + " AND requestto = " + this.NativeUser.Key, connection))
+                {
+                    int count = Convert.ToInt32(command.ExecuteScalar());
+                    if (count > 0) return true;
+                }
+                connection.Close();
+            }
+            return false;
+        }
+
 
         private void RemoveFriendship()
         {
