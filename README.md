@@ -37,7 +37,6 @@ Nexa-Social-Media is a social media platform project developed using C#. It feat
 - **Resources:** Resource files.
 
 ## Screenshots
-![Screenshot](https://github.com/wshuv-o/Nexa-Social-Media/blob/master/Screenshot%20(455).png)
 ![Screenshot](https://github.com/wshuv-o/Nexa-Social-Media/blob/master/Screenshot%20(456).png)
 ![Screenshot (455)](https://github.com/wshuv-o/Nexa-Social-Media/assets/100506316/7b7b8a9a-9299-44a0-80d5-97c5f9c3002e)
 ![Screenshot (456)](https://github.com/wshuv-o/Nexa-Social-Media/assets/100506316/b2a5f451-82e7-4372-899f-214c22a000d8)
