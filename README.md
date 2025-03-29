@@ -1,5 +1,5 @@
 # Nexa-Social-Media
-
+ 
 Nexa-Social-Media is a social media platform project developed using C#. It features various functionalities typically found in social media applications.
  
 ## Features
