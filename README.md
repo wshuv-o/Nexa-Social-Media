@@ -27,7 +27,7 @@ Nexa-Social-Media is a social media platform project developed using C#. It feat
 
 ## Project Structure
 - **Admin:** Administrative functionalities.
-- **Classes:** Core classes for the application.
+- **Classes:** Core classes for the application. 
 - **CustomControls:** Custom user controls used in the UI.
 - **Friends:** Friend management features.
 - **MarketPlace:** Marketplace features.
