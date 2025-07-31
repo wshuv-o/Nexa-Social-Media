@@ -10,7 +10,7 @@ Nexa-Social-Media is a social media platform project developed using C#. It feat
 - **MarketPlace:** A platform for buying and selling products.
 - **Stories:** Share stories that disappear after a set period.
 
-## Getting Started
+## Getting Started 
 
 ### Prerequisites
 - Visual Studio 2019 or later
